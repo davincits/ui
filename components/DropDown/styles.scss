@@ -1,0 +1,62 @@
+@import "app/styles/variables";
+
+.ui-dropdown {
+  position: relative;
+
+  .ui-dropdown-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    color: rgba($font-color, 0.6);
+  }
+
+  & > .ui-icon-expand-less,
+  & > .ui-icon-expand-more {
+    right: 0.25rem;
+    top: 50%;
+    margin-top: -0.75rem;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .ui-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 1.5rem;
+    margin-top: 0.125rem;
+  }
+
+  .ui-dropdown-button {
+    height: 2rem;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .ui-dropdown-button-container {
+    position: relative;
+  }
+
+  &.ui-dropdown-opened {
+
+    .ui-dropdown-button {
+      border-color: $brand-primary;
+      background-color: $white;
+      box-shadow: 0 0 0 1px $brand-primary-light, inset 0 0 0 1px $brand-primary-light;
+    }
+  }
+
+  .ui-dropdown-label ~ .ui-icon-expand-less,
+  .ui-dropdown-label ~ .ui-icon-expand-more {
+    margin-top: -0.3125rem;
+  }
+}
+
+.ui-dropdown-content {
+  position: fixed;
+  z-index: 100;
+  animation: UIFadeIn 0.2s;
+  overflow: auto;
+}

@@ -1,0 +1,19 @@
+@import "app/styles/variables";
+
+.ui-option {
+  display: flex;
+  font-size: 0.875rem;
+  padding: 0 1rem;
+  height: 2.5rem;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gray-light;
+  }
+
+  &.ui-selected {
+    font-weight: 500;
+    color: $brand-primary;
+  }
+}

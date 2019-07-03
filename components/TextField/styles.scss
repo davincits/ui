@@ -1,0 +1,115 @@
+@import "app/styles/variables";
+
+.ui-text-field {
+  position: relative;
+  line-height: $line-height;
+
+  label {
+    display: block;
+    width: 100%;
+    font-weight: normal;
+  }
+
+  .ui-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    color: rgba($font-color, 0.6);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+    color: $font-color;
+    font-family: $font-family;
+    font-size: 0.875rem;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    padding: 0.5rem 0.75rem;
+    background-color: $white;
+    outline: none;
+
+    &:hover:not(:focus) {
+      background-color: $gray-lightest;
+    }
+
+    &:focus {
+      border-color: $brand-primary;
+      box-shadow: 0 0 0 2px $brand-primary-light;
+    }
+
+    &[disabled] {
+      border-color: $ui-gray-disabled;
+      background-color: $ui-gray-disabled;
+    }
+  }
+
+  input {
+    height: 2rem;
+  }
+
+  textarea {
+    min-height: 3rem;
+  }
+
+  &.ui-no-resize {
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  &.ui-inline {
+
+    label {
+      display: flex;
+      width: auto;
+    }
+
+    .ui-label {
+      font-size: 0.75rem;
+      align-items: center;
+      display: flex;
+      padding-right: 0.5rem;
+      height: 2rem;
+    }
+  }
+
+  &.ui-type-search {
+
+    input,
+    textarea {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .ui-icon-search,
+    .ui-icon-close {
+      position: absolute;
+      top: 50%;
+      margin-top: -0.75rem;
+      color: $gray;
+    }
+
+    .ui-icon-search {
+      left: 0.25rem;
+    }
+
+    .ui-icon-close {
+      right: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $gray-150;
+      }
+    }
+  }
+
+  &.ui-state-error {
+    input,
+    textarea {
+      border-color: $brand-danger;
+    }
+  }
+}

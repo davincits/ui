@@ -1,0 +1,36 @@
+@import "app/styles/variables";
+
+.ui-tooltip-container {
+  position: relative;
+
+  .ui-tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 0.75rem;
+    background: $white;
+    border-radius: $border-radius;
+    padding: 0.25rem 0.5rem;
+    max-width: 16rem;
+    display: none;
+    margin-top: -0.5rem;
+    white-space: pre;
+    text-align: center;
+  }
+
+  &:hover .ui-tooltip {
+    display: block;
+    animation: tooltipFadeIn 0.3s forwards;
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}

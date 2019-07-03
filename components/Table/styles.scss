@@ -1,0 +1,74 @@
+@import "app/styles/variables";
+
+.ui-table {
+  width: 100%;
+
+  .ui-row {
+    display: flex;
+
+    .ui-head {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid $gray;
+      background-color: $gray-light;
+      text-transform: uppercase;
+      color: rgba(51, 51, 51, 0.4);
+      font-size: 0.75rem;
+      height: 2rem;
+      font-weight: 500;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &:first-child {
+        border-radius: 0.25rem 0 0 0;
+        border-left: 1px solid $gray;
+      }
+
+      &:last-child {
+        border-radius: 0 0.25rem 0 0;
+        border-right: 1px solid $gray;
+      }
+    }
+
+    .ui-cell {
+      display: flex;
+      align-items: center;
+      font-size: 0.825rem;
+      min-height: 2rem;
+      border-top: 1px solid $gray;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      transition: background-color 0.25s;
+
+      &:first-child {
+        border-left: 1px solid $gray;
+      }
+
+      &:last-child {
+        border-right: 1px solid $gray;
+      }
+    }
+
+    &:hover {
+
+      .ui-cell {
+        background-color: $gray-lightest;
+      }
+    }
+
+    &:last-child {
+
+      .ui-cell {
+        border-bottom: 1px solid $gray;
+
+        &:first-child {
+          border-radius: 0 0 0 0.25rem;
+        }
+
+        &:last-child {
+          border-radius: 0 0 0.25rem 0;
+        }
+      }
+    }
+  }
+}

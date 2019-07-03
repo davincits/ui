@@ -1,0 +1,114 @@
+@import "app/styles/variables";
+
+.ui-toaster-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 1rem;
+  top: 4rem;
+  z-index: 20;
+
+  .ui-toastr-item {
+    position: relative;
+    width: 20rem;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: $border-radius;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    min-height: 3rem;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+    animation: toastrAnimation 0.25s;
+    transition: margin-top 0.25s, opacity 0.25s, height 0.25s;
+
+    .ui-toastr-message {
+      font-weight: bold;
+      margin-right: 1.5rem;
+
+      &::before {
+        display: inline-block;
+        margin-right: 0.25rem;
+      }
+    }
+
+    .ui-toastr-description {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      line-height: 1.2;
+    }
+
+    &.ui-toastr-item-hide-animation {
+      height: 48px;
+      margin-top: -48px;
+      opacity: 0;
+    }
+
+    .ui-button {
+      margin-top: 1rem;
+    }
+  }
+
+  .ui-toastr-item-type-info {
+
+    .ui-toastr-message::before {
+      content: "ℹ️";
+    }
+  }
+
+  .ui-toastr-item-type-success {
+
+    .ui-toastr-message {
+      color: $brand-success;
+
+      &::before {
+        content: "✅";
+      }
+    }
+  }
+
+  .ui-toastr-item-type-warning {
+
+    .ui-toastr-message {
+      color: $brand-warning;
+
+      &::before {
+        content: "⚠️️";
+      }
+    }
+  }
+
+  .ui-toastr-item-type-danger {
+
+    .ui-toastr-message {
+      color: $brand-danger;
+
+      &::before {
+        content: "🔴";
+      }
+    }
+  }
+
+  .ui-toastr-close {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $gray;
+    }
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+@keyframes toastrAnimation {
+  from {
+    transform: translate(100%, 0);
+  }
+}

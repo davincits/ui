@@ -1,0 +1,36 @@
+@import "app/styles/variables";
+
+.loading-css-dotted {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $brand-primary;
+    margin: 2px;
+    animation: blink .3s infinite alternate;
+  }
+
+  .dot-second {
+    animation-delay: .1s;
+  }
+
+  .dot-third {
+    animation-delay: .2s;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

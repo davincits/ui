@@ -1,0 +1,37 @@
+@import "app/styles/variables";
+
+.ui-alert {
+  position: relative;
+  border-radius: $border-radius;
+  background-color: $white;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &.ui-showed {
+    opacity: 1;
+  }
+
+  .ui-alert-content {
+    padding: 1rem;
+    font-size: 0.875rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .ui-close {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    margin-top: -0.75rem;
+
+    svg {
+      display: block;
+    }
+  }
+
+  .ui-close + .ui-alert-content {
+    padding-right: 3rem;
+  }
+}
