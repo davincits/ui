@@ -1,11 +1,11 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-drop-area {
   position: relative;
-  background-color: $gray-lightest;
-  border: 1px dashed $gray;
-  border-radius: $border-radius;
-  padding: 1rem;
+  background-color: $ui-color-gray-lightest;
+  border: 1px dashed $ui-color-gray;
+  border-radius: $ui-border-radius;
+  padding: 16px;
 
   .ui-drop-decoration {
     position: absolute;
@@ -13,11 +13,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid $brand-primary;
-    border-radius: $border-radius;
-    background-color: $brand-primary-light;
+    border: 1px solid $ui-color-brand-primary;
+    border-radius: $ui-border-radius;
+    background-color: $ui-color-brand-primary-light;
     display: none;
-    color: $brand-primary;
+    color: $ui-color-brand-primary;
     justify-content: center;
     align-items: center;
   }
@@ -33,7 +33,7 @@
   }
 
   &.drag-over {
-    border-color: $brand-primary;
+    border-color: $ui-color-brand-primary;
 
     .ui-drop-element {
       display: block;
@@ -45,6 +45,6 @@
   }
 
   &.error-state {
-    border-color: $brand-danger;
+    border-color: $ui-color-brand-danger;
   }
 }

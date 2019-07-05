@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-tooltip-container {
   position: relative;
@@ -7,13 +7,13 @@
     position: absolute;
     top: 0;
     left: 50%;
-    font-size: 0.75rem;
-    background: $white;
-    border-radius: $border-radius;
-    padding: 0.25rem 0.5rem;
-    max-width: 16rem;
+    font-size: $ui-font-size-xs;
+    background: $ui-color-white;
+    border-radius: $ui-border-radius;
+    padding: 4px 8px;
+    max-width: 256px;
     display: none;
-    margin-top: -0.5rem;
+    margin-top: -8px;
     white-space: pre;
     text-align: center;
   }

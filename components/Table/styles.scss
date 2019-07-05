@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-table {
   width: 100%;
@@ -9,64 +9,64 @@
     .ui-head {
       display: flex;
       align-items: center;
-      border-top: 1px solid $gray;
-      background-color: $gray-light;
+      border-top: 1px solid $ui-color-gray;
+      background-color: $ui-color-gray-light-2;
       text-transform: uppercase;
       color: rgba(51, 51, 51, 0.4);
-      font-size: 0.75rem;
-      height: 2rem;
+      font-size: $ui-font-size-xs;
+      height: 32px;
       font-weight: 500;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 16px;
+      padding-right: 16px;
 
       &:first-child {
-        border-radius: 0.25rem 0 0 0;
-        border-left: 1px solid $gray;
+        border-radius: 4px 0 0 0;
+        border-left: 1px solid $ui-color-gray;
       }
 
       &:last-child {
-        border-radius: 0 0.25rem 0 0;
-        border-right: 1px solid $gray;
+        border-radius: 0 4px 0 0;
+        border-right: 1px solid $ui-color-gray;
       }
     }
 
     .ui-cell {
       display: flex;
       align-items: center;
-      font-size: 0.825rem;
-      min-height: 2rem;
-      border-top: 1px solid $gray;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      font-size: $ui-font-size-s;
+      min-height: 32px;
+      border-top: 1px solid $ui-color-gray;
+      padding-left: 16px;
+      padding-right: 16px;
       transition: background-color 0.25s;
 
       &:first-child {
-        border-left: 1px solid $gray;
+        border-left: 1px solid $ui-color-gray;
       }
 
       &:last-child {
-        border-right: 1px solid $gray;
+        border-right: 1px solid $ui-color-gray;
       }
     }
 
     &:hover {
 
       .ui-cell {
-        background-color: $gray-lightest;
+        background-color: $ui-color-gray-lightest;
       }
     }
 
     &:last-child {
 
       .ui-cell {
-        border-bottom: 1px solid $gray;
+        border-bottom: 1px solid $ui-color-gray;
 
         &:first-child {
-          border-radius: 0 0 0 0.25rem;
+          border-radius: 0 0 0 4px;
         }
 
         &:last-child {
-          border-radius: 0 0 0.25rem 0;
+          border-radius: 0 0 4px 0;
         }
       }
     }

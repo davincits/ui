@@ -1,8 +1,8 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-text-field {
   position: relative;
-  line-height: $line-height;
+  line-height: $ui-line-height;
 
   label {
     display: block;
@@ -11,46 +11,46 @@
   }
 
   .ui-label {
-    font-size: 0.6875rem;
+    font-size: $ui-font-size-xxs;
     text-transform: uppercase;
-    color: rgba($font-color, 0.6);
+    color: rgba($ui-font-color, 0.6);
     line-height: 1;
-    margin-bottom: 0.25rem;
+    margin-bottom: 4px;
   }
 
   input, textarea {
     display: block;
     width: 100%;
-    color: $font-color;
-    font-family: $font-family;
-    font-size: 0.875rem;
-    border: 1px solid $gray;
-    border-radius: $border-radius;
-    padding: 0.5rem 0.75rem;
-    background-color: $white;
+    color: $ui-font-color;
+    font-family: $ui-font-family;
+    font-size: $ui-font-size;
+    border: 1px solid $ui-color-gray;
+    border-radius: $ui-border-radius;
+    padding: 8px 12px;
+    background-color: $ui-color-white;
     outline: none;
 
     &:hover:not(:focus) {
-      background-color: $gray-lightest;
+      background-color: $ui-color-gray-lightest;
     }
 
     &:focus {
-      border-color: $brand-primary;
-      box-shadow: 0 0 0 2px $brand-primary-light;
+      border-color: $ui-color-brand-primary;
+      box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
 
     &[disabled] {
-      border-color: $ui-gray-disabled;
-      background-color: $ui-gray-disabled;
+      border-color: $ui-color-disabled;
+      background-color: $ui-color-disabled;
     }
   }
 
   input {
-    height: 2rem;
+    height: 32px;
   }
 
   textarea {
-    min-height: 3rem;
+    min-height: 48px;
   }
 
   &.ui-no-resize {
@@ -68,11 +68,11 @@
     }
 
     .ui-label {
-      font-size: 0.75rem;
+      font-size: $ui-font-size-xs;
       align-items: center;
       display: flex;
-      padding-right: 0.5rem;
-      height: 2rem;
+      padding-right: 8px;
+      height: 32px;
     }
   }
 
@@ -80,28 +80,28 @@
 
     input,
     textarea {
-      padding-left: 1.75rem;
-      padding-right: 1.75rem;
+      padding-left: 28px;
+      padding-right: 28px;
     }
 
     .ui-icon-search,
     .ui-icon-close {
       position: absolute;
       top: 50%;
-      margin-top: -0.75rem;
-      color: $gray;
+      margin-top: -12px;
+      color: $ui-color-gray;
     }
 
     .ui-icon-search {
-      left: 0.25rem;
+      left: 4px;
     }
 
     .ui-icon-close {
-      right: 0.25rem;
+      right: 4px;
       cursor: pointer;
 
       &:hover {
-        color: $gray-150;
+        color: $ui-color-gray-dark;
       }
     }
   }
@@ -109,7 +109,7 @@
   &.ui-state-error {
     input,
     textarea {
-      border-color: $brand-danger;
+      border-color: $ui-color-brand-danger;
     }
   }
 }

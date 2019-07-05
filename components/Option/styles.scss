@@ -1,19 +1,19 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-option {
   display: flex;
-  font-size: 0.875rem;
-  padding: 0 1rem;
-  height: 2.5rem;
+  font-size: $ui-font-size;
+  padding: 0 16px;
+  height: 40px;
   align-items: center;
   cursor: pointer;
 
   &:hover {
-    background-color: $gray-light;
+    background-color: $ui-color-gray-light-2;
   }
 
   &.ui-selected {
     font-weight: 500;
-    color: $brand-primary;
+    color: $ui-color-brand-primary;
   }
 }

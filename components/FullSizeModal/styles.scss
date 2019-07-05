@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .component-full-size-modal {
   position: fixed;
@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $white;
+  background: $ui-color-white;
   z-index: 10;
   user-select: none;
   display: flex;
@@ -21,11 +21,11 @@
       font-weight: 500;
       display: flex;
       justify-content: space-between;
-      padding-left: 2rem;
+      padding-left: 32px;
 
       .component-full-size-modal-title,
       .component-full-size-modal-close {
-        height: 4rem;
+        height: 64px;
         display: flex;
         align-items: center;
       }
@@ -37,26 +37,26 @@
       .component-full-size-modal-close {
         cursor: pointer;
         transition: color 0.3s;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 32px;
+        padding-right: 32px;
 
         .ui-text-muted {
-          margin-left: 0.25rem;
+          margin-left: 4px;
         }
 
         &:hover {
-          color: $brand-primary;
+          color: $ui-color-brand-primary;
         }
       }
     }
 
     .header-subtitle {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 32px;
+      padding-right: 32px;
     }
 
     &.with-shadow {
-      box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -73,7 +73,7 @@
     z-index: 2;
 
     &.with-shadow {
-      box-shadow: 0 1px 1rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
   }
 }

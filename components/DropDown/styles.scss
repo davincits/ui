@@ -1,19 +1,19 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-dropdown {
   position: relative;
 
   .ui-dropdown-label {
-    font-size: 0.6875rem;
+    font-size: $ui-font-size-xxs;
     text-transform: uppercase;
-    color: rgba($font-color, 0.6);
+    color: rgba($ui-font-color, 0.6);
   }
 
   & > .ui-icon-expand-less,
   & > .ui-icon-expand-more {
-    right: 0.25rem;
+    right: 4px;
     top: 50%;
-    margin-top: -0.75rem;
+    margin-top: -12px;
     position: absolute;
     pointer-events: none;
   }
@@ -24,15 +24,15 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    padding: 1.5rem;
-    margin-top: 0.125rem;
+    padding: 24px;
+    margin-top: 2px;
   }
 
   .ui-dropdown-button {
-    height: 2rem;
+    height: 32px;
     width: 100%;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .ui-dropdown-button-container {
@@ -42,15 +42,15 @@
   &.ui-dropdown-opened {
 
     .ui-dropdown-button {
-      border-color: $brand-primary;
-      background-color: $white;
-      box-shadow: 0 0 0 1px $brand-primary-light, inset 0 0 0 1px $brand-primary-light;
+      border-color: $ui-color-brand-primary;
+      background-color: $ui-color-white;
+      box-shadow: 0 0 0 1px $ui-color-brand-primary-light, inset 0 0 0 1px $ui-color-brand-primary-light;
     }
   }
 
   .ui-dropdown-label ~ .ui-icon-expand-less,
   .ui-dropdown-label ~ .ui-icon-expand-more {
-    margin-top: -0.3125rem;
+    margin-top: -5px;
   }
 }
 

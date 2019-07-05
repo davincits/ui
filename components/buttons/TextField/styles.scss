@@ -1,7 +1,7 @@
-@import "app/styles/variables";
+@import "../common";
 
 .button-text-field {
-  font-size: 16px;
+  font-size: $ui-font-size-l;
   display: inline-block;
   position: relative;
   background-color: transparent;
@@ -45,7 +45,7 @@
     border: none;
     outline: none;
     background-color: transparent;
-    color: $gray-dark;
+    color: $ui-color-graphite;
     cursor: inherit;
     font: inherit;
     text-align: left;
@@ -61,7 +61,7 @@
     -webkit-appearance: textfield;
 
     .hint-text {
-      color: $text-muted;
+      color: $ui-font-color-muted;
     }
   }
 
@@ -70,12 +70,12 @@
     bottom: 6px;
     left: 0;
     width: 100%;
-    border-bottom: 1px solid $gray-50;
+    border-bottom: 1px solid $ui-color-gray-light;
   }
 
   .underline-error {
     transform: scaleX(0);
-    border-color: $brand-danger;
+    border-color: $ui-color-brand-danger;
     border-width: 2px;
     transition: transform .45s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -86,8 +86,8 @@
 
   .error-text {
     top: 100%;
-    color: $brand-danger;
-    font-size: 12px;
+    color: $ui-color-brand-danger;
+    font-size: $ui-font-size-xs;
     line-height: 12px;
     position: absolute;
   }

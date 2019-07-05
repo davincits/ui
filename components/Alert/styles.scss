@@ -1,9 +1,12 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-alert {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
   position: relative;
-  border-radius: $border-radius;
-  background-color: $white;
+  border-radius: $ui-border-radius;
+  background-color: $ui-color-white;
   opacity: 0;
   transition: opacity 0.2s;
 
@@ -12,8 +15,7 @@
   }
 
   .ui-alert-content {
-    padding: 1rem;
-    font-size: 0.875rem;
+    padding: 16px;
 
     p {
       margin: 0;
@@ -23,8 +25,8 @@
   .ui-close {
     position: absolute;
     top: 50%;
-    right: 0.75rem;
-    margin-top: -0.75rem;
+    right: 12px;
+    margin-top: -12px;
 
     svg {
       display: block;
@@ -32,6 +34,6 @@
   }
 
   .ui-close + .ui-alert-content {
-    padding-right: 3rem;
+    padding-right: 48px;
   }
 }

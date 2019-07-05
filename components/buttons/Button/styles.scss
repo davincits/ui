@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-button {
   display: inline-block;
@@ -25,7 +25,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 14px;
+  font-size: $ui-font-size;
   border: none;
 
   &:not([disabled]):hover {
@@ -42,7 +42,7 @@
   }
 
   &.ui-button-small {
-    font-size: 12px;
+    font-size: $ui-font-size-xs;
     line-height: 30px;
     height: 30px;
   }

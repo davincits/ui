@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .component-gallery {
   position: relative;
@@ -14,25 +14,25 @@
     transform: translate(-50%, -50%);
 
     svg {
-      width: 6rem;
-      height: 6rem;
+      width: 96px;
+      height: 96px;
     }
   }
 
   .component-gallery-view {
     position: absolute;
     left: 0;
-    right: 17rem;
+    right: 272px;
     top: 0;
     bottom: 0;
-    padding: 2.5rem 6rem 2.5rem;
+    padding: 40px 96px 40px;
     overflow: hidden;
 
     .ui-icon-broken {
       position: absolute;
       left: 50%;
       top: 50%;
-      margin-left: 8.5rem;
+      margin-left: 136px;
       transform: translate(-50%, -50%);
     }
 
@@ -70,18 +70,18 @@
     bottom: 0;
     right: 0;
     left: 0;
-    padding-left: calc(100vw - 17rem);
+    padding-left: calc(100vw - 272px);
     overflow-y: auto;
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
+    padding-top: 32px;
+    padding-bottom: 40px;
 
     .image {
       position: relative;
-      width: 4rem;
-      height: 4rem;
+      width: 64px;
+      height: 64px;
       background-position: center;
       background-size: cover;
-      margin: 0.5rem 0.25rem 0;
+      margin: 8px 4px 0;
       cursor: pointer;
       opacity: 0;
       transition: opacity 0.3s;
@@ -100,7 +100,7 @@
         opacity: 0;
         background-image: url(eye.svg);
         background-position: center;
-        background-color: $brand-primary;
+        background-color: $ui-color-brand-primary;
         transition: opacity 0.3s;
         content: "";
       }
@@ -118,7 +118,7 @@
   .control {
     position: absolute;
     top: 50%;
-    padding: 2rem;
+    padding: 32px;
     cursor: pointer;
     transform: translate(0, -50%);
 
@@ -129,7 +129,7 @@
     &:hover {
 
       svg {
-        color: $brand-primary;
+        color: $ui-color-brand-primary;
       }
     }
   }
@@ -139,6 +139,6 @@
   }
 
   .control-next {
-    right: 17rem;
+    right: 272px;
   }
 }

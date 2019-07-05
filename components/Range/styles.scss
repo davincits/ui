@@ -1,12 +1,12 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-range {
-  padding: 0.7rem 0;
+  padding: 12px 0;
 
   .ui-range-track {
     position: relative;
-    height: 0.25rem;
-    background-color: $gray;
+    height: 4px;
+    background-color: $ui-color-gray;
     cursor: pointer;
 
     .ui-range-track-active {
@@ -15,38 +15,38 @@
       left: 0;
       right: 0;
       height: 100%;
-      background-color: $brand-primary;
+      background-color: $ui-color-brand-primary;
     }
 
     .ui-range-slider {
       position: absolute;
       left: 0;
-      top: -0.625rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      border: 0.125rem solid $brand-primary-light-2;
+      top: -10px;
+      width: 24px;
+      height: 24px;
+      border: 2px solid $ui-color-brand-primary-light-2;
       border-radius: 50%;
-      background-color: $white;
-      margin-left: -0.625rem;
+      background-color: $ui-color-white;
+      margin-left: -10px;
       transition: background-color 0.2s;
       user-select: none;
 
       &:hover {
-        background-color: $brand-primary-light;
+        background-color: $ui-color-brand-primary-light;
       }
 
       &:active {
-        background-color: $brand-primary-light-2;
+        background-color: $ui-color-brand-primary-light-2;
       }
 
       &::after {
         position: absolute;
-        left: 0.5625rem;
-        top: 0.4375rem;
-        width: 0.125rem;
-        height: 0.125rem;
-        background-color: $brand-primary;
-        box-shadow: 0.25rem 0 $brand-primary, 0.25rem 0.25rem $brand-primary, 0 0.25rem $brand-primary, -0.25rem 0.25rem $brand-primary, -0.25rem 0 $brand-primary;
+        left: 9px;
+        top: 7px;
+        width: 2px;
+        height: 2px;
+        background-color: $ui-color-brand-primary;
+        box-shadow: 4px 0 $ui-color-brand-primary, 4px 4px $ui-color-brand-primary, 0 4px $ui-color-brand-primary, -4px 4px $ui-color-brand-primary, -4px 0 $ui-color-brand-primary;
         content: "";
       }
     }

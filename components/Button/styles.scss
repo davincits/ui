@@ -1,41 +1,42 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-button {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
   position: relative;
   border: none;
-  font-family: $font-family;
-  color: $font-color;
-  border: 1px solid $gray;
-  background-color: $white;
-  border-radius: $border-radius;
-  font-size: 0.875rem;
+  border: 1px solid $ui-color-gray;
+  background-color: $ui-color-white;
+  border-radius: $ui-border-radius;
+  font-size: $ui-font-size;
   font-weight: 400;
   display: flex;
-  height: 2.5rem;
+  height: 40px;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 16px;
   cursor: pointer;
   overflow: hidden;
   transition: background-color 0.25s, border-color 0.25s;
 
   svg:first-child {
-    margin-right: 0.625rem;
-    margin-left: -0.25rem;
+    margin-right: 10px;
+    margin-left: -4px;
   }
 
   &:hover {
-    background-color: $gray-lightest;
+    background-color: $ui-color-gray-lightest;
   }
 
   &:focus {
-    border-color: $brand-primary;
-    background-color: $white;
-    box-shadow: 0 0 0 1px $brand-primary-light, inset 0 0 0 1px $brand-primary-light;
+    border-color: $ui-color-brand-primary;
+    background-color: $ui-color-white;
+    box-shadow: 0 0 0 1px $ui-color-brand-primary-light, inset 0 0 0 1px $ui-color-brand-primary-light;
   }
 
   &:active {
-    border-color: $gray;
-    background-color: $gray;
+    border-color: $ui-color-gray;
+    background-color: $ui-color-gray;
     box-shadow: none;
   }
 
@@ -49,83 +50,83 @@
   }
 
   &.ui-button-small {
-    height: 2rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   &.ui-button-blue {
-    color: $brand-primary;
-    border-color: $brand-primary-light-2;
+    color: $ui-color-brand-primary;
+    border-color: $ui-color-brand-primary-light-2;
 
     &:hover {
-      background-color: $brand-primary-light;
+      background-color: $ui-color-brand-primary-light;
     }
 
     &:focus {
-      border-color: $brand-primary;
-      box-shadow: 0 0 0 2px $brand-primary-light;
+      border-color: $ui-color-brand-primary;
+      box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
 
     &:active {
-      background-color: $brand-primary-light-2;
-      border-color: $brand-primary-light-2;
+      background-color: $ui-color-brand-primary-light-2;
+      border-color: $ui-color-brand-primary-light-2;
       box-shadow: none;
     }
   }
 
   &.ui-button-danger {
-    background-color: $white;
-    color: $brand-danger;
-    border-color: rgba($brand-danger, 0.2);
+    background-color: $ui-color-white;
+    color: $ui-color-brand-danger;
+    border-color: rgba($ui-color-brand-danger, 0.2);
 
     &:hover {
-      border-color: $brand-danger;
+      border-color: $ui-color-brand-danger;
     }
 
     &:focus {
-      border-color: $brand-danger;
-      box-shadow: inset 0 0 0 1px rgba($brand-danger, 0.2), 0 0 0 1px rgba($brand-danger, 0.2);
+      border-color: $ui-color-brand-danger;
+      box-shadow: inset 0 0 0 1px rgba($ui-color-brand-danger, 0.2), 0 0 0 1px rgba($ui-color-brand-danger, 0.2);
     }
 
     &:active {
-      color: $brand-danger;
-      background-color: rgba($brand-danger, 0.4);
-      border-color: rgba($brand-danger, 0.2);
+      color: $ui-color-brand-danger;
+      background-color: rgba($ui-color-brand-danger, 0.4);
+      border-color: rgba($ui-color-brand-danger, 0.2);
       box-shadow: none;
     }
   }
 
   &.ui-button-primary {
-    background-color: $brand-primary;
-    color: $white;
+    background-color: $ui-color-brand-primary;
+    color: $ui-color-white;
     border: none;
 
     &:hover {
-      background-color: $brand-primary-light-3;
+      background-color: $ui-color-brand-primary-light-3;
     }
 
     &:focus {
-      background-color: $brand-primary;
-      box-shadow: 0 0 0 2px $brand-primary-light-2;
+      background-color: $ui-color-brand-primary;
+      box-shadow: 0 0 0 2px $ui-color-brand-primary-light-2;
     }
 
     &:active {
-      background-color: $brand-primary-light-2;
+      background-color: $ui-color-brand-primary-light-2;
       box-shadow: none;
     }
   }
 
   &[disabled] {
-    background-color: $gray-lightest !important;
-    color: rgba($font-color, 0.2) !important;
+    background-color: $ui-color-gray-lightest !important;
+    color: rgba($ui-font-color, 0.2) !important;
     border: none !important;
     cursor: default !important;
   }
 
   &.ui-button-loading::after {
     position: absolute;
-    background-color: rgba($white, 0.3);
+    background-color: rgba($ui-color-white, 0.3);
     z-index: 1;
     top: 0;
     left: 0;

@@ -3,8 +3,6 @@ import { classes } from '../utils';
 import DropDown from '../DropDown';
 import Option from '../Option';
 
-import './styles.scss';
-
 class Select extends PureComponent {
   onOptionClick = (value) => {
     const { onChange } = this.props;

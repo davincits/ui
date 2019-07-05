@@ -1,39 +1,39 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-toaster-container {
   position: fixed;
   display: flex;
   flex-direction: column;
-  right: 1rem;
-  top: 4rem;
+  right: 16px;
+  top: 64px;
   z-index: 20;
 
   .ui-toastr-item {
     position: relative;
-    width: 20rem;
-    background-color: $white;
-    padding: 1rem;
-    border-radius: $border-radius;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    min-height: 3rem;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+    width: 320px;
+    background-color: $ui-color-white;
+    padding: 16px;
+    border-radius: $ui-border-radius;
+    font-size: $ui-font-size;
+    margin-top: 8px;
+    min-height: 48px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
     animation: toastrAnimation 0.25s;
     transition: margin-top 0.25s, opacity 0.25s, height 0.25s;
 
     .ui-toastr-message {
       font-weight: bold;
-      margin-right: 1.5rem;
+      margin-right: 24px;
 
       &::before {
         display: inline-block;
-        margin-right: 0.25rem;
+        margin-right: 4px;
       }
     }
 
     .ui-toastr-description {
-      margin-top: 0.5rem;
-      font-size: 0.8125rem;
+      margin-top: 8px;
+      font-size: $ui-font-size-s;
       line-height: 1.2;
     }
 
@@ -44,7 +44,7 @@
     }
 
     .ui-button {
-      margin-top: 1rem;
+      margin-top: 16px;
     }
   }
 
@@ -58,7 +58,7 @@
   .ui-toastr-item-type-success {
 
     .ui-toastr-message {
-      color: $brand-success;
+      color: $ui-color-brand-success;
 
       &::before {
         content: "✅";
@@ -69,7 +69,7 @@
   .ui-toastr-item-type-warning {
 
     .ui-toastr-message {
-      color: $brand-warning;
+      color: $ui-color-brand-warning;
 
       &::before {
         content: "⚠️️";
@@ -80,7 +80,7 @@
   .ui-toastr-item-type-danger {
 
     .ui-toastr-message {
-      color: $brand-danger;
+      color: $ui-color-brand-danger;
 
       &::before {
         content: "🔴";
@@ -97,7 +97,7 @@
     border-radius: 50%;
 
     &:hover {
-      background-color: $gray;
+      background-color: $ui-color-gray
     }
 
     svg {

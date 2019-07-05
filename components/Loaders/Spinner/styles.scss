@@ -1,4 +1,4 @@
-@import "app/styles/variables";
+@import "../common";
 
 .loading-css-only {
   position: absolute;
@@ -21,7 +21,7 @@
     height: 80px;
     margin: -40px 0 0 -40px;
     border: 2px solid;
-    border-color: $brand-primary transparent;
+    border-color: $ui-color-brand-primary transparent;
     border-radius: 50%;
     animation-name: rotationAnim;
     animation-duration: 600ms;
@@ -35,7 +35,7 @@
     height: 70px;
     margin: -35px 0 0 -35px;
     animation-direction: reverse;
-    border-color: transparent $brand-primary;
+    border-color: transparent $ui-color-brand-primary;
   }
 }
 

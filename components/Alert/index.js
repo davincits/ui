@@ -5,7 +5,15 @@ import IconClose from '../icons/Close';
 
 import './styles.scss';
 
-class Alert extends PureComponent {
+export default class UIAlert extends PureComponent {
+  static propTypes = {
+    closeable: bool,
+  };
+
+  static defaultProps = {
+    closeable: true,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -44,13 +52,3 @@ class Alert extends PureComponent {
     );
   }
 }
-
-Alert.propTypes = {
-  closeable: bool,
-};
-
-Alert.defaultProps = {
-  closeable: true,
-};
-
-export default Alert;

@@ -1,28 +1,28 @@
-@import "app/styles/variables";
+@import "../common";
 
 .ui-tab {
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
-  color: $gray-50;
+  font-size: $ui-font-size;
+  color: $ui-color-gray-light;
   text-transform: uppercase;
-  height: 3rem;
+  height: 48px;
   cursor: pointer;
-  margin-right: 1.5rem;
+  margin-right: 24px;
 
   &:hover {
-    color: $gray-150;
+    color: $ui-color-gray-dark;
   }
 
   &.ui-active {
-    color: $font-color;
-    box-shadow: 0 1px 0 $brand-primary, inset 0 -1px 0 $brand-primary;
+    color: $ui-font-color;
+    box-shadow: 0 1px 0 $ui-color-brand-primary, inset 0 -1px 0 $ui-color-brand-primary;
   }
 
   .ui-badge, .ui-badge-danger {
 
     &:last-child {
-      margin-left: 0.5rem;
+      margin-left: 8px;
     }
   }
 }

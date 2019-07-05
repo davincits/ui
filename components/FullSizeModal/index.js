@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Portal from '../Portal';
 
 import './styles.scss';
 
@@ -69,22 +70,24 @@ class FullSizeModal extends PureComponent {
       subtitle,
     } = this.props;
     return (
-      <div className="component-full-size-modal" onScroll={this.onScroll}>
-        <div className="component-full-size-modal-header" ref="header">
-          <div className="component-full-size-modal-header-main">
-            <div className="component-full-size-modal-title">{title}</div>
-            <div className="component-full-size-modal-close" onClick={this.onClose}>
-              <span>Close</span>
-              <span className="ui-text-muted">(esc)</span>
+      <Portal>
+        <div className="component-full-size-modal" onScroll={this.onScroll}>
+          <div className="component-full-size-modal-header" ref="header">
+            <div className="component-full-size-modal-header-main">
+              <div className="component-full-size-modal-title">{title}</div>
+              <div className="component-full-size-modal-close" onClick={this.onClose}>
+                <span>Close</span>
+                <span className="ui-text-muted">(esc)</span>
+              </div>
             </div>
+            {subtitle && <div className="header-subtitle">{subtitle}</div>}
           </div>
-          {subtitle && <div className="header-subtitle">{subtitle}</div>}
+          <div className="component-full-size-modal-content" ref="content">
+            {children}
+            {footer && <div className="component-full-size-modal-footer" ref="footer">{footer}</div>}
+          </div>
         </div>
-        <div className="component-full-size-modal-content" ref="content">
-          {children}
-          {footer && <div className="component-full-size-modal-footer" ref="footer">{footer}</div>}
-        </div>
-      </div>
+      </Portal>
     );
   }
 }
