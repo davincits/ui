@@ -1,0 +1,88 @@
+@import "../common";
+
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  animation: uiDialogBgAnimation .25s forwards;
+  z-index: 999;
+
+  .ui-dialog-window {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: $ui-color-white;
+    border-radius: 6px;
+    width: 31.25rem;
+    box-shadow: 0 0 24px 0 rgba(0,0,0,0.15);
+    min-height: 14rem;
+    max-height: 100%;
+    transform: translate3d(0, 0, 0);
+    animation: uiDialogWindowAnimation .25s forwards;
+
+    .ui-dialog-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 4.5rem;
+      border-bottom: 1px solid #D6D6D6;
+      padding: 0 3rem 0 1.5rem;
+
+      .ui-dialog-title {
+        font-weight: bold;
+      }
+
+      .ui-dialog-close {
+        position: absolute;
+        cursor: pointer;
+        top: 1.5rem;
+        right: 1.5rem;
+
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
+
+    .ui-dialog-content {
+      flex: 1;
+      padding: 1.5rem;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .ui-dialog-actions {
+      padding: 0 1.5rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@keyframes uiDialogBgAnimation {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes uiDialogWindowAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}

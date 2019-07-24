@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Button from '../Button';
+import Label from '../Label';
 import { classes } from '../utils';
 import IconExpandMore from '../icons/ExpandMore';
 import IconExpandLess from '../icons/ExpandLess';
@@ -24,25 +25,28 @@ class DropDown extends PureComponent {
   }
 
   clickHandler = () => {
-    const { button } = this.refs;
-    const { innerHeight: windowHeight } = window;
-    const {
-      width,
-      left,
-      top,
-      bottom,
-      height,
-    } = button.getBoundingClientRect();
-    const onTop = top > (windowHeight + height) / 2;
-    this.setState({
-      dropDownStyle: {
+    const { inline = true } = this.props;
+    if (!inline) {
+      const { button } = this.refs;
+      const { innerHeight: windowHeight } = window;
+      const {
         width,
         left,
-        top: !onTop && bottom,
-        bottom: onTop && (windowHeight - top),
-        maxHeight: (onTop ? top : (windowHeight - bottom)) - MARGIN,
-      },
-    });
+        top,
+        bottom,
+        height,
+      } = button.getBoundingClientRect();
+      const onTop = top > (windowHeight + height) / 2;
+      this.setState({
+        dropDownStyle: {
+          width,
+          left,
+          top: !onTop && bottom,
+          bottom: onTop && (windowHeight - top),
+          maxHeight: (onTop ? top : (windowHeight - bottom)) - MARGIN,
+        },
+      });
+    }
     this.toggleOpenState();
   }
 
@@ -68,6 +72,8 @@ class DropDown extends PureComponent {
       className,
       closeDropDown,
       inline = true,
+      button,
+      name,
       ...rest
     } = this.props;
     const {
@@ -80,24 +86,30 @@ class DropDown extends PureComponent {
       [className]: className,
     });
     const dropDown = (
-      <div
-        className="ui-dropdown-content ui-paper"
-        ref="dropdown"
-        style={dropDownStyle}
-      >
-        {children}
+      <div className={`${name}_dropdown`}>
+        <div
+          className="ui-dropdown-content ui-paper"
+          ref="dropdown"
+          style={inline ? null : dropDownStyle}
+        >
+          {children}
+        </div>
       </div>
     );
     return (
       <div className={classList} {...rest}>
-        {!!label && <div className="ui-dropdown-label">{label}</div>}
+        {!!label && <Label className="ui-dropdown-label">{label}</Label>}
         <div className="ui-dropdown-button-container" ref="button">
-          <Button className="ui-dropdown-button" onClick={this.clickHandler}>
-            <div className="ui-ellipsis">{buttonContent}</div>
-          </Button>
+          <div onClick={this.clickHandler}>
+            {button || (
+              <Button className="ui-dropdown-button">
+                <div className="ui-ellipsis">{buttonContent}</div>
+              </Button>
+            )}
+          </div>
           {opened && (inline ? dropDown : (<Portal>{dropDown}</Portal>))}
         </div>
-        {opened ? <IconExpandLess /> : <IconExpandMore />}
+        {!button && (opened ? <IconExpandLess /> : <IconExpandMore />)}
       </div>
     );
   }

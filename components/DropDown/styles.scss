@@ -3,12 +3,6 @@
 .ui-dropdown {
   position: relative;
 
-  .ui-dropdown-label {
-    font-size: $ui-font-size-xxs;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
-  }
-
   & > .ui-icon-expand-less,
   & > .ui-icon-expand-more {
     right: 4px;

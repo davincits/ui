@@ -15,6 +15,9 @@ import Alert from './Alert';
 import Row from './Row';
 import Col from './Col';
 import Tooltip from './Tooltip';
+import Dialog from './Dialog';
+import Label from './Label';
+import Show from './Show';
 
 export {
   Button,
@@ -34,4 +37,7 @@ export {
   Row,
   Col,
   Tooltip,
+  Dialog,
+  Label,
+  Show,
 };
