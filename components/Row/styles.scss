@@ -1,7 +1,5 @@
-@import "app/styles/ui";
-
 .ui-row {
-  @extend .ui-flex;
+  display: flex;
 
   &.ui-row-gutter {
     margin-left: -8px;

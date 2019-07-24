@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import IconCloudBackup from 'app/ui/icons/CloudBackup';
 import { ToastDanger } from 'app/ui/Toastr';
-import { classes } from 'app/utils/common';
+import { classes } from '../utils';
 
 import './styles.scss';
 

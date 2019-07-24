@@ -18,6 +18,8 @@ import Tooltip from './Tooltip';
 import Dialog from './Dialog';
 import Label from './Label';
 import Show from './Show';
+import Flex from './Flex';
+import TextEllipsis from './TextEllipsis';
 
 export {
   Button,
@@ -40,4 +42,6 @@ export {
   Dialog,
   Label,
   Show,
+  Flex,
+  TextEllipsis,
 };

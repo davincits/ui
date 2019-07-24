@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import TextEllipsis from '../TextEllipsis';
 import { classes } from '../utils';
 
 import './styles.scss';
@@ -7,14 +8,11 @@ class Option extends PureComponent {
   onClick = () => {
     const { value, onClick } = this.props;
     onClick(value);
-  }
+  };
 
   render() {
     const {
-      className,
-      value,
-      label,
-      selected,
+      className, value, label, selected,
     } = this.props;
     const classList = classes({
       'ui-option': true,
@@ -23,7 +21,7 @@ class Option extends PureComponent {
     });
     return (
       <div className={classList} onClick={this.onClick}>
-        <div className="ui-ellipsis">{label || value}</div>
+        <TextEllipsis>{label || value}</TextEllipsis>
       </div>
     );
   }

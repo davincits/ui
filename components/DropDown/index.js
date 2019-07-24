@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Button from '../Button';
 import Label from '../Label';
+import TextEllipsis from '../TextEllipsis';
 import { classes } from '../utils';
 import IconExpandMore from '../icons/ExpandMore';
 import IconExpandLess from '../icons/ExpandLess';
@@ -42,13 +43,13 @@ class DropDown extends PureComponent {
           width,
           left,
           top: !onTop && bottom,
-          bottom: onTop && (windowHeight - top),
-          maxHeight: (onTop ? top : (windowHeight - bottom)) - MARGIN,
+          bottom: onTop && windowHeight - top,
+          maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
         },
       });
     }
     this.toggleOpenState();
-  }
+  };
 
   windowClickHandler = (event) => {
     const { button, dropdown } = this.refs;
@@ -58,7 +59,7 @@ class DropDown extends PureComponent {
       parent = parent.parentNode;
     }
     this.toggleOpenState(false);
-  }
+  };
 
   toggleOpenState(opened = !this.state.opened) {
     this.setState({ opened });
@@ -74,21 +75,19 @@ class DropDown extends PureComponent {
       inline = true,
       button,
       name,
+      disabled,
       ...rest
     } = this.props;
-    const {
-      opened,
-      dropDownStyle,
-    } = this.state;
+    const { opened, dropDownStyle } = this.state;
     const classList = classes({
       'ui-dropdown': true,
       'ui-dropdown-opened': opened,
       [className]: className,
     });
     const dropDown = (
-      <div className={`${name}_dropdown`}>
+      <div className={name ? `${name}_dropdown` : ''}>
         <div
-          className="ui-dropdown-content ui-paper"
+          className="ui-dropdown-content"
           ref="dropdown"
           style={inline ? null : dropDownStyle}
         >
@@ -101,13 +100,15 @@ class DropDown extends PureComponent {
         {!!label && <Label className="ui-dropdown-label">{label}</Label>}
         <div className="ui-dropdown-button-container" ref="button">
           <div onClick={this.clickHandler}>
-            {button || (
-              <Button className="ui-dropdown-button">
-                <div className="ui-ellipsis">{buttonContent}</div>
+            {button ? (
+              React.cloneElement(button, { disabled })
+            ) : (
+              <Button className="ui-dropdown-button" disabled={disabled}>
+                <TextEllipsis>{buttonContent}</TextEllipsis>
               </Button>
             )}
           </div>
-          {opened && (inline ? dropDown : (<Portal>{dropDown}</Portal>))}
+          {opened && (inline ? dropDown : <Portal>{dropDown}</Portal>)}
         </div>
         {!button && (opened ? <IconExpandLess /> : <IconExpandMore />)}
       </div>

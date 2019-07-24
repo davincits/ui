@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { ToastDanger } from 'app/ui/Toastr';
-import { classes } from 'app/utils/common';
+import { classes } from '../utils';
 
 import './styles.scss';
 

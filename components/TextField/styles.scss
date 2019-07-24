@@ -1,4 +1,4 @@
-@import "../common";
+@import '../common';
 
 .ui-text-field {
   position: relative;
@@ -14,11 +14,10 @@
     font-size: $ui-font-size-xxs;
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);
-    line-height: 1;
-    margin-bottom: 4px;
   }
 
-  input, textarea {
+  input,
+  textarea {
     display: block;
     width: 100%;
     color: $ui-font-color;
@@ -31,7 +30,7 @@
     outline: none;
 
     &:hover:not(:focus) {
-      background-color: $ui-color-gray-lightest;
+      background-color: rgba($ui-color-gray-lightest, 0.1);
     }
 
     &:focus {
@@ -40,8 +39,8 @@
     }
 
     &[disabled] {
-      border-color: $ui-color-disabled;
-      background-color: $ui-color-disabled;
+      border-color: $ui-color-gray-lightest;
+      background-color: $ui-color-gray-lightest;
     }
   }
 
@@ -54,14 +53,12 @@
   }
 
   &.ui-no-resize {
-
     textarea {
       resize: none;
     }
   }
 
   &.ui-inline {
-
     label {
       display: flex;
       width: auto;
@@ -77,7 +74,6 @@
   }
 
   &.ui-type-search {
-
     input,
     textarea {
       padding-left: 28px;

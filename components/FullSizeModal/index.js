@@ -7,6 +7,11 @@ const ESC_CODE = 'Escape';
 
 class FullSizeModal extends PureComponent {
   componentDidMount() {
+    if (!document.body.__opened_modals__) {
+      document.body.__opened_modals__ = 1;
+    } else {
+      document.body.__opened_modals__++;
+    }
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', this.keyPressHandler);
     window.addEventListener('resize', this.resizeHandler);
@@ -18,27 +23,27 @@ class FullSizeModal extends PureComponent {
   }
 
   componentWillUnmount() {
-    document.body.style.overflow = '';
     window.removeEventListener('keydown', this.keyPressHandler);
     window.removeEventListener('resize', this.resizeHandler);
+    if (--document.body.__opened_modals__ > 0) return;
+    document.body.style.overflow = '';
   }
-
 
   onClose = () => {
     const { onClose } = this.props;
     if (onClose) onClose();
-  }
+  };
 
   keyPressHandler = ({ code }) => {
     const { onClose } = this.props;
     if (onClose && code === ESC_CODE) {
       onClose();
     }
-  }
+  };
 
   resizeHandler = () => {
     this.detectFooterCovering();
-  }
+  };
 
   detectFooterCovering() {
     const { content, footer } = this.refs;
@@ -60,7 +65,7 @@ class FullSizeModal extends PureComponent {
       header.classList.remove('with-shadow');
     }
     this.detectFooterCovering();
-  }
+  };
 
   render() {
     const {
@@ -68,6 +73,7 @@ class FullSizeModal extends PureComponent {
       title,
       footer,
       subtitle,
+      closeLabel = 'Close',
     } = this.props;
     return (
       <Portal>
@@ -75,8 +81,11 @@ class FullSizeModal extends PureComponent {
           <div className="component-full-size-modal-header" ref="header">
             <div className="component-full-size-modal-header-main">
               <div className="component-full-size-modal-title">{title}</div>
-              <div className="component-full-size-modal-close" onClick={this.onClose}>
-                <span>Close</span>
+              <div
+                className="component-full-size-modal-close"
+                onClick={this.onClose}
+              >
+                <span>{closeLabel}</span>
                 <span className="ui-text-muted">(esc)</span>
               </div>
             </div>
@@ -84,7 +93,11 @@ class FullSizeModal extends PureComponent {
           </div>
           <div className="component-full-size-modal-content" ref="content">
             {children}
-            {footer && <div className="component-full-size-modal-footer" ref="footer">{footer}</div>}
+            {footer && (
+              <div className="component-full-size-modal-footer" ref="footer">
+                {footer}
+              </div>
+            )}
           </div>
         </div>
       </Portal>

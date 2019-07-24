@@ -1,4 +1,4 @@
-@import "../common";
+@import '../common';
 
 .component-full-size-modal {
   position: fixed;
@@ -8,7 +8,6 @@
   height: 100%;
   background: $ui-color-white;
   z-index: 10;
-  user-select: none;
   display: flex;
   flex-direction: column;
 
@@ -30,15 +29,12 @@
         align-items: center;
       }
 
-      .component-full-size-modal-title {
-        user-select: auto;
-      }
-
       .component-full-size-modal-close {
         cursor: pointer;
         transition: color 0.3s;
         padding-left: 32px;
         padding-right: 32px;
+        user-select: none;
 
         .ui-text-muted {
           margin-left: 4px;

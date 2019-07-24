@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { classes } from 'app/utils/common';
+import { classes } from '../utils';
 
 class Preview extends PureComponent {
   constructor(props) {

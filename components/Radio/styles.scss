@@ -1,4 +1,4 @@
-@import "../common";
+@import '../common';
 
 .ui-radio {
   display: flex;
@@ -37,6 +37,10 @@
   }
 
   input:checked + .ui-fake-radio {
-    border: 4px solid $ui-color-brand-primary
+    border: 4px solid $ui-color-brand-primary;
+  }
+
+  input[disabled] + .ui-fake-radio {
+    border-color: $ui-color-disabled;
   }
 }

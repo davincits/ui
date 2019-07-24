@@ -9,46 +9,48 @@ const ESC_CODE = 'Escape';
 
 class Dialog extends PureComponent {
   componentDidMount() {
+    if (!document.body.__opened_modals__) {
+      document.body.__opened_modals__ = 1;
+    } else {
+      document.body.__opened_modals__++;
+    }
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', this.keyPressHandler);
   }
 
   componentWillUnmount() {
-    document.body.style.overflow = '';
     window.removeEventListener('keydown', this.keyPressHandler);
+    if (--document.body.__opened_modals__ > 0) return;
+    document.body.style.overflow = '';
   }
 
-  keyPressHandler = (event) => {
+  keyPressHandler = event => {
     if (event.code === ESC_CODE) {
       this.onClose();
     }
-  }
+  };
 
   closeClickHandler = () => {
     this.onClose();
-  }
+  };
 
-  backDropClickHandler = (event) => {
+  backDropClickHandler = event => {
     if (event.target === event.currentTarget) {
       this.onClose();
     }
-  }
+  };
 
   onClose() {
-    const { onClose } = this.props;
-    if (onClose) onClose();
+    const { onClose, disabled } = this.props;
+    if (onClose && !disabled) onClose();
   }
 
   render() {
-    const {
-      title,
-      children,
-      className,
-      actions,
-    } = this.props;
+    const { title, children, className, actions, disabled } = this.props;
     const classList = classes({
       'ui-dialog': true,
-      [className]: className,
+      disabled: disabled,
+      [className]: className
     });
     return (
       <Portal>
@@ -62,9 +64,11 @@ class Dialog extends PureComponent {
             </div>
             <div className="ui-dialog-content">{children}</div>
             <div className="ui-dialog-actions">
-              {
-                actions.length ? React.Children.map(actions, (action, key) => React.cloneElement(action, { key })) : actions
-              }
+              {actions.length
+                ? React.Children.map(actions, (action, key) =>
+                    React.cloneElement(action, { key })
+                  )
+                : actions}
             </div>
           </div>
         </div>

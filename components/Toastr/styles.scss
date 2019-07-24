@@ -1,4 +1,4 @@
-@import "../common";
+@import '../common';
 
 .ui-toaster-container {
   position: fixed;
@@ -6,7 +6,7 @@
   flex-direction: column;
   right: 16px;
   top: 64px;
-  z-index: 20;
+  z-index: 999;
 
   .ui-toastr-item {
     position: relative;
@@ -49,41 +49,37 @@
   }
 
   .ui-toastr-item-type-info {
-
     .ui-toastr-message::before {
-      content: "ℹ️";
+      content: 'ℹ️';
     }
   }
 
   .ui-toastr-item-type-success {
-
     .ui-toastr-message {
       color: $ui-color-brand-success;
 
       &::before {
-        content: "✅";
+        content: '✅';
       }
     }
   }
 
   .ui-toastr-item-type-warning {
-
     .ui-toastr-message {
       color: $ui-color-brand-warning;
 
       &::before {
-        content: "⚠️️";
+        content: '⚠️️';
       }
     }
   }
 
   .ui-toastr-item-type-danger {
-
     .ui-toastr-message {
       color: $ui-color-brand-danger;
 
       &::before {
-        content: "🔴";
+        content: '🔴';
       }
     }
   }
@@ -97,7 +93,7 @@
     border-radius: 50%;
 
     &:hover {
-      background-color: $ui-color-gray
+      background-color: $ui-color-gray;
     }
 
     svg {

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Portal from '../Portal';
 import Item from './Item';
 import Store from './Store';
 import { classes } from '../utils';
@@ -22,19 +23,23 @@ class Container extends PureComponent {
   toastrStoreChangeCallback = () => {
     const { toasts } = Store;
     this.setState({ toasts });
-  }
+  };
 
   render() {
     const { className } = this.props;
     const { toasts } = this.state;
     const classList = classes({
       'ui-toaster-container': true,
-      [className]: className,
+      [className]: className
     });
     return (
-      <div className={classList}>
-        {toasts.map(toast => (<Item key={toast.uid} {...toast} />))}
-      </div>
+      <Portal>
+        <div className={classList}>
+          {toasts.map(toast => (
+            <Item key={toast.uid} {...toast} />
+          ))}
+        </div>
+      </Portal>
     );
   }
 }
