@@ -1,4 +1,4 @@
-@import "../common";
+@import '../../common';
 
 .loading-css-only {
   position: absolute;
@@ -27,7 +27,7 @@
     animation-duration: 600ms;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    content: "";
+    content: '';
   }
 
   &::after {

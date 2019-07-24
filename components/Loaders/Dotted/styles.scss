@@ -1,4 +1,4 @@
-@import "../common";
+@import '../../common';
 
 .loading-css-dotted {
   position: relative;
@@ -14,15 +14,15 @@
     border-radius: 50%;
     background-color: $ui-color-brand-primary;
     margin: 2px;
-    animation: blink .3s infinite alternate;
+    animation: blink 0.3s infinite alternate;
   }
 
   .dot-second {
-    animation-delay: .1s;
+    animation-delay: 0.1s;
   }
 
   .dot-third {
-    animation-delay: .2s;
+    animation-delay: 0.2s;
   }
 }
 
