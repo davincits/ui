@@ -16,7 +16,7 @@ function Col({
     [className]: className,
   });
   if (width) style.width = `${width}%`;
-  if (width) style.width = 'auto';
+  else if (auto) style.width = 'auto';
   else style.flex = 1;
   return (
     <div className={classList} style={style} {...props}>{children}</div>

@@ -3,14 +3,18 @@ import './style.scss';
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
+export const FILES_COUNT_ERROR = 'FILES_COUNT_ERROR';
+export const FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
+export const FILE_SIZE_ERROR = 'FILE_SIZE_ERROR';
+
 class FileField extends PureComponent {
   state = { error: false }
 
   changeHandler = ({ target: { files } }) => {
-    const { multiple, fileTypes, maxSize } = this.props;
+    const { multiple, fileTypes, maxSize, onError } = this.props;
     if (!files.length) return null;
     if (!multiple && files.length > 1) {
-      // ToastDanger({ title: 'Only single file allowed' });
+      if (onError) onError(FILES_COUNT_ERROR);
       return this.setState({ error: true });
     }
     if (fileTypes) {
@@ -19,7 +23,7 @@ class FileField extends PureComponent {
         const { name } = files[i];
         const ext = name.split('.').pop();
         if (!types.includes(ext)) {
-          // ToastDanger({ title: 'File type is not allowed' });
+          if (onError) onError(FILE_TYPE_ERROR);
           return this.setState({ error: true });
         }
       }
@@ -28,7 +32,7 @@ class FileField extends PureComponent {
       for (let i = 0; i < files.length; i++) {
         const { size } = files[i];
         if (size > maxSize) {
-          // ToastDanger({ title: 'File is to big!' });
+          if (onError) onError(FILE_SIZE_ERROR);
           return this.setState({ error: true });
         }
       }

@@ -1,3 +1,7 @@
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
 $ui-font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 $ui-font-color: #333333;
 $ui-font-color-muted: #AFAFAF;
@@ -40,6 +44,18 @@ $ui-border-radius: 4px;
   margin-bottom: 4px;
 }
 
-*, *::after, *::before {
-  box-sizing: border-box;
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-paper {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  background-color: $ui-color-white;
+  border-radius: $ui-border-radius;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }

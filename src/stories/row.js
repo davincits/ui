@@ -63,8 +63,8 @@ storiesOf('Row', module)
       {() => (
         <Row gutter>
           <Col auto><Dummy text="Lorem ipsum dolor sit amet"/></Col>
-          <Col auto><Dummy text="Consectetur adipisicing elit" /></Col>
-          <Col auto><Dummy text="Ut enim ad minim veniam" /></Col>
+          <Col auto><Dummy text="Consectetur" /></Col>
+          <Col auto><Dummy text="Ut enim ad minim veniam adipisicing elit" /></Col>
         </Row>
       )}
     </Container>

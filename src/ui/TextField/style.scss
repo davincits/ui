@@ -4,8 +4,10 @@
   font-family: $ui-font-family;
   font-size: $ui-font-size;
   color: $ui-font-color;
+  line-height: $ui-line-height;
   position: relative;
   line-height: $ui-line-height;
+  box-sizing: border-box;
 
   label {
     display: block;

@@ -1,7 +1,6 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import TextEllipsis from '../TextEllipsis';
 import { classes } from '../utils';
 
 class Option extends PureComponent {
@@ -21,7 +20,7 @@ class Option extends PureComponent {
     });
     return (
       <div className={classList} onClick={this.onClick}>
-        <TextEllipsis>{label || value}</TextEllipsis>
+        <div className="ui-ellipsis">{label || value}</div>
       </div>
     );
   }

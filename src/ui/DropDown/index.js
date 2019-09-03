@@ -2,8 +2,6 @@ import './style.scss';
 
 import React, { PureComponent } from 'react';
 import Button from '../Button';
-import Label from '../Label';
-import TextEllipsis from '../TextEllipsis';
 import { classes } from '../utils';
 import IconExpandMore from '../icons/ExpandMore';
 import IconExpandLess from '../icons/ExpandLess';
@@ -101,14 +99,14 @@ class DropDown extends PureComponent {
     );
     return (
       <div className={classList} {...rest}>
-        {!!label && <Label className="ui-dropdown-label">{label}</Label>}
+        {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
         <div className="ui-dropdown-button-container" ref="button">
           <div onClick={this.clickHandler}>
             {button ? (
               React.cloneElement(button, { disabled })
             ) : (
               <Button className="ui-dropdown-button" disabled={disabled}>
-                <TextEllipsis>{buttonContent}</TextEllipsis>
+                  <div className="ui-ellipsis">{buttonContent}</div>
               </Button>
             )}
           </div>

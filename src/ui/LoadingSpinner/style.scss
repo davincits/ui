@@ -11,6 +11,7 @@
   background: rgba(255, 255, 255, 0.9);
   animation-name: fadeIn;
   animation-duration: 600ms;
+  box-sizing: border-box;
 
   &.global {
     position: fixed;

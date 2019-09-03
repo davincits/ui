@@ -5,7 +5,6 @@ import { bool, string } from 'prop-types';
 import { classes } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
-import TextEllipsis from '../TextEllipsis';
 import Show from '../Show';
 
 const checkValue = value => (
@@ -93,7 +92,7 @@ class TextField extends PureComponent {
       <div className={classList} onClick={onClick}>
         <Show if={label}>
           <label className="ui-label" htmlFor={id}>
-            <TextEllipsis>{label}</TextEllipsis>
+            <div classname="ui-ellipsis">{label}</div>
           </label>
         </Show>
         {multiline ? (

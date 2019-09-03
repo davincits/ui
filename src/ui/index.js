@@ -6,14 +6,11 @@ import Dialog from './Dialog';
 import DropArea from './DropArea';
 import DropDown from './DropDown';
 import FileField from './FileField';
-import Flex from './Flex';
 import FullSizeModal from './FullSizeModal';
 import Gallery from './Gallery';
-import Label from './Label';
 import LoadingDotted from './LoadingDotted';
 import LoadingSpinner from './LoadingSpinner';
 import Option from './Option';
-import Paper from './Paper';
 import Portal from './Portal';
 import Radio from './Radio';
 import Range from './Range';
@@ -25,7 +22,6 @@ import Tabs from './Tabs';
 import Tab from './Tab';
 import TabList from './TabList';
 import TabPanel from './TabPanel';
-import TextEllipsis from './TextEllipsis';
 import TextField from './TextField';
 import Tooltip from './Tooltip';
 import Table, { Row as TR, Head as TH, Cell as TD } from './Table';
@@ -41,14 +37,11 @@ export {
   DropArea,
   DropDown,
   FileField,
-  Flex,
   FullSizeModal,
   Gallery,
-  Label,
   LoadingDotted,
   LoadingSpinner,
   Option,
-  Paper,
   Portal,
   Radio,
   Range,
@@ -60,7 +53,6 @@ export {
   Tab,
   TabList,
   TabPanel,
-  TextEllipsis,
   TextField,
   Tooltip,
   Table,
