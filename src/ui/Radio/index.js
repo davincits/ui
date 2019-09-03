@@ -7,9 +7,8 @@ class Radio extends PureComponent {
   uniqid = `${Date.now()}${Math.random()}`
 
   onChange = (event) => {
-    const { onChange } = this.props;
-    const { value } = event.target;
-    if (onChange) onChange(value, event);
+    const { onChange, value } = this.props;
+    if (onChange && event.target.value) onChange(value, event);
   }
 
   render() {

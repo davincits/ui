@@ -49,7 +49,7 @@ class TextField extends PureComponent {
 
   onResetClick = (event) => {
     const { onChange } = this.props;
-    if (onChange) onChange(event, '');
+    if (onChange) onChange('', event);
   };
 
   render() {

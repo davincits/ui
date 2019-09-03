@@ -1,5 +1,7 @@
 .ui-svg-icon {
+  vertical-align: baseline;
   display: inline-block;
+  fill: currentColor;
   width: 24px;
   height: 24px;
 }
@@ -60,7 +62,11 @@
   height: 12px;
 }
 
-.ui-icon-document-blank {
+.ui-icon-document-blank,
+.ui-icon-user,
+.ui-icon-cup,
+.ui-icon-comment,
+.ui-icon-attention {
   width: 16px;
   height: 16px;
 }

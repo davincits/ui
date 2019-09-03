@@ -62,10 +62,7 @@
   }
 
   &.ui-inline {
-    label {
-      display: flex;
-      width: auto;
-    }
+    display: flex;
 
     .ui-label {
       font-size: $ui-font-size-xs;
@@ -73,6 +70,7 @@
       display: flex;
       padding-right: 8px;
       height: 32px;
+      width: auto;
     }
   }
 
@@ -87,7 +85,7 @@
     .ui-icon-close {
       position: absolute;
       top: 50%;
-      margin-top: -12px;
+      margin-top: -3px;
       color: $ui-color-gray;
     }
 
