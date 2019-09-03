@@ -56,6 +56,11 @@
 }
 
 .ui-dropdown-content {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+  box-sizing: border-box;
   position: fixed;
   background-color: $ui-color-white;
   border-radius: $ui-border-radius;

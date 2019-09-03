@@ -105,6 +105,7 @@
         background-image: url(eye.svg);
         background-position: center;
         background-color: $ui-color-brand-primary;
+        background-repeat: no-repeat;
         transition: opacity 0.3s;
         content: '';
       }

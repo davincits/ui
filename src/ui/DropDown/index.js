@@ -72,7 +72,6 @@ class DropDown extends PureComponent {
       label,
       buttonContent,
       className,
-      closeDropDown,
       inline = true,
       button,
       name,

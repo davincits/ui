@@ -2,7 +2,21 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { DialogsContainer, AlertDialog, ConfirmDialog } from '../ui';
+import { action } from '@storybook/addon-actions';
+import { DialogsContainer, AlertDialog, ConfirmDialog, Button } from '../ui';
+
+const openAlertDialog = async () => {
+  await AlertDialog({ title: 'Alert dialog title', message: 'Alert dialog message'});
+  action('closed')();
+}
+
+const openConfirmDialog = async () => {
+  if (await ConfirmDialog({ title: 'Confirm dialog title', message: 'Are you sure about that?'})) {
+    action('closed')('I\'m pretty sure');
+  } else {
+    action('closed')('I\'m not sure');
+  }
+}
 
 storiesOf('CommonDialogs', module)
   .addDecorator(story => (
@@ -15,29 +29,13 @@ storiesOf('CommonDialogs', module)
       )}
     </Container>
   ))
-  .add('common', () => (
+  .add('alert', () => (
     <Container>
-      {() => (
-        <div style={{ background: '#f0f0f0', padding: '16px' }}>
-          <Alert>
-            <span className="ui-text-danger"><strong>Warning! </strong></span>
-            <span>There will be an important message from Davinci, which can be read and hidden. Messages may contain </span>
-            <a href="https://google.com">links</a>
-          </Alert>
-        </div>
-      )}
+      {() => (<Button onClick={openAlertDialog}>Open alert dialog</Button>)}
     </Container>
   ))
-  .add('unclosable', () => (
+  .add('confirm', () => (
     <Container>
-      {() => (
-        <div style={{ background: '#f0f0f0', padding: '16px' }}>
-          <Alert closeable={false}>
-            <span className="ui-text-danger"><strong>Warning! </strong></span>
-            <span>There will be an important message from Davinci, which can be read and hidden. Messages may contain </span>
-            <a href="https://google.com">links</a>
-          </Alert>
-        </div>
-      )}
+      {() => (<Button onClick={openConfirmDialog}>Open confirm dialog</Button>)}
     </Container>
   ))

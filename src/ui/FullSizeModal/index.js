@@ -49,6 +49,7 @@ class FullSizeModal extends PureComponent {
 
   detectFooterCovering() {
     const { content, footer } = this.refs;
+    if (!content || !footer) return null;
     const { scrollHeight, scrollTop, offsetHeight } = content;
     if (footer) {
       if (Math.ceil(offsetHeight + scrollTop) === scrollHeight) {

@@ -11,19 +11,19 @@
 [x] Alert
 [x] Slider
 [x] Range
-[ ] Tooltip
-[ ] Tab, TabList, TabPanel, Tabs
-[ ] DropDown
-[ ] Select, Option
-[ ] DropArea
-[ ] Gallery
-[ ] Dialog
-[ ] CommonDialogs
-[ ] FullSizeModal
-[ ] Toastr
+[x] Tooltip
+[x] Tab, TabList, TabPanel, Tabs
+[x] DropDown
+[x] Select, Option
+[x] DropArea
+[x] Gallery
+[x] Dialog
+[x] CommonDialogs
+[x] FullSizeModal
+[x] Toastr
 [ ] icons
 
-[ ] Misc
-  [ ] LoadingDotted
-  [ ] LoadingSpinner
+[x] Misc
+  [x] LoadingDotted
+  [x] LoadingSpinner
 
