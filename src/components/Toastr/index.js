@@ -1,25 +1,57 @@
-import Container from './Container';
-import { add } from './actions';
-import {
-  TOASTR_DEFAULT,
-  TOASTR_INFO,
-  TOASTR_SUCCESS,
-  TOASTR_WARNING,
-  TOASTR_DANGER,
-} from './constants';
+import './style.scss';
 
-export default Container;
+import Item from './Item';
+import Store, { UPDATE, REMOVE } from '../share/Store';
+import Dispatcher from '../share/Dispatcher';
+import getContainer from '../share/getContainer';
+import { uniqid } from '../utils';
 
-const Toast = params => add(params, TOASTR_DEFAULT);
-const ToastInfo = params => add(params, TOASTR_INFO);
-const ToastSuccess = params => add(params, TOASTR_SUCCESS);
-const ToastWarning = params => add(params, TOASTR_WARNING);
-const ToastDanger = params => add(params, TOASTR_DANGER);
+const TOASTR_DEFAULT = 'default';
+const TOASTR_INFO = 'info';
+const TOASTR_SUCCESS = 'success';
+const TOASTR_WARNING = 'warning';
+const TOASTR_DANGER = 'danger';
+const DELLAY = 5000;
+const HIDE_ANIMATION_DURATION = 250;
 
-export {
-  Toast,
-  ToastInfo,
-  ToastSuccess,
-  ToastWarning,
-  ToastDanger,
-};
+const store = new Store();
+const dispatcher = new Dispatcher();
+
+dispatcher.register(store.handle);
+
+export function Toast(params) { add(params, TOASTR_DEFAULT); }
+export function ToastInfo(params) { add(params, TOASTR_INFO); }
+export function ToastSuccess(params) { add(params, TOASTR_SUCCESS); }
+export function ToastWarning(params) { add(params, TOASTR_WARNING); }
+export function ToastDanger(params) { add(params, TOASTR_DANGER); }
+
+export default getContainer({ item: Item, store, className: 'ui-toaster-container' });
+
+function update(payload) {
+  dispatcher.dispatch({ type: UPDATE, payload });
+}
+
+function remove(payload) {
+  dispatcher.dispatch({ type: REMOVE, payload });
+}
+
+function close(uid) {
+  update({ uid, hide: true });
+  setTimeout(() => remove(uid), HIDE_ANIMATION_DURATION);
+}
+
+function add(payload, type) {
+  const { delay = DELLAY } = payload;
+  const uid = uniqid();
+  const onClose = () => close(uid);
+  dispatcher.dispatch({
+    type,
+    payload: {
+      uid,
+      delay,
+      onClose,
+      ...payload,
+    },
+  });
+  if (delay) setTimeout(() => onClose(), delay);
+}

@@ -14,6 +14,7 @@ $ui-color-gray-dark: #969696;
 $ui-color-gray: #D6D6D6;
 $ui-color-gray-light: #ADADAD;
 $ui-color-gray-light-2: #f0f0f0;
+$ui-color-gray-light-3: #EAEAEA;
 $ui-color-gray-lightest: #F5F5F5;
 $ui-color-brand-primary: #05B9E6;
 $ui-color-brand-primary-light: #CDF1FA;
@@ -21,9 +22,18 @@ $ui-color-brand-primary-light-2: #82DCF2;
 $ui-color-brand-primary-light-3: #44CBED;
 $ui-color-brand-success: #83C833;
 $ui-color-brand-success-light: #daecc6;
-$ui-color-brand-warning: #f6a622;
+$ui-color-brand-warning: #F6A622;
 $ui-color-brand-danger: #F53C3C;
 $ui-color-brand-danger-light:#FF3E2F;
 $ui-color-disabled: #EAEAEA;
 
 $ui-border-radius: 4px;
+
+.ui-label {
+  font-size: $ui-font-size-xxs;
+  text-transform: uppercase;
+  color: rgba($ui-font-color, 0.6);
+  font-weight: 500;
+  line-height: $ui-font-size-xxs + 1;
+  margin-bottom: 4px;
+}

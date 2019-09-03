@@ -1,20 +1,17 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import IconBroken from 'app/ui/icons/Broken';
 import IconArrowRight from 'app/ui/icons/ArrowRight';
 import IconArrowLeft from 'app/ui/icons/ArrowLeft';
 import Preview from './Preview';
 
-import './styles.scss';
-
 const ESC_CODE = 'Escape';
 
 class Gallery extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 0,
-      error: false,
-    };
+  state = {
+    current: 0,
+    error: false,
   }
 
   componentDidMount() {
@@ -94,7 +91,7 @@ class Gallery extends PureComponent {
     const { current, error } = this.state;
     const { images = [] } = this.props;
     const hasImages = images.length;
-    return images.length ? (
+    return hasImages ? (
       <div className="component-gallery">
         <div className="component-gallery-view">
           {
@@ -106,6 +103,7 @@ class Gallery extends PureComponent {
                   onLoad={this.resizeImage}
                   onError={this.onLoadError}
                   ref="image"
+                  alt="gallery-image"
                 />
               </div>
             )
@@ -141,11 +139,11 @@ class Gallery extends PureComponent {
         </div>
       </div>
     ) : (
-      <div className="component-gallery">
-        <div className="component-gallery-view">
-          <IconBroken />
+        <div className="component-gallery">
+          <div className="component-gallery-view">
+            <IconBroken />
+          </div>
         </div>
-      </div>
     );
   }
 }

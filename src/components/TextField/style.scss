@@ -29,7 +29,7 @@
     background-color: $ui-color-white;
     outline: none;
 
-    &:hover:not(:focus) {
+    &:hover:not(:focus):not([disabled]) {
       background-color: rgba($ui-color-gray-lightest, 0.1);
     }
 
@@ -39,8 +39,8 @@
     }
 
     &[disabled] {
-      border-color: $ui-color-gray-lightest;
-      background-color: $ui-color-gray-lightest;
+      border-color: $ui-color-gray-light-3;
+      background-color: $ui-color-gray-light-3;
     }
   }
 

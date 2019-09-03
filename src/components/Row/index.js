@@ -1,9 +1,14 @@
+import './style.scss';
+
 import React from 'react';
 import { classes } from '../utils';
 
-import './styles.scss';
-
-function Row({ className, children, gutter }) {
+function Row({
+  className,
+  children,
+  gutter,
+  ...props
+}) {
   const classList = classes({
     'ui-row': true,
     'ui-row-gutter': gutter === true,
@@ -11,7 +16,7 @@ function Row({ className, children, gutter }) {
     [className]: className,
   });
   return (
-    <div className={classList}>{children}</div>
+    <div className={classList} {...props}>{children}</div>
   );
 }
 

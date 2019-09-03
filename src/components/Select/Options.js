@@ -24,7 +24,7 @@ class Options extends PureComponent {
       options.parentNode.style.maxHeight = '';
     }
     const selected = options.querySelector('.ui-selected');
-    if (selected) selected.scrollIntoView({ block: "center" });
+    if (selected) selected.scrollIntoView({ block: 'center' });
   }
 
   render() {

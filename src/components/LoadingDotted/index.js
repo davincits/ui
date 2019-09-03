@@ -1,7 +1,6 @@
-import React from 'react';
-import 'app/styles/loading.scss';
+import './style.scss';
 
-import './styles.scss';
+import React from 'react';
 
 function LoadingDotted({ width, height }) {
   const style = {

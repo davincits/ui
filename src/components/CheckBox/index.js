@@ -1,9 +1,12 @@
+
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
-import './styles.scss';
-
 class CheckBox extends PureComponent {
+  uniqid = `${Date.now()}${Math.random()}`
+
   onChange = (event) => {
     const { onChange } = this.props;
     if (onChange) onChange(event.target.checked, event);
@@ -15,6 +18,7 @@ class CheckBox extends PureComponent {
       label,
       onChange,
       value,
+      id = this.uniqid,
       ...rest
     } = this.props;
     const classList = classes({
@@ -23,11 +27,9 @@ class CheckBox extends PureComponent {
     });
     return (
       <div className={classList}>
-        <label>
-          <input type="checkbox" onChange={this.onChange} checked={value} {...rest} />
-          <span className="ui-fake-checkbox" />
-          {!!label && <div className="ui-label">{label}</div>}
-        </label>
+        <input type="checkbox" id={id} onChange={this.onChange} checked={value} {...rest} />
+        <label htmlFor={id} className="ui-fake-checkbox" />
+        {!!label && <label htmlFor={id} className="ui-label">{label}</label>}
       </div>
     );
   }

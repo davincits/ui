@@ -20,7 +20,6 @@
     border-radius: 6px;
     width: 31.25rem;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.15);
-    min-height: 14rem;
     max-height: 100%;
     transform: translate3d(0, 0, 0);
     animation: uiDialogWindowAnimation 0.25s forwards;
@@ -60,6 +59,10 @@
       padding: 0 1.5rem 1.5rem;
       display: flex;
       justify-content: flex-end;
+
+      .ui-button {
+        margin-left: 8px;
+      }
     }
   }
 

@@ -12,6 +12,4 @@ class Dispatcher {
   }
 }
 
-const dispatcherInstance = new Dispatcher();
-
-export default dispatcherInstance;
+export default Dispatcher;

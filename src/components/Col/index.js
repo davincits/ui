@@ -1,9 +1,14 @@
+import './style.scss';
+
 import React from 'react';
 import { classes } from '../utils';
 
-import './styles.scss';
-
-function Col({ className, children, width }) {
+function Col({
+  className,
+  children,
+  width,
+  ...props
+}) {
   const style = {};
   const classList = classes({
     'ui-column': true,
@@ -12,7 +17,7 @@ function Col({ className, children, width }) {
   if (width) style.width = `${width}%`;
   else style.flex = 1;
   return (
-    <div className={classList} style={style}>{children}</div>
+    <div className={classList} style={style} {...props}>{children}</div>
   );
 }
 

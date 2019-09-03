@@ -1,4 +1,4 @@
-@import '../../common';
+@import "../common";
 
 .loading-css-only {
   position: absolute;
@@ -11,6 +11,10 @@
   background: rgba(255, 255, 255, 0.9);
   animation-name: fadeIn;
   animation-duration: 600ms;
+
+  &.global {
+    position: fixed;
+  }
 
   &::before,
   &::after {
@@ -27,7 +31,7 @@
     animation-duration: 600ms;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    content: '';
+    content: "";
   }
 
   &::after {

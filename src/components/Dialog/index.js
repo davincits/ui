@@ -1,9 +1,9 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import Portal from '../Portal';
-import IconClose from 'app/ui/icons/Close';
+import IconClose from '../icons/Close';
 import { classes } from '../utils';
-
-import './styles.scss';
 
 const ESC_CODE = 'Escape';
 
@@ -20,11 +20,12 @@ class Dialog extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.keyPressHandler);
-    if (--document.body.__opened_modals__ > 0) return;
+    document.body.__opened_modals__--;
+    if (document.body.__opened_modals__ > 0) return;
     document.body.style.overflow = '';
   }
 
-  keyPressHandler = event => {
+  keyPressHandler = (event) => {
     if (event.code === ESC_CODE) {
       this.onClose();
     }
@@ -34,7 +35,7 @@ class Dialog extends PureComponent {
     this.onClose();
   };
 
-  backDropClickHandler = event => {
+  backDropClickHandler = (event) => {
     if (event.target === event.currentTarget) {
       this.onClose();
     }
@@ -46,11 +47,17 @@ class Dialog extends PureComponent {
   }
 
   render() {
-    const { title, children, className, actions, disabled } = this.props;
+    const {
+      title,
+      children,
+      className,
+      actions = [],
+      disabled,
+    } = this.props;
     const classList = classes({
       'ui-dialog': true,
-      disabled: disabled,
-      [className]: className
+      [className]: className,
+      disabled,
     });
     return (
       <Portal>
@@ -65,9 +72,9 @@ class Dialog extends PureComponent {
             <div className="ui-dialog-content">{children}</div>
             <div className="ui-dialog-actions">
               {actions.length
-                ? React.Children.map(actions, (action, key) =>
-                    React.cloneElement(action, { key })
-                  )
+                ? React.Children.map(actions, (action, key) => (
+                  React.cloneElement(action, { key })
+                ))
                 : actions}
             </div>
           </div>

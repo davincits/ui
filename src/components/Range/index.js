@@ -1,11 +1,13 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { number, array, func } from 'prop-types';
 import { classes } from '../utils';
 
-import './styles.scss';
-
 class Range extends PureComponent {
-  getValue([first, second] = this.props.value) {
+  getValue(value) {
+    const { value: $value } = this.props;
+    let [first, second] = value || $value;
     const { min, max } = this.props;
     first = Number(first);
     second = Number(second);
@@ -115,7 +117,7 @@ Range.defaultProps = {
   min: 0,
   max: 100,
   value: [0, 100],
-  onChange: () => {},
+  onChange: () => { },
 };
 
 export default Range;

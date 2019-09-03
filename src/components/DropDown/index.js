@@ -1,3 +1,5 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import Button from '../Button';
 import Label from '../Label';
@@ -7,15 +9,10 @@ import IconExpandMore from '../icons/ExpandMore';
 import IconExpandLess from '../icons/ExpandLess';
 import Portal from '../Portal';
 
-import './styles.scss';
-
 const MARGIN = 0;
 
 class DropDown extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { opened: false };
-  }
+  state = { opened: false }
 
   componentDidMount() {
     window.addEventListener('mousedown', this.windowClickHandler);
@@ -26,7 +23,8 @@ class DropDown extends PureComponent {
   }
 
   clickHandler = () => {
-    const { inline = true } = this.props;
+    const { inline = true, disabled } = this.props;
+    if (disabled) return;
     if (!inline) {
       const { button } = this.refs;
       const { innerHeight: windowHeight } = window;
@@ -52,16 +50,21 @@ class DropDown extends PureComponent {
   };
 
   windowClickHandler = (event) => {
+    const { disabled } = this.props;
+    const { opened } = this.state;
+    if (disabled || !opened) return;
     const { button, dropdown } = this.refs;
     let parent = event.target;
     while (parent) {
-      if (parent === dropdown || parent === button) return;
+      if (parent.isSameNode(dropdown) || parent.isSameNode(button)) return;
       parent = parent.parentNode;
     }
     this.toggleOpenState(false);
   };
 
-  toggleOpenState(opened = !this.state.opened) {
+  toggleOpenState(opened = null) {
+    const { opened: current } = this.state;
+    if (opened === null) opened = !current;
     this.setState({ opened });
   }
 
@@ -83,6 +86,7 @@ class DropDown extends PureComponent {
       'ui-dropdown': true,
       'ui-dropdown-opened': opened,
       [className]: className,
+      disabled,
     });
     const dropDown = (
       <div className={name ? `${name}_dropdown` : ''}>

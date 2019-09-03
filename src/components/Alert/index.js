@@ -1,9 +1,9 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { bool } from 'prop-types';
 import { classes } from '../utils';
 import IconClose from '../icons/Close';
-
-import './styles.scss';
 
 export default class UIAlert extends PureComponent {
   static propTypes = {
@@ -14,12 +14,9 @@ export default class UIAlert extends PureComponent {
     closeable: true,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      showed: true,
-      display: true,
-    };
+  state = {
+    showed: true,
+    display: true,
   }
 
   onCloseClick = () => {

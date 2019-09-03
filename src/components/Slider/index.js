@@ -1,12 +1,16 @@
+import '../Range/style.scss';
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { number, func } from 'prop-types';
 import { classes } from '../utils';
 
-import '../Range/styles.scss';
-import './styles.scss';
-
 class Slider extends PureComponent {
-  getValue(value = this.props.value) {
+  getValue(value) {
+    const { value: $value } = this.props;
+    if (value === undefined) {
+      value = $value;
+    }
     const { min, max } = this.props;
     value = Number(value);
     if (isNaN(value)) value = min;
@@ -101,7 +105,7 @@ Range.defaultProps = {
   min: 0,
   max: 100,
   value: 100,
-  onChange: () => {},
+  onChange: () => { },
 };
 
 export default Slider;

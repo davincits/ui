@@ -1,12 +1,12 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 import DropDown from '../DropDown';
 import Option from '../Option';
 
-import './styles.scss';
-
 class Select extends PureComponent {
-  onOptionClick = value => {
+  onOptionClick = (value) => {
     const { onChange } = this.props;
     const { dropdown } = this.refs;
     if (onChange) onChange(value);
@@ -14,13 +14,19 @@ class Select extends PureComponent {
   };
 
   render() {
-    const { className, value, label, options, disabled, ...props } = this.props;
+    const {
+      className,
+      value,
+      label,
+      options,
+      disabled,
+      ...props
+    } = this.props;
     const classList = classes({
       'ui-select': true,
-      [className]: className
+      [className]: className,
     });
-    const { label: selectedLabel } =
-      options.find(({ value: val }) => val === value) || options[0];
+    const { label: selectedLabel } = options.find(({ value: val }) => val === value) || options[0] || {};
     return (
       <div className={classList} {...props}>
         <DropDown

@@ -2,21 +2,16 @@
 
 .ui-checkbox {
   display: flex;
+  align-items: center;
 
-  label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  input {
+  & > input {
     position: absolute;
     display: none;
     opacity: 0;
     visibility: hidden;
   }
 
-  .ui-fake-checkbox {
+  & > .ui-fake-checkbox {
     width: 16px;
     height: 16px;
     border: 1px solid $ui-color-gray;
@@ -37,7 +32,7 @@
     }
   }
 
-  .ui-label {
+  & > .ui-label {
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);
     font-size: $ui-font-size-xs;
@@ -45,9 +40,10 @@
     display: flex;
     padding-left: 8px;
     height: 32px;
+    margin-bottom: 0;
   }
 
-  input:checked + .ui-fake-checkbox {
+  & > input:checked + .ui-fake-checkbox {
     background-color: $ui-color-brand-primary;
     border-color: $ui-color-brand-primary;
 

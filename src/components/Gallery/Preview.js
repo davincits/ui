@@ -2,10 +2,7 @@ import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
 class Preview extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { showed: false };
-  }
+  state = { showed: false }
 
   clickHandler = (event) => {
     event.stopPropagation();
@@ -31,6 +28,7 @@ class Preview extends PureComponent {
           onLoad={this.loadHandler}
           onAbort={this.loadHandler}
           onError={this.loadHandler}
+          alt="gallery-image-preview"
         />
       </div>
     );

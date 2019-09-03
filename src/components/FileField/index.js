@@ -1,14 +1,11 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { ToastDanger } from 'app/ui/Toastr';
 import { classes } from '../utils';
 
-import './styles.scss';
-
 class FileField extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { error: false };
-  }
+  state = { error: false }
 
   changeHandler = ({ target: { files } }) => {
     const { multiple, fileTypes, maxSize } = this.props;

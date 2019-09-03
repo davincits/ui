@@ -1,17 +1,14 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import IconCloudBackup from 'app/ui/icons/CloudBackup';
 import { ToastDanger } from 'app/ui/Toastr';
 import { classes } from '../utils';
 
-import './styles.scss';
-
 class DropArea extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: false,
-      dragOver: false,
-    };
+  state = {
+    error: false,
+    dragOver: false,
   }
 
   componentDidMount() {

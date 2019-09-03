@@ -1,7 +1,8 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import Portal from '../Portal';
-
-import './styles.scss';
+import { classes } from '../utils';
 
 const ESC_CODE = 'Escape';
 
@@ -25,7 +26,8 @@ class FullSizeModal extends PureComponent {
   componentWillUnmount() {
     window.removeEventListener('keydown', this.keyPressHandler);
     window.removeEventListener('resize', this.resizeHandler);
-    if (--document.body.__opened_modals__ > 0) return;
+    document.body.__opened_modals__--;
+    if (document.body.__opened_modals__ > 0) return;
     document.body.style.overflow = '';
   }
 
@@ -74,10 +76,11 @@ class FullSizeModal extends PureComponent {
       footer,
       subtitle,
       closeLabel = 'Close',
+      className,
     } = this.props;
     return (
       <Portal>
-        <div className="component-full-size-modal" onScroll={this.onScroll}>
+        <div className={classes(['component-full-size-modal', className])} onScroll={this.onScroll}>
           <div className="component-full-size-modal-header" ref="header">
             <div className="component-full-size-modal-header-main">
               <div className="component-full-size-modal-title">{title}</div>

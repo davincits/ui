@@ -1,9 +1,11 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
-import './styles.scss';
-
 class Radio extends PureComponent {
+  uniqid = `${Date.now()}${Math.random()}`
+
   onChange = (event) => {
     const { onChange } = this.props;
     const { value } = event.target;
@@ -15,6 +17,7 @@ class Radio extends PureComponent {
       className,
       label,
       onChange,
+      id = this.uniqid,
       ...rest
     } = this.props;
     const classList = classes({
@@ -23,11 +26,9 @@ class Radio extends PureComponent {
     });
     return (
       <div className={classList}>
-        <label>
-          <input type="radio" onChange={this.onChange} {...rest} />
-          <span className="ui-fake-radio" />
-          {!!label && <div className="ui-label">{label}</div>}
-        </label>
+        <input type="radio" id={id} onChange={this.onChange} {...rest} />
+        <label htmlFor={id} className="ui-fake-radio" />
+        {!!label && <label htmlFor={id} className="ui-label">{label}</label>}
       </div>
     );
   }

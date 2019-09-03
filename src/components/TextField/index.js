@@ -1,26 +1,23 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { bool, string } from 'prop-types';
 import { classes } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
 import TextEllipsis from '../TextEllipsis';
-import Label from '../Label';
 import Show from '../Show';
 
-import './styles.scss';
-
-const checkValue = value =>
-  (value === null ||
-  value === undefined ||
-  (typeof value === 'number' && isNaN(value))
-    ? ''
-    : value);
+const checkValue = value => (
+  (value === null)
+    || (value === undefined)
+    || (typeof value === 'number' && isNaN(value)
+    ) ? '' : value);
 
 class TextField extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { height: null };
-  }
+  uniqid = `${Date.now()}${Math.random()}`
+
+  state = { height: null }
 
   onChange = (event) => {
     const { onChange } = this.props;
@@ -69,6 +66,8 @@ class TextField extends PureComponent {
       autoheight,
       search,
       error,
+      id = this.uniqid,
+      onClick,
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -91,30 +90,28 @@ class TextField extends PureComponent {
       props.onKeyDown = this.onKeyDown;
     }
     return (
-      <div className={classList}>
-        <label>
-          <Show if={label}>
-            <Label>
-              <TextEllipsis>{label}</TextEllipsis>
-            </Label>
+      <div className={classList} onClick={onClick}>
+        <Show if={label}>
+          <label className="ui-label" htmlFor={id}>
+            <TextEllipsis>{label}</TextEllipsis>
+          </label>
+        </Show>
+        {multiline ? (
+          <div
+            className="text-area-wrapper"
+            style={{ height: height || 'auto' }}
+          >
+            <textarea {...props} id={id} />
+          </div>
+        ) : (
+          <input type={type} id={id} {...props} />
+        )}
+        <Show if={search}>
+          <SearchIcon />
+          <Show if={value}>
+            <CloseIcon onClick={this.onResetClick} />
           </Show>
-          {multiline ? (
-            <div
-              className="text-area-wrapper"
-              style={{ height: height || 'auto' }}
-            >
-              <textarea {...props} />
-            </div>
-          ) : (
-            <input type={type} {...props} />
-          )}
-          <Show if={search}>
-            <SearchIcon />
-            <Show if={value}>
-              <CloseIcon onClick={this.onResetClick} />
-            </Show>
-          </Show>
-        </label>
+        </Show>
       </div>
     );
   }

@@ -15,8 +15,13 @@
   .ui-dropdown-button {
     height: 32px;
     width: 100%;
-    padding-left: 8px;
+    padding-left: 12px;
     padding-right: 20px;
+
+    &[disabled] {
+      background-color: $ui-color-gray-light-3 !important;
+      color: $ui-font-color !important;
+    }
   }
 
   .ui-dropdown-button-container {
@@ -35,6 +40,13 @@
   .ui-dropdown-label ~ .ui-icon-expand-less,
   .ui-dropdown-label ~ .ui-icon-expand-more {
     margin-top: -5px;
+  }
+
+  &.disabled {
+    .ui-icon-expand-less,
+    .ui-icon-expand-more {
+      opacity: 0.1;
+    }
   }
 }
 

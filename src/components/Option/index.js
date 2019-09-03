@@ -1,8 +1,8 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import TextEllipsis from '../TextEllipsis';
 import { classes } from '../utils';
-
-import './styles.scss';
 
 class Option extends PureComponent {
   onClick = () => {

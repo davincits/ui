@@ -1,7 +1,7 @@
+import './style.scss';
+
 import React from 'react';
 import { classes } from '../utils';
-
-import './styles.scss';
 
 function Button(props) {
   const {
@@ -30,7 +30,15 @@ function Button(props) {
     'ui-button-small': small,
     [className]: className,
   });
-  return (<button className={classList} {...rest}>{children}</button>);
+  return (
+    <button
+      type="button"
+      className={classList}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
 }
 
 export default Button;
