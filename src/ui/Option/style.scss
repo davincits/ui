@@ -1,0 +1,21 @@
+@import "../common";
+
+.ui-option {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  display: flex;
+  padding: 0 16px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $ui-color-gray-light-2;
+  }
+
+  &.ui-selected {
+    font-weight: 500;
+    color: $ui-color-brand-primary;
+  }
+}

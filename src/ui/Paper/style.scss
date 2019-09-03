@@ -1,0 +1,10 @@
+@import "../common";
+
+.ui-paper {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  background-color: $ui-color-white;
+  border-radius: $ui-border-radius;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,114 @@
+@import '../common';
+
+.ui-toaster-container {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 16px;
+  top: 64px;
+  z-index: 999;
+
+  .ui-toastr-item {
+    position: relative;
+    width: 320px;
+    background-color: $ui-color-white;
+    padding: 16px;
+    border-radius: $ui-border-radius;
+    font-size: $ui-font-size;
+    margin-top: 8px;
+    min-height: 48px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    animation: toastrAnimation 0.25s;
+    transition: margin-top 0.25s, opacity 0.25s, height 0.25s;
+
+    .ui-toastr-message {
+      font-weight: bold;
+      margin-right: 24px;
+
+      &::before {
+        display: inline-block;
+        margin-right: 4px;
+      }
+    }
+
+    .ui-toastr-description {
+      margin-top: 8px;
+      font-size: $ui-font-size-s;
+      line-height: 1.2;
+    }
+
+    &.ui-toastr-item-hide-animation {
+      height: 48px;
+      margin-top: -48px;
+      opacity: 0;
+    }
+
+    .ui-button {
+      margin-top: 16px;
+    }
+  }
+
+  .ui-toastr-item-type-info {
+    .ui-toastr-message::before {
+      content: 'ℹ️';
+    }
+  }
+
+  .ui-toastr-item-type-success {
+    .ui-toastr-message {
+      color: $ui-color-brand-success;
+
+      &::before {
+        content: '✅';
+      }
+    }
+  }
+
+  .ui-toastr-item-type-warning {
+    .ui-toastr-message {
+      color: $ui-color-brand-warning;
+
+      &::before {
+        content: '⚠️️';
+      }
+    }
+  }
+
+  .ui-toastr-item-type-danger {
+    .ui-toastr-message {
+      color: $ui-color-brand-danger;
+
+      &::before {
+        content: '🔴';
+      }
+    }
+  }
+
+  .ui-toastr-close {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $ui-color-gray;
+    }
+
+    svg {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+  }
+}
+
+@keyframes toastrAnimation {
+  from {
+    transform: translate(100%, 0);
+  }
+}

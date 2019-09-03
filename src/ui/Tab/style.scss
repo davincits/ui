@@ -1,0 +1,30 @@
+@import "../common";
+
+.ui-tab {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  display: flex;
+  align-items: center;
+  color: $ui-color-gray-light;
+  text-transform: uppercase;
+  height: 48px;
+  cursor: pointer;
+  margin-right: 24px;
+
+  &:hover {
+    color: $ui-color-gray-dark;
+  }
+
+  &.ui-active {
+    color: $ui-font-color;
+    box-shadow: 0 1px 0 $ui-color-brand-primary, inset 0 -1px 0 $ui-color-brand-primary;
+  }
+
+  .ui-badge, .ui-badge-danger {
+
+    &:last-child {
+      margin-left: 8px;
+    }
+  }
+}
