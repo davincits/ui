@@ -9,8 +9,8 @@
 [x] CheckBox
 [x] Radio
 [x] Alert
-[ ] Slider
-[ ] Range
+[x] Slider
+[x] Range
 [ ] Tooltip
 [ ] Tab, TabList, TabPanel, Tabs
 [ ] DropDown
