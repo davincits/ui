@@ -3,7 +3,7 @@ import Svg from './Svg';
 
 export default ({ duration = 2000, ...props }) => {
   const styles = `
-    #root {
+    #svg-icon-spinner-animation {
       animation: rotate ${duration}ms linear infinite;
       transform-origin: 50% 50%;
     }
@@ -26,7 +26,7 @@ export default ({ duration = 2000, ...props }) => {
           <stop offset="100%" stopColor="rgba(5, 185, 230, 1)" />
         </linearGradient>
       </defs>
-      <g id="root">
+      <g id="svg-icon-spinner-animation">
         <path d="M0.5,12 A1,1 0 0,0 23.5,12" fill="none" strokeWidth="1" stroke="url(#gradient1)" />
         <path d="M0.5,12 A1,1 0 0,1 23.5,12" fill="none" strokeWidth="1" stroke="url(#gradient2)" />
       </g>

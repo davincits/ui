@@ -8,6 +8,7 @@
 [x] FileField
 [x] CheckBox
 [x] Radio
+[x] Table
 [x] Alert
 [x] Slider
 [x] Range
