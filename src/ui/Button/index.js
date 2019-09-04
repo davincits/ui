@@ -15,6 +15,7 @@ function Button(props) {
     unbordered,
     blue,
     small,
+    active,
     ...rest
   } = props;
   if (loading) rest.disabled = true;
@@ -28,6 +29,7 @@ function Button(props) {
     'ui-button-blue': blue,
     'ui-uppercase': uppercase,
     'ui-button-small': small,
+    'ui-button-active': active,
     [className]: className,
   });
   return (

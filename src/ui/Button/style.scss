@@ -31,7 +31,7 @@
     background-color: $ui-color-gray-lightest;
   }
 
-  &:focus {
+  &.ui-button-active {
     border-color: $ui-color-brand-primary;
     background-color: $ui-color-white;
     box-shadow: 0 0 0 1px $ui-color-brand-primary-light, inset 0 0 0 1px $ui-color-brand-primary-light;
@@ -66,7 +66,7 @@
       background-color: $ui-color-brand-primary-light;
     }
 
-    &:focus {
+    &.ui-button-active {
       border-color: $ui-color-brand-primary;
       box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
@@ -87,7 +87,7 @@
       border-color: $ui-color-brand-danger;
     }
 
-    &:focus {
+    &.ui-button-active {
       border-color: $ui-color-brand-danger;
       box-shadow: inset 0 0 0 1px rgba($ui-color-brand-danger, 0.2), 0 0 0 1px rgba($ui-color-brand-danger, 0.2);
     }
@@ -109,7 +109,7 @@
       background-color: $ui-color-brand-primary-light-3;
     }
 
-    &:focus {
+    &.ui-button-active {
       background-color: $ui-color-brand-primary;
       box-shadow: 0 0 0 2px $ui-color-brand-primary-light-2;
     }
