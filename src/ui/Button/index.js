@@ -14,6 +14,7 @@ function Button(props) {
     loading,
     unbordered,
     blue,
+    large,
     small,
     active,
     ...rest
@@ -28,6 +29,7 @@ function Button(props) {
     'ui-button-unbordered': unbordered,
     'ui-button-blue': blue,
     'ui-uppercase': uppercase,
+    'ui-button-large': large,
     'ui-button-small': small,
     'ui-button-active': active,
     [className]: className,

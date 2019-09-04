@@ -33,6 +33,11 @@ storiesOf('Button', module)
       {() => <Button onClick={onClick} unbordered>Hello Button</Button>}
     </Container>
   ))
+  .add('large', () => (
+    <Container>
+      {() => <Button onClick={onClick} large>Hello Button</Button>}
+    </Container>
+  ))
   .add('small', () => (
     <Container>
       {() => <Button onClick={onClick} small>Hello Button</Button>}
