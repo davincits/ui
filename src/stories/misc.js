@@ -10,7 +10,7 @@ storiesOf('Misc', module)
       {() => (<LoadingDotted />)}
     </Container>
   ))
-  .add('unclosable', () => (
+  .add('LoadingSpinner', () => (
     <Container>
       {() => (<LoadingSpinner />)}
     </Container>

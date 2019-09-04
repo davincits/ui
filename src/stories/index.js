@@ -1,6 +1,6 @@
 import './style.scss';
 
-import './row';
+import './grid';
 import './button';
 import './text-field';
 import './file-field';

@@ -93,7 +93,7 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Close /&gt;</span>
             </div>
             <div className="icon-container">
-              <CloseAnim />
+              <CloseAnim delay={10000} />
               <span className="icon-title">&lt;CloseAnim /&gt;</span>
             </div>
             <div className="icon-container">

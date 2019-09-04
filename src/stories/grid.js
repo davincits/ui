@@ -6,7 +6,7 @@ import { Row, Col } from '../ui';
 
 const Dummy = ({ text = 'Column' }) => (<div style={{ padding: '8px', backgroundColor: '#f0f0f0' }}>{text}</div>)
 
-storiesOf('Row', module)
+storiesOf('Grid', module)
   .add('common', () => (
     <Container>
       {() => (
