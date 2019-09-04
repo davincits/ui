@@ -7,7 +7,6 @@
   line-height: $ui-line-height;
   box-sizing: border-box;
   position: relative;
-  display: inline-block;
 
   .ui-tooltip {
     position: absolute;
@@ -21,6 +20,7 @@
     display: none;
     white-space: pre;
     text-align: center;
+    margin-top: -4px;
   }
 
   &:hover .ui-tooltip {

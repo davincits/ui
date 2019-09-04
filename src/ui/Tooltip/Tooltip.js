@@ -7,8 +7,8 @@ class Tooltip extends PureComponent {
   componentDidMount() {
     const { tooltip } = this.refs;
     const bounding = tooltip.getBoundingClientRect();
-    const leftOver = window.innerWidth - bounding.right - 8;
-    const rightOver = bounding.left - 8;
+    const leftOver = window.innerWidth - bounding.right;
+    const rightOver = bounding.left;
     if (leftOver < 0) tooltip.style.marginLeft = `${String(leftOver)}px`;
     if (rightOver < 0) tooltip.style.marginLeft = `${String(-rightOver)}px`;
   }

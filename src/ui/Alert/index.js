@@ -1,19 +1,10 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { bool } from 'prop-types';
 import { classes } from '../utils';
 import IconClose from '../icons/Close';
 
 export default class UIAlert extends PureComponent {
-  static propTypes = {
-    closeable: bool,
-  };
-
-  static defaultProps = {
-    closeable: true,
-  };
-
   state = {
     showed: true,
     display: true,
@@ -33,7 +24,7 @@ export default class UIAlert extends PureComponent {
     const {
       className,
       children,
-      closeable,
+      closeable = true,
     } = this.props;
     const { showed, display } = this.state;
     const classList = classes({
