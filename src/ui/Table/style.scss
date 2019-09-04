@@ -52,6 +52,14 @@
       &:last-child {
         border-right: 1px solid $ui-color-gray;
       }
+
+      &.ui-cell-align-right {
+        justify-content: flex-end;
+      }
+
+      &.ui-cell-align-center {
+        justify-content: center;
+      }
     }
 
     &:hover {

@@ -7,12 +7,10 @@ function Cell({
   cellWidth,
   width,
   style = {},
+  align = 'left',
   ...props
 }) {
-  const classList = classes({
-    'ui-cell': true,
-    [className]: className,
-  });
+  const classList = classes([`ui-cell ui-cell-align-${align}`, className]);
   if (width || cellWidth) {
     style.width = `${width || cellWidth}%`;
   } else {

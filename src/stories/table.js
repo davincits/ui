@@ -32,18 +32,18 @@ storiesOf('Table', module)
             </Row>
             {
               ROOMS.map(({ type, amount, price }, i) => (
-                  <Row key={i}>
-                    <Cell>{type}</Cell>
-                    <Cell>
-                      <span>12/12/20</span>
-                      <span>&nbsp;-&nbsp;</span>
-                      <span>13/12/20</span>
-                    </Cell>
-                    <Cell>{amount}</Cell>
-                    <Cell>{price.toFixed(2)}</Cell>
-                    <Cell>{(amount * price).toFixed(2)}</Cell>
-                  </Row>
-                ))
+                <Row key={i}>
+                  <Cell>{type}</Cell>
+                  <Cell>
+                    <span>12/12/20</span>
+                    <span>&nbsp;-&nbsp;</span>
+                    <span>13/12/20</span>
+                  </Cell>
+                  <Cell>{amount}</Cell>
+                  <Cell align="right">{price.toFixed(2)}</Cell>
+                  <Cell align="right">{(amount * price).toFixed(2)}</Cell>
+                </Row>
+              ))
             }
             <Row>
               <Cell width="100">
