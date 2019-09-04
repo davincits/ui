@@ -11,7 +11,7 @@ storiesOf('Dialog', module)
         <Dialog
           title="Dialog title"
           actions={[
-            <Button>First</Button>,
+            <Button autoFocus>First</Button>,
             <Button>Second</Button>,
           ]}
         >

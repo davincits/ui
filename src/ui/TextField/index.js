@@ -92,7 +92,7 @@ class TextField extends PureComponent {
       <div className={classList} onClick={onClick}>
         <Show if={label}>
           <label className="ui-label" htmlFor={id}>
-            <div classname="ui-ellipsis">{label}</div>
+            <div className="ui-ellipsis">{label}</div>
           </label>
         </Show>
         {multiline ? (
