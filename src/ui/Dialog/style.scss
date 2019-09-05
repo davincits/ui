@@ -34,7 +34,6 @@
       display: flex;
       align-items: center;
       min-height: 4.5rem;
-      border-bottom: 1px solid #d6d6d6;
       padding: 0 3rem 0 1.5rem;
 
       .ui-dialog-title {
@@ -59,7 +58,7 @@
     }
 
     .ui-dialog-content {
-      padding: 1.5rem;
+      padding: 12px 24px 24px;
       height: 100%;
       overflow-x: hidden;
       overflow-y: auto;
