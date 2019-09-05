@@ -42,8 +42,10 @@ function close(uid) {
 
 function add(payload, type) {
   const { delay = DELLAY } = payload;
+  const { closeElement } = payload;
   const uid = uniqid();
   const onClose = () => close(uid);
+  console.log(payload);
   dispatcher.dispatch({
     type,
     payload: {
@@ -53,5 +55,6 @@ function add(payload, type) {
       ...payload,
     },
   });
-  if (delay) setTimeout(() => onClose(), delay);
+  if (!delay || closeElement) return;
+  setTimeout(() => onClose(), delay);
 }
