@@ -7,7 +7,6 @@ import './file-field';
 import './checkbox';
 import './radio';
 import './table';
-import './alert';
 import './slider';
 import './range';
 import './tooltip';
