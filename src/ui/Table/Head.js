@@ -6,13 +6,11 @@ function Head({
   className,
   cellWidth,
   width,
+  align = 'left',
   style = {},
   ...props
 }) {
-  const classList = classes({
-    'ui-head': true,
-    [className]: className,
-  });
+  const classList = classes([`ui-table-head ui-table-head-align-${align}`, className]);
   if (width || cellWidth) {
     style.width = `${width || cellWidth}%`;
   } else {

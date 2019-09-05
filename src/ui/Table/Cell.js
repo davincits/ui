@@ -10,7 +10,7 @@ function Cell({
   align = 'left',
   ...props
 }) {
-  const classList = classes([`ui-cell ui-cell-align-${align}`, className]);
+  const classList = classes([`ui-table-cell ui-table-cell-align-${align}`, className]);
   if (width || cellWidth) {
     style.width = `${width || cellWidth}%`;
   } else {

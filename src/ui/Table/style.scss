@@ -8,10 +8,10 @@
   box-sizing: border-box;
   width: 100%;
 
-  .ui-row {
+  .ui-table-row {
     display: flex;
 
-    .ui-head {
+    .ui-table-head {
       display: flex;
       align-items: center;
       border-top: 1px solid $ui-color-gray;
@@ -33,9 +33,17 @@
         border-radius: 0 4px 0 0;
         border-right: 1px solid $ui-color-gray;
       }
+
+      &.ui-table-head-align-right {
+        justify-content: flex-end;
+      }
+
+      &.ui-table-head-align-center {
+        justify-content: center;
+      }
     }
 
-    .ui-cell {
+    .ui-table-cell {
       display: flex;
       align-items: center;
       font-size: $ui-font-size-s;
@@ -53,25 +61,25 @@
         border-right: 1px solid $ui-color-gray;
       }
 
-      &.ui-cell-align-right {
+      &.ui-table-cell-align-right {
         justify-content: flex-end;
       }
 
-      &.ui-cell-align-center {
+      &.ui-table-cell-align-center {
         justify-content: center;
       }
     }
 
     &:hover {
 
-      .ui-cell {
+      .ui-table-cell {
         background-color: $ui-color-gray-lightest;
       }
     }
 
     &:last-child {
 
-      .ui-cell {
+      .ui-table-cell {
         border-bottom: 1px solid $ui-color-gray;
 
         &:first-child {

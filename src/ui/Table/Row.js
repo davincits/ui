@@ -1,11 +1,13 @@
 import React from 'react';
 import { classes } from '../utils';
 
-function Row({ children, className, cellsWidth, ...props }) {
-  const classList = classes({
-    'ui-row': true,
-    [className]: className,
-  });
+function Row({
+  children,
+  className,
+  cellsWidth,
+  ...props
+}) {
+  const classList = classes(['ui-table-row', className]);
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>

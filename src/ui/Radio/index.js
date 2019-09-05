@@ -24,11 +24,11 @@ class Radio extends PureComponent {
       [className]: className,
     });
     return (
-      <div className={classList}>
+      <label htmlFor={id} className={classList}>
         <input type="radio" id={id} onChange={this.onChange} {...rest} />
-        <label htmlFor={id} className="ui-fake-radio" />
-        {!!label && <label htmlFor={id} className="ui-label">{label}</label>}
-      </div>
+        <span className="ui-fake-radio" />
+        {!!label && <div className="ui-label">{label}</div>}
+      </label>
     );
   }
 }
