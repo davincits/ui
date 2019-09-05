@@ -41,7 +41,8 @@
         padding-right: 32px;
         user-select: none;
 
-        .ui-text-muted {
+        .component-full-size-modal-close-key {
+          color: $ui-color-gray-dark;
           margin-left: 4px;
         }
 
@@ -51,9 +52,13 @@
       }
     }
 
-    .header-subtitle {
+    .component-full-size-modal-header-subtitle {
       padding-left: 32px;
       padding-right: 32px;
+
+      .ui-tabs {
+        margin-top: -16px;
+      }
     }
 
     &.with-shadow {
@@ -68,8 +73,10 @@
   }
 
   .component-full-size-modal-footer {
-    position: sticky;
+    position: absolute;
+    left: 0;
     bottom: 0;
+    width: 100%;
     transition: box-shadow 0.3s;
     z-index: 2;
 

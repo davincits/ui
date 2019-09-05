@@ -17,6 +17,7 @@ class FullSizeModal extends PureComponent {
     window.addEventListener('keydown', this.keyPressHandler);
     window.addEventListener('resize', this.resizeHandler);
     this.detectFooterCovering();
+    setTimeout(() => this.detectFooterCovering(), 200);
   }
 
   componentDidUpdate() {
@@ -90,19 +91,19 @@ class FullSizeModal extends PureComponent {
                 onClick={this.onClose}
               >
                 <span>{closeLabel}</span>
-                <span className="ui-text-muted">(esc)</span>
+                <span className="component-full-size-modal-close-key">(esc)</span>
               </div>
             </div>
-            {subtitle && <div className="header-subtitle">{subtitle}</div>}
+            {subtitle && <div className="component-full-size-modal-header-subtitle">{subtitle}</div>}
           </div>
           <div className="component-full-size-modal-content" ref="content">
             {children}
-            {footer && (
-              <div className="component-full-size-modal-footer" ref="footer">
-                {footer}
-              </div>
-            )}
           </div>
+          {footer && (
+            <div className="component-full-size-modal-footer" ref="footer">
+              {footer}
+            </div>
+          )}
         </div>
       </Portal>
     );
