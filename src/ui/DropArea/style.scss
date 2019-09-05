@@ -38,7 +38,7 @@
   }
 
   &.drag-over {
-    border-color: $ui-color-brand-primary;
+    border: none;
 
     .ui-drop-element {
       display: block;
