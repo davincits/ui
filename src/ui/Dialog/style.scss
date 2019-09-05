@@ -44,8 +44,13 @@
       .ui-dialog-close {
         position: absolute;
         cursor: pointer;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: 0;
+        right: 0;
+        width: 72px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover {
           opacity: 0.75;

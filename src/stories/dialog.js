@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { Dialog, Button } from '../ui';
 
@@ -11,9 +12,10 @@ storiesOf('Dialog', module)
         <Dialog
           title="Dialog title"
           actions={[
-            <Button autoFocus>First</Button>,
-            <Button>Second</Button>,
+            <Button onClick={action('first button clicked')} autoFocus>First</Button>,
+            <Button onClick={action('second button clicked')}>Second</Button>,
           ]}
+          onClose={action('close clicked')}
         >
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -34,9 +36,10 @@ storiesOf('Dialog', module)
         <Dialog
           title="Dialog title"
           actions={[
-            <Button>First</Button>,
-            <Button>Second</Button>,
+            <Button onClick={action('first button clicked')} autoFocus>First</Button>,
+            <Button onClick={action('second button clicked')}>Second</Button>,
           ]}
+          onClose={action('close clicked')}
         >
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
