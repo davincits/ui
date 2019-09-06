@@ -1,0 +1,82 @@
+@import "../common";
+
+.ui-tooltip-container {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+  box-sizing: border-box;
+  position: relative;
+
+  .ui-tooltip {
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    left: 50%;
+    width: 240px;
+    display: none;
+    text-align: center;
+    margin-top: -4px;
+    margin-left: -120px;
+    z-index: 1;
+    transform: translate(0, -100%);
+
+    .ui-tooltip-content {
+      font-weight: normal;
+      padding: 4px 8px;
+      font-size: $ui-font-size-xs;
+      font-family: $ui-font-family;
+      color: $ui-font-color;
+      background-color: $ui-color-white;
+      border-radius: $ui-border-radius;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &:hover .ui-tooltip {
+    display: flex;
+    animation: tooltipFadeIn 0.3s forwards;
+  }
+
+  &.ui-tooltip-place-right {
+
+    .ui-tooltip {
+      justify-content: flex-start;
+      top: 50%;
+      left: 100%;
+      margin-top: 0;
+      margin-left: 4px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &.ui-tooltip-place-left {
+
+    .ui-tooltip {
+      justify-content: flex-end;
+      top: 50%;
+      left: 0;
+      margin-top: 0;
+      margin-left: -4px;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  &.ui-tooltip-place-bottom {
+
+    .ui-tooltip {
+      top: 100%;
+      margin-top: 4px;
+      transform: translate(0, 0);
+    }
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
