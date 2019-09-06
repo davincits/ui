@@ -32,7 +32,7 @@ function add(payload, type) {
       type,
       payload: {
         uid,
-        onConfirm: () => remove(uid, () => resolve(true)),
+        onConfirm: value => remove(uid, () => resolve({ value })),
         onCancel: () => remove(uid, () => resolve(false)),
         ...payload,
       },
