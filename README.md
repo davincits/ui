@@ -1,3 +1,3 @@
 # Davinci UI
 
-[Storyboof](https://davincits.github.io/ui/storybook)
+[Storybook](https://davincits.github.io/ui/storybook)

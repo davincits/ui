@@ -3,59 +3,128 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { Button } from '../components';
+import { Button, Row, Col } from '../components';
 
 const onClick = action('clicked');
 
 storiesOf('Button', module)
   .add('common', () => (
     <Container>
-      {() => <Button onClick={onClick}>Hello Button</Button>}
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick}>Common Button</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   ))
-  .add('uppercase', () => (
+  .add('filled', () => (
     <Container>
-      {() => <Button onClick={onClick} uppercase>Hello Button</Button>}
+      {() => (
+        <div>
+          <Row gutter style={{ width: '680px', margin: '24px 0' }}>
+            <Col>
+              <Button onClick={onClick} block primary>Primary Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block danger>Danger Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block success>Success Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block warning>Warning Button</Button>
+            </Col>
+          </Row>
+        </div>
+      )}
     </Container>
   ))
-  .add('block', () => (
+  .add('stroke', () => (
     <Container>
-      {() => <Button onClick={onClick} block>Hello Button</Button>}
-    </Container>
-  ))
-  .add('loading', () => (
-    <Container>
-      {() => <Button onClick={onClick} loading>Hello Button</Button>}
-    </Container>
-  ))
-  .add('unbordered', () => (
-    <Container>
-      {() => <Button onClick={onClick} unbordered>Hello Button</Button>}
+      {() => (
+        <div>
+          <Row gutter style={{ width: '680px', margin: '24px 0' }}>
+            <Col>
+              <Button onClick={onClick} block stroke primary>Primary Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block stroke danger>Danger Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block stroke success>Success Button</Button>
+            </Col>
+            <Col>
+              <Button onClick={onClick} block stroke warning>Warning Button</Button>
+            </Col>
+          </Row>
+        </div>
+      )}
     </Container>
   ))
   .add('large', () => (
     <Container>
-      {() => <Button onClick={onClick} large>Hello Button</Button>}
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick} large>Large Button</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   ))
   .add('small', () => (
     <Container>
-      {() => <Button onClick={onClick} small>Hello Button</Button>}
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick} small>Small Button</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   ))
-  .add('primary', () => (
+  .add('uppercase', () => (
     <Container>
-      {() => <Button onClick={onClick} primary>Hello Button</Button>}
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick} uppercase>Uppercase Button</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   ))
-  .add('danger', () => (
+  .add('block', () => (
     <Container>
-      {() => <Button onClick={onClick} danger>Hello Button</Button>}
+      {() => (
+        <div>
+          <Button onClick={onClick} block>Full width Button</Button>
+        </div>
+      )}
     </Container>
   ))
-  .add('blue', () => (
+  .add('unbordered', () => (
     <Container>
-      {() => <Button onClick={onClick} blue>Hello Button</Button>}
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick} unbordered>Unbordered Button</Button>
+          </Col>
+        </Row>
+      )}
+    </Container>
+  ))
+  .add('loading', () => (
+    <Container>
+      {() => (
+        <Row gutter>
+          <Col auto>
+            <Button onClick={onClick} loading>Loading Button</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   ))
   .add('disabled', () => (

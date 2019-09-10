@@ -73,6 +73,13 @@ storiesOf('Toasts', module)
           </Col>
           <Col auto>
             <Button onClick={() => {
+              Toast({ title: 'Title', message: 'message', delay: 0 })
+            }}>
+              Without delay
+            </Button>
+          </Col>
+          <Col auto>
+            <Button onClick={() => {
               Toast({ title: 'Title', message: 'message', closeElement: (<Button small>Close</Button>) })
             }}>
               With button

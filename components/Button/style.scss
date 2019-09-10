@@ -27,20 +27,193 @@
     margin-left: -4px;
   }
 
-  &:hover {
+  &:hover,
+  &.ui-button-hover {
     background-color: $ui-color-gray-lightest;
   }
 
+  &:active,
   &.ui-button-active {
-    border-color: $ui-color-brand-primary;
-    background-color: $ui-color-white;
-    box-shadow: 0 0 0 1px $ui-color-brand-primary-light, inset 0 0 0 1px $ui-color-brand-primary-light;
-  }
-
-  &:active {
     border-color: $ui-color-gray;
     background-color: $ui-color-gray;
     box-shadow: none;
+  }
+
+  &.ui-button-focus {
+    border-color: $ui-color-brand-primary;
+    box-shadow: 0 0 0 2px #CDF1FA;
+  }
+
+  &.ui-button-primary {
+    background-color: $ui-color-brand-primary;
+    color: $ui-color-white;
+    border: none;
+
+    &:hover,
+    &.ui-button-hover {
+      background-color: #44CBED;
+    }
+
+    &:active,
+    &.ui-button-active {
+      background-color: #82DCF2;
+    }
+
+    &.ui-button-focus {
+      background-color: #05B9E6;
+      box-shadow: 0 0 0 2px #82DCF2;
+    }
+
+    &.ui-button-stroke {
+      color: $ui-color-brand-primary;
+      border: 1px solid rgba($ui-color-brand-primary, 0.3);
+      background-color: $ui-color-white;
+
+      &:hover,
+      &.ui-button-hover {
+        border-color: rgba($ui-color-brand-primary, 0.6);
+      }
+
+      &:active,
+      &.ui-button-active {
+        border-color: rgba($ui-color-brand-primary, 0.6);
+        background-color: rgba($ui-color-brand-primary, 0.6);
+      }
+
+      &.ui-button-focus {
+        border-color: $ui-color-brand-primary;
+        box-shadow: 0 0 0 2px rgba($ui-color-brand-primary, 0.2);
+      }
+    }
+  }
+
+  &.ui-button-danger {
+    background-color: $ui-color-brand-danger;
+    color: $ui-color-white;
+    border: none;
+
+    &:hover,
+    &.ui-button-hover {
+      background-color: #F77268;
+    }
+
+    &:active,
+    &.ui-button-active {
+      background-color: #F9A19A;
+    }
+
+    &.ui-button-focus {
+      background-color: #F44335;
+      box-shadow: 0 0 0 2px rgba(#F44335, 0.3);
+    }
+
+    &.ui-button-stroke {
+      color: $ui-color-brand-danger;
+      border: 1px solid rgba($ui-color-brand-danger, 0.3);
+      background-color: $ui-color-white;
+
+      &:hover,
+      &.ui-button-hover {
+        border-color: rgba($ui-color-brand-danger, 0.6);
+      }
+
+      &:active,
+      &.ui-button-active {
+        border-color: rgba($ui-color-brand-danger, 0.6);
+        background-color: rgba($ui-color-brand-danger, 0.6);
+      }
+
+      &.ui-button-focus {
+        border-color: $ui-color-brand-danger;
+        box-shadow: 0 0 0 2px rgba($ui-color-brand-danger, 0.2);
+      }
+    }
+  }
+
+  &.ui-button-success {
+    background-color: $ui-color-brand-success;
+    color: $ui-color-white;
+    border: none;
+
+    &:hover,
+    &.ui-button-hover {
+      background-color: #9FDE59;
+    }
+
+    &:active,
+    &.ui-button-active {
+      background-color: #BEE990;
+    }
+
+    &.ui-button-focus {
+      background-color: $ui-color-brand-success;
+      box-shadow: 0 0 0 2px rgba($ui-color-brand-success, 0.3);
+    }
+
+    &.ui-button-stroke {
+      color: $ui-color-brand-success;
+      border: 1px solid rgba($ui-color-brand-success, 0.3);
+      background-color: $ui-color-white;
+
+      &:hover,
+      &.ui-button-hover {
+        border-color: rgba($ui-color-brand-success, 0.6);
+      }
+
+      &:active,
+      &.ui-button-active {
+        border-color: rgba($ui-color-brand-success, 0.6);
+        background-color: rgba($ui-color-brand-success, 0.6);
+      }
+
+      &.ui-button-focus {
+        border-color: $ui-color-brand-success;
+        box-shadow: 0 0 0 2px rgba($ui-color-brand-success, 0.2);
+      }
+    }
+  }
+
+  &.ui-button-warning {
+    background-color: $ui-color-brand-warning;
+    color: $ui-color-white;
+    border: none;
+
+    &:hover,
+    &.ui-button-hover {
+      background-color: #F8BC5A;
+    }
+
+    &:active,
+    &.ui-button-active {
+      background-color: #FAD291;
+    }
+
+    &.ui-button-focus {
+      background-color: $ui-color-brand-warning;
+      box-shadow: 0 0 0 2px rgba($ui-color-brand-warning, 0.3);
+    }
+
+    &.ui-button-stroke {
+      color: $ui-color-brand-warning;
+      border: 1px solid rgba($ui-color-brand-warning, 0.3);
+      background-color: $ui-color-white;
+
+      &:hover,
+      &.ui-button-hover {
+        border-color: rgba($ui-color-brand-warning, 0.6);
+      }
+
+      &:active,
+      &.ui-button-active {
+        border-color: rgba($ui-color-brand-warning, 0.6);
+        background-color: rgba($ui-color-brand-warning, 0.6);
+      }
+
+      &.ui-button-focus {
+        border-color: $ui-color-brand-warning;
+        box-shadow: 0 0 0 2px rgba($ui-color-brand-warning, 0.2);
+      }
+    }
   }
 
   &.ui-button-block {
@@ -62,68 +235,6 @@
     height: 32px;
     padding-left: 12px;
     padding-right: 12px;
-  }
-
-  &.ui-button-blue {
-    color: $ui-color-brand-primary;
-    border-color: $ui-color-brand-primary-light-2;
-
-    &:hover {
-      background-color: $ui-color-brand-primary-light;
-    }
-
-    &.ui-button-active {
-      border-color: $ui-color-brand-primary;
-      box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
-    }
-
-    &:active {
-      background-color: $ui-color-brand-primary-light-2;
-      border-color: $ui-color-brand-primary-light-2;
-      box-shadow: none;
-    }
-  }
-
-  &.ui-button-danger {
-    background-color: $ui-color-white;
-    color: $ui-color-brand-danger;
-    border-color: rgba($ui-color-brand-danger, 0.2);
-
-    &:hover {
-      border-color: $ui-color-brand-danger;
-    }
-
-    &.ui-button-active {
-      border-color: $ui-color-brand-danger;
-      box-shadow: inset 0 0 0 1px rgba($ui-color-brand-danger, 0.2), 0 0 0 1px rgba($ui-color-brand-danger, 0.2);
-    }
-
-    &:active {
-      color: $ui-color-brand-danger;
-      background-color: rgba($ui-color-brand-danger, 0.4);
-      border-color: rgba($ui-color-brand-danger, 0.2);
-      box-shadow: none;
-    }
-  }
-
-  &.ui-button-primary {
-    background-color: $ui-color-brand-primary;
-    color: $ui-color-white;
-    border: none;
-
-    &:hover {
-      background-color: $ui-color-brand-primary-light-3;
-    }
-
-    &.ui-button-active {
-      background-color: $ui-color-brand-primary;
-      box-shadow: 0 0 0 2px $ui-color-brand-primary-light-2;
-    }
-
-    &:active {
-      background-color: $ui-color-brand-primary-light-2;
-      box-shadow: none;
-    }
   }
 
   &[disabled] {
