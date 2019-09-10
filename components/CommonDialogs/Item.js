@@ -33,12 +33,12 @@ class Item extends PureComponent {
     let actions = [];
     switch (type) {
       case DIALOG_ALERT:
-        actions = (<Button primary uppercase onClick={this.onConfirm}>{textConfirm || 'OK'}</Button>);
+        actions = (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'OK'}</Button>);
         break;
       case DIALOG_CONFIRM:
         actions = [
-          (<Button primary uppercase onClick={this.onConfirm}>{textConfirm || 'Confirm'}</Button>),
-          (<Button danger uppercase onClick={onCancel}>{textCancel}</Button>),
+          (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'Confirm'}</Button>),
+          (<Button danger stroke uppercase onClick={onCancel}>{textCancel}</Button>),
         ];
         break;
       default:

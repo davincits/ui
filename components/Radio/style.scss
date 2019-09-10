@@ -27,6 +27,10 @@
     transition: border 0.25s;
   }
 
+  &:hover > .ui-fake-radio {
+    background-color: $ui-color-gray-lightest;
+  }
+
   & > .ui-label {
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);

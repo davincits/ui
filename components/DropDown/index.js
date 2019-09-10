@@ -104,8 +104,8 @@ class DropDown extends PureComponent {
             {button ? (
               React.cloneElement(button, { disabled })
             ) : (
-              <Button className="ui-dropdown-button" disabled={disabled}>
-                  <div className="ui-ellipsis">{buttonContent}</div>
+              <Button className="ui-dropdown-button" focus={opened} disabled={disabled}>
+                <div className="ui-ellipsis">{buttonContent}</div>
               </Button>
             )}
           </div>

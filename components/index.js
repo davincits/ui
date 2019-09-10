@@ -13,7 +13,8 @@ import LoadingDotted from './LoadingDotted';
 import LoadingSpinner from './LoadingSpinner';
 import Option from './Option';
 import Portal from './Portal';
-import Radio from './Radio';
+import RadioGroup from './Radio/RadioGroup';
+import Radio from './Radio/Radio';
 import Range from './Range';
 import Select from './Select';
 import Show from './Show';
@@ -43,6 +44,7 @@ export {
   LoadingSpinner,
   Option,
   Portal,
+  RadioGroup,
   Radio,
   Range,
   Row,

@@ -1,6 +1,6 @@
 import './style.scss';
 
-import React from 'react';
+import React, { Children } from 'react';
 import Row from './Row';
 import Head from './Head';
 import Cell from './Cell';
@@ -14,7 +14,7 @@ function Table({ children, className, cellsWidth, ...props }) {
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {React.Children.map(children, child => React.cloneElement(child, { cellsWidth }))}
+        {Children.map(children, child => React.cloneElement(child, { cellsWidth }))}
       </div>
     );
   }

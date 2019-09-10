@@ -14,7 +14,7 @@ class Radio extends PureComponent {
   render() {
     const {
       className,
-      label,
+      children,
       onChange,
       id = this.uniqid,
       ...rest
@@ -27,7 +27,7 @@ class Radio extends PureComponent {
       <label htmlFor={id} className={classList}>
         <input type="radio" id={id} onChange={this.onChange} {...rest} />
         <span className="ui-fake-radio" />
-        {!!label && <div className="ui-label">{label}</div>}
+        {!!children && <div className="ui-label">{children}</div>}
       </label>
     );
   }

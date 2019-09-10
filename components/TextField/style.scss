@@ -35,7 +35,7 @@
     outline: none;
 
     &:hover:not(:focus):not([disabled]) {
-      background-color: rgba($ui-color-gray-lightest, 0.1);
+      background-color: $ui-color-gray-lightest;
     }
 
     &:focus {
