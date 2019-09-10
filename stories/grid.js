@@ -15,7 +15,6 @@ storiesOf('Grid', module)
           <Col><Dummy /></Col>
           <Col><Dummy /></Col>
           <Col><Dummy /></Col>
-          <Col><Dummy /></Col>
         </Row>
       )}
     </Container>

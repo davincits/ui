@@ -1,11 +1,3 @@
 # Davinci UI
 
-```
-npm install
-```
-
-## Story Book
-
-```
-npm run storybook
-```
+[Storyboof](https://davincits.github.io/ui/storybook)

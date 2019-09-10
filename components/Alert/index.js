@@ -1,23 +1,30 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
+import { bool, func, number } from 'prop-types';
 import { classes } from '../utils';
 import IconClose from '../icons/Close';
 
-export default class UIAlert extends PureComponent {
+const DEFAULT_DELAY = 300;
+
+class Alert extends PureComponent {
+  static propTypes = {
+    closeable: bool,
+    onClose: func,
+    delay: number,
+  }
+
   state = {
     showed: true,
     display: true,
   }
 
   onCloseClick = () => {
-    const { onClose } = this.props;
+    const { onClose, delay = DEFAULT_DELAY } = this.props;
     this.setState({ showed: false });
-    setTimeout(() => {
-      this.setState({ display: false }, () => {
-        if (onClose) onClose();
-      });
-    }, 300);
+    if (!onClose) return;
+    if (!delay) return onClose();
+    setTimeout(() => this.setState({ display: false }, onClose), delay);
   }
 
   render() {
@@ -25,18 +32,22 @@ export default class UIAlert extends PureComponent {
       className,
       children,
       closeable = true,
+      ...props
     } = this.props;
     const { showed, display } = this.state;
-    const classList = classes({
-      'ui-alert': true,
-      'ui-showed': showed,
-      [className]: className,
-    });
     return display && (
-      <div className={classList}>
-        {closeable && (<span className="ui-close" onClick={this.onCloseClick}><IconClose /></span>)}
-        <div className="ui-alert-content">{children}</div>
+      <div className={classes(['ui-alert', showed && 'ui-showed', className])} {...props}>
+        {closeable && (
+          <div className="ui-close" onClick={this.onCloseClick}>
+            <IconClose />
+          </div>
+        )}
+        <div className="ui-alert-content">
+          {children}
+        </div>
       </div>
     );
   }
 }
+
+export default Alert;

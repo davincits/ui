@@ -7,6 +7,7 @@
   line-height: $ui-line-height;
   box-sizing: border-box;
   position: relative;
+  border: 1px solid $ui-color-gray-light-3;
   border-radius: $ui-border-radius;
   background-color: $ui-color-white;
   opacity: 0;
@@ -29,9 +30,15 @@
     top: 50%;
     right: 12px;
     margin-top: -12px;
+    cursor: pointer;
+    opacity: 0.75;
 
     svg {
       display: block;
+    }
+
+    &:hover {
+      opacity: 1;
     }
   }
 

@@ -22,6 +22,7 @@
     width: 100%;
     padding-left: 12px;
     padding-right: 20px;
+    text-align: left;
 
     &[disabled] {
       background-color: $ui-color-gray-light-3 !important;

@@ -45,7 +45,6 @@ function add(payload, type) {
   const { closeElement } = payload;
   const uid = uniqid();
   const onClose = () => close(uid);
-  console.log(payload);
   dispatcher.dispatch({
     type,
     payload: {

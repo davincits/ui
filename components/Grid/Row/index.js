@@ -1,7 +1,8 @@
 import './style.scss';
 
 import React from 'react';
-import { classes } from '../utils';
+import { bool, string, oneOfType } from 'prop-types';
+import { classes } from '../../utils';
 
 function Row({
   className,
@@ -18,6 +19,11 @@ function Row({
   return (
     <div className={classList} {...props}>{children}</div>
   );
+}
+
+Row.propTypes = {
+  /** The description for myProp */
+  gutter: oneOfType([bool, string])
 }
 
 export default Row;

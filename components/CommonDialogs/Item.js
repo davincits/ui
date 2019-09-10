@@ -7,6 +7,8 @@ export const DIALOG_ALERT = 'alert';
 export const DIALOG_CONFIRM = 'confirm';
 
 class Item extends PureComponent {
+  state = {}
+
   onChange = (value) => {
     this.setState({ value });
   }

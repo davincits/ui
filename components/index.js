@@ -1,7 +1,8 @@
 import Alert from './Alert';
 import Button from './Button';
 import CheckBox from './CheckBox';
-import Col from './Col';
+import Col from './Grid/Col';
+import Row from './Grid/Row';
 import Dialog from './Dialog';
 import DropArea from './DropArea';
 import DropDown from './DropDown';
@@ -14,7 +15,6 @@ import Option from './Option';
 import Portal from './Portal';
 import Radio from './Radio';
 import Range from './Range';
-import Row from './Row';
 import Select from './Select';
 import Show from './Show';
 import Slider from './Slider';
