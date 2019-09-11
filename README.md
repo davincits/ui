@@ -28,17 +28,25 @@ import { Row, Col } from 'ui';
 ### Exaples
 
 ```jsx
-<Row gutter>
-  <Col>Column 1/3</Col>
-  <Col>Column 1/3</Col>
-  <Col>Column 1/3</Col>
-</Row>
+function Example() {
+  return (
+    <Row gutter>
+      <Col>Column 1/3</Col>
+      <Col>Column 1/3</Col>
+      <Col>Column 1/3</Col>
+    </Row>
+  );
+}
 
-<Row gutter="small">
-  <Col width={25}>Column 1/4</Col>
-  <Col width={50}>Column 1/2</Col>
-  <Col width={25}>Column 1/4</Col>
-</Row>
+function Example() {
+  return (
+    <Row gutter="small">
+      <Col width={25}>Column 1/4</Col>
+      <Col width={50}>Column 1/2</Col>
+      <Col width={25}>Column 1/4</Col>
+    </Row>
+  );
+}
 ```
 
 ---
@@ -73,8 +81,29 @@ import { Button } from 'ui';
 ### Exaples
 
 ```jsx
-<Button onClick={() => {}} primary stroke uppercase>Button text</Button>
-<Button onClick={() => {}} loading={loading} danger stroke unbordered>Button text</Button>
+function Example({ loading, onClick }) {
+  return (
+    <div>
+      <Button
+        onClick={onClick}
+        primary
+        stroke
+        uppercase
+      >
+        Button text
+      </Button>
+      <Button
+        onClick={onClick}
+        loading={loading}
+        danger
+        stroke
+        unbordered
+      >
+        Button text
+      </Button>
+    </div>
+  );
+}
 ```
 
 ---
