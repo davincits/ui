@@ -1,6 +1,7 @@
 import './style.scss';
 
 import React from 'react';
+import { bool, number, string, oneOfType } from 'prop-types';
 import { classes } from '../../utils';
 
 function Col({
@@ -21,6 +22,11 @@ function Col({
   return (
     <div className={classList} style={style} {...props}>{children}</div>
   );
+}
+
+Col.propTypes = {
+  width: oneOfType([number, string]),
+  auto: bool,
 }
 
 export default Col;

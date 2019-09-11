@@ -22,7 +22,6 @@ function Row({
 }
 
 Row.propTypes = {
-  /** The description for myProp */
   gutter: oneOfType([bool, string])
 }
 

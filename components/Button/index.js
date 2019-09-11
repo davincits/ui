@@ -4,19 +4,6 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { classes } from '../utils';
 
-const propsTypes = {
-  primary: bool,
-  danger: bool,
-  uppercase: bool,
-  block: bool,
-  loading: bool,
-  unbordered: bool,
-  blue: bool,
-  large: bool,
-  small: bool,
-  active: bool,
-}
-
 function Button(props) {
   const {
     children,
@@ -30,7 +17,6 @@ function Button(props) {
     block,
     loading,
     unbordered,
-    blue,
     large,
     small,
     active,
@@ -49,7 +35,6 @@ function Button(props) {
     'ui-button-stroke': stroke,
     'ui-button-block': block,
     'ui-button-unbordered': unbordered,
-    'ui-button-blue': blue,
     'ui-uppercase': uppercase,
     'ui-button-large': large,
     'ui-button-small': small,
@@ -69,6 +54,21 @@ function Button(props) {
   );
 }
 
-Button.propsTypes = propsTypes;
+Button.propsTypes = {
+  primary: bool,
+  danger: bool,
+  warning: bool,
+  success: bool,
+  stroke: bool,
+  uppercase: bool,
+  block: bool,
+  loading: bool,
+  unbordered: bool,
+  large: bool,
+  small: bool,
+  active: bool,
+  hover: bool,
+  focus: bool,
+};
 
 export default Button;
