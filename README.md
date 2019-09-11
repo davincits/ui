@@ -6,7 +6,7 @@
 
 ### Import
 
-```
+```jsx
 import { Row, Col } from 'ui';
 ```
 
@@ -27,7 +27,7 @@ import { Row, Col } from 'ui';
 
 ### Exaples
 
-```
+```jsx
 <Row gutter>
   <Col>Column 1/3</Col>
   <Col>Column 1/3</Col>
@@ -47,7 +47,7 @@ import { Row, Col } from 'ui';
 
 ### Import
 
-```
+```jsx
 import { Button } from 'ui';
 ```
 
@@ -72,7 +72,7 @@ import { Button } from 'ui';
 
 ### Exaples
 
-```
+```jsx
 <Button onClick={() => {}} primary stroke uppercase>Button text</Button>
 <Button onClick={() => {}} loading={loading} danger stroke unbordered>Button text</Button>
 ```
