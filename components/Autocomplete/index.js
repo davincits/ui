@@ -12,18 +12,6 @@ class Autocomplete extends Component {
     items: null,
   }
 
-  onChange = (value) => {
-    const { items, onChange, minChars = 2 } = this.props;
-    if (onChange) onChange(value);
-    const lowerValue = value.toLowerCase();
-    const list = value.length >= minChars ?
-      items.filter(i => i.toLowerCase().includes(lowerValue)) : null;
-    if (list && !list.length) {
-      this.setState({ notFound: true });
-    }
-    this.setState({ items: list });
-  }
-
   onSelect = (value) => {
     const { onChange } = this.props;
     const { dropdown } = this.refs;
@@ -40,18 +28,23 @@ class Autocomplete extends Component {
     const {
       className,
       notFoundText = 'Nothing was found...',
+      items,
       label,
-      value,
+      value = '',
+      onChange,
+      minChars = 2,
     } = this.props;
-    const { items, notFound } = this.state;
     const textField = (
       <TextField
         value={value}
-        onChange={this.onChange}
+        onChange={onChange}
         onFocus={this.onFocus}
         search
       />
     );
+    const lowerValue = value.toLowerCase() ;
+    const list = value.length >= minChars ?
+      items.filter(i => i.toLowerCase().includes(lowerValue)) : null;
     return (
       <div className={classes(['ui-autocomplete', className])}>
         <DropDown
@@ -61,14 +54,15 @@ class Autocomplete extends Component {
           manual
         >
           <div className="ui-autocomplete-items">
-            {items && items.map(value => (
-              <Item key={value} value={value} onClick={this.onSelect}/>
-            ))}
-            {notFound && (
+            {list && (list.length ? (
+              list.map(value => (
+                <Item key={value} value={value} onClick={this.onSelect}/>
+              ))
+            ) : (
               <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
                 {notFoundText}
               </div>
-            )}
+            ))}
           </div>
         </DropDown>
       </div>

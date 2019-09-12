@@ -131,6 +131,8 @@ import { TextField } from 'ui';
 | `autoheight` | `bool` | true | Auto resize multiline field |
 | `multiline` | `bool` | false | Multiline field (textarea) |
 | `resize` | `bool` | true | Use with multiline. Able to resize |
+| `prefix` | `text | Element` | none |  |
+| `postfix` | `text | Element` | none |  |
 
 ### Example
 

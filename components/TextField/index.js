@@ -61,9 +61,11 @@ class TextField extends PureComponent {
       onBlur,
       value: $value,
       type = 'text',
-      autoheight,
+      autoheight = true,
       search,
       error,
+      prefix,
+      postfix,
       id = this.uniqid,
       ...rest
     } = this.props;
@@ -94,21 +96,27 @@ class TextField extends PureComponent {
           </label>
         ) : null}
         {multiline ? (
-          <div
-            className="text-area-wrapper"
-            style={{ height: height || 'auto' }}
-          >
+          <div className="text-area-wrapper" style={{ height: height || 'auto' }}>
             <textarea {...props} id={id} />
+            <div className="ui-text-field-stroke" />
           </div>
         ) : (
-          <input type={type} id={id} {...props} />
-        )}
-        {search && (
-          (value ? (
-            <CloseIcon onClick={this.onResetClick} />
-          ) : (
-            <SearchIcon />
-          ))
+          <div className="ui-text-field-input-wrap">
+            {prefix ? (<div className="ui-text-field-prefix">{prefix}</div>) : null}
+            <input type={type} id={id} {...props} />
+            {search ? (
+              <div className="ui-text-field-postfix">
+                {value ? (
+                  <CloseIcon onClick={this.onResetClick} />
+                ) : (
+                  <SearchIcon />
+                )}
+              </div>
+            ) : (
+              postfix ? (<div className="ui-text-field-postfix">{postfix}</div>) : null
+            )}
+            <div className="ui-text-field-stroke" />
+          </div>
         )}
       </div>
     );
@@ -128,6 +136,8 @@ TextField.propTypes = {
   onChange: func,
   onBlur: func,
   value: string,
+  prefix: oneOfType([element, string]),
+  postfix: oneOfType([element, string]),
 };
 
 export default TextField;

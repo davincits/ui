@@ -5,8 +5,6 @@
   font-size: $ui-font-size;
   color: $ui-font-color;
   line-height: $ui-line-height;
-  position: relative;
-  line-height: $ui-line-height;
   box-sizing: border-box;
 
   label {
@@ -21,32 +19,53 @@
     color: rgba($ui-font-color, 0.6);
   }
 
+  .ui-text-field-input-wrap {
+    display: flex;
+    position: relative;
+    background-color: $ui-color-white;
+  }
+
+  .ui-text-field-stroke {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $ui-color-gray;
+    border-radius: $ui-border-radius;
+  }
+
   input,
   textarea {
+    position: relative;
     color: $ui-font-color;
     font-family: $ui-font-family;
     font-size: $ui-font-size;
     display: block;
     width: 100%;
-    border: 1px solid $ui-color-gray;
-    border-radius: $ui-border-radius;
     padding: 8px 12px;
-    background-color: $ui-color-white;
     outline: none;
+    border: none;
+    z-index: 1;
+    background: none;
 
-    &:hover:not(:focus):not([disabled]) {
+    &:hover:not(:focus):not([disabled]) ~ .ui-text-field-stroke {
       background-color: $ui-color-gray-lightest;
     }
 
-    &:focus {
+    &:focus ~ .ui-text-field-stroke {
       border-color: $ui-color-brand-primary;
       box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
 
-    &[disabled] {
+    &[disabled] ~ .ui-text-field-stroke {
       border-color: $ui-color-gray-light-3;
       background-color: $ui-color-gray-light-3;
     }
+  }
+
+  .text-area-wrapper {
+    position: relative;
   }
 
   input {
@@ -55,9 +74,11 @@
 
   textarea {
     min-height: 48px;
+    resize: vertical;
   }
 
   &.ui-no-resize {
+
     textarea {
       resize: none;
     }
@@ -73,20 +94,19 @@
       padding-right: 8px;
       height: 32px;
       width: auto;
+      margin-bottom: 0;
     }
   }
 
   &.ui-type-search {
+
     input {
       padding-right: 28px;
     }
 
     .ui-icon-search,
     .ui-icon-close {
-      position: absolute;
       color: $ui-color-gray;
-      bottom: 4px;
-      right: 4px;
     }
 
     .ui-icon-close {
@@ -107,13 +127,44 @@
   }
 
   &.ui-state-error {
+
     input,
     textarea {
-      border-color: $ui-color-brand-danger;
+      & ~ .ui-text-field-stroke {
+        border-color: $ui-color-brand-danger;
+      }
 
-      &:focus {
+      &:focus ~ .ui-text-field-stroke {
         box-shadow: 0 0 0 2px rgba($ui-color-brand-danger, 0.25);
       }
+    }
+  }
+
+  .ui-text-field-prefix,
+  .ui-text-field-postfix {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 32px;
+    color: $ui-color-gray;
+    align-items: center;
+  }
+
+  .ui-text-field-prefix {
+    left: 0;
+    padding-left: 12px;
+
+    svg {
+      margin-left: -8px;
+    }
+  }
+
+  .ui-text-field-postfix {
+    right: 0;
+    padding-right: 12px;
+
+    svg {
+      margin-right: -8px;
     }
   }
 }
