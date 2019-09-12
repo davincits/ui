@@ -2,10 +2,10 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import { classes, uniqid } from '../utils';
 
 class CheckBox extends PureComponent {
-  uniqid = `${Date.now()}${Math.random()}`
+  uniqid = uniqid()
 
   onChange = (event) => {
     const { onChange } = this.props;

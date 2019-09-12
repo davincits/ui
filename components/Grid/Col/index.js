@@ -12,7 +12,7 @@ function Col({
   style = {},
   ...props
 }) {
-  if (width) style.width = `${width}%`;
+  if (width) style.width = `${String(width)}%`;
   else if (auto) style.width = 'auto';
   else style.flex = 1;
   return (

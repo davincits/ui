@@ -7,4 +7,4 @@ export const classes = o => (Array.isArray(o) ? o : Object.entries(o).map(([k, v
 
 export const isNull = value => value === null;
 
-export const uniqid = () => `uid${String(Date.now())}${String(Math.round(Math.random() * 1000000))}`;
+export const uniqid = () => `uid${Date.now().toString(36)}${Math.random().toString(36)}`;
