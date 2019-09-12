@@ -521,8 +521,6 @@ hr {
   font-size: 14px;
   color: #333333;
   line-height: 1.4;
-  position: relative;
-  line-height: 1.4;
   box-sizing: border-box; }
   .ui-text-field label {
     display: block;
@@ -532,33 +530,49 @@ hr {
     font-size: 11px;
     text-transform: uppercase;
     color: rgba(51, 51, 51, 0.6); }
+  .ui-text-field .ui-text-field-input-wrap {
+    display: flex;
+    position: relative;
+    background-color: #ffffff; }
+  .ui-text-field .ui-text-field-stroke {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #D6D6D6;
+    border-radius: 4px; }
   .ui-text-field input,
   .ui-text-field textarea {
+    position: relative;
     color: #333333;
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 14px;
     display: block;
     width: 100%;
-    border: 1px solid #D6D6D6;
-    border-radius: 4px;
     padding: 8px 12px;
-    background-color: #ffffff;
-    outline: none; }
-    .ui-text-field input:hover:not(:focus):not([disabled]),
-    .ui-text-field textarea:hover:not(:focus):not([disabled]) {
+    outline: none;
+    border: none;
+    z-index: 1;
+    background: none; }
+    .ui-text-field input:hover:not(:focus):not([disabled]) ~ .ui-text-field-stroke,
+    .ui-text-field textarea:hover:not(:focus):not([disabled]) ~ .ui-text-field-stroke {
       background-color: #F5F5F5; }
-    .ui-text-field input:focus,
-    .ui-text-field textarea:focus {
+    .ui-text-field input:focus ~ .ui-text-field-stroke,
+    .ui-text-field textarea:focus ~ .ui-text-field-stroke {
       border-color: #05B9E6;
       box-shadow: 0 0 0 2px #CDF1FA; }
-    .ui-text-field input[disabled],
-    .ui-text-field textarea[disabled] {
+    .ui-text-field input[disabled] ~ .ui-text-field-stroke,
+    .ui-text-field textarea[disabled] ~ .ui-text-field-stroke {
       border-color: #EAEAEA;
       background-color: #EAEAEA; }
+  .ui-text-field .text-area-wrapper {
+    position: relative; }
   .ui-text-field input {
     height: 32px; }
   .ui-text-field textarea {
-    min-height: 48px; }
+    min-height: 48px;
+    resize: vertical; }
   .ui-text-field.ui-no-resize textarea {
     resize: none; }
   .ui-text-field.ui-inline {
@@ -569,15 +583,13 @@ hr {
       display: flex;
       padding-right: 8px;
       height: 32px;
-      width: auto; }
+      width: auto;
+      margin-bottom: 0; }
   .ui-text-field.ui-type-search input {
     padding-right: 28px; }
   .ui-text-field.ui-type-search .ui-icon-search,
   .ui-text-field.ui-type-search .ui-icon-close {
-    position: absolute;
-    color: #D6D6D6;
-    bottom: 4px;
-    right: 4px; }
+    color: #D6D6D6; }
   .ui-text-field.ui-type-search .ui-icon-close {
     cursor: pointer;
     color: #ffffff;
@@ -588,12 +600,30 @@ hr {
       opacity: 1; }
   .ui-text-field.ui-type-search input:focus + .ui-icon-close {
     background: #05B9E6; }
-  .ui-text-field.ui-state-error input,
-  .ui-text-field.ui-state-error textarea {
+  .ui-text-field.ui-state-error input ~ .ui-text-field-stroke,
+  .ui-text-field.ui-state-error textarea ~ .ui-text-field-stroke {
     border-color: #F53C3C; }
-    .ui-text-field.ui-state-error input:focus,
-    .ui-text-field.ui-state-error textarea:focus {
-      box-shadow: 0 0 0 2px rgba(245, 60, 60, 0.25); }
+  .ui-text-field.ui-state-error input:focus ~ .ui-text-field-stroke,
+  .ui-text-field.ui-state-error textarea:focus ~ .ui-text-field-stroke {
+    box-shadow: 0 0 0 2px rgba(245, 60, 60, 0.25); }
+  .ui-text-field .ui-text-field-prefix,
+  .ui-text-field .ui-text-field-postfix {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 32px;
+    color: #D6D6D6;
+    align-items: center; }
+  .ui-text-field .ui-text-field-prefix {
+    left: 0;
+    padding-left: 12px; }
+    .ui-text-field .ui-text-field-prefix svg {
+      margin-left: -8px; }
+  .ui-text-field .ui-text-field-postfix {
+    right: 0;
+    padding-right: 12px; }
+    .ui-text-field .ui-text-field-postfix svg {
+      margin-right: -8px; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
