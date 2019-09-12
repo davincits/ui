@@ -76,6 +76,7 @@ class DropDown extends PureComponent {
       button,
       name,
       disabled,
+      manual,
       ...rest
     } = this.props;
     const { opened, dropDownStyle } = this.state;
@@ -85,7 +86,7 @@ class DropDown extends PureComponent {
       [className]: className,
       disabled,
     });
-    const dropDown = (
+    const dropDown = children ? (
       <div className={name ? `${name}_dropdown` : ''}>
         <div
           className="ui-dropdown-content"
@@ -95,12 +96,12 @@ class DropDown extends PureComponent {
           {children}
         </div>
       </div>
-    );
+    ) : null;
     return (
       <div className={classList} {...rest}>
         {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
         <div className="ui-dropdown-button-container" ref="button">
-          <div onClick={this.clickHandler}>
+          <div onClick={manual ? null : this.clickHandler}>
             {button ? (
               React.cloneElement(button, { disabled })
             ) : (
@@ -109,9 +110,9 @@ class DropDown extends PureComponent {
               </Button>
             )}
           </div>
-          {opened && (inline ? dropDown : <Portal>{dropDown}</Portal>)}
+          {dropDown && opened && (inline ? dropDown : <Portal>{dropDown}</Portal>)}
         </div>
-        {!button && (opened ? <IconExpandLess /> : <IconExpandMore />)}
+        {!button && (dropDown && opened ? <IconExpandLess /> : <IconExpandMore />)}
       </div>
     );
   }

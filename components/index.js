@@ -1,4 +1,5 @@
 import Alert from './Alert';
+import Autocomplete from './Autocomplete';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import Col from './Grid/Col';
@@ -6,7 +7,7 @@ import Row from './Grid/Row';
 import Dialog from './Dialog';
 import DropArea from './DropArea';
 import DropDown from './DropDown';
-import FileField from './FileField';
+import FileField, { FILES_COUNT_ERROR, FILE_TYPE_ERROR, FILE_SIZE_ERROR } from './FileField';
 import FullSizeModal from './FullSizeModal';
 import Gallery from './Gallery';
 import LoadingDotted from './LoadingDotted';
@@ -31,6 +32,7 @@ import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
 
 export {
   Alert,
+  Autocomplete,
   Button,
   CheckBox,
   Col,
@@ -70,4 +72,7 @@ export {
   DialogsContainer,
   AlertDialog,
   ConfirmDialog,
+  FILES_COUNT_ERROR,
+  FILE_TYPE_ERROR,
+  FILE_SIZE_ERROR,
 };

@@ -77,31 +77,32 @@
   }
 
   &.ui-type-search {
-    input,
-    textarea {
-      padding-left: 28px;
+    input {
       padding-right: 28px;
     }
 
     .ui-icon-search,
     .ui-icon-close {
       position: absolute;
-      top: 50%;
-      margin-top: -3px;
       color: $ui-color-gray;
-    }
-
-    .ui-icon-search {
-      left: 4px;
+      bottom: 4px;
+      right: 4px;
     }
 
     .ui-icon-close {
-      right: 4px;
       cursor: pointer;
+      color: $ui-color-white;
+      background: $ui-color-gray;
+      border-radius: 50%;
+      opacity: 0.75;
 
       &:hover {
-        color: $ui-color-gray-dark;
+        opacity: 1;
       }
+    }
+
+    input:focus + .ui-icon-close {
+      background: $ui-color-brand-primary;
     }
   }
 

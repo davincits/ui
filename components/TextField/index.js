@@ -1,11 +1,10 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { bool, string } from 'prop-types';
+import { bool, string, func, element, oneOfType } from 'prop-types';
 import { classes } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
-import Show from '../Show';
 
 const checkValue = value => (
   (value === null)
@@ -56,17 +55,16 @@ class TextField extends PureComponent {
       className,
       label,
       multiline,
-      resize,
+      resize = true,
       inline,
       onChange,
       onBlur,
       value: $value,
-      type,
+      type = 'text',
       autoheight,
       search,
       error,
       id = this.uniqid,
-      onClick,
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -89,12 +87,12 @@ class TextField extends PureComponent {
       props.onKeyDown = this.onKeyDown;
     }
     return (
-      <div className={classList} onClick={onClick}>
-        <Show if={label}>
+      <div className={classList}>
+        {label ? (
           <label className="ui-label" htmlFor={id}>
             <div className="ui-ellipsis">{label}</div>
           </label>
-        </Show>
+        ) : null}
         {multiline ? (
           <div
             className="text-area-wrapper"
@@ -105,25 +103,31 @@ class TextField extends PureComponent {
         ) : (
           <input type={type} id={id} {...props} />
         )}
-        <Show if={search}>
-          <SearchIcon />
-          <Show if={value}>
+        {search && (
+          (value ? (
             <CloseIcon onClick={this.onResetClick} />
-          </Show>
-        </Show>
+          ) : (
+            <SearchIcon />
+          ))
+        )}
       </div>
     );
   }
 }
 
 TextField.propTypes = {
+  className: string,
+  label: oneOfType([element, string]),
   type: string,
+  inline: bool,
+  multiline: bool,
   resize: bool,
-};
-
-TextField.defaultProps = {
-  type: 'text',
-  resize: true,
+  autoheight: bool,
+  search: bool,
+  error: bool,
+  onChange: func,
+  onBlur: func,
+  value: string,
 };
 
 export default TextField;

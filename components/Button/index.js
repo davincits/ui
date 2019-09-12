@@ -1,7 +1,7 @@
 import './style.scss';
 
 import React from 'react';
-import { bool } from 'prop-types';
+import { bool, string } from 'prop-types';
 import { classes } from '../utils';
 
 function Button(props) {
@@ -55,6 +55,7 @@ function Button(props) {
 }
 
 Button.propsTypes = {
+  className: string,
   primary: bool,
   danger: bool,
   warning: bool,

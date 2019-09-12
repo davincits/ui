@@ -9,22 +9,19 @@ function Col({
   children,
   width,
   auto,
+  style = {},
   ...props
 }) {
-  const style = {};
-  const classList = classes({
-    'ui-column': true,
-    [className]: className,
-  });
   if (width) style.width = `${width}%`;
   else if (auto) style.width = 'auto';
   else style.flex = 1;
   return (
-    <div className={classList} style={style} {...props}>{children}</div>
+    <div className={classes(['ui-column', className])} style={style} {...props}>{children}</div>
   );
 }
 
 Col.propTypes = {
+  className: string,
   width: oneOfType([number, string]),
   auto: bool,
 }

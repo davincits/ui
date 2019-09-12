@@ -22,6 +22,7 @@ function Row({
 }
 
 Row.propTypes = {
+  className: string,
   gutter: oneOfType([bool, string])
 }
 

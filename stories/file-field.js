@@ -5,18 +5,11 @@ import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { FileField } from '../components';
 
-const onChangeAction = action('changed');
-
 storiesOf('FileField', module)
   .add('common', () => (
     <Container>
-      {({ onChange }) => (
-        <FileField
-          onChange={(value) => {
-            onChange(value);
-            onChangeAction(value);
-          }}
-        >
+      {() => (
+        <FileField onChange={action('changed')}>
           Click to select a file
         </FileField>
       )}
@@ -24,12 +17,19 @@ storiesOf('FileField', module)
   ))
   .add('multiple', () => (
     <Container>
-      {({ onChange }) => (
+      {({ value: error, onChange }) => (
         <FileField
           onChange={(value) => {
-            onChange(value);
-            onChangeAction(value);
+            onChange(false);
+            action('changed')(value)
           }}
+          onError={(value) => {
+            onChange(true);
+            action('error')(value)
+          }}
+          error={error}
+          maxSize={1024}
+          fileTypes=".txt"
           multiple
         >
           Click to select one or more file
