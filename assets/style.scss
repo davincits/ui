@@ -8,3 +8,47 @@ body {
   color: #333333;
   font-size: 14px;
 }
+
+#content {
+  display: flex;
+  padding: 32px 16px;
+  font-size: 14px;
+}
+
+nav {
+  width: 20%;
+  font-size: 14px;
+
+  a {
+    display: block;
+  }
+
+  .tag-H2 {
+    margin-top: 4px;
+  }
+
+  .tag-H3 {
+    margin-left: 12px;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .tag-H4 {
+    margin-left: 24px;
+    font-size: 12px;
+  }
+}
+
+.content-wrapper {
+  width: 80%;
+}
+
+.main-content pre > code {
+  font-size: 13px;
+}
+
+.main-content .highlight pre,
+.main-content pre {
+  font-size: 13px;
+  line-height: 18px;
+}
