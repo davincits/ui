@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   module: {
     rules: [
@@ -23,7 +25,11 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
-      }
+      },
     ]
+  },
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname)
   }
 };
