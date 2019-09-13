@@ -85,7 +85,7 @@ class TextField extends PureComponent {
       value,
       ...rest,
     };
-    if (autoheight) {
+    if (multiline && autoheight) {
       props.onKeyDown = this.onKeyDown;
     }
     return (

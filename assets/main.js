@@ -5,7 +5,7 @@
       const a = document.createElement('a');
       const name = el.nodeName;
       const text = el.textContent;
-      const id = text.replace(/ /g, '-').replace(/[^\w-]+/g,'') + '-' + index;
+      const id = text.replace(/ /g, '-').replace(/[^\w-]+/g, '') + '-' + index;
       a.classList.add(`tag-${name}`);
       a.textContent = text;
       a.href = `#${id}`;

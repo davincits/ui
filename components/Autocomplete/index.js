@@ -3,8 +3,9 @@ import './style.scss';
 import React, { Component } from 'react';
 import DropDown from '../DropDown';
 import TextField from '../TextField';
+import Loading from '../LoadingDotted';
 import Item from './Item';
-import { classes } from '../utils';
+import { classes, isString } from '../utils';
 
 class Autocomplete extends Component {
   state = {
@@ -33,6 +34,7 @@ class Autocomplete extends Component {
       value = '',
       onChange,
       minChars = 2,
+      loading,
     } = this.props;
     const textField = (
       <TextField
@@ -42,8 +44,8 @@ class Autocomplete extends Component {
         search
       />
     );
-    const lowerValue = value.toLowerCase() ;
-    const list = value.length >= minChars ?
+    const lowerValue = isString(value) ? value.toLowerCase() : '';
+    const list = (items && lowerValue.length >= minChars) ?
       items.filter(i => i.toLowerCase().includes(lowerValue)) : null;
     return (
       <div className={classes(['ui-autocomplete', className])}>
@@ -54,15 +56,22 @@ class Autocomplete extends Component {
           manual
         >
           <div className="ui-autocomplete-items">
-            {list && (list.length ? (
-              list.map(value => (
-                <Item key={value} value={value} onClick={this.onSelect}/>
-              ))
-            ) : (
-              <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
-                {notFoundText}
-              </div>
-            ))}
+            {list ?
+              (list.length ? (
+                list.map(value => (
+                  <Item key={value} value={value} onClick={this.onSelect}/>
+                ))
+              ) : (
+                <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
+                  {notFoundText}
+                </div>
+              )) : (
+                loading && (
+                  <div className="ui-autocomplete-item ui-autocomplete-item-loading">
+                    <Loading />
+                  </div>
+                )
+              )}
           </div>
         </DropDown>
       </div>
