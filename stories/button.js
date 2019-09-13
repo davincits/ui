@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { Button, Row, Col } from '../components';
+import { Button, Row, Col } from '../src';
 
 const onClick = action('clicked');
 

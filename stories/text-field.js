@@ -3,8 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { TextField } from '../components';
-import IconVerified from '../components/icons/Verified';
+import { TextField } from '../src';
+import IconVerified from '../src/icons/Verified';
 
 storiesOf('TextField', module)
   .add('common', () => (

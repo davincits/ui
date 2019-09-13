@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { DropArea } from '../components';
+import { DropArea } from '../src';
 
 const onChangeAction = action('changed');
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { Gallery } from '../components';
+import { Gallery } from '../src';
 
 const IMAGES = [
   'https://davinci-media.s3-eu-central-1.amazonaws.com/media/1486567361619.jpeg',

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { LoadingDotted, LoadingSpinner } from '../components';
+import { LoadingDotted, LoadingSpinner } from '../src';
 
 storiesOf('Misc', module)
   .add('LoadingDotted', () => (
