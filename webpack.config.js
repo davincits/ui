@@ -28,8 +28,10 @@ module.exports = {
       },
     ]
   },
+  target: 'node',
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname)
+    path: path.resolve(__dirname),
+    libraryTarget: 'umd2'
   }
 };
