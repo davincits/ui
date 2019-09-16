@@ -46,8 +46,5 @@ module.exports = {
     path: path.resolve(__dirname),
     libraryTarget: 'umd'
   },
-  externals: {
-    'react': 'react', // Case matters here
-    'react-dom' : 'reactDOM' // Case matters here
-   }
+  externals: ['react', 'react-dom']
 };
