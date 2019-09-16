@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: '[name].css',
     }),
   ],
   module: {
@@ -37,8 +37,12 @@ module.exports = {
       },
     ]
   },
+  entry: {
+    index: './src/index.js',
+    icons: './src/icons.js',
+  },
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     path: path.resolve(__dirname),
     libraryTarget: 'umd2'
   }

@@ -12,7 +12,7 @@ import {
   Button,
   Row,
   Col,
-} from '../src';
+} from '../components';
 
 storiesOf('Toasts', module)
   .addDecorator(story => (

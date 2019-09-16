@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { FileField } from '../src';
+import { FileField } from '../components';
 
 storiesOf('FileField', module)
   .add('common', () => (

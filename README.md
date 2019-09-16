@@ -2,6 +2,26 @@
 
 [Storybook](https://davincits.github.io/ui/storybook)
 
+### Current version
+
+```
+v.0.2.4
+```
+
+### Usage
+
+Add to dependencies (package.json)
+
+```
+"ui": "git+https://github.com/davinci/ui.gitv0.2.4"
+```
+
+Import in main `app.js` file
+
+```
+import 'ui/style.css';
+```
+
 ## Grid
 
 ### Import
@@ -206,6 +226,38 @@ class Example extends Component {
       />
     );
   }
+}
+```
+
+---
+
+## Checkbox
+
+### Import
+
+```jsx
+import { Checkbox } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `string | element` | none | Label |
+| `value` | `bool` | none | Checked state |
+| `onChange` | `func` | none | On change handler |
+
+### Example
+
+```jsx
+function Example({ value, onChange }) {
+  return (
+    <Checkbox
+      label="I am agree with terms"
+      value={value}
+      onChange={onChange}
+    />
+  );
 }
 ```
 

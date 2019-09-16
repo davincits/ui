@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { FullSizeModal, Button, Tabs, Tab, TabList, TabPanel } from '../src';
+import { FullSizeModal, Button, Tabs, Tab, TabList, TabPanel } from '../components';
 
 const Lorem = () => (
   <p>

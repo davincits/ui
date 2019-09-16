@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { DropDown, Row, Col, Button } from '../src';
+import { DropDown, Row, Col, Button } from '../components';
 
 storiesOf('DropDown', module)
   .add('common', () => (

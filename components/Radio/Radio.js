@@ -1,11 +1,9 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import { classes, uniqid } from '../utils';
 
 class Radio extends PureComponent {
-  uniqid = `${Date.now()}${Math.random()}`
-
   onChange = (event) => {
     const { onChange, value } = this.props;
     if (onChange && event.target.value) onChange(value, event);
@@ -16,7 +14,7 @@ class Radio extends PureComponent {
       className,
       children,
       onChange,
-      id = this.uniqid,
+      id = uniqid(),
       ...rest
     } = this.props;
     const classList = classes({

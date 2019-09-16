@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { Autocomplete } from '../src';
+import { Autocomplete } from '../components';
 import CITIES from './mocks/cities.json';
 import USERS from './mocks/users.json';
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { Tooltip } from '../src';
+import { Tooltip } from '../components';
 
 storiesOf('Tooltip', module)
   .add('common', () => (

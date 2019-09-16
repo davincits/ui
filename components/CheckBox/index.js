@@ -2,11 +2,10 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
+import { bool, string, func, element, oneOfType } from 'prop-types';
 import { classes, uniqid } from '../utils';
 
 class CheckBox extends PureComponent {
-  uniqid = uniqid()
-
   onChange = (event) => {
     const { onChange } = this.props;
     if (onChange) onChange(event.target.checked, event);
@@ -18,7 +17,7 @@ class CheckBox extends PureComponent {
       label,
       onChange,
       value,
-      id = this.uniqid,
+      id = uniqid(),
       ...rest
     } = this.props;
     const classList = classes({
@@ -33,6 +32,12 @@ class CheckBox extends PureComponent {
       </div>
     );
   }
+}
+
+CheckBox.propTypes = {
+  label: oneOfType([string, element]),
+  value: bool,
+  onChange: func,
 }
 
 export default CheckBox;
