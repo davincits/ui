@@ -1,6 +1,7 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
+import { bool, number, string, func } from 'prop-types';
 import { classes } from '../utils';
 
 export const FILES_COUNT_ERROR = 'FILES_COUNT_ERROR';
@@ -59,6 +60,15 @@ class FileField extends PureComponent {
       </div>
     );
   }
+}
+
+FileField.propTypes = {
+  fileTypes: string,
+  maxSize: number,
+  onChange: func,
+  onError: func,
+  error: bool,
+  multiple: bool,
 }
 
 export default FileField;

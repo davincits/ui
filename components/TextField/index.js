@@ -2,7 +2,7 @@ import './style.scss';
 
 import React, { PureComponent } from 'react';
 import { bool, string, func, element, oneOfType } from 'prop-types';
-import { classes } from '../utils';
+import { classes, uniqid } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
 
@@ -13,8 +13,6 @@ const checkValue = value => (
     ) ? '' : value);
 
 class TextField extends PureComponent {
-  uniqid = `${Date.now()}${Math.random()}`
-
   state = { height: null }
 
   onChange = (event) => {
@@ -66,7 +64,7 @@ class TextField extends PureComponent {
       error,
       prefix,
       postfix,
-      id = this.uniqid,
+      id = uniqid()
       ...rest
     } = this.props;
     const { height } = this.state;
