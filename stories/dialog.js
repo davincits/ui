@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { Dialog, Button } from '../src';
+import { Dialog, Button } from '../components';
 
 storiesOf('Dialog', module)
   .add('common', () => (

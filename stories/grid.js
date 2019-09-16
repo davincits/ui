@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { Row, Col } from '../src';
+import { Row, Col } from '../components';
 
 const Dummy = ({ text = 'Column' }) => (<div style={{ padding: '8px', backgroundColor: '#f0f0f0' }}>{text}</div>)
 

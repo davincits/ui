@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
 import { action } from '@storybook/addon-actions';
-import { DialogsContainer, AlertDialog, ConfirmDialog, Button } from '../src';
+import { DialogsContainer, AlertDialog, ConfirmDialog, Button } from '../components';
 
 const openAlertDialog = async () => {
   await AlertDialog({ title: 'Alert dialog title', message: 'Alert dialog message'});

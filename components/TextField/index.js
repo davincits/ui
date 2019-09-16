@@ -64,7 +64,7 @@ class TextField extends PureComponent {
       error,
       prefix,
       postfix,
-      id = uniqid()
+      id = uniqid(),
       ...rest
     } = this.props;
     const { height } = this.state;

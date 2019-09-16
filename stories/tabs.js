@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { Tabs, Tab, TabList, TabPanel } from '../src';
+import { Tabs, Tab, TabList, TabPanel } from '../components';
 
 storiesOf('Tabs', module)
   .add('common', () => (

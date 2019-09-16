@@ -7,7 +7,7 @@ import {
   TR as Row,
   TH as Head,
   TD as Cell,
-} from '../src';
+} from '../components';
 
 const ROOMS = [
   { type: 'Single', amount: 3, price: 17 },

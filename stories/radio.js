@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { RadioGroup, Radio } from '../src';
+import { RadioGroup, Radio } from '../components';
 
 const onChangeAction = action('changed');
 
