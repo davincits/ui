@@ -44,6 +44,10 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname),
-    libraryTarget: 'umd2'
-  }
+    libraryTarget: 'umd'
+  },
+  externals: {
+    'react': 'react', // Case matters here
+    'react-dom' : 'reactDOM' // Case matters here
+   }
 };
