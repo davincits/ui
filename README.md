@@ -5,7 +5,7 @@
 ### Current version
 
 ```
-v.0.2.4
+v0.2.4
 ```
 
 ### Usage
@@ -19,7 +19,8 @@ Add to dependencies (package.json)
 Import in main `app.js` file
 
 ```
-import 'ui/style.css';
+import 'ui/index.css';
+import 'ui/icon.css'; // in case you want to use icons
 ```
 
 ## Grid
