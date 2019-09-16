@@ -1,4 +1,4 @@
-import ArrowLeft from '../components/icons/ArrowLeft';
+export ArrowLeft from '../components/icons/ArrowLeft';
 import ArrowRight from '../components/icons/ArrowRight';
 import Attention from '../components/icons/Attention';
 import Bell from '../components/icons/Bell';
