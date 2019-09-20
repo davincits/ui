@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, cloneElement } from 'react';
 import { classes } from '../utils';
 
 function Row({
@@ -11,7 +11,7 @@ function Row({
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {React.Children.map(children, (child, i) => React.cloneElement(child, { cellWidth: cellsWidth[i] }))}
+        {Children.map(children, (child, i) => child && cloneElement(child, { cellWidth: cellsWidth[i] }))}
       </div>
     );
   }

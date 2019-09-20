@@ -23,7 +23,7 @@ function Row({
 
 Row.propTypes = {
   className: string,
-  gutter: oneOfType([bool, string])
-}
+  gutter: oneOfType([bool, string]),
+};
 
 export default Row;

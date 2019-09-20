@@ -1,12 +1,17 @@
 import './style.scss';
 
-import React, { Children } from 'react';
+import React, { Children, cloneElement } from 'react';
 import Row from './Row';
 import Head from './Head';
 import Cell from './Cell';
 import { classes } from '../utils';
 
-function Table({ children, className, cellsWidth, ...props }) {
+function Table({
+  children,
+  className,
+  cellsWidth,
+  ...props
+}) {
   const classList = classes({
     'ui-table': true,
     [className]: className,
@@ -14,7 +19,7 @@ function Table({ children, className, cellsWidth, ...props }) {
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {Children.map(children, child => React.cloneElement(child, { cellsWidth }))}
+        {Children.map(children, child => child && cloneElement(child, { cellsWidth }))}
       </div>
     );
   }

@@ -38,6 +38,6 @@ CheckBox.propTypes = {
   label: oneOfType([string, element]),
   value: bool,
   onChange: func,
-}
+};
 
 export default CheckBox;

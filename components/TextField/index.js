@@ -133,7 +133,6 @@ TextField.propTypes = {
   error: bool,
   onChange: func,
   onBlur: func,
-  value: string,
   prefix: oneOfType([element, string]),
   postfix: oneOfType([element, string]),
 };

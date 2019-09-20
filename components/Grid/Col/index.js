@@ -24,6 +24,6 @@ Col.propTypes = {
   className: string,
   width: oneOfType([number, string]),
   auto: bool,
-}
+};
 
 export default Col;

@@ -8,11 +8,6 @@ import Item from './Item';
 import { classes, isString } from '../utils';
 
 class Autocomplete extends Component {
-  state = {
-    notFound: false,
-    items: null,
-  }
-
   onSelect = (value) => {
     const { onChange } = this.props;
     const { dropdown } = this.refs;
@@ -59,7 +54,7 @@ class Autocomplete extends Component {
             {list ?
               (list.length ? (
                 list.map(value => (
-                  <Item key={value} value={value} onClick={this.onSelect}/>
+                  <Item key={value} value={value} onClick={this.onSelect} />
                 ))
               ) : (
                 <div className="ui-autocomplete-item ui-autocomplete-item-not-found">

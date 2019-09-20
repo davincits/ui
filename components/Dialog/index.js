@@ -70,8 +70,10 @@ class Dialog extends PureComponent {
     this.onClose();
   };
 
-  backDropClickHandler = (event) => {
-    if (event.target === event.currentTarget) {
+  backDropClickHandler = () => {
+    if (this.clickStartOnDialogContent) {
+      this.clickStartOnDialogContent = false;
+    } else {
       this.onClose();
     }
   };
@@ -79,6 +81,10 @@ class Dialog extends PureComponent {
   onClose() {
     const { onClose, disabled } = this.props;
     if (onClose && !disabled) onClose();
+  }
+
+  mouseDownHandler = () => {
+    this.clickStartOnDialogContent = true;
   }
 
   render() {
@@ -97,7 +103,7 @@ class Dialog extends PureComponent {
     return (
       <Portal>
         <div className={classList} onClick={this.backDropClickHandler} onScroll={this.onScroll}>
-          <div className="ui-dialog-window">
+          <div className="ui-dialog-window" onMouseDown={this.mouseDownHandler}>
             <div className="ui-dialog-header" ref="header">
               <div className="ui-dialog-title">{title}</div>
               <div className="ui-dialog-close" onClick={this.closeClickHandler}>
