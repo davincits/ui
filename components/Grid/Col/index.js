@@ -4,6 +4,8 @@ import React from 'react';
 import { bool, number, string, oneOfType } from 'prop-types';
 import { classes } from '../../utils';
 
+const REGEXP = /^\d+$/;
+
 function Col({
   className,
   children,
@@ -12,7 +14,7 @@ function Col({
   style = {},
   ...props
 }) {
-  if (width) style.width = `${String(width)}%`;
+  if (width) style.width = REGEXP.test(width) ? `${String(width)}%` : width;
   else if (auto) style.width = 'auto';
   else style.flex = 1;
   return (

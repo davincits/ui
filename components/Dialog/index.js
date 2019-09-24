@@ -70,8 +70,8 @@ class Dialog extends PureComponent {
     this.onClose();
   };
 
-  backDropClickHandler = () => {
-    if (this.clickStartOnDialogContent) {
+  backDropClickHandler = (event) => {
+    if (this.clickStartOnDialogContent || (event.target !== event.currentTarget)) {
       this.clickStartOnDialogContent = false;
     } else {
       this.onClose();
