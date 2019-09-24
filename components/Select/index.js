@@ -26,7 +26,7 @@ class Select extends PureComponent {
       'ui-select': true,
       [className]: className,
     });
-    const { label: selectedLabel } = options.find(({ value: val }) => val === value) || options[0] || {};
+    const { label: selectedLabel } = options.filter(i => i).find(({ value: val }) => val === value) || options[0] || {};
     return (
       <div className={classList} {...props}>
         <DropDown
@@ -37,7 +37,7 @@ class Select extends PureComponent {
           name="ui-select"
           ref="dropdown"
         >
-          {options.map(props => (
+          {options.map(props => props && (
             <Option
               key={props.value}
               onClick={this.onOptionClick}

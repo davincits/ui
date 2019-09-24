@@ -10,7 +10,9 @@ export const FILE_SIZE_ERROR = 'FILE_SIZE_ERROR';
 
 class FileField extends PureComponent {
   changeHandler = ({ target: { files } }) => {
-    const { multiple, fileTypes, maxSize, onError } = this.props;
+    const {
+      multiple, fileTypes, maxSize, onError,
+    } = this.props;
     files = [...files];
     if (!files.length) return null;
     if (!multiple && files.length > 1) {
@@ -69,6 +71,6 @@ FileField.propTypes = {
   onError: func,
   error: bool,
   multiple: bool,
-}
+};
 
 export default FileField;

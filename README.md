@@ -5,7 +5,7 @@
 ### Current version
 
 ```
-v0.2.4
+v0.2.6
 ```
 
 ### Usage
@@ -13,7 +13,7 @@ v0.2.4
 Add to dependencies (package.json)
 
 ```
-"ui": "git+https://github.com/davinci/ui.gitv0.2.4"
+"ui": "git+https://github.com/davinci/ui.gitv0.2.6"
 ```
 
 Import in main `app.js` file
@@ -147,7 +147,6 @@ import { TextField } from 'ui';
 | `search` | `bool` | false | Additional control for search type of field |
 | `onChange` | `func` | none | Field on change handler |
 | `onBlur` | `func` | none | Field on blur handler |
-| `value` | `text` | none | Field value |
 | `type` | `text` | none | Field type (password, mail, phone, etc) |
 | `autoheight` | `bool` | true | Auto resize multiline field |
 | `multiline` | `bool` | false | Multiline field (textarea) |

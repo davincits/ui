@@ -13,19 +13,38 @@ class DropDown extends PureComponent {
   state = { opened: false }
 
   componentDidMount() {
-    window.addEventListener('mousedown', this.windowClickHandler);
+    window.addEventListener('click', this.windowClickHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousedown', this.windowClickHandler);
+    window.removeEventListener('click', this.windowClickHandler);
   }
 
   clickHandler = () => {
-    const { inline = true, disabled } = this.props;
-    if (disabled) return;
-    if (!inline) {
-      const { button } = this.refs;
-      const { innerHeight: windowHeight } = window;
+    const { disabled, manual } = this.props;
+    if (disabled || manual) return;
+    this.toggleOpenState();
+  };
+
+  windowClickHandler = (event) => {
+    const { disabled } = this.props;
+    const { opened } = this.state;
+    if (disabled || !opened) return;
+    const { button, dropdown } = this.refs;
+    let parent = event.target;
+    while (parent) {
+      if (parent.isSameNode(dropdown) || parent.isSameNode(button)) return;
+      parent = parent.parentNode;
+    }
+    this.toggleOpenState(false);
+  };
+
+  toggleOpenState(opened = !this.state.opened) {
+    const { inline = true } = this.props;
+    const { button } = this.refs;
+    const { innerHeight: windowHeight } = window;
+    this.setState({ opened }, () => {
+      if (inline || !opened) return;
       const {
         width,
         left,
@@ -43,27 +62,7 @@ class DropDown extends PureComponent {
           maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
         },
       });
-    }
-    this.toggleOpenState();
-  };
-
-  windowClickHandler = (event) => {
-    const { disabled } = this.props;
-    const { opened } = this.state;
-    if (disabled || !opened) return;
-    const { button, dropdown } = this.refs;
-    let parent = event.target;
-    while (parent) {
-      if (parent.isSameNode(dropdown) || parent.isSameNode(button)) return;
-      parent = parent.parentNode;
-    }
-    this.toggleOpenState(false);
-  };
-
-  toggleOpenState(opened = null) {
-    const { opened: current } = this.state;
-    if (opened === null) opened = !current;
-    this.setState({ opened });
+    });
   }
 
   render() {
@@ -76,7 +75,7 @@ class DropDown extends PureComponent {
       button,
       name,
       disabled,
-      manual,
+      closeDelay,
       ...rest
     } = this.props;
     const { opened, dropDownStyle } = this.state;
@@ -101,7 +100,7 @@ class DropDown extends PureComponent {
       <div className={classList} {...rest}>
         {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
         <div className="ui-dropdown-button-container" ref="button">
-          <div onClick={manual ? null : this.clickHandler}>
+          <div onClick={this.clickHandler}>
             {button ? (
               React.cloneElement(button, { disabled })
             ) : (
