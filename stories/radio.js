@@ -25,3 +25,20 @@ storiesOf('Radio', module)
       )}
     </Container>
   ))
+  .add('disabled', () => (
+    <Container>
+      {({ value = 2, onChange }) => (
+        <RadioGroup
+          onChange={(value) => {
+            onChange(value);
+            onChangeAction(value);
+          }}
+          value={value}
+        >
+          <Radio value={1} disabled>Input label #1</Radio>
+          <Radio value={2} disabled>Input label #2</Radio>
+          <Radio value={3} disabled>Input label #3</Radio>
+        </RadioGroup>
+      )}
+    </Container>
+  ))
