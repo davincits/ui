@@ -8,12 +8,10 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   & > input {
-    position: absolute;
     display: none;
-    opacity: 0;
-    visibility: hidden;
   }
 
   & > .ui-fake-checkbox {
@@ -35,6 +33,10 @@
       opacity: 0;
       content: "";
     }
+  }
+
+  &:hover > .ui-fake-checkbox {
+    background-color: $ui-color-gray-light-2;
   }
 
   & > .ui-label {

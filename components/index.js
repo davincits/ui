@@ -26,6 +26,7 @@ import TabList from './TabList';
 import TabPanel from './TabPanel';
 import TextField from './TextField';
 import Tooltip from './Tooltip';
+import MultiSelect from './MultiSelect';
 import Table, { Row as TR, Head as TH, Cell as TD } from './Table';
 import ToastrContainer, { Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger } from './Toastr';
 import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
@@ -72,6 +73,7 @@ export {
   DialogsContainer,
   AlertDialog,
   ConfirmDialog,
+  MultiSelect,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,

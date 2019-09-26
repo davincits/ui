@@ -3,12 +3,12 @@ import './style.scss';
 
 import React, { PureComponent } from 'react';
 import { bool, string, func, element, oneOfType } from 'prop-types';
-import { classes, uniqid } from '../utils';
+import { classes } from '../utils';
 
 class CheckBox extends PureComponent {
-  onChange = (event) => {
-    const { onChange } = this.props;
-    if (onChange) onChange(event.target.checked, event);
+  onChange = () => {
+    const { onChange, value } = this.props;
+    if (onChange) onChange(!value);
   }
 
   render() {
@@ -16,19 +16,14 @@ class CheckBox extends PureComponent {
       className,
       label,
       onChange,
-      value,
-      id = uniqid(),
+      value = false,
       ...rest
     } = this.props;
-    const classList = classes({
-      'ui-checkbox': true,
-      [className]: className,
-    });
     return (
-      <div className={classList}>
-        <input type="checkbox" id={id} onChange={this.onChange} checked={value} {...rest} />
-        <label htmlFor={id} className="ui-fake-checkbox" />
-        {!!label && <label htmlFor={id} className="ui-label">{label}</label>}
+      <div className={classes(['ui-checkbox', className])} onClick={this.onChange}>
+        <input type="checkbox" onChange={this.onChange} checked={value} {...rest} />
+        <div className="ui-fake-checkbox" />
+        {!!label && <div className="ui-label">{label}</div>}
       </div>
     );
   }

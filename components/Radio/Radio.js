@@ -1,12 +1,12 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { classes, uniqid } from '../utils';
+import { classes } from '../utils';
 
 class Radio extends PureComponent {
-  onChange = (event) => {
+  onChange = () => {
     const { onChange, value } = this.props;
-    if (onChange && event.target.value) onChange(value, event);
+    if (onChange) onChange(value);
   }
 
   render() {
@@ -14,19 +14,14 @@ class Radio extends PureComponent {
       className,
       children,
       onChange,
-      id = uniqid(),
       ...rest
     } = this.props;
-    const classList = classes({
-      'ui-radio': true,
-      [className]: className,
-    });
     return (
-      <label htmlFor={id} className={classList}>
-        <input type="radio" id={id} onChange={this.onChange} {...rest} />
+      <div className={classes(['ui-radio', className])} onClick={this.onChange}>
+        <input type="radio" onChange={this.onChange} {...rest} />
         <span className="ui-fake-radio" />
         {!!children && <div className="ui-label">{children}</div>}
-      </label>
+      </div>
     );
   }
 }

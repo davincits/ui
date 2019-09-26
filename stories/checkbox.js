@@ -10,7 +10,7 @@ const onChangeAction = action('changed');
 storiesOf('CheckBox', module)
   .add('common', () => (
     <Container>
-      {({ value = 'Lorem ipsum', onChange }) => (
+      {({ value, onChange }) => (
         <CheckBox
           label="Input label"
           value={value}

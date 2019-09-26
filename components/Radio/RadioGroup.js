@@ -1,8 +1,9 @@
 import React, { Children } from 'react';
+import { classes } from '../utils';
 
-function RadioGroup({ children, value, onChange }) {
+function RadioGroup({ children, value, onChange, className }) {
   return (
-    <div className="ui-radio-group">
+    <div  className={classes(['ui-radio-group', className])}>
       {Children.map(children, child => React.cloneElement(child, {
         checked: value === child.props.value,
         onChange,

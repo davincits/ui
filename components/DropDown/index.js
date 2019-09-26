@@ -76,6 +76,7 @@ class DropDown extends PureComponent {
       name,
       disabled,
       closeDelay,
+      manual,
       ...rest
     } = this.props;
     const { opened, dropDownStyle } = this.state;
