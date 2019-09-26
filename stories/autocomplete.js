@@ -36,7 +36,7 @@ class Example extends Component {
 
   onChange = (value) => {
     this.setState({ value, items: null });
-    if (value.length > 2) this.request(value);
+    if (value) this.request(value);
   }
 
   render() {
@@ -48,7 +48,6 @@ class Example extends Component {
         items={items}
         loading={loading}
         onChange={this.onChange}
-        minLength={1}
       />
     );
   }

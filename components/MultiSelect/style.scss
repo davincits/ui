@@ -1,0 +1,25 @@
+@import '../common.scss';
+
+.ui-multiselect {
+
+  .ui-dropdown-content {
+    padding: 0;
+
+    .ui-multiselect-item {
+      align-items: center;
+      display: flex;
+      height: 40px;
+      cursor: pointer;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      .ui-checkbox {
+        margin-right: 16px;
+      }
+
+      &:hover {
+        background-color: $ui-color-gray-light-2;
+      }
+    }
+  }
+}

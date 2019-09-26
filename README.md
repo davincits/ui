@@ -5,7 +5,7 @@
 ### Current version
 
 ```
-v0.2.6
+v0.2.7
 ```
 
 ### Usage
@@ -13,7 +13,7 @@ v0.2.6
 Add to dependencies (package.json)
 
 ```
-"ui": "git+https://github.com/davinci/ui.git#v0.2.6"
+"ui": "git+https://github.com/davinci/ui.git#v0.2.7"
 ```
 
 Import in main `app.js` file

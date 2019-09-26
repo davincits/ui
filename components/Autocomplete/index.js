@@ -28,7 +28,7 @@ class Autocomplete extends Component {
       label,
       value = '',
       onChange,
-      minChars = 2,
+      minLength = 1,
       loading,
     } = this.props;
     const textField = (
@@ -40,7 +40,7 @@ class Autocomplete extends Component {
       />
     );
     const lowerValue = isString(value) ? value.toLowerCase() : '';
-    const list = (items && lowerValue.length >= minChars) ?
+    const list = (items && lowerValue.length >= minLength) ?
       items.filter(i => i.toLowerCase().includes(lowerValue)) : null;
     return (
       <div className={classes(['ui-autocomplete', className])}>
@@ -66,7 +66,8 @@ class Autocomplete extends Component {
                     <Loading />
                   </div>
                 )
-              )}
+              )
+            }
           </div>
         </DropDown>
       </div>

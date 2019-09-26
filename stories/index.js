@@ -14,6 +14,7 @@ import './tooltip';
 import './tabs';
 import './dropdown';
 import './select';
+import './multiselect';
 import './drop-area';
 import './gallery';
 import './dialog';

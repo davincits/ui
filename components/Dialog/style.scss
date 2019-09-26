@@ -64,8 +64,7 @@
     .ui-dialog-content {
       padding: 12px 24px 24px;
       height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
+      overflow: auto;
     }
 
     .ui-dialog-actions {
