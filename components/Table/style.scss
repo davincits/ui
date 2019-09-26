@@ -19,7 +19,7 @@
       text-transform: uppercase;
       color: rgba(51, 51, 51, 0.4);
       font-size: $ui-font-size-xs;
-      height: 32px;
+      min-height: 32px;
       font-weight: 500;
       padding-left: 16px;
       padding-right: 16px;
@@ -46,8 +46,8 @@
     .ui-table-cell {
       display: flex;
       align-items: center;
-      font-size: $ui-font-size-s;
-      min-height: 32px;
+      font-size: $ui-font-size;
+      min-height: 36px;
       border-top: 1px solid $ui-color-gray;
       padding-left: 16px;
       padding-right: 16px;
