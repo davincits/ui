@@ -1,5 +1,6 @@
 import React, { Children } from 'react';
 import { classes } from '../utils';
+import { any, func } from 'prop-types';
 
 function RadioGroup({ children, value, onChange, className }) {
   return (
@@ -11,5 +12,10 @@ function RadioGroup({ children, value, onChange, className }) {
     </div>
   );
 }
+
+RadioGroup.propTypes = {
+  value: any,
+  onChange: func,
+};
 
 export default RadioGroup;

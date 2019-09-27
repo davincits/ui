@@ -2,6 +2,7 @@ import './style.scss';
 
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
+import { any } from 'prop-types';
 
 class Radio extends PureComponent {
   onChange = () => {
@@ -25,5 +26,9 @@ class Radio extends PureComponent {
     );
   }
 }
+
+Radio.propTypes = {
+  value: any,
+};
 
 export default Radio;

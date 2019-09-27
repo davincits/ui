@@ -263,4 +263,514 @@ function Example({ value, onChange }) {
 
 ---
 
+## Radio
+
+### Import
+
+```jsx
+import { RadioGroup, Radio } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ value, onChange }) {
+  return (
+    <RadioGroup
+      onChange={onChange}
+      value={value}
+    >
+      <Radio value={1}>Input label #1</Radio>
+      <Radio value={2}>Input label #2</Radio>
+      <Radio value={3}>Input label #3</Radio>
+    </RadioGroup>
+  );
+}
+```
+
+---
+
+## Table
+
+### Import
+
+```jsx
+import { Table, TR, TH, TD } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example() {
+  return (
+    <Table cellsWidth={[13, 49, 11, 13, 14]}>
+      <TR>
+        <TH>ROOM</TH>
+        <TH>Interval</TH>
+        <TH>Count</TH>
+        <TH>Price, €</TH>
+        <TH>Total, €</TH>
+      </TR>
+      <TR>
+        <TD>Double</TD>
+        <TD>12/12/20 - 13/12/20</TD>
+        <TD>5</TD>
+        <TD align="right">25.00</TD>
+        <TD align="right">125.00</TD>
+      </TR>
+      <TR>
+        <TD width="86" align="right">Total</TD>
+        <TD width="14" align="right">€125</TD>
+      </TR>
+    </Table>
+  );
+}
+```
+
+---
+
+## Slider
+
+### Import
+
+```jsx
+import { Slider } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ value = 20, onChange }) {
+  return (
+    <Slider
+      min={10}
+      max={100}
+      value={value}
+      onChange={onChange}
+    />
+  );
+}
+```
+
+---
+
+## Range
+
+### Import
+
+```jsx
+import { Range } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ value = [20, 80], onChange }) {
+  return (
+    <Range
+      min={10}
+      max={100}
+      value={value}
+      onChange={onChange}
+    />
+  );
+}
+```
+
+---
+
+## Tooltip
+
+### Import
+
+```jsx
+import { Tooltip } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example() {
+  return (
+    <Tooltip tooltip="Tooltip content...">Simple tooltip</Tooltip>
+  );
+}
+```
+
+---
+
+## Tabs
+
+### Import
+
+```jsx
+import { Tabs, Tab, TabList, TabPanel } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example() {
+  return (
+    <Tabs>
+      <TabList>
+        <Tab>First tab</Tab>
+        <Tab>Second tab</Tab>
+        <Tab>Third tab</Tab>
+      </TabList>
+      <TabPanel>First tab content</TabPanel>
+      <TabPanel>Second tab content</TabPanel>
+      <TabPanel>Third tab content</TabPanel>
+    </Tabs>
+  );
+}
+```
+
+---
+
+## DropDown
+
+### Import
+
+```jsx
+import { DropDown } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example() {
+  return (
+    <DropDown label="Example" buttonContent="Click me">
+      Lorem ipsum dolor sit amet...
+    </DropDown>
+  );
+}
+```
+
+---
+
+## Select
+
+### Import
+
+```jsx
+import { Select } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+const OPTIONS = [
+  { value: 'first', label: 'First option' },
+  { value: 'second', label: 'Second option' },
+  { value: 'third', label: 'Third option' },
+];
+
+function Example({ value, onChange }) {
+  return (
+    <Select
+      label="Example"
+      value={value}
+      options={OPTIONS}
+      onChange={onChange}
+    />
+  );
+}
+```
+
+---
+
+## MultiSelect
+
+### Import
+
+```jsx
+import { MultiSelect } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+const OPTIONS = [
+  { value: 'first', label: 'First option' },
+  { value: 'second', label: 'Second option' },
+  { value: 'third', label: 'Third option' },
+];
+
+function Example({ value, onChange }) {
+  return (
+    <MultiSelect
+      label="Example"
+      value={value}
+      options={OPTIONS}
+      onChange={onChange}
+    />
+  );
+}
+```
+
+---
+
+## DropArea
+
+### Import
+
+```jsx
+import { DropArea } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ onChange }) {
+  return (
+    <DropArea onChange={onChange}>Drag file to this area</DropArea>
+  );
+}
+```
+
+---
+
+## Gallery
+
+### Import
+
+```jsx
+import { Gallery } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+const IMAGES = [
+  'https://dummyimage.com/600x400/ccc/fff',
+  'https://dummyimage.com/600x400/aaa/eee',
+  'https://dummyimage.com/600x400/777/ddd',
+];
+
+function Example() {
+  return (<Gallery images={IMAGES} />);
+}
+```
+
+---
+
+## Dialog
+
+### Import
+
+```jsx
+import { Dialog } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ isOpen, onClose }) {
+  return (
+    <Dialog
+      title="Dialog title"
+      actions={[
+        <Button>First</Button>,
+        <Button>Second</Button>,
+      ]}
+      onClose={onClose}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,...
+    </Dialog>
+  );
+}
+```
+
+---
+
+## Common Dialogs
+
+### Import
+
+```jsx
+import { DialogsContainer, AlertDialog, ConfirmDialog } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function App() {
+  return (
+    <SomeProvider>
+      <Router />
+      <DialogsContainer />
+    </SomeProvider>
+  );
+}
+
+class Example extends Component {
+  ...
+
+  async someMethod() {
+    const result = await ConfirmDialog({ title: 'Title', message: 'Some message' });
+    if (result) {
+      // Confirmed
+    } else {
+      // Canceled
+    }
+  }
+
+  async someAnotherMethod() {
+    await AlertDialog({ title: 'Title', message: 'Some message' });
+    // execute after close AlertDialog
+  }
+
+  ...
+}
+```
+
+---
+
+## Full size modal
+
+### Import
+
+```jsx
+import { FullSizeModal } from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function Example({ isOpen, onClose  }) {
+  <FullSizeModal
+    title="Modal title"
+    footer={<div>Footer</div>}
+    onClose={onClose}
+  >
+    <p>Press ESC to close this window</p>
+  </FullSizeModal>
+}
+```
+
+---
+
+## Toasts
+
+### Import
+
+```jsx
+import {
+  ToastrContainer,
+  Toast,
+  ToastInfo,
+  ToastSuccess,
+  ToastWarning,
+  ToastDanger,
+} from 'ui';
+```
+
+### Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+
+### Example
+
+```jsx
+function App() {
+  return (
+    <SomeProvider>
+      <Router />
+      <ToastrContainer />
+    </SomeProvider>
+  );
+}
+
+class Example extends Component {
+  ...
+
+  async someMethod() {
+    Toast({ title: 'Title', message: 'Common message' });
+    ToastInfo({ title: 'Title', message: 'Info message' });
+    ToastSuccess({ title: 'Title', message: 'Success message' });
+    ToastWarning({ title: 'Title', message: 'Warning message' });
+    ToastDanger({ title: 'Title', message: 'Danger message' });
+    Toast({ title: 'Title', message: 'With custom delay', delay: 10000 });
+    Toast({ title: 'Title', message: 'Without delay', delay: 0 });
+  }
+
+  ...
+}
+```
+
+---
+
 To be continued...
