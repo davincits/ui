@@ -752,30 +752,19 @@ hr {
     .ui-checkbox > input:checked + .ui-fake-checkbox::after {
       opacity: 1; }
 
-.ui-row-gutter > .ui-column {
-  padding-left: 8px;
-  padding-right: 8px; }
+.ui-row-gutter > .ui-column + .ui-column {
+  margin-left: 16px; }
 
-.ui-row-gutter-small > .ui-column {
-  padding-left: 4px;
-  padding-right: 4px; }
+.ui-row-gutter-small > .ui-column + .ui-column {
+  margin-left: 8px; }
 
-.ui-row-gutter-large > .ui-column {
-  padding-left: 16px;
-  padding-right: 16px; }
+.ui-row-gutter-large > .ui-column + .ui-column {
+  margin-left: 32px; }
 
 .ui-row {
   display: flex;
-  box-sizing: border-box; }
-  .ui-row.ui-row-gutter {
-    margin-left: -8px;
-    margin-right: -8px; }
-  .ui-row.ui-row-gutter-small {
-    margin-left: -4px;
-    margin-right: -4px; }
-  .ui-row.ui-row-gutter-large {
-    margin-left: -16px;
-    margin-right: -16px; }
+  box-sizing: border-box;
+  width: 100%; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
@@ -1866,6 +1855,58 @@ hr {
       margin-right: 16px; }
     .ui-multiselect .ui-dropdown-content .ui-multiselect-item:hover {
       background-color: #f0f0f0; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.ui-label {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.6);
+  font-weight: 500;
+  line-height: 12px;
+  margin-bottom: 4px; }
+
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.ui-paper {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+
+.ui-list {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ffffff; }
+  .ui-list .ui-list-item {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer; }
+    .ui-list .ui-list-item:hover {
+      background-color: rgba(51, 51, 51, 0.05); }
+    .ui-list .ui-list-item .ui-list-item-image {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #D6D6D6;
+      background-size: contain;
+      margin-right: 16px; }
+    .ui-list .ui-list-item .ui-list-item-label {
+      flex: 1 0; }
+  .ui-list.ui-list-images-large .ui-list-item .ui-list-item-image {
+    width: 40px;
+    height: 40px; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
