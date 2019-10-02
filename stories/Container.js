@@ -8,10 +8,10 @@ export default class Container extends PureComponent {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, width } = this.props;
     const { value } = this.state;
     return (
-      <div className="content">
+      <div className="content" style={{ width }}>
         {children({ value, onChange: this.onChange })}
       </div>
     );

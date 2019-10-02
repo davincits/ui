@@ -150,7 +150,6 @@ import { TextField } from 'ui';
 | `type` | `text` | none | Field type (password, mail, phone, etc) |
 | `autoheight` | `bool` | true | Auto resize multiline field |
 | `multiline` | `bool` | false | Multiline field (textarea) |
-| `resize` | `bool` | true | Use with multiline. Able to resize |
 | `prefix` | `text | Element` | none |  |
 | `postfix` | `text | Element` | none |  |
 

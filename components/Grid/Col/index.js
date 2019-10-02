@@ -4,7 +4,7 @@ import React from 'react';
 import { bool, number, string, oneOfType } from 'prop-types';
 import { classes } from '../../utils';
 
-const REGEXP = /^\d+$/;
+const REGEXP = /^[.\d]+$/;
 
 function Col({
   className,

@@ -53,7 +53,6 @@ class TextField extends PureComponent {
       className,
       label,
       multiline,
-      resize = true,
       inline,
       onChange,
       onBlur,
@@ -71,7 +70,6 @@ class TextField extends PureComponent {
     const value = checkValue($value);
     const classList = classes({
       'ui-text-field': true,
-      'ui-no-resize': !resize,
       'ui-inline': inline,
       'ui-type-search': search,
       'ui-state-error': error,
@@ -127,7 +125,6 @@ TextField.propTypes = {
   type: string,
   inline: bool,
   multiline: bool,
-  resize: bool,
   autoheight: bool,
   search: bool,
   error: bool,

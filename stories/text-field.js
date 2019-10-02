@@ -8,7 +8,7 @@ import IconVerified from '../components/icons/Verified';
 
 storiesOf('TextField', module)
   .add('common', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -22,7 +22,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('inline', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -37,7 +37,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('search', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -52,7 +52,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('error', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -67,7 +67,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('multiline', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -81,8 +81,8 @@ storiesOf('TextField', module)
       )}
     </Container>
   ))
-  .add('no resize', () => (
-    <Container>
+  .add('no autoheight', () => (
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -92,13 +92,13 @@ storiesOf('TextField', module)
             action('changed')(value);
           }}
           multiline
-          resize={false}
+          autoheight={false}
         />
       )}
     </Container>
   ))
   .add('prefix', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -113,7 +113,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('postfix', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"
@@ -128,7 +128,7 @@ storiesOf('TextField', module)
     </Container>
   ))
   .add('prefix & postfix', () => (
-    <Container>
+    <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
         <TextField
           label="Input label"

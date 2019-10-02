@@ -74,14 +74,7 @@
 
   textarea {
     min-height: 48px;
-    resize: vertical;
-  }
-
-  &.ui-no-resize {
-
-    textarea {
-      resize: none;
-    }
+    resize: none;
   }
 
   &.ui-inline {

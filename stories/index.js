@@ -3,6 +3,7 @@ import './style.scss';
 import './grid';
 import './button';
 import './text-field';
+import './list';
 import './autocomplete';
 import './file-field';
 import './checkbox';
