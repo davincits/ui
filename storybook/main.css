@@ -563,8 +563,6 @@ hr {
     height: 32px; }
   .ui-text-field textarea {
     min-height: 48px;
-    resize: vertical; }
-  .ui-text-field.ui-no-resize textarea {
     resize: none; }
   .ui-text-field.ui-inline {
     display: flex; }
@@ -1712,7 +1710,8 @@ hr {
   text-transform: uppercase;
   height: 48px;
   cursor: pointer;
-  margin-right: 24px; }
+  margin-right: 24px;
+  font-weight: 500; }
   .ui-tab:hover {
     color: #969696; }
   .ui-tab.ui-active {
