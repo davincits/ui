@@ -7,6 +7,8 @@ import Loading from '../LoadingDotted';
 import Item from './Item';
 import { classes, isString } from '../utils';
 
+const defaultFilter = (item, value, lowerValue) => item.toLowerCase().includes(lowerValue);
+
 class Autocomplete extends Component {
   onSelect = (value) => {
     const { onChange } = this.props;
@@ -30,9 +32,11 @@ class Autocomplete extends Component {
       onChange,
       minLength = 1,
       loading,
+      filter = defaultFilter,
     } = this.props;
     const textField = (
       <TextField
+        label={label}
         value={value}
         onChange={onChange}
         onFocus={this.onFocus}
@@ -41,11 +45,10 @@ class Autocomplete extends Component {
     );
     const lowerValue = isString(value) ? value.toLowerCase() : '';
     const list = (items && lowerValue.length >= minLength) ?
-      items.filter(i => i.toLowerCase().includes(lowerValue)) : null;
+      items.filter(i => !filter || filter(i, value, lowerValue)) : null;
     return (
       <div className={classes(['ui-autocomplete', className])}>
         <DropDown
-          label={label}
           button={textField}
           ref="dropdown"
           manual

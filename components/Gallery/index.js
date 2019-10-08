@@ -6,7 +6,8 @@ import IconArrowRight from '../icons/ArrowRight';
 import IconArrowLeft from '../icons/ArrowLeft';
 import Preview from './Preview';
 
-const ESC_CODE = 'Escape';
+const ARROW_RIGHT_CODE = 'ArrowRight';
+const ARROW_LEFT_CODE = 'ArrowLeft';
 
 class Gallery extends PureComponent {
   state = {
@@ -45,19 +46,16 @@ class Gallery extends PureComponent {
     this.setState({ error: true });
   }
 
-  onClose = () => {
-    const { onClose } = this.props;
-    this.setState({
-      current: 0,
-      error: false,
-    });
-    if (onClose) onClose();
-  }
-
   keyPressHandler = ({ code }) => {
     const { onClose } = this.props;
-    if (onClose && code === ESC_CODE) {
-      onClose();
+    switch (code) {
+      case ARROW_RIGHT_CODE:
+        this.nextPhoto();
+        break;
+      case ARROW_LEFT_CODE:
+        this.prevPhoto();
+        break;
+      default:
     }
   }
 

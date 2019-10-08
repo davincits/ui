@@ -30,10 +30,11 @@ class MultiSelect extends Component {
       options,
       value,
       buttonContent = this.getButtonContent(),
+      inline,
     } = this.props;
     return (
       <div className={classes(['ui-multiselect', className])}>
-        <DropDown label={label} buttonContent={buttonContent}>
+        <DropDown label={label} buttonContent={buttonContent} inline={inline} name="ui-multiselect">
           {Array.isArray(options) ? options.map(i => (
             <Item
               key={i.value}
@@ -51,6 +52,6 @@ class MultiSelect extends Component {
 
 MultiSelect.propTypes = {
   value: array,
-}
+};
 
 export default MultiSelect;

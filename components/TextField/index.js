@@ -6,6 +6,10 @@ import { classes, uniqid } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
 
+const FIELD_TYPE_TEXT = 'text';
+const FIELD_TYPE_NUMBER = 'number';
+const normalizeFieldType = type => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
+
 const checkValue = value => (
   (value === null)
     || (value === undefined)
@@ -16,8 +20,11 @@ class TextField extends PureComponent {
   state = { height: null }
 
   onChange = (event) => {
-    const { onChange } = this.props;
-    if (onChange) onChange(event.target.value, event);
+    const { value } = event.target;
+    const { onChange, type } = this.props;
+    if (onChange && (type !== FIELD_TYPE_NUMBER || (value === '') || !isNaN(value))) {
+      onChange(event.target.value, event);
+    }
   };
 
   onBlur = (event) => {
@@ -48,16 +55,27 @@ class TextField extends PureComponent {
     if (onChange) onChange('', event);
   };
 
+  onPlusClick = () => {
+    const { value, onChange } = this.props;
+    if (onChange && !isNaN(value)) onChange(value + 1);
+  }
+
+  onMinusClick = () => {
+    const { value, onChange } = this.props;
+    if (onChange && !isNaN(value)) onChange(value - 1);
+  }
+
   render() {
     const {
       className,
       label,
       multiline,
+      resize = true,
       inline,
       onChange,
       onBlur,
       value: $value,
-      type = 'text',
+      type = FIELD_TYPE_TEXT,
       autoheight = true,
       search,
       error,
@@ -70,6 +88,7 @@ class TextField extends PureComponent {
     const value = checkValue($value);
     const classList = classes({
       'ui-text-field': true,
+      'ui-no-resize': !resize,
       'ui-inline': inline,
       'ui-type-search': search,
       'ui-state-error': error,
@@ -92,25 +111,26 @@ class TextField extends PureComponent {
           </label>
         ) : null}
         {multiline ? (
-          <div className="text-area-wrapper" style={{ height: height || 'auto' }}>
+          <div className="ui-text-area-wrapper" style={{ height: height || 'auto' }}>
             <textarea {...props} id={id} />
             <div className="ui-text-field-stroke" />
           </div>
         ) : (
           <div className="ui-text-field-input-wrap">
             {prefix ? (<div className="ui-text-field-prefix">{prefix}</div>) : null}
-            <input type={type} id={id} {...props} />
-            {search ? (
+            <input type={normalizeFieldType(type)} id={id} {...props} />
+            {(search || postfix) ? (
               <div className="ui-text-field-postfix">
-                {value ? (
-                  <CloseIcon onClick={this.onResetClick} />
-                ) : (
-                  <SearchIcon />
-                )}
+                {search ? (
+                  value ? (<CloseIcon onClick={this.onResetClick} />) : (<SearchIcon />)
+                ) : (postfix || null)}
               </div>
-            ) : (
-              postfix ? (<div className="ui-text-field-postfix">{postfix}</div>) : null
-            )}
+            ) : (type === FIELD_TYPE_NUMBER ? (
+              [
+                (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
+                (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
+              ]
+            ) : null)}
             <div className="ui-text-field-stroke" />
           </div>
         )}
@@ -125,6 +145,7 @@ TextField.propTypes = {
   type: string,
   inline: bool,
   multiline: bool,
+  resize: bool,
   autoheight: bool,
   search: bool,
   error: bool,
