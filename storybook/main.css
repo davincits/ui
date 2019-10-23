@@ -833,8 +833,8 @@ hr {
       position: relative;
       display: flex;
       align-items: center;
-      min-height: 4.5rem;
-      padding: 0 3rem 0 1.5rem; }
+      min-height: 64px;
+      padding: 0 48px 0 24px; }
       .ui-dialog .ui-dialog-window .ui-dialog-header .ui-dialog-title {
         font-weight: bold; }
       .ui-dialog .ui-dialog-window .ui-dialog-header .ui-dialog-close {
@@ -852,11 +852,11 @@ hr {
       .ui-dialog .ui-dialog-window .ui-dialog-header.with-shadow {
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2); }
     .ui-dialog .ui-dialog-window .ui-dialog-content {
-      padding: 0 24px;
+      padding: 8px 24px;
       height: 100%;
       overflow: auto; }
     .ui-dialog .ui-dialog-window .ui-dialog-actions {
-      padding: 16px 24px;
+      padding: 8px 24px 16px;
       display: flex;
       justify-content: flex-end; }
       .ui-dialog .ui-dialog-window .ui-dialog-actions .ui-button {
@@ -1540,12 +1540,11 @@ hr {
     opacity: 0;
     visibility: hidden; }
   .ui-radio > .ui-fake-radio {
-    width: 16px;
-    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
     border: 1px solid #D6D6D6;
     background-color: #ffffff;
     border-radius: 8px;
-    display: inline-block;
     -webkit-transition: border 0.25s;
     transition: border 0.25s; }
   .ui-radio:hover > .ui-fake-radio {
@@ -1560,7 +1559,7 @@ hr {
     padding-top: 1px;
     height: 32px;
     margin-bottom: 0; }
-  .ui-radio > input:checked + .ui-fake-radio {
+  .ui-radio.ui-radio-checked > .ui-fake-radio {
     border: 4px solid #05B9E6; }
   .ui-radio > input[disabled] + .ui-fake-radio {
     border-color: #EAEAEA; }
