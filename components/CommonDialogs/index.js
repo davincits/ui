@@ -14,6 +14,7 @@ dispatcher.register(store.handle);
 export function AlertDialog(params) {
   return add(params, DIALOG_ALERT);
 }
+
 export function ConfirmDialog(params) {
   return add(params, DIALOG_CONFIRM);
 }

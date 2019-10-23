@@ -1,10 +1,8 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { TextField } from '../components';
-import IconVerified from '../components/icons/Verified';
 
 storiesOf('TextField', module)
   .add('common', () => (
@@ -13,9 +11,9 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
         />
       )}
@@ -27,9 +25,9 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
           inline
         />
@@ -42,11 +40,42 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
           search
+        />
+      )}
+    </Container>
+  ))
+  .add('number', () => (
+    <Container width="240px">
+      {({ value = '5', onChange }) => (
+        <TextField
+          label="Input label"
+          value={value}
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
+          }}
+          type="number"
+        />
+      )}
+    </Container>
+  ))
+  .add('natural number', () => (
+    <Container width="240px">
+      {({ value = '5', onChange }) => (
+        <TextField
+          label="Input label"
+          value={value}
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
+          }}
+          type="number"
+          natural
         />
       )}
     </Container>
@@ -57,9 +86,9 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
           error
         />
@@ -72,9 +101,9 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
           multiline
         />
@@ -87,59 +116,13 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
+          onChange={(val) => {
+            onChange(val);
+            action('changed')(val);
           }}
           multiline
           autoheight={false}
         />
       )}
     </Container>
-  ))
-  .add('prefix', () => (
-    <Container width="240px">
-      {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          label="Input label"
-          value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
-          }}
-          prefix="Pre"
-        />
-      )}
-    </Container>
-  ))
-  .add('postfix', () => (
-    <Container width="240px">
-      {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          label="Input label"
-          value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
-          }}
-          postfix="Post"
-        />
-      )}
-    </Container>
-  ))
-  .add('prefix & postfix', () => (
-    <Container width="240px">
-      {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          label="Input label"
-          value={value}
-          onChange={(value) => {
-            onChange(value);
-            action('changed')(value);
-          }}
-          prefix="Pre"
-          postfix={<IconVerified style={{ color: '#00adff' }}/>}
-        />
-      )}
-    </Container>
-  ))
+  ));

@@ -16,7 +16,13 @@ class Item extends PureComponent {
   onConfirm = () => {
     const { onConfirm } = this.props;
     const { value } = this.state;
-    onConfirm(value);
+    if (!this.confirmHook || this.confirmHook()) {
+      onConfirm(value);
+    }
+  }
+
+  setConfirmHook = (hook) => {
+    this.confirmHook = hook;
   }
 
   render() {
@@ -27,7 +33,10 @@ class Item extends PureComponent {
       onCancel,
       textConfirm,
       textCancel = 'Cancel',
+      confirmButton,
+      cancelButton,
       render,
+      className,
     } = this.props;
     const { value } = this.state;
     let actions = [];
@@ -36,22 +45,42 @@ class Item extends PureComponent {
         actions = (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'OK'}</Button>);
         break;
       case DIALOG_CONFIRM:
-        actions = [
-          (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'Confirm'}</Button>),
-          (<Button danger stroke uppercase onClick={onCancel}>{textCancel}</Button>),
+        actions = [(
+          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-cancel-wrapper" onClick={onCancel}>
+            {cancelButton || (
+              <Button danger stroke uppercase>{textCancel}</Button>
+            )}
+          </div>
+        ), (
+          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper" onClick={this.onConfirm}>
+            {confirmButton || (
+              <Button primary stroke uppercase>{textConfirm || 'Confirm'}</Button>
+            )}
+          </div>
+        ),
         ];
         break;
       default:
     }
     return (
       <Dialog
-        className={classes(['ui-common-dialog-item', `ui-common-dialog-item-type-${type}`])}
+        className={
+          classes([
+            'ui-common-dialog-item',
+            `ui-common-dialog-item-type-${type}`,
+            className,
+          ])
+        }
         title={title}
         actions={actions}
         onClose={onCancel}
       >
         {message}
-        {render && render({ value, onChange: this.onChange })}
+        {render && render({
+          value,
+          onChange: this.onChange,
+          setConfirmHook: this.setConfirmHook,
+        })}
       </Dialog>
     );
   }

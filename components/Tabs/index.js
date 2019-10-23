@@ -28,7 +28,8 @@ class Tabs extends PureComponent {
 
   changeIndex = (index) => {
     const { onChange } = this.props;
-    this.setState({ index }, () => onChange && onChange(index));
+    this.setState({ index });
+    if (onChange) onChange(index);
   }
 
   render() {
