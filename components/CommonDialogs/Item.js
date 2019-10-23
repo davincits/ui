@@ -27,6 +27,8 @@ class Item extends PureComponent {
       onCancel,
       textConfirm,
       textCancel = 'Cancel',
+      confirmButton,
+      cancelButton,
       render,
     } = this.props;
     const { value } = this.state;
@@ -36,9 +38,19 @@ class Item extends PureComponent {
         actions = (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'OK'}</Button>);
         break;
       case DIALOG_CONFIRM:
-        actions = [
-          (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'Confirm'}</Button>),
-          (<Button danger stroke uppercase onClick={onCancel}>{textCancel}</Button>),
+        actions = [(
+          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper" onClick={this.onConfirm}>
+            {confirmButton || (
+              <Button primary stroke uppercase>{textConfirm || 'Confirm'}</Button>
+            )}
+          </div>
+        ), (
+          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-cancel-wrapper" onClick={onCancel}>
+            {cancelButton || (
+              <Button danger stroke uppercase>{textCancel}</Button>
+            )}
+          </div>
+          ),
         ];
         break;
       default:

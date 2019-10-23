@@ -6,7 +6,8 @@ import { Autocomplete } from '../components';
 import CITIES from './mocks/cities.json';
 import USERS from './mocks/users.json';
 
-export const debounce = (func, wait, immediate, timeout) => (...args) => {
+const debounce = (func, wait, immediate) => (...args) => {
+  let timeout = null;
   const later = () => {
     timeout = null;
     if (!immediate) func(...args);
@@ -76,4 +77,4 @@ storiesOf('Autocomplete', module)
         </div>
       )}
     </Container>
-  ))
+  ));

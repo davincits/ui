@@ -11,19 +11,21 @@ const FIELD_TYPE_NUMBER = 'number';
 const normalizeFieldType = type => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
 
 const checkValue = value => (
-  (value === null)
-    || (value === undefined)
-    || (typeof value === 'number' && isNaN(value)
-    ) ? '' : value);
+  (value === null) || (value === undefined) || (value !== value) ? '' : value
+);
 
 class TextField extends PureComponent {
   state = { height: null }
 
   onChange = (event) => {
     const { value } = event.target;
-    const { onChange, type } = this.props;
-    if (onChange && (type !== FIELD_TYPE_NUMBER || (value === '') || !isNaN(value))) {
-      onChange(event.target.value, event);
+    const { onChange, type, natural } = this.props;
+    const isNumberType = type === FIELD_TYPE_NUMBER;
+    if (onChange && (!isNumberType || (value === '') || !isNaN(value))) {
+      if (isNumberType && natural) {
+        return onChange(Math.abs(parseInt(value)), event);
+      }
+      onChange(value, event);
     }
   };
 
@@ -57,12 +59,25 @@ class TextField extends PureComponent {
 
   onPlusClick = () => {
     const { value, onChange } = this.props;
-    if (onChange && !isNaN(value)) onChange(value + 1);
+    if (onChange && !isNaN(value)) onChange(Number(value) + 1);
   }
 
   onMinusClick = () => {
-    const { value, onChange } = this.props;
-    if (onChange && !isNaN(value)) onChange(value - 1);
+    const { value, natural, onChange } = this.props;
+    if (onChange && !isNaN(value) && (!natural || Number(value) > 0)) onChange(Number(value) - 1);
+  }
+
+  control() {
+    const { search, value, type } = this.props;
+    if (search) {
+      return value
+        ? (<CloseIcon onClick={this.onResetClick} />)
+        : (<SearchIcon />);
+    }
+    return type === FIELD_TYPE_NUMBER ? [
+        (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
+        (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
+      ] : null;
   }
 
   render() {
@@ -79,9 +94,8 @@ class TextField extends PureComponent {
       autoheight = true,
       search,
       error,
-      prefix,
-      postfix,
       id = uniqid(),
+      natural,
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -113,25 +127,11 @@ class TextField extends PureComponent {
         {multiline ? (
           <div className="ui-text-area-wrapper" style={{ height: height || 'auto' }}>
             <textarea {...props} id={id} />
-            <div className="ui-text-field-stroke" />
           </div>
         ) : (
           <div className="ui-text-field-input-wrap">
-            {prefix ? (<div className="ui-text-field-prefix">{prefix}</div>) : null}
             <input type={normalizeFieldType(type)} id={id} {...props} />
-            {(search || postfix) ? (
-              <div className="ui-text-field-postfix">
-                {search ? (
-                  value ? (<CloseIcon onClick={this.onResetClick} />) : (<SearchIcon />)
-                ) : (postfix || null)}
-              </div>
-            ) : (type === FIELD_TYPE_NUMBER ? (
-              [
-                (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
-                (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
-              ]
-            ) : null)}
-            <div className="ui-text-field-stroke" />
+            {this.control()}
           </div>
         )}
       </div>
@@ -151,8 +151,6 @@ TextField.propTypes = {
   error: bool,
   onChange: func,
   onBlur: func,
-  prefix: oneOfType([element, string]),
-  postfix: oneOfType([element, string]),
 };
 
 export default TextField;

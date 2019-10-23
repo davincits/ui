@@ -25,19 +25,8 @@
     background-color: $ui-color-white;
   }
 
-  .ui-text-field-stroke {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid $ui-color-gray;
-    border-radius: $ui-border-radius;
-  }
-
   input,
   textarea {
-    position: relative;
     color: $ui-font-color;
     font-family: $ui-font-family;
     font-size: $ui-font-size;
@@ -45,20 +34,20 @@
     width: 100%;
     padding: 8px 12px;
     outline: none;
-    border: none;
-    z-index: 1;
-    background: none;
+    border: 1px solid $ui-color-gray;
+    background-color: $ui-color-white;
+    border-radius: 3px;
 
-    &:hover:not(:focus):not([disabled]) ~ .ui-text-field-stroke {
+    &:hover:not(:focus):not([disabled]) {
       background-color: $ui-color-gray-lightest;
     }
 
-    &:focus ~ .ui-text-field-stroke {
+    &:focus {
       border-color: $ui-color-brand-primary;
       box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
 
-    &[disabled] ~ .ui-text-field-stroke {
+    &[disabled] {
       border-color: $ui-color-gray-light-3;
       background-color: $ui-color-gray-light-3;
     }
@@ -106,6 +95,9 @@
 
     .ui-icon-search,
     .ui-icon-close {
+      position: absolute;
+      right: 4px;
+      top: 4px;
       color: $ui-color-gray;
     }
 
@@ -130,41 +122,11 @@
 
     input,
     textarea {
-      & ~ .ui-text-field-stroke {
-        border-color: $ui-color-brand-danger;
-      }
+      border-color: $ui-color-brand-danger;
 
-      &:focus ~ .ui-text-field-stroke {
+      &:focus {
         box-shadow: 0 0 0 2px rgba($ui-color-brand-danger, 0.25);
       }
-    }
-  }
-
-  .ui-text-field-prefix,
-  .ui-text-field-postfix {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    height: 32px;
-    color: $ui-color-gray;
-    align-items: center;
-  }
-
-  .ui-text-field-prefix {
-    left: 0;
-    padding-left: 12px;
-
-    svg {
-      margin-left: -8px;
-    }
-  }
-
-  .ui-text-field-postfix {
-    right: 0;
-    padding-right: 12px;
-
-    svg {
-      margin-right: -8px;
     }
   }
 

@@ -47,7 +47,6 @@ class Gallery extends PureComponent {
   }
 
   keyPressHandler = ({ code }) => {
-    const { onClose } = this.props;
     switch (code) {
       case ARROW_RIGHT_CODE:
         this.nextPhoto();
