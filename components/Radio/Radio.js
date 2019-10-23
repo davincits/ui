@@ -2,7 +2,6 @@ import './style.scss';
 
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
-import { any } from 'prop-types';
 
 class Radio extends PureComponent {
   onChange = () => {
@@ -15,20 +14,17 @@ class Radio extends PureComponent {
       className,
       children,
       onChange,
+      checked,
       ...rest
     } = this.props;
     return (
-      <div className={classes(['ui-radio', className])} onClick={this.onChange}>
-        <input type="radio" onChange={this.onChange} {...rest} />
+      <div className={classes(['ui-radio', checked && 'ui-radio-checked', className])} onClick={this.onChange}>
+        <input type="radio" onChange={this.onChange} checked={checked} {...rest} />
         <span className="ui-fake-radio" />
         {!!children && <div className="ui-label">{children}</div>}
       </div>
     );
   }
 }
-
-Radio.propTypes = {
-  value: any,
-};
 
 export default Radio;

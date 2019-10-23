@@ -11,7 +11,8 @@ function Row({
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {Children.map(children, (child, i) => child && cloneElement(child, { cellWidth: cellsWidth[i] }))}
+        {Children.map(children, (child, i) => child
+          && cloneElement(child, { cellWidth: cellsWidth[i] }))}
       </div>
     );
   }
