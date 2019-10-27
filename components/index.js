@@ -32,6 +32,7 @@ import ListItem from './List/Item';
 import Table, { Row as TR, Head as TH, Cell as TD } from './Table';
 import ToastrContainer, { Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger } from './Toastr';
 import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
+import Datepicker from './Datepicker';
 
 export {
   Alert,
@@ -78,6 +79,7 @@ export {
   MultiSelect,
   List,
   ListItem,
+  Datepicker,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,

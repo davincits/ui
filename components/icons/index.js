@@ -33,6 +33,7 @@ import ThumbUp from './ThumbUp';
 import Unlink from './Unlink';
 import User from './User';
 import Verified from './Verified';
+import Calendar from './Calendar';
 
 export {
   ArrowLeft,
@@ -70,4 +71,5 @@ export {
   Unlink,
   User,
   Verified,
+  Calendar,
 };

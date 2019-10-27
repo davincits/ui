@@ -1,0 +1,54 @@
+@import '../common.scss';
+
+.ui-datepicker {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+  box-sizing: border-box;
+  font-weight: 400;
+  display: inline-block;
+
+  .ui-datepicker-icon-container {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+.ui-datepicker_dropdown {
+
+  .ui-dropdown-content {
+    padding: 8px;
+    width: 296px !important;
+
+    .ui-datepicker-days-of-month {
+      display: flex;
+      flex-wrap: wrap;
+
+      .ui-datepicker-day-of-month,
+      .ui-datepicker-day-of-month-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+      }
+
+      .ui-datepicker-day-of-month {
+        cursor: pointer;
+        border-radius: $ui-border-radius;
+
+        &.muted {
+          color: #dcdcdc;
+        }
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+}

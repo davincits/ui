@@ -22,6 +22,7 @@ import './dialog';
 import './common-dialogs';
 import './full-size-modal';
 import './toasts';
+import './datepicker';
 import './icons';
 
 import './misc';
