@@ -19,3 +19,19 @@ export const WEEK_DAYS = [
   WEEK_DAY_SA,
 ];
 export const WEEK_START = WEEK_DAY_MO;
+export const MONTH_NAMES = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+export const LAST_MONTH_INDEX = MONTH_NAMES.length - 1;
+export const YEARS_PER_PAGE = 16;

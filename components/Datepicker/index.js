@@ -8,10 +8,11 @@ import Content from './Content';
 import { classes } from '../utils';
 
 class Datepicker extends PureComponent {
-  state = {}
-
   onChange = (date) => {
-    console.log({ date });
+    const { onChange } = this.props;
+    const { dropdown } = this.refs;
+    if (onChange) onChange(date);
+    dropdown.setState({ opened: false });
   }
 
   render() {
@@ -21,11 +22,12 @@ class Datepicker extends PureComponent {
       className,
       onChange,
     } = this.props;
-    const date = value ? new Date(value) : new Date();
+    const dateObject = value ? new Date(value) : new Date();
     return (
       <div className={classes(['ui-datepicker', className])}>
         <DropDown
-          button={(
+          ref="dropdown"
+          button={label || (
             <div className="ui-datepicker-icon-container">
               <IconCalendar />
             </div>
@@ -34,7 +36,7 @@ class Datepicker extends PureComponent {
           name="ui-datepicker"
         >
           <Content
-            date={date}
+            dateObject={dateObject}
             onChange={this.onChange}
           />
         </DropDown>
