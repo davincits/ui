@@ -21,7 +21,7 @@ class Datepicker extends PureComponent {
       label,
       className,
       onChange,
-      isDateAllowed,
+      isDateAllowed = () => true,
     } = this.props;
     const dateObject = value ? new Date(value) : new Date();
     return (
