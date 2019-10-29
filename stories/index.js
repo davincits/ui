@@ -22,6 +22,8 @@ import './dialog';
 import './common-dialogs';
 import './full-size-modal';
 import './toasts';
+import './datepicker';
+import './timepicker';
 import './icons';
 
 import './misc';

@@ -101,15 +101,21 @@ class DropDown extends PureComponent {
       <div className={classList} {...rest}>
         {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
         <div className="ui-dropdown-button-container" ref="button">
-          <div onClick={this.clickHandler}>
-            {button ? (
-              React.cloneElement(button, { disabled })
-            ) : (
-              <Button className="ui-dropdown-button" focus={opened} disabled={disabled}>
-                <div className="ui-ellipsis">{buttonContent}</div>
-              </Button>
-            )}
-          </div>
+          {button ? (
+            React.cloneElement(button, {
+              onClick: this.clickHandler,
+              disabled,
+            })
+          ) : (
+            <Button
+              className="ui-dropdown-button"
+              focus={opened}
+              disabled={disabled}
+              onClick={this.clickHandler}
+            >
+              <div className="ui-ellipsis">{buttonContent}</div>
+            </Button>
+          )}
           {dropDown && opened && (inline ? dropDown : <Portal>{dropDown}</Portal>)}
         </div>
         {!button && (dropDown && opened ? <IconExpandLess /> : <IconExpandMore />)}
