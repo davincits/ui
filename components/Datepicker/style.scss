@@ -52,6 +52,13 @@
           color: $ui-color-brand-primary;
           font-weight: 500;
         }
+
+        &.disabled {
+          color: $ui-color-gray;
+          font-weight: normal;
+          background-color: inherit;
+          cursor: default;
+        }
       }
     }
 
@@ -77,6 +84,13 @@
         &.selected {
           color: $ui-color-brand-primary;
           font-weight: 500;
+        }
+
+        &.disabled {
+          color: $ui-color-gray;
+          font-weight: normal;
+          background-color: inherit;
+          cursor: default;
         }
       }
     }
@@ -109,6 +123,13 @@
         &.selected {
           color: $ui-color-brand-primary;
           font-weight: 500;
+        }
+
+        &.disabled {
+          color: $ui-color-gray;
+          font-weight: normal;
+          background-color: inherit;
+          cursor: default;
         }
       }
     }

@@ -158,11 +158,12 @@ class Content extends PureComponent {
             <IconChevronRight />
           </div>
         </div>
-        {years.map(({ year, selected }) => (
+        {years.map(({ year, selected, disabled }) => (
           <Year
             key={year}
             year={year}
             selected={selected}
+            disabled={disabled}
             onClick={this.onYearClick}
           />
         ))}
@@ -212,6 +213,7 @@ class Content extends PureComponent {
   }
 
   renderMonthView() {
+    const { isDateAllowed } = this.props;
     const {
       currentYear,
       currentMonth,
@@ -246,6 +248,12 @@ class Content extends PureComponent {
         selected: currentYear === selectedYear
           && month === selectedMonth
           && date === selectedDate,
+        disabled: !isDateAllowed({
+          year: currentYear,
+          month,
+          date,
+          day: dateObject.getDay(),
+        }),
       });
       dateObject.setTime(dateObject.getTime() + DAY);
       if (isNaN(dateObject.getMonth())) {
@@ -296,6 +304,7 @@ class Content extends PureComponent {
             date={item.date}
             muted={item.muted}
             selected={item.selected}
+            disabled={item.disabled}
           />
         ))}
       </div>

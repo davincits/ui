@@ -19,6 +19,7 @@ class Timepicker extends PureComponent {
       value,
       label,
       className,
+      isTimeAllowed = () => true,
     } = this.props;
     return (
       <div className={classes(['ui-timepicker', className])}>
@@ -35,6 +36,7 @@ class Timepicker extends PureComponent {
           <Content
             value={value}
             onChange={this.onChange}
+            isTimeAllowed={isTimeAllowed}
           />
         </DropDown>
       </div>
