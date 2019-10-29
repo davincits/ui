@@ -1,17 +1,16 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import TextField from '../TextField';
+import IconTime from '../icons/Time';
 import DropDown from '../DropDown';
-import IconCalendar from '../icons/Calendar';
 import Content from './Content';
 import { classes } from '../utils';
 
-class Datepicker extends PureComponent {
-  onChange = (date) => {
+class Timepicker extends PureComponent {
+  onChange = (time) => {
     const { onChange } = this.props;
     const { dropdown } = this.refs;
-    if (onChange) onChange(date);
+    if (onChange) onChange(time);
     dropdown.setState({ opened: false });
   }
 
@@ -20,26 +19,22 @@ class Datepicker extends PureComponent {
       value,
       label,
       className,
-      onChange,
-      isDateAllowed,
     } = this.props;
-    const dateObject = value ? new Date(value) : new Date();
     return (
-      <div className={classes(['ui-datepicker', className])}>
+      <div className={classes(['ui-timepicker', className])}>
         <DropDown
           ref="dropdown"
           button={label || (
-            <div className="ui-datepicker-icon-container">
-              <IconCalendar />
+            <div className="ui-timepicker-icon-container">
+              <IconTime />
             </div>
           )}
           inline={false}
-          name="ui-datepicker"
+          name="ui-timepicker"
         >
           <Content
-            dateObject={dateObject}
+            value={value}
             onChange={this.onChange}
-            isDateAllowed={isDateAllowed}
           />
         </DropDown>
       </div>
@@ -47,4 +42,4 @@ class Datepicker extends PureComponent {
   }
 }
 
-export default Datepicker;
+export default Timepicker;

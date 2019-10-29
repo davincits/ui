@@ -3,22 +3,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
-import { Datepicker, Button } from '../components';
+import { Timepicker, Button } from '../components';
 import IconCalendar from '../components/icons/Calendar';
 
-storiesOf('Date picker', module)
+storiesOf('Time picker', module)
   .add('common', () => (
     <Container>
       {({ value = '', onChange }) => (
         <div>
-          <Datepicker
+          <Timepicker
             onChange={(val) => {
               onChange(val);
               action('changed')(val);
             }}
             value={value}
           />
-          <p>Selected date: {value}</p>
+          <p>Selected time: {value}</p>
         </div>
       )}
     </Container>
@@ -26,11 +26,11 @@ storiesOf('Date picker', module)
   .add('button', () => (
     <Container>
       {({ value = '', onChange }) => (
-        <Datepicker
+        <Timepicker
           label={(
             <Button>
               <IconCalendar />
-              {value || 'Select a date'}
+              {value || 'Select a time'}
             </Button>
           )}
           onChange={(val) => {

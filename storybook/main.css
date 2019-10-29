@@ -532,7 +532,7 @@ hr {
     outline: none;
     border: 1px solid #D6D6D6;
     background-color: #ffffff;
-    border-radius: 3px; }
+    border-radius: 4px; }
     .ui-text-field input:hover:not(:focus):not([disabled]),
     .ui-text-field textarea:hover:not(:focus):not([disabled]) {
       background-color: #F5F5F5; }
@@ -2000,6 +2000,308 @@ hr {
 
 .ui-common-dialog-item .ui-dialog-actions .ui-button {
   margin-left: 8px; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.ui-label {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.6);
+  font-weight: 500;
+  line-height: 12px;
+  margin-bottom: 4px; }
+
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.ui-paper {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+
+.ui-datepicker {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  box-sizing: border-box;
+  font-weight: 400;
+  display: inline-block; }
+  .ui-datepicker .ui-datepicker-icon-container {
+    cursor: pointer; }
+    .ui-datepicker .ui-datepicker-icon-container:hover {
+      background-color: #f0f0f0; }
+    .ui-datepicker .ui-datepicker-icon-container svg {
+      display: block; }
+
+.ui-datepicker_dropdown .ui-dropdown-content {
+  padding: 8px;
+  width: 296px !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years {
+    display: flex;
+    flex-wrap: wrap; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years .ui-datepicker-year-label {
+      width: 70px;
+      height: 32px;
+      display: flex;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 4px; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years .ui-datepicker-year-label:hover {
+        background-color: #f0f0f0; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years .ui-datepicker-year-label.selected {
+        color: #05B9E6;
+        font-weight: 500; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year {
+    display: flex;
+    flex-wrap: wrap; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year .ui-datepicker-month-of-year-label {
+      width: 93px;
+      height: 32px;
+      display: flex;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 4px; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year .ui-datepicker-month-of-year-label:hover {
+        background-color: #f0f0f0; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year .ui-datepicker-month-of-year-label.selected {
+        color: #05B9E6;
+        font-weight: 500; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month {
+    display: flex;
+    flex-wrap: wrap; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month,
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month {
+      cursor: pointer;
+      border-radius: 4px; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.muted {
+        color: #dcdcdc; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month:hover {
+        background-color: #f0f0f0; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected {
+        color: #05B9E6;
+        font-weight: 500; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header {
+    display: flex;
+    width: 100%; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-previous,
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-next,
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 4px; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-previous:hover,
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-next:hover,
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label:hover {
+        background-color: #f0f0f0; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-previous,
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-next {
+      width: 48px;
+      height: 32px; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label {
+      flex: 1 1;
+      margin-left: 8px;
+      margin-right: 8px;
+      font-weight: 500; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label .year-label {
+        color: #cccccc; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.ui-label {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.6);
+  font-weight: 500;
+  line-height: 12px;
+  margin-bottom: 4px; }
+
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.ui-paper {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+
+.ui-timepicker {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  box-sizing: border-box;
+  font-weight: 400;
+  display: inline-block; }
+  .ui-timepicker .ui-timepicker-icon-container {
+    cursor: pointer; }
+    .ui-timepicker .ui-timepicker-icon-container:hover {
+      background-color: #f0f0f0; }
+    .ui-timepicker .ui-timepicker-icon-container svg {
+      display: block; }
+
+.ui-timepicker_dropdown .ui-dropdown-content {
+  padding: 8px;
+  width: 256px !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view,
+  .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view {
+    position: relative;
+    height: 256px; }
+    .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-hour-label,
+    .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-minute-label,
+    .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-hour-label,
+    .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-minute-label {
+      font-weight: 500;
+      -webkit-transform-origin: 0 50%;
+              transform-origin: 0 50%;
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      font-size: 18px; }
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-hour-label span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-minute-label span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-hour-label span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-minute-label span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #777777; }
+        .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-hour-label span:hover,
+        .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-minute-label span:hover,
+        .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-hour-label span:hover,
+        .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-minute-label span:hover {
+          background-color: #f0f0f0;
+          color: #333333; }
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-hour-label.selected span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-minute-label.selected span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-hour-label.selected span,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-minute-label.selected span {
+        background-color: #f0f0f0;
+        color: #333333; }
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-hour-label.inner,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-hours-view .ui-timepicker-minute-label.inner,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-hour-label.inner,
+      .ui-timepicker_dropdown .ui-dropdown-content .ui-timepicker-minutes-view .ui-timepicker-minute-label.inner {
+        width: 36%;
+        font-size: 17px; }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-1 {
+    -webkit-transform: translate(0, -50%) rotate(-60deg);
+            transform: translate(0, -50%) rotate(-60deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-1 span {
+      -webkit-transform: rotate(60deg);
+              transform: rotate(60deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-2 {
+    -webkit-transform: translate(0, -50%) rotate(-30deg);
+            transform: translate(0, -50%) rotate(-30deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-2 span {
+      -webkit-transform: rotate(30deg);
+              transform: rotate(30deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-3 {
+    -webkit-transform: translate(0, -50%) rotate(0);
+            transform: translate(0, -50%) rotate(0); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-3 span {
+      -webkit-transform: rotate(0);
+              transform: rotate(0); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-4 {
+    -webkit-transform: translate(0, -50%) rotate(30deg);
+            transform: translate(0, -50%) rotate(30deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-4 span {
+      -webkit-transform: rotate(-30deg);
+              transform: rotate(-30deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-5 {
+    -webkit-transform: translate(0, -50%) rotate(60deg);
+            transform: translate(0, -50%) rotate(60deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-5 span {
+      -webkit-transform: rotate(-60deg);
+              transform: rotate(-60deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-6 {
+    -webkit-transform: translate(0, -50%) rotate(90deg);
+            transform: translate(0, -50%) rotate(90deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-6 span {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-7 {
+    -webkit-transform: translate(0, -50%) rotate(120deg);
+            transform: translate(0, -50%) rotate(120deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-7 span {
+      -webkit-transform: rotate(-120deg);
+              transform: rotate(-120deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-8 {
+    -webkit-transform: translate(0, -50%) rotate(150deg);
+            transform: translate(0, -50%) rotate(150deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-8 span {
+      -webkit-transform: rotate(-150deg);
+              transform: rotate(-150deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-9 {
+    -webkit-transform: translate(0, -50%) rotate(180deg);
+            transform: translate(0, -50%) rotate(180deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-9 span {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-10 {
+    -webkit-transform: translate(0, -50%) rotate(210deg);
+            transform: translate(0, -50%) rotate(210deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-10 span {
+      -webkit-transform: rotate(-210deg);
+              transform: rotate(-210deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-11 {
+    -webkit-transform: translate(0, -50%) rotate(240deg);
+            transform: translate(0, -50%) rotate(240deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-11 span {
+      -webkit-transform: rotate(-240deg);
+              transform: rotate(-240deg); }
+  .ui-timepicker_dropdown .ui-dropdown-content .position-12 {
+    -webkit-transform: translate(0, -50%) rotate(270deg);
+            transform: translate(0, -50%) rotate(270deg); }
+    .ui-timepicker_dropdown .ui-dropdown-content .position-12 span {
+      -webkit-transform: rotate(-270deg);
+              transform: rotate(-270deg); }
 
 
 /*# sourceMappingURL=main.css.map*/

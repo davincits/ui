@@ -33,6 +33,7 @@ import Table, { Row as TR, Head as TH, Cell as TD } from './Table';
 import ToastrContainer, { Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger } from './Toastr';
 import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
 import Datepicker from './Datepicker';
+import Timepicker from './Timepicker';
 
 export {
   Alert,
@@ -80,6 +81,7 @@ export {
   List,
   ListItem,
   Datepicker,
+  Timepicker,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,
