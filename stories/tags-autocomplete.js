@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import { Autocomplete } from '../components';
-import CITIES from './mocks/cities.json';
+import { TagsAutocomplete } from '../components';
 import USERS from './mocks/users.json';
 
 const debounce = (func, wait, immediate) => {
@@ -27,10 +26,10 @@ class Example extends Component {
 
   request = debounce((value) => {
     this.setState({ loading: true });
-    const search = (value || '').toLocaleLowerCase();
+    const search = (value || '').trim().toLocaleLowerCase();
     const items = USERS
       .map(({ first_name, last_name }) => `${first_name} ${last_name}`)
-      .filter((user) => user.toLocaleLowerCase().includes(search));
+      .filter((str) => str.includes(search));
     setTimeout(() => {
       this.setState({
         items,
@@ -39,53 +38,33 @@ class Example extends Component {
     }, 1000);
   }, 400)
 
-  onChange = (value, selected) => {
-    console.log({ selected });
-    const { items } = this.state;
-    this.setState({ value, items: null });
-    if (!value || (items && items.some((item) => item === value))) return;
-    this.request(value);
+  onChange = (value) => {
+    this.setState({ value });
+  }
+
+  onInputChange = (value) => {
+    this.setState({ items: null });
+    if (value) this.request(value);
   }
 
   render() {
     const { value, items, loading } = this.state;
     return (
-      <Autocomplete
+      <TagsAutocomplete
         label="Autocomplete"
         value={value}
         items={items}
         loading={loading}
         onChange={this.onChange}
+        onInputChange={this.onInputChange}
       />
     );
   }
 }
 
-storiesOf('Autocomplete', module)
+storiesOf('TagsAutocomplete', module)
   .add('common', () => (
-    <Container>
-      {({ value, onChange }) => {
-        const search = (value || '').toLocaleLowerCase();
-        const items = CITIES.filter((city) => city.toLocaleLowerCase().includes(search));
-        return (
-          <div style={{ width: '286px' }}>
-            <Autocomplete
-              label="Autocomplete"
-              value={value}
-              items={items}
-              onChange={onChange}
-            />
-          </div>
-        );
-      }}
-    </Container>
-  ))
-  .add('with request', () => (
-    <Container>
-      {() => (
-        <div style={{ width: '286px' }}>
-          <Example />
-        </div>
-      )}
+    <Container width="480px">
+      {() => (<Example />)}
     </Container>
   ));
