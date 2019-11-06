@@ -39,8 +39,8 @@ class Example extends Component {
     }, 1000);
   }, 400)
 
-  onChange = (value, selected) => {
-    console.log({ selected });
+  onChange = (value/* , selected */) => {
+    // console.log({ selected });
     const { items } = this.state;
     this.setState({ value, items: null });
     if (!value || (items && items.some((item) => item === value))) return;
