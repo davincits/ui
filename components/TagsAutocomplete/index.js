@@ -12,16 +12,23 @@ class TagsAutocomplete extends PureComponent {
     inputValue: '',
   }
 
-  onSelect = (value) => {
-    // const { onChange } = this.props;
-    // const { dropdown } = this.refs;
-    // onChange(value);
-    // dropdown.setState({ opened: false });
+  onSelect = (selected) => {
+    const { value, onChange } = this.props;
+    const { dropdown } = this.refs;
+    onChange(Array.isArray(value) ? [...value, selected] : [selected]);
+    this.setState({ inputValue: '' });
+    dropdown.setState({ opened: false });
   }
 
   onFocus = () => {
     const { dropdown } = this.refs;
     dropdown.setState({ opened: true });
+  }
+
+  onInputChange = (inputValue) => {
+    const { onInputChange } = this.props;
+    this.setState({ inputValue });
+    if (onInputChange) onInputChange(inputValue);
   }
 
   render() {
@@ -33,11 +40,10 @@ class TagsAutocomplete extends PureComponent {
       disabled,
       value,
       notFoundText = 'Nothing was found...',
-      onInputChange,
-      minLength = 1,
-      ...rest
+      loading,
+      onChange,
     } = this.props;
-    const { inputValue, loading } = this.state;
+    const { inputValue } = this.state;
     const classList = classes({
       'ui-tags-autocomplete': true,
       'ui-disabled': disabled,
@@ -50,25 +56,28 @@ class TagsAutocomplete extends PureComponent {
             <TagsField
               value={value}
               onFocus={this.onFocus}
-              onInputChange={onInputChange}
+              onInputChange={this.onInputChange}
+              onChange={onChange}
+              inputValue={inputValue}
+              noCustom
             />
           }
           ref="dropdown"
           manual
         >
-          <div className="ui-tags-autocomplete-items">
+          <div className="ui-autocomplete-items">
             {items ?
               (items.length ? (
-                items.map(value => (
+                items.filter(item => !Array.isArray(value) || !value.includes(item)).map(value => (
                   <Item key={value} value={value} onClick={this.onSelect} />
                 ))
               ) : (
-                <div className="ui-tags-autocomplete-item ui-tags-autocomplete-item-not-found">
+                <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
                   {notFoundText}
                 </div>
               )) : (
                 loading && (
-                  <div className="ui-tags-autocomplete-item ui-tags-autocomplete-item-loading">
+                  <div className="ui-autocomplete-item ui-autocomplete-item-loading">
                     <Loading />
                   </div>
                 )

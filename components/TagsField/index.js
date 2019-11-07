@@ -20,10 +20,11 @@ class TagsField extends PureComponent {
 
   onInputKeyPress = (event) => {
     const { key, target } = event;
-    const { value, onChange } = this.props;
+    const { value, onChange, onInputChange, noCustom } = this.props;
     const inputValue = target.value.trim();
-    if (key === ENTER_CODE && inputValue && onChange) {
+    if (key === ENTER_CODE && inputValue && onChange && !noCustom) {
       onChange(Array.isArray(value) ? [...value, inputValue] : [inputValue]);
+      onInputChange('');
       this.setState({ inputValue: '' });
     }
   };
@@ -44,6 +45,7 @@ class TagsField extends PureComponent {
   }
 
   render() {
+    const { inputValue: inputValueFromState } = this.state;
     const {
       className,
       label,
@@ -51,17 +53,18 @@ class TagsField extends PureComponent {
       disabled,
       value,
       onFocus,
+      inputValue = inputValueFromState,
       ...rest
     } = this.props;
-    const { inputValue } = this.state;
     const classList = classes({
       'ui-tags-field': true,
       'ui-disabled': disabled,
       [className]: className,
     });
+    const tags = Array.isArray(value) ? value : [];
     return (
       <div className={classList} onClick={this.onClick}>
-        {Array.isArray(value) && value.map((str, i) => (
+        {tags.map((str, i) => (
           <Tag key={i} value={str} index={i} onRemove={this.onRemove} />
         ))}
         <input

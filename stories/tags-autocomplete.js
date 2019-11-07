@@ -29,7 +29,7 @@ class Example extends Component {
     const search = (value || '').trim().toLocaleLowerCase();
     const items = USERS
       .map(({ first_name, last_name }) => `${first_name} ${last_name}`)
-      .filter((str) => str.includes(search));
+      .filter((str) => str.toLocaleLowerCase().includes(search));
     setTimeout(() => {
       this.setState({
         items,
@@ -38,8 +38,8 @@ class Example extends Component {
     }, 1000);
   }, 400)
 
-  onChange = (value) => {
-    this.setState({ value });
+  onChange = (value, event) => {
+    this.setState({ value, items: null });
   }
 
   onInputChange = (value) => {
