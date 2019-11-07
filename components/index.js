@@ -34,6 +34,8 @@ import ToastrContainer, { Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDan
 import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
 import Datepicker from './Datepicker';
 import Timepicker from './Timepicker';
+import TagsField from './TagsField';
+import TagsAutocomplete from './TagsAutocomplete';
 
 export {
   Alert,
@@ -82,6 +84,8 @@ export {
   ListItem,
   Datepicker,
   Timepicker,
+  TagsField,
+  TagsAutocomplete,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,

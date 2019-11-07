@@ -24,6 +24,8 @@ import './full-size-modal';
 import './toasts';
 import './datepicker';
 import './timepicker';
+import './tags-field';
+import './tags-autocomplete';
 import './icons';
 
 import './misc';
