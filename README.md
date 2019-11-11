@@ -272,6 +272,7 @@ import { RadioGroup, Radio } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -304,6 +305,7 @@ import { Table, TR, TH, TD } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -348,6 +350,7 @@ import { Slider } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -378,6 +381,7 @@ import { Range } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -408,6 +412,7 @@ import { Tooltip } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -433,6 +438,7 @@ import { Tabs, Tab, TabList, TabPanel } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -467,6 +473,7 @@ import { DropDown } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -494,6 +501,7 @@ import { Select } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -530,6 +538,7 @@ import { MultiSelect } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -566,6 +575,7 @@ import { DropArea } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -591,6 +601,7 @@ import { Gallery } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -620,6 +631,7 @@ import { Dialog } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -654,6 +666,7 @@ import { DialogsContainer, AlertDialog, ConfirmDialog } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -702,6 +715,7 @@ import { FullSizeModal } from 'ui';
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
@@ -738,6 +752,7 @@ import {
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
+| | | | |
 
 ### Example
 
