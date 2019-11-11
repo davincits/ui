@@ -57,8 +57,8 @@ class DropDown extends PureComponent {
         dropDownStyle: {
           width,
           left,
-          top: !onTop && bottom,
-          bottom: onTop && windowHeight - top,
+          top: onTop ? '' : bottom,
+          bottom: onTop ? windowHeight - top : '',
           maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
         },
       });
@@ -104,7 +104,7 @@ class DropDown extends PureComponent {
           {button ? (
             React.cloneElement(button, {
               onClick: this.clickHandler,
-              disabled,
+              ...(disabled ? { disabled: true } : null),
             })
           ) : (
             <Button

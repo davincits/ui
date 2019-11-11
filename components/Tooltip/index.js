@@ -13,7 +13,9 @@ function Container({
   return (
     <div className={classes(['ui-tooltip-container', `ui-tooltip-place-${place}`, className])}>
       {children}
-      <Tooltip checkPosition={[TOP, BOTTOM].includes(place)}>{tooltip}</Tooltip>
+      {tooltip ? (
+        <Tooltip checkPosition={[TOP, BOTTOM].includes(place)}>{tooltip}</Tooltip>
+      ) : null}
     </div>
   );
 }
