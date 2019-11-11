@@ -9,6 +9,7 @@ const ENTER_CODE = 'Enter';
 class TagsField extends PureComponent {
   state = {
     inputValue: '',
+    focused: false,
   };
 
   onInputChange = (event) => {
@@ -20,7 +21,9 @@ class TagsField extends PureComponent {
 
   onInputKeyPress = (event) => {
     const { key, target } = event;
-    const { value, onChange, onInputChange, noCustom } = this.props;
+    const {
+      value, onChange, onInputChange, noCustom,
+    } = this.props;
     const inputValue = target.value.trim();
     if (key === ENTER_CODE && inputValue && onChange && !noCustom) {
       onChange(Array.isArray(value) ? [...value, inputValue] : [inputValue]);
@@ -44,37 +47,65 @@ class TagsField extends PureComponent {
     }
   }
 
+  onFocus = (event) => {
+    const { onFocus } = this.props;
+    if (onFocus) onFocus(event);
+    this.setState({ focused: true });
+  }
+
+  onBlur = (event) => {
+    const { onBlur } = this.props;
+    if (onBlur) onBlur(event);
+    this.setState({ focused: false });
+  }
+
   render() {
-    const { inputValue: inputValueFromState } = this.state;
+    const {
+      focused,
+      inputValue: inputValueFromState,
+    } = this.state;
     const {
       className,
       label,
       error,
       disabled,
       value,
-      onFocus,
       inputValue = inputValueFromState,
-      ...rest
+      placeholder,
     } = this.props;
     const classList = classes({
       'ui-tags-field': true,
       'ui-disabled': disabled,
+      'ui-focused': focused,
+      'ui-tags-field-error': error,
       [className]: className,
     });
     const tags = Array.isArray(value) ? value : [];
     return (
-      <div className={classList} onClick={this.onClick}>
-        {tags.map((str, i) => (
-          <Tag key={i} value={str} index={i} onRemove={this.onRemove} />
-        ))}
-        <input
-          ref="input"
-          value={inputValue}
-          disabled={disabled}
-          onChange={this.onInputChange}
-          onKeyPress={this.onInputKeyPress}
-          onFocus={onFocus}
-        />
+      <div className={classList}>
+        {label ? (
+          <div className="ui-label">{label}</div>
+        ) : null}
+        <div className="ui-tags-field-content" onClick={this.onClick}>
+          {tags.map((tag, i) => (
+            <Tag
+              key={tag.label || tag}
+              value={tag}
+              index={i}
+              onRemove={this.onRemove}
+            />
+          ))}
+          <input
+            ref="input"
+            value={inputValue}
+            disabled={disabled}
+            onChange={this.onInputChange}
+            onKeyPress={this.onInputKeyPress}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            placeholder={placeholder}
+          />
+        </div>
       </div>
     );
   }

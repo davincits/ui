@@ -11,7 +11,7 @@ const FIELD_TYPE_NUMBER = 'number';
 const normalizeFieldType = type => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
 
 const checkValue = value => (
-  (value === null) || (value === undefined) || (value !== value) ? '' : value
+  (value === null) || (value === undefined) || (value !== value) ? '' : value // eslint-disable-line no-self-compare
 );
 
 class TextField extends PureComponent {
@@ -22,8 +22,8 @@ class TextField extends PureComponent {
     const { onChange, type, natural } = this.props;
     const isNumberType = type === FIELD_TYPE_NUMBER;
     if (onChange && (!isNumberType || (value === '') || !isNaN(value))) {
-      if (isNumberType && natural) {
-        return onChange(Math.abs(parseInt(value)), event);
+      if (natural) {
+        return onChange(Math.abs(parseInt(value, 10)), event);
       }
       onChange(value, event);
     }
@@ -75,9 +75,9 @@ class TextField extends PureComponent {
         : (<SearchIcon />);
     }
     return type === FIELD_TYPE_NUMBER ? [
-        (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
-        (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
-      ] : null;
+      (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
+      (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
+    ] : null;
   }
 
   render() {

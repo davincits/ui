@@ -14,11 +14,11 @@ storiesOf('CheckBox', module)
         <CheckBox
           label="Input label"
           value={value}
-          onChange={(value) => {
-            onChange(value);
-            onChangeAction(value);
+          onChange={(val) => {
+            onChange(val);
+            onChangeAction(val);
           }}
         />
       )}
     </Container>
-  ))
+  ));

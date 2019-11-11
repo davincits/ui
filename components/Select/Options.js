@@ -31,7 +31,7 @@ class Options extends PureComponent {
     const { value, options, onClick } = this.props;
     return (
       <div className="ui-select-options" ref="options">
-        {options.map(props => (
+        {options.map((props) => (
           <Option
             key={props.value}
             onClick={onClick}
