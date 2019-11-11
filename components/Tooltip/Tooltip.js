@@ -16,9 +16,14 @@ class Tooltip extends PureComponent {
   }
 
   render() {
-    const { children, className } = this.props;
+    const {
+      children,
+      className,
+      top,
+      left,
+    } = this.props;
     return (
-      <div className={classes(['ui-tooltip', className])}>
+      <div className={classes(['ui-tooltip', className])} style={{ left: `${left}px`, top: `${top}px` }}>
         <div className="ui-tooltip-content" ref="tooltip">{children}</div>
       </div>
     );

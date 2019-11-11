@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import DropDown from '../DropDown';
 import TextField from '../TextField';
 import Loading from '../LoadingDotted';
-import Item from './Item';
 import List from '../List';
 import { classes } from '../utils';
 

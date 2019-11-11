@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import TagsField from '../TagsField';
 import DropDown from '../DropDown';
 import Loading from '../LoadingDotted';
-import Item from './Item';
+import List from '../List';
 import { classes } from '../utils';
 
 class TagsAutocomplete extends PureComponent {
@@ -74,9 +74,7 @@ class TagsAutocomplete extends PureComponent {
           <div className="ui-tags-autocomplete-items">
             {items ?
               (items.length ? (
-                items.filter(item => !Array.isArray(value) || !value.includes(item)).map(value => (
-                  <Item key={value.label || value} value={value} onClick={this.onSelect} />
-                ))
+                <List items={items.filter(item => !Array.isArray(value) || !value.includes(item))} onClick={this.onSelect} />
               ) : (
                 <div className="ui-tags-autocomplete-item ui-tags-autocomplete-item-not-found">
                   {notFoundText}
