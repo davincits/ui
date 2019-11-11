@@ -1,6 +1,7 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
+import CheckBox from '../CheckBox';
 import { classes } from '../utils';
 
 const Image = ({ src }) => (<div className="ui-list-item-image" style={{ backgroundImage: `url(${src})` }} />);
@@ -15,17 +16,20 @@ class Item extends PureComponent {
     const {
       className,
       item,
-      ...props
+      checkbox,
+      chacked,
     } = this.props;
     const { img, label } = item;
     return (
       <div className={classes(['ui-list-item', className])} onClick={this.onClick}>
+        {checkbox && (
+          <CheckBox value={chacked} />
+        )}
         {img ? (<Image src={img} />) : null}
         <div className="ui-list-item-label">{label || item}</div>
       </div>
     );
   }
 }
-
 
 export default Item;

@@ -10,12 +10,20 @@ function List({
   items,
   onClick,
   imageSize = 'medium',
+  checkbox,
+  isChecked,
   ...props
 }) {
   return (
     <div className={classes(['ui-list', className, `ui-list-images-${imageSize}`])} {...props}>
       {items ? items.map((item, index) => (
-        <Item key={item.id || index} item={item} onClick={onClick} />
+        <Item
+          key={item.id || index}
+          item={item}
+          onClick={onClick}
+          checkbox={checkbox}
+          checked={isChecked && isChecked(item)}
+        />
       )) : children}
     </div>
   );
