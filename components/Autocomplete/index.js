@@ -5,6 +5,7 @@ import DropDown from '../DropDown';
 import TextField from '../TextField';
 import Loading from '../LoadingDotted';
 import Item from './Item';
+import List from '../List';
 import { classes } from '../utils';
 
 class Autocomplete extends Component {
@@ -50,9 +51,7 @@ class Autocomplete extends Component {
           <div className="ui-autocomplete-items">
             {items ?
               (items.length ? (
-                items.map(value => (
-                  <Item key={value} value={value} onClick={this.onSelect} />
-                ))
+                <List items={items} onClick={this.onSelect} />
               ) : (
                 <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
                   {notFoundText}

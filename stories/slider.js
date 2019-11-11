@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { Slider } from '../components';
-
-const onChangeAction = action('changed');
 
 storiesOf('Slider', module)
   .add('common', () => (
@@ -17,12 +14,9 @@ storiesOf('Slider', module)
             min={10}
             max={100}
             value={value}
-            onChange={(value) => {
-              onChange(value);
-              onChangeAction(value);
-            }}
+            onChange={onChange}
           />
         </div>
       )}
     </Container>
-  ))
+  ));

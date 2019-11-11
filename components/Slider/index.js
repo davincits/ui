@@ -6,6 +6,18 @@ import { number, func } from 'prop-types';
 import { classes } from '../utils';
 
 class Slider extends PureComponent {
+  componentWillMount() {
+    window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('mouseup', this.cancelTracking);
+    window.addEventListener('mouseleave', this.cancelTracking);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('mouseup', this.cancelTracking);
+    window.removeEventListener('mouseleave', this.cancelTracking);
+  }
+
   getValue(value) {
     const { value: $value } = this.props;
     if (value === undefined) {
@@ -25,9 +37,6 @@ class Slider extends PureComponent {
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
     this.clientXStart = event.clientX;
     this.sliderStart = Number(value);
-    window.addEventListener('mousemove', this.onMouseMove);
-    window.addEventListener('mouseup', this.cancelTracking);
-    window.addEventListener('mouseleave', this.cancelTracking);
   }
 
   onMouseMove = (event) => {
@@ -43,9 +52,6 @@ class Slider extends PureComponent {
 
   cancelTracking = () => {
     this.tracking = false;
-    window.removeEventListener('mousemove', this.onMouseMove);
-    window.removeEventListener('mouseup', this.cancelTracking);
-    window.removeEventListener('mouseleave', this.cancelTracking);
   }
 
   onClick = (event) => {
