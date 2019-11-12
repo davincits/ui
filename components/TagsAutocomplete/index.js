@@ -53,7 +53,7 @@ class TagsAutocomplete extends PureComponent {
     return (
       <div className={classList} onClick={this.onClick}>
         <DropDown
-          button={
+          button={(
             <TagsField
               value={value}
               onFocus={this.onFocus}
@@ -65,16 +65,19 @@ class TagsAutocomplete extends PureComponent {
               placeholder={placeholder}
               noCustom
             />
-          }
+          )}
           label={label}
           ref="dropdown"
           inline={false}
           name="ui-tags-autocomplete"
         >
           <div className="ui-tags-autocomplete-items">
-            {items ?
-              (items.length ? (
-                <List items={items.filter(item => !Array.isArray(value) || !value.includes(item))} onClick={this.onSelect} />
+            {items
+              ? (items.length ? (
+                <List
+                  items={items.filter((item) => !Array.isArray(value) || !value.includes(item))}
+                  onClick={this.onSelect}
+                />
               ) : (
                 <div className="ui-tags-autocomplete-item ui-tags-autocomplete-item-not-found">
                   {notFoundText}
@@ -85,8 +88,7 @@ class TagsAutocomplete extends PureComponent {
                     <Loading />
                   </div>
                 )
-              )
-            }
+              )}
           </div>
         </DropDown>
       </div>

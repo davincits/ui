@@ -1,16 +1,18 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { bool, string, func, element, oneOfType } from 'prop-types';
+import {
+  bool, string, func, element, oneOfType,
+} from 'prop-types';
 import { classes, uniqid } from '../utils';
 import SearchIcon from '../icons/Search';
 import CloseIcon from '../icons/Close';
 
 const FIELD_TYPE_TEXT = 'text';
 const FIELD_TYPE_NUMBER = 'number';
-const normalizeFieldType = type => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
+const normalizeFieldType = (type) => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
 
-const checkValue = value => (
+const checkValue = (value) => (
   (value === null) || (value === undefined) || (value !== value) ? '' : value // eslint-disable-line no-self-compare
 );
 

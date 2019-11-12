@@ -18,17 +18,13 @@ class Slider extends PureComponent {
     window.removeEventListener('mouseleave', this.cancelTracking);
   }
 
-  getValue(value) {
-    const { value: $value } = this.props;
-    if (value === undefined) {
-      value = $value;
-    }
+  getValue(value = this.props.value) { // eslint-disable-line react/destructuring-assignment
     const { min, max } = this.props;
-    value = Number(value);
-    if (isNaN(value)) value = min;
-    if (value < min) return min;
-    if (value > max) return max;
-    return value;
+    let $value = Number(value);
+    if (isNaN($value)) $value = min;
+    if ($value < min) return min;
+    if ($value > max) return max;
+    return $value;
   }
 
   onMouseDown = (event) => {
@@ -48,10 +44,6 @@ class Slider extends PureComponent {
     if (value < min) value = min;
     if (value > max) value = max;
     onChange(value);
-  }
-
-  cancelTracking = () => {
-    this.tracking = false;
   }
 
   onClick = (event) => {
@@ -79,6 +71,10 @@ class Slider extends PureComponent {
       left: `${sliderLeft}%`,
     };
     return [trackStyle, sliderStyle];
+  }
+
+  cancelTracking = () => {
+    this.tracking = false;
   }
 
   render() {

@@ -19,13 +19,15 @@ class Container extends PureComponent {
 
   onMouseEnter = ({ target }) => {
     const { place = TOP } = this.props;
-    const { left, top, width, height } = target.getBoundingClientRect();
+    const {
+      left, top, width, height,
+    } = target.getBoundingClientRect();
     switch (place) {
       case RIGHT:
         this.setState({ left: left + width, top: top + height / 2 });
         break;
       case LEFT:
-        this.setState({ left: left, top: top + height / 2 });
+        this.setState({ left, top: top + height / 2 });
         break;
       case BOTTOM:
         this.setState({ left: left + width / 2, top: top + height });

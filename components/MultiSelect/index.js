@@ -3,23 +3,21 @@ import './style.scss';
 import React, { Component } from 'react';
 import DropDown from '../DropDown';
 import List from '../List';
-import Item from './Item';
 import { classes } from '../utils';
-import { array } from 'prop-types';
 
 class MultiSelect extends Component {
   onSelect = (val) => {
     const { value, onChange } = this.props;
     if (!onChange) return;
     if (!value) return onChange([val]);
-    onChange(value.includes(val) ? value.filter(item => item !== val) : [...value, val]);
+    onChange(value.includes(val) ? value.filter((item) => item !== val) : [...value, val]);
   }
 
   getButtonContent() {
     const { value, options } = this.props;
     if (!value || !value.length) return 'Choose...';
     if (value.length === 1) {
-      return options.find(i => i.value === value[0].value).label;
+      return options.find((i) => i.value === value[0].value).label;
     }
     return `Selected: ${value.length}`;
   }
@@ -41,7 +39,7 @@ class MultiSelect extends Component {
             items={Array.isArray(options) ? options : []}
             onClick={this.onSelect}
             imageSize={imageSize}
-            isChecked={i => Boolean(value && value.includes(i))}
+            isChecked={(i) => Boolean(value && value.includes(i))}
             checkbox
           />
         </DropDown>
@@ -49,9 +47,5 @@ class MultiSelect extends Component {
     );
   }
 }
-
-MultiSelect.propTypes = {
-  value: array,
-};
 
 export default MultiSelect;

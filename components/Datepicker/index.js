@@ -1,7 +1,6 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import TextField from '../TextField';
 import DropDown from '../DropDown';
 import IconCalendar from '../icons/Calendar';
 import Content from './Content';
@@ -20,7 +19,6 @@ class Datepicker extends PureComponent {
       value,
       label,
       className,
-      onChange,
       isDateAllowed = () => true,
     } = this.props;
     const dateObject = value ? new Date(value) : new Date();

@@ -28,7 +28,6 @@ class Autocomplete extends Component {
       label,
       value = '',
       onChange,
-      minLength = 1,
       loading,
     } = this.props;
     const textField = (
@@ -48,8 +47,8 @@ class Autocomplete extends Component {
           manual
         >
           <div className="ui-autocomplete-items">
-            {items ?
-              (items.length ? (
+            {items
+              ? (items.length ? (
                 <List items={items} onClick={this.onSelect} />
               ) : (
                 <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
@@ -61,8 +60,7 @@ class Autocomplete extends Component {
                     <Loading />
                   </div>
                 )
-              )
-            }
+              )}
           </div>
         </DropDown>
       </div>

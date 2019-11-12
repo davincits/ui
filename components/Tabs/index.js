@@ -15,21 +15,21 @@ class Tabs extends PureComponent {
     }
   }
 
-  renderChildren() {
-    const { children } = this.props;
-    const { index } = this.state;
-    let i = 0;
-    return React.Children.map(children, child => React.cloneElement(child, {
-      changeIndex: this.changeIndex,
-      active: (child.type !== TabList) && (index === i++),
-      index,
-    }));
-  }
-
   changeIndex = (index) => {
     const { onChange } = this.props;
     this.setState({ index });
     if (onChange) onChange(index);
+  }
+
+  renderChildren() {
+    const { children } = this.props;
+    const { index } = this.state;
+    let i = 0;
+    return React.Children.map(children, (child) => React.cloneElement(child, {
+      changeIndex: this.changeIndex,
+      active: (child.type !== TabList) && (index === i++),
+      index,
+    }));
   }
 
   render() {

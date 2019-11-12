@@ -39,7 +39,7 @@ class DropDown extends PureComponent {
     this.toggleOpenState(false);
   };
 
-  toggleOpenState(opened = !this.state.opened) {
+  toggleOpenState(opened = !this.state.opened) { // eslint-disable-line react/destructuring-assignment
     const { inline = true } = this.props;
     const { button } = this.refs;
     const { innerHeight: windowHeight } = window;

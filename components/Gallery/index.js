@@ -113,7 +113,7 @@ class Gallery extends PureComponent {
           {
             images.map((src, index) => (
               <Preview
-                key={index}
+                key={src}
                 src={src}
                 index={index}
                 current={current === index}
@@ -136,11 +136,11 @@ class Gallery extends PureComponent {
         </div>
       </div>
     ) : (
-        <div className="component-gallery">
-          <div className="component-gallery-view">
-            <IconBroken />
-          </div>
+      <div className="component-gallery">
+        <div className="component-gallery-view">
+          <IconBroken />
         </div>
+      </div>
     );
   }
 }
