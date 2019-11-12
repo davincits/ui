@@ -2,6 +2,7 @@ import './style.scss';
 
 import React, { Component } from 'react';
 import DropDown from '../DropDown';
+import List from '../List';
 import Item from './Item';
 import { classes } from '../utils';
 import { array } from 'prop-types';
@@ -18,7 +19,7 @@ class MultiSelect extends Component {
     const { value, options } = this.props;
     if (!value || !value.length) return 'Choose...';
     if (value.length === 1) {
-      return options.find(i => i.value === value[0]).label;
+      return options.find(i => i.value === value[0].value).label;
     }
     return `Selected: ${value.length}`;
   }
@@ -31,19 +32,18 @@ class MultiSelect extends Component {
       value,
       buttonContent = this.getButtonContent(),
       inline,
+      imageSize,
     } = this.props;
     return (
       <div className={classes(['ui-multiselect', className])}>
         <DropDown label={label} buttonContent={buttonContent} inline={inline} name="ui-multiselect">
-          {Array.isArray(options) ? options.map(i => (
-            <Item
-              key={i.value}
-              value={i.value}
-              label={i.label}
-              selected={Boolean(value && value.includes(i.value))}
-              onSelect={this.onSelect}
-            />
-          )) : null}
+          <List
+            items={Array.isArray(options) ? options : []}
+            onClick={this.onSelect}
+            imageSize={imageSize}
+            isChecked={i => Boolean(value && value.includes(i))}
+            checkbox
+          />
         </DropDown>
       </div>
     );

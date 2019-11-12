@@ -1,0 +1,52 @@
+[
+  {
+    "id": "2b97558c-58b7-4437-9631-4b3ddcc686d0",
+    "label": "Bertram Pedersen",
+    "img": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
+  },
+  {
+    "id": "f5e2f412-c24e-44f3-917d-55f399ba7655",
+    "label": "Elly Widmann",
+    "img": "https://randomuser.me/api/portraits/thumb/women/65.jpg"
+  },
+  {
+    "id": "67abd417-106e-4160-a121-93c4ff34641a",
+    "label": "Vetle Østvik",
+    "img": "https://randomuser.me/api/portraits/thumb/men/82.jpg"
+  },
+  {
+    "id": "c2b65d74-cfb0-4d22-a550-46665feac4d8",
+    "label": "Mason Martin",
+    "img": "https://randomuser.me/api/portraits/thumb/men/8.jpg"
+  },
+  {
+    "id": "8d3b8c73-1854-4be6-a8a9-5b23141a07ed",
+    "label": "Vildan Saygıner",
+    "img": "https://randomuser.me/api/portraits/thumb/women/27.jpg"
+  },
+  {
+    "id": "2f64f032-6c4d-4aee-bb8e-0ad3b3fe5a61",
+    "label": "Reinaldo de Souza",
+    "img": "https://randomuser.me/api/portraits/thumb/men/11.jpg"
+  },
+  {
+    "id": "19c164bb-42ec-4272-a1ab-be78d8013c51",
+    "label": "Lea Larsen",
+    "img": "https://randomuser.me/api/portraits/thumb/women/64.jpg"
+  },
+  {
+    "id": "6ac88e0c-3bc4-475f-831e-f1f9ecc4bb45",
+    "label": "Allie Moreno",
+    "img": "https://randomuser.me/api/portraits/thumb/women/83.jpg"
+  },
+  {
+    "id": "2dbe05f8-614e-462d-9776-34f1210ac9ca",
+    "label": "Sara Heinonen",
+    "img": "https://randomuser.me/api/portraits/thumb/women/3.jpg"
+  },
+  {
+    "id": "99484c81-aae2-4b06-8019-8095160c269a",
+    "label": "Brittany Jackson",
+    "img": "https://randomuser.me/api/portraits/thumb/women/91.jpg"
+  }
+]

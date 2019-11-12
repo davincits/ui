@@ -4,45 +4,60 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { MultiSelect } from '../components';
-
-const OPTIONS = [
-  {
-    value: 'first',
-    label: 'First option',
-  },
-  {
-    value: 'second',
-    label: 'Second option',
-  },
-  {
-    value: 'third',
-    label: 'Third option',
-  },
-  {
-    value: 'fourth',
-    label: 'Fourth option',
-  },
-  {
-    value: 'fifth',
-    label: 'Fifth option',
-  }
-];
+import LIST from './mocks/users_list.json';
+import LIST_24 from './mocks/users_list_img_24.json';
+import LIST_40 from './mocks/users_list_img_40.json';
 
 storiesOf('MultiSelect', module)
   .add('common', () => (
     <Container>
       {({ value, onChange }) => (
-        <div style={{ width: '240px'}}>
+        <div style={{ width: '240px' }}>
           <MultiSelect
             label="Input label"
             value={value}
-            options={OPTIONS}
-            onChange={(value) => {
-              onChange(value);
-              action('changed')(value);
+            options={LIST}
+            onChange={(val) => {
+              onChange(val);
+              action('changed')(val);
             }}
           />
         </div>
       )}
     </Container>
   ))
+  .add('with image', () => (
+    <Container>
+      {({ value, onChange }) => (
+        <div style={{ width: '240px' }}>
+          <MultiSelect
+            label="Input label"
+            value={value}
+            options={LIST_24}
+            onChange={(val) => {
+              onChange(val);
+              action('changed')(val);
+            }}
+          />
+        </div>
+      )}
+    </Container>
+  ))
+  .add('with large image', () => (
+    <Container>
+      {({ value, onChange }) => (
+        <div style={{ width: '240px' }}>
+          <MultiSelect
+            label="Input label"
+            value={value}
+            options={LIST_40}
+            imageSize="large"
+            onChange={(val) => {
+              onChange(val);
+              action('changed')(val);
+            }}
+          />
+        </div>
+      )}
+    </Container>
+  ));

@@ -17,13 +17,13 @@ class Item extends PureComponent {
       className,
       item,
       checkbox,
-      chacked,
+      checked,
     } = this.props;
     const { img, label } = item;
     return (
       <div className={classes(['ui-list-item', className])} onClick={this.onClick}>
         {checkbox && (
-          <CheckBox value={chacked} />
+          <CheckBox value={checked} />
         )}
         {img ? (<Image src={img} />) : null}
         <div className="ui-list-item-label">{label || item}</div>
