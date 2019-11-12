@@ -29,18 +29,6 @@
           &:hover {
             background-color: rgba(#333333, 0.05);
           }
-
-          &.ui-autocomplete-item-not-found {
-            cursor: default;
-
-            &:hover {
-              background-color: inherit;
-            }
-          }
-
-          &.ui-autocomplete-item-loading {
-            justify-content: center;
-          }
         }
       }
     }

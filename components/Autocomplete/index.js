@@ -51,16 +51,17 @@ class Autocomplete extends Component {
               ? (items.length ? (
                 <List items={items} onClick={this.onSelect} />
               ) : (
-                <div className="ui-autocomplete-item ui-autocomplete-item-not-found">
-                  {notFoundText}
-                </div>
-              )) : (
-                loading && (
-                  <div className="ui-autocomplete-item ui-autocomplete-item-loading">
-                    <Loading />
-                  </div>
-                )
-              )}
+                <List
+                  items={[notFoundText]}
+                  notActive
+                />
+              )) : (loading && (
+                <List
+                  items={[<Loading />]}
+                  notActive
+                />
+              )
+            )}
           </div>
         </DropDown>
       </div>

@@ -187,12 +187,6 @@ hr {
       cursor: pointer; }
       .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item:hover {
         background-color: rgba(51, 51, 51, 0.05); }
-      .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item.ui-autocomplete-item-not-found {
-        cursor: default; }
-        .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item.ui-autocomplete-item-not-found:hover {
-          background-color: inherit; }
-      .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item.ui-autocomplete-item-loading {
-        justify-content: center; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
@@ -718,10 +712,10 @@ hr {
     min-height: 40px;
     display: flex;
     align-items: center;
-    padding: 8px 16px;
-    cursor: pointer; }
-    .ui-list .ui-list-item:hover {
-      background-color: rgba(51, 51, 51, 0.05); }
+    padding: 8px 16px; }
+    .ui-list .ui-list-item:not(.ui-list-item-not-active):hover {
+      background-color: rgba(51, 51, 51, 0.05);
+      cursor: pointer; }
     .ui-list .ui-list-item .ui-checkbox {
       margin-right: 16px; }
     .ui-list .ui-list-item .ui-list-item-image {
@@ -1902,6 +1896,9 @@ hr {
 
 .ui-multiselect_dropdown .ui-dropdown-content {
   padding: 0; }
+  .ui-multiselect_dropdown .ui-dropdown-content .ui-multiselect-search {
+    padding: 16px;
+    border-bottom: 1px solid #E6E6E6; }
   .ui-multiselect_dropdown .ui-dropdown-content .ui-multiselect-item {
     align-items: center;
     display: flex;

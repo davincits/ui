@@ -46,7 +46,7 @@ storiesOf('MultiSelect', module)
   .add('with large image', () => (
     <Container>
       {({ value, onChange }) => (
-        <div style={{ width: '240px' }}>
+        <div style={{ width: '260px' }}>
           <MultiSelect
             label="Input label"
             value={value}
@@ -56,6 +56,24 @@ storiesOf('MultiSelect', module)
               onChange(val);
               action('changed')(val);
             }}
+          />
+        </div>
+      )}
+    </Container>
+  ))
+  .add('with large image', () => (
+    <Container>
+      {({ value, onChange }) => (
+        <div style={{ width: '280px' }}>
+          <MultiSelect
+            label="Input label"
+            value={value}
+            options={LIST_24}
+            onChange={(val) => {
+              onChange(val);
+              action('changed')(val);
+            }}
+            search
           />
         </div>
       )}

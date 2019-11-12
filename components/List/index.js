@@ -12,6 +12,7 @@ function List({
   imageSize = 'medium',
   checkbox,
   isChecked,
+  notActive,
   ...props
 }) {
   return (
@@ -23,6 +24,7 @@ function List({
           onClick={onClick}
           checkbox={checkbox}
           checked={isChecked && isChecked(item)}
+          notActive={notActive}
         />
       )) : children}
     </div>

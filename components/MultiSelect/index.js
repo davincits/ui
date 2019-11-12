@@ -3,9 +3,15 @@ import './style.scss';
 import React, { Component } from 'react';
 import DropDown from '../DropDown';
 import List from '../List';
+import TextField from '../TextField';
+import Loading from '../LoadingDotted';
 import { classes } from '../utils';
 
 class MultiSelect extends Component {
+  state = {
+    serchString: '',
+  };
+
   onSelect = (val) => {
     const { value, onChange } = this.props;
     if (!onChange) return;
@@ -22,6 +28,10 @@ class MultiSelect extends Component {
     return `Selected: ${value.length}`;
   }
 
+  onSearchChange = (serchString) => {
+    this.setState({ serchString });
+  }
+
   render() {
     const {
       className,
@@ -31,17 +41,52 @@ class MultiSelect extends Component {
       buttonContent = this.getButtonContent(),
       inline,
       imageSize,
+      search,
+      notFoundText = 'Nothing was found...',
     } = this.props;
+    const { serchString } = this.state;
+    const searchStringLowercased = serchString.toLocaleLowerCase();
+    const items = Array.isArray(options) ?
+      options.filter(i => !serchString || (i.label || i).toLocaleLowerCase().includes(serchString)) :
+      [];
     return (
       <div className={classes(['ui-multiselect', className])}>
-        <DropDown label={label} buttonContent={buttonContent} inline={inline} name="ui-multiselect">
-          <List
-            items={Array.isArray(options) ? options : []}
-            onClick={this.onSelect}
-            imageSize={imageSize}
-            isChecked={(i) => Boolean(value && value.includes(i))}
-            checkbox
-          />
+        <DropDown
+          label={label}
+          buttonContent={buttonContent}
+          inline={inline}
+          name="ui-multiselect"
+        >
+          {search && (
+            <div className="ui-multiselect-search">
+              <TextField
+                value={serchString}
+                onChange={this.onSearchChange}
+                search
+              />
+            </div>
+          )}
+          {items
+            ? (items.length ? (
+              <List
+                items={items}
+                onClick={this.onSelect}
+                imageSize={imageSize}
+                isChecked={(i) => Boolean(value && value.includes(i))}
+                checkbox
+              />
+            ) : (
+              <List
+                items={[notFoundText]}
+                notActive
+              />
+            )) : (loading && (
+              <List
+                items={[<Loading />]}
+                notActive
+              />
+            )
+          )}
         </DropDown>
       </div>
     );

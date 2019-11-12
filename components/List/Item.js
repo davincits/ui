@@ -18,10 +18,18 @@ class Item extends PureComponent {
       item,
       checkbox,
       checked,
+      notActive,
     } = this.props;
     const { img, label } = item;
     return (
-      <div className={classes(['ui-list-item', className])} onClick={this.onClick}>
+      <div
+        className={classes([
+          'ui-list-item',
+          notActive && 'ui-list-item-not-active',
+          className,
+        ])}
+        onClick={this.onClick}
+      >
         {checkbox && (
           <CheckBox value={checked} />
         )}

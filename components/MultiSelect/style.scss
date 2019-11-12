@@ -5,6 +5,11 @@
   .ui-dropdown-content {
     padding: 0;
 
+    .ui-multiselect-search {
+      padding: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
     .ui-multiselect-item {
       align-items: center;
       display: flex;
