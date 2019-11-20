@@ -16,10 +16,11 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-react",
+              '@babel/env',
+              '@babel/react',
             ],
-          }
-        }
+          },
+        },
       },
       {
         test: /\.scss$/,
@@ -33,9 +34,9 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
-    ]
+    ],
   },
   entry: {
     index: './src/index.js',
@@ -44,7 +45,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname),
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
-  externals: ['react', 'react-dom']
+  externals: ['react', 'react-dom'],
 };
