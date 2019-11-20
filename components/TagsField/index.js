@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 import Tag from './Tag';
 
-const ENTER_CODE = 'Enter';
+const KEY_NAMES = ['Enter', ',', ' '];
 
 class TagsField extends PureComponent {
   state = {
@@ -25,10 +25,11 @@ class TagsField extends PureComponent {
       value, onChange, onInputChange, noCustom,
     } = this.props;
     const inputValue = target.value.trim();
-    if (key === ENTER_CODE && inputValue && onChange && !noCustom) {
-      const result = onChange(Array.isArray(value) ? [...value, inputValue] : [inputValue]);
-      if (result === false) return;
+    if (KEY_NAMES.includes(key) && inputValue && onChange && !noCustom) {
+      onChange(Array.isArray(value) ? [...value, inputValue] : [inputValue]);
       if (onInputChange) onInputChange('');
+      console.log("PRESS", inputValue);
+      event.preventDefault();
       this.setState({ inputValue: '' });
     }
   };
