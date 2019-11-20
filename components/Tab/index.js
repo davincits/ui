@@ -4,9 +4,10 @@ import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
 class Tab extends PureComponent {
-  clickHandler = () => {
+  clickHandler = (event) => {
     const { index, changeIndex } = this.props;
     changeIndex && changeIndex(index);
+    if (onClick) onClick(event);
   }
 
   render() {
