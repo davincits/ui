@@ -16,14 +16,14 @@ class MultiSelect extends Component {
     const { value, onChange } = this.props;
     if (!onChange) return;
     if (!value) return onChange([val]);
-    onChange(value.includes(val) ? value.filter((item) => item !== val) : [...value, val]);
+    onChange(value.includes(val) ? value.filter(item => item !== val) : [...value, val]);
   }
 
   getButtonContent() {
     const { value, options } = this.props;
     if (!value || !value.length) return 'Choose...';
     if (value.length === 1) {
-      return options.find((i) => i.value === value[0].value).label;
+      return options.find(i => i.value === value[0].value).label;
     }
     return `Selected: ${value.length}`;
   }
@@ -47,7 +47,7 @@ class MultiSelect extends Component {
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();
     const items = Array.isArray(options) ?
-      options.filter(i => !serchString || (i.label || i).toLocaleLowerCase().includes(serchString)) :
+      options.filter(i => !serchString || (i.label || i).toLocaleLowerCase().includes(searchStringLowercased)) :
       [];
     return (
       <div className={classes(['ui-multiselect', className])}>
@@ -72,7 +72,7 @@ class MultiSelect extends Component {
                 items={items}
                 onClick={this.onSelect}
                 imageSize={imageSize}
-                isChecked={(i) => Boolean(value && value.includes(i))}
+                isChecked={i => Boolean(value && value.includes(i))}
                 checkbox
               />
             ) : (

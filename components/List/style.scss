@@ -1,9 +1,13 @@
 @import '../common.scss';
 
 .ui-list {
-  box-sizing: border-box;
   width: 100%;
   background-color: $ui-color-white;
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+  box-sizing: border-box;
 
   .ui-list-item {
     min-height: 40px;
