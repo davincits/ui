@@ -25,7 +25,7 @@ class Tabs extends PureComponent {
     const { children } = this.props;
     const { index } = this.state;
     let i = 0;
-    return React.Children.map(children, (child) => React.cloneElement(child, {
+    return React.Children.map(children, child => React.cloneElement(child, {
       changeIndex: this.changeIndex,
       active: (child.type !== TabList) && (index === i++),
       index,
