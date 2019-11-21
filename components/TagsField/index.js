@@ -25,10 +25,10 @@ class TagsField extends PureComponent {
       value, onChange, onInputChange, noCustom,
     } = this.props;
     const inputValue = target.value.trim();
-    if (KEY_NAMES.includes(key) && inputValue && onChange && !noCustom) {
-      onChange(Array.isArray(value) ? [...value, inputValue] : [inputValue]);
+    const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
+    if (KEY_NAMES.includes(key) && inputValues.length && onChange && !noCustom) {
+      onChange(Array.isArray(value) ? [...value, ...inputValues] : inputValues);
       if (onInputChange) onInputChange('');
-      console.log("PRESS", inputValue);
       event.preventDefault();
       this.setState({ inputValue: '' });
     }
