@@ -5,7 +5,7 @@ import { classes } from '../utils';
 
 class Tab extends PureComponent {
   clickHandler = (event) => {
-    const { index, changeIndex } = this.props;
+    const { index, changeIndex, onClick } = this.props;
     changeIndex && changeIndex(index);
     if (onClick) onClick(event);
   }

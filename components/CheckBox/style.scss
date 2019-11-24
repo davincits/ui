@@ -58,4 +58,8 @@
       opacity: 1;
     }
   }
+
+  &.ui-with-error > .ui-fake-checkbox {
+    border-color: $ui-color-brand-danger;
+  }
 }

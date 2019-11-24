@@ -57,7 +57,7 @@ class Container extends PureComponent {
         className={classes(['ui-tooltip-container', className])}
       >
         {children}
-        {opened && (
+        {Boolean(tooltip) && opened && (
           <Portal>
             <Tooltip className={`ui-tooltip-place-${place}`} left={left} top={top} checkPosition={[TOP, BOTTOM].includes(place)}>{tooltip}</Tooltip>
           </Portal>

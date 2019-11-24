@@ -19,10 +19,19 @@ class CheckBox extends PureComponent {
       label,
       onChange,
       value = false,
+      error,
       ...rest
     } = this.props;
     return (
-      <div className={classes(['ui-checkbox', value && 'ui-checkbox-checked', className])} onClick={this.onChange}>
+      <div
+        className={classes([
+          'ui-checkbox',
+          value && 'ui-checkbox-checked',
+          error && 'ui-with-error',
+          className
+        ])}
+        onClick={this.onChange}
+      >
         <input type="checkbox" onChange={this.onChange} checked={value} {...rest} />
         <div className="ui-fake-checkbox" />
         {!!label && <div className="ui-label">{label}</div>}
