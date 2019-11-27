@@ -61,7 +61,7 @@ storiesOf('MultiSelect', module)
       )}
     </Container>
   ))
-  .add('with large image', () => (
+  .add('with search', () => (
     <Container>
       {({ value, onChange }) => (
         <div style={{ width: '280px' }}>

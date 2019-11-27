@@ -38,8 +38,10 @@ import Datepicker from './Datepicker';
 import Timepicker from './Timepicker';
 import TagsField from './TagsField';
 import TagsAutocomplete from './TagsAutocomplete';
+import Accordion from './Accordion';
 
 export {
+  Accordion,
   Alert,
   Autocomplete,
   Button,

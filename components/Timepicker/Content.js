@@ -3,6 +3,15 @@ import './style.scss';
 import React, { PureComponent } from 'react';
 import Label from './Label';
 
+const parseAloowedTimeString = (string) => string.split(';')
+  .map((p) => p.split('-').map((t) => t.split(':').map((s) => parseInt(s, 10))));
+const isTimeAllowed = ({ hours: h, minutes: m }, a) => (!a || a.some(([[h1, m1], [h2, m2]]) => {
+  if (m === null) {
+    return (h >= h1) && (h <= h2);
+  }
+  return ((h === h1) ? (m >= m1) : (h > h1)) && ((h === h2) ? (m <= m2) : (h < h2));
+}));
+
 class Datepicker extends PureComponent {
   constructor(props) {
     super(props);
@@ -43,32 +52,36 @@ class Datepicker extends PureComponent {
   }
 
   render() {
-    const { isTimeAllowed } = this.props;
+    const { allowedTime: allowedTimeString } = this.props;
     const { hoursView, hours, minutes } = this.state;
     const hoursTable = [];
-    for (let i = 1; i < 13; i++) {
-      hoursTable.push({
-        label: i,
-        position: i,
-        disabled: !isTimeAllowed({ hours: i, minutes: minutes || 0 }),
-      });
-    }
-    for (let i = 13; i < 25; i++) {
-      hoursTable.push({
-        label: i < 24 ? i : 0,
-        position: (i - 12),
-        inner: true,
-        disabled: !isTimeAllowed({ hours: i < 24 ? i : 0, minutes: minutes || 0 }),
-      });
-    }
     const minutesTable = [];
-    for (let i = 1; i < 13; i++) {
-      minutesTable.push({
-        label: i < 12 ? i * 5 : 0,
-        position: i,
-        inner: true,
-        disabled: !isTimeAllowed({ hours: hours || 0, minutes: i < 12 ? i * 5 : 0 }),
-      });
+    const allowedTime = allowedTimeString ? parseAloowedTimeString(allowedTimeString) : null;
+    if (hoursView) {
+      for (let i = 1; i < 13; i++) {
+        hoursTable.push({
+          label: i,
+          position: i,
+          disabled: !isTimeAllowed({ hours: i, minutes }, allowedTime),
+        });
+      }
+      for (let i = 13; i < 25; i++) {
+        hoursTable.push({
+          label: i < 24 ? i : 0,
+          position: (i - 12),
+          inner: true,
+          disabled: !isTimeAllowed({ hours: i < 24 ? i : 0, minutes }, allowedTime),
+        });
+      }
+    } else {
+      for (let i = 1; i < 13; i++) {
+        minutesTable.push({
+          label: i < 12 ? i * 5 : 0,
+          position: i,
+          inner: true,
+          disabled: !isTimeAllowed({ hours, minutes: i < 12 ? i * 5 : 0 }, allowedTime),
+        });
+      }
     }
     return (
       <div className="ui-timepicker-content">

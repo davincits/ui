@@ -50,3 +50,7 @@
     border-color: $ui-color-disabled;
   }
 }
+
+.ui-radio-group.ui-with-error .ui-radio > input + .ui-fake-radio {
+  border-color: $ui-color-brand-danger;
+}

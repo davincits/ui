@@ -3,10 +3,10 @@ import { func } from 'prop-types';
 import { classes } from '../utils';
 
 function RadioGroup({
-  children, value, onChange, className,
+  children, value, onChange, className, error,
 }) {
   return (
-    <div className={classes(['ui-radio-group', className])}>
+    <div className={classes(['ui-radio-group', error && 'ui-with-error', className])}>
       {Children.map(children, (child) => React.cloneElement(child, {
         checked: value === child.props.value,
         onChange,

@@ -1,0 +1,48 @@
+@import '../common.scss';
+
+.ui-accordion-title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+  font-weight: 500;
+  color: $ui-color-brand-primary;
+  min-height: 48px;
+  border-top: 1px solid #D6D6D6;
+  cursor: pointer;
+
+  svg {
+    margin-right: 8px;
+    transition: transform .2s;
+  }
+
+  &:hover {
+    color: rgba($ui-color-brand-primary, 0.7);
+  }
+}
+
+.ui-accordion-toggle.ui-active-state .ui-accordion-title {
+  color: $ui-font-color;
+
+  svg {
+    transform: rotate(45deg);
+  }
+}
+
+.ui-accordion > .ui-accordion-toggle:first-child > .ui-accordion-title {
+  border-top: none;
+}
+
+.ui-accordion-collapse.ui-animated {
+  max-height: 0;
+  transition: max-height .4s;
+  overflow: hidden;
+
+  &.ui-active {
+    transition-delay: .2s;
+    max-height: 640px;
+  }
+}

@@ -48,6 +48,15 @@ hr {
   border-right: 0;
   margin: 24px 0; }
 
+.u-padding {
+  padding: 16px; }
+
+.u-padding-top {
+  padding-top: 16px; }
+
+.u-padding-bottom {
+  padding-bottom: 16px; }
+
 *, *::after, *::before {
   box-sizing: inherit; }
 
@@ -705,9 +714,13 @@ hr {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-list {
-  box-sizing: border-box;
   width: 100%;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  box-sizing: border-box; }
   .ui-list .ui-list-item {
     min-height: 40px;
     display: flex;
@@ -804,6 +817,8 @@ hr {
     border-color: #05B9E6; }
     .ui-checkbox > input:checked + .ui-fake-checkbox::after {
       opacity: 1; }
+  .ui-checkbox.ui-with-error > .ui-fake-checkbox {
+    border-color: #F53C3C; }
 
 .ui-row-gutter > .ui-column + .ui-column {
   margin-left: 16px; }
@@ -1612,6 +1627,9 @@ hr {
   .ui-radio > input[disabled] + .ui-fake-radio {
     border-color: #EAEAEA; }
 
+.ui-radio-group.ui-with-error .ui-radio > input + .ui-fake-radio {
+  border-color: #F53C3C; }
+
 *, *::after, *::before {
   box-sizing: inherit; }
 
@@ -1684,6 +1702,36 @@ hr {
         background-color: #05B9E6;
         box-shadow: 4px 0 #05B9E6, 4px 4px #05B9E6, 0 4px #05B9E6, -4px 4px #05B9E6, -4px 0 #05B9E6;
         content: ""; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.ui-label {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.6);
+  font-weight: 500;
+  line-height: 12px;
+  margin-bottom: 4px; }
+
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.ui-paper {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+
+.ui-select.ui-with-error .ui-dropdown .ui-dropdown-button {
+  border-color: #F53C3C; }
 
 .ui-select_dropdown {
   position: relative;
@@ -1826,7 +1874,7 @@ hr {
     opacity: 1; } }
 
 .ui-tooltip {
-  position: absolute;
+  position: fixed;
   justify-content: center;
   display: flex;
   top: 0;
@@ -2463,6 +2511,74 @@ hr {
           background-color: inherit; }
       .ui-tags-autocomplete_dropdown .ui-dropdown-content .ui-tags-autocomplete-items .ui-tags-autocomplete-item.ui-tags-autocomplete-item-loading {
         justify-content: center; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.ui-label {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.6);
+  font-weight: 500;
+  line-height: 12px;
+  margin-bottom: 4px; }
+
+.ui-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.ui-paper {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+
+.ui-accordion-title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #05B9E6;
+  min-height: 48px;
+  border-top: 1px solid #D6D6D6;
+  cursor: pointer; }
+  .ui-accordion-title svg {
+    margin-right: 8px;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s; }
+  .ui-accordion-title:hover {
+    color: rgba(5, 185, 230, 0.7); }
+
+.ui-accordion-toggle.ui-active-state .ui-accordion-title {
+  color: #333333; }
+  .ui-accordion-toggle.ui-active-state .ui-accordion-title svg {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+.ui-accordion > .ui-accordion-toggle:first-child > .ui-accordion-title {
+  border-top: none; }
+
+.ui-accordion-collapse.ui-animated {
+  max-height: 0;
+  -webkit-transition: max-height .4s;
+  transition: max-height .4s;
+  overflow: hidden; }
+  .ui-accordion-collapse.ui-animated.ui-active {
+    -webkit-transition-delay: .2s;
+            transition-delay: .2s;
+    max-height: 640px; }
 
 
 /*# sourceMappingURL=main.css.map*/

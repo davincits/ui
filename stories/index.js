@@ -17,6 +17,7 @@ import './dropdown';
 import './select';
 import './multiselect';
 import './drop-area';
+import './accordion';
 import './gallery';
 import './dialog';
 import './common-dialogs';

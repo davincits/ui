@@ -29,12 +29,8 @@ storiesOf('Time picker', module)
               {value || 'Select a time'}
             </Button>
           )}
-          isTimeAllowed={({ hours, minutes }) => {
-            const start = 7 * 60 + 30; // from 07:30
-            const end = 18 * 60 + 45; // to 18:45
-            const time = hours * 60 + minutes;
-            return time >= start && time <= end;
-          }}
+          // from 7:30 to 18:45
+          allowedTime="7:30-13:00;14:00-18:45"
           onChange={onChange}
           value={value}
         />

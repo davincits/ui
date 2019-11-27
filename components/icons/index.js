@@ -34,6 +34,7 @@ import Unlink from './Unlink';
 import User from './User';
 import Verified from './Verified';
 import Calendar from './Calendar';
+import Plus from './Plus';
 
 export {
   ArrowLeft,
@@ -72,4 +73,5 @@ export {
   User,
   Verified,
   Calendar,
+  Plus,
 };
