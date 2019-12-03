@@ -13,9 +13,8 @@ class Item extends PureComponent {
     this.setState({ value });
   }
 
-  onConfirm = () => {
+  onConfirm = (value = this.state.value) => { // eslint-disable-line
     const { onConfirm } = this.props;
-    const { value } = this.state;
     if (!this.confirmHook || this.confirmHook()) {
       onConfirm(value);
     }
@@ -31,37 +30,33 @@ class Item extends PureComponent {
       message,
       type,
       onCancel,
-      textConfirm,
+      textConfirm = 'Confirm',
       textCancel = 'Cancel',
-      confirmButton,
-      cancelButton,
+      confirmButton = (<Button primary stroke uppercase>{textConfirm || 'Confirm'}</Button>),
+      cancelButton = (<Button danger stroke uppercase>{textCancel}</Button>),
       render,
       className,
     } = this.props;
     const { value } = this.state;
-    let actions = [];
-    switch (type) {
-      case DIALOG_ALERT:
-        actions = (<Button primary stroke uppercase onClick={this.onConfirm}>{textConfirm || 'OK'}</Button>);
-        break;
-      case DIALOG_CONFIRM:
-        actions = [(
-          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-cancel-wrapper" onClick={onCancel}>
-            {cancelButton || (
-              <Button danger stroke uppercase>{textCancel}</Button>
-            )}
-          </div>
-        ), (
-          <div className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper" onClick={this.onConfirm}>
-            {confirmButton || (
-              <Button primary stroke uppercase>{textConfirm || 'Confirm'}</Button>
-            )}
-          </div>
-        ),
-        ];
-        break;
-      default:
+    const actions = [];
+    if (type === DIALOG_CONFIRM) {
+      actions.push((
+        <div
+          className="ui-common-dialog-button-wrapper ui-common-dialog-button-cancel-wrapper"
+          onClick={onCancel}
+        >
+          {cancelButton}
+        </div>
+      ));
     }
+    actions.push((
+      <div
+        className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper"
+        onClick={this.onConfirm}
+      >
+        {confirmButton}
+      </div>
+    ));
     return (
       <Dialog
         className={
@@ -80,6 +75,8 @@ class Item extends PureComponent {
           value,
           onChange: this.onChange,
           setConfirmHook: this.setConfirmHook,
+          onCancel,
+          onConfirm: this.onConfirm,
         })}
       </Dialog>
     );

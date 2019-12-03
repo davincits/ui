@@ -5,8 +5,8 @@ import { classes } from '../utils';
 
 class Option extends PureComponent {
   onClick = () => {
-    const { value, onClick } = this.props;
-    onClick(value);
+    const { value, selected, onClick } = this.props;
+    if (!selected) onClick(value);
   };
 
   render() {

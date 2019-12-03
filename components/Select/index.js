@@ -3,7 +3,7 @@ import './style.scss';
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 import DropDown from '../DropDown';
-import Option from '../Option';
+import Option from './Option';
 
 class Select extends PureComponent {
   onOptionClick = (value) => {
@@ -54,5 +54,7 @@ class Select extends PureComponent {
     );
   }
 }
+
+Selet.Option = Option;
 
 export default Select;

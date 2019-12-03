@@ -94,6 +94,7 @@ class Dialog extends PureComponent {
       className,
       actions = [],
       disabled,
+      width,
     } = this.props;
     const classList = classes({
       'ui-dialog': true,
@@ -103,7 +104,7 @@ class Dialog extends PureComponent {
     return (
       <Portal>
         <div className={classList} onClick={this.backDropClickHandler} onScroll={this.onScroll}>
-          <div className="ui-dialog-window" onMouseDown={this.mouseDownHandler}>
+          <div className="ui-dialog-window" onMouseDown={this.mouseDownHandler} style={{ width }}>
             <div className="ui-dialog-header" ref="header">
               <div className="ui-dialog-title">{title}</div>
               <div className="ui-dialog-close" onClick={this.closeClickHandler}>

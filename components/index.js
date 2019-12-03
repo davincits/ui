@@ -12,7 +12,6 @@ import FullSizeModal from './FullSizeModal';
 import Gallery from './Gallery';
 import LoadingDotted from './LoadingDotted';
 import LoadingSpinner from './LoadingSpinner';
-import Option from './Option';
 import Portal from './Portal';
 import RadioGroup from './Radio/RadioGroup';
 import Radio from './Radio/Radio';
@@ -55,7 +54,6 @@ export {
   Gallery,
   LoadingDotted,
   LoadingSpinner,
-  Option,
   Portal,
   RadioGroup,
   Radio,
