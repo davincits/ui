@@ -24,6 +24,7 @@ import './common-dialogs';
 import './full-size-modal';
 import './toasts';
 import './datepicker';
+import './date-range-picker';
 import './timepicker';
 import './tags-field';
 import './tags-autocomplete';

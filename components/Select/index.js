@@ -55,6 +55,6 @@ class Select extends PureComponent {
   }
 }
 
-Selet.Option = Option;
+Select.Option = Option;
 
 export default Select;

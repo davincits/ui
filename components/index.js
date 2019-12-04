@@ -34,6 +34,8 @@ import ToastrContainer, {
 } from './Toastr';
 import DialogsContainer, { AlertDialog, ConfirmDialog } from './CommonDialogs';
 import Datepicker from './Datepicker';
+import DatePicker from './Datepicker';
+import DateRangePicker from './DateRangePicker';
 import Timepicker from './Timepicker';
 import TagsField from './TagsField';
 import TagsAutocomplete from './TagsAutocomplete';
@@ -85,6 +87,8 @@ export {
   List,
   ListItem,
   Datepicker,
+  DatePicker,
+  DateRangePicker,
   Timepicker,
   TagsField,
   TagsAutocomplete,

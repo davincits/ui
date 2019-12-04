@@ -1,7 +1,7 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import { classes } from '../../utils';
 
 class Option extends PureComponent {
   onClick = () => {

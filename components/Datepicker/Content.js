@@ -21,9 +21,10 @@ class Content extends PureComponent {
   constructor(props) {
     super(props);
     const { dateObject } = props;
-    const year = dateObject.getFullYear();
-    const month = dateObject.getMonth();
-    const date = dateObject.getDate();
+    const today = new Date();
+    const year = (dateObject || today).getFullYear();
+    const month = (dateObject || today).getMonth();
+    const date = dateObject && dateObject.getDate();
     this.state = {
       currentYear: year,
       currentMonth: month,
