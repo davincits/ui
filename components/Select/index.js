@@ -3,7 +3,7 @@ import './style.scss';
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 import DropDown from '../DropDown';
-import Option from './Option';
+import Option from '../Option';
 
 class Select extends PureComponent {
   onOptionClick = (value) => {
@@ -21,6 +21,7 @@ class Select extends PureComponent {
       options,
       disabled,
       error,
+      placeholder,
       ...props
     } = this.props;
     const classList = classes({
@@ -28,19 +29,21 @@ class Select extends PureComponent {
       'ui-with-error': error,
       [className]: className,
     });
-    const { label: selectedLabel } = options
-      .filter(i => i).find(({ value: val }) => val === value) || options[0] || {};
+    const selected = options.filter((i) => i).find(({ value: val }) => val === value);
+    const placeholderText = (
+      <div className="ui-placeholder">{placeholder}</div>
+    );
     return (
       <div className={classList} {...props}>
         <DropDown
           label={label}
-          buttonContent={selectedLabel}
+          buttonContent={selected ? selected.label : placeholderText}
           disabled={disabled}
           inline={false}
           name="ui-select"
           ref="dropdown"
         >
-          {options.map(opt => (opt ? (
+          {options.map((opt) => (opt ? (
             <Option
               key={opt.value}
               onClick={this.onOptionClick}
@@ -54,7 +57,5 @@ class Select extends PureComponent {
     );
   }
 }
-
-Select.Option = Option;
 
 export default Select;

@@ -61,12 +61,16 @@ class TextField extends PureComponent {
 
   onPlusClick = () => {
     const { value, onChange } = this.props;
-    if (onChange && !isNaN(value)) onChange(Number(value) + 1);
+    if (onChange) {
+      onChange((isNaN(value) ? 0 : Number(value)) + 1);
+    }
   }
 
   onMinusClick = () => {
     const { value, natural, onChange } = this.props;
-    if (onChange && !isNaN(value) && (!natural || Number(value) > 0)) onChange(Number(value) - 1);
+    if (onChange && !isNaN(value) && (!natural || Number(value) > 1)) {
+      onChange(Number(value) - 1);
+    }
   }
 
   control() {
