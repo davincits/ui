@@ -20,16 +20,10 @@ class Datepicker extends PureComponent {
       label,
       className,
       isDateAllowed = () => true,
+      monthNames,
+      dayNames,
     } = this.props;
-    let dateObject;
-    if (value) {
-      const parts = value.split('-');
-      dateObject = new Date(
-        parseInt(parts[0], 10),
-        parseInt(parts[1], 10) - 1,
-        parseInt(parts[2], 10),
-      );
-    }
+    const dateObject = value ? new Date(value) : new Date();
     return (
       <div className={classes(['ui-datepicker', className])}>
         <DropDown
@@ -46,6 +40,8 @@ class Datepicker extends PureComponent {
             dateObject={dateObject}
             onChange={this.onChange}
             isDateAllowed={isDateAllowed}
+            monthNames={monthNames}
+            dayNames={dayNames}
           />
         </DropDown>
       </div>

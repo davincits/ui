@@ -19,19 +19,31 @@ export const WEEK_DAYS = [
   WEEK_DAY_SA,
 ];
 export const WEEK_START = WEEK_DAY_MO;
+export const MONTH_NAME_JANUARY = 'January';
+export const MONTH_NAME_FEBRUARY = 'February';
+export const MONTH_NAME_MARCH = 'March';
+export const MONTH_NAME_APRIL = 'April';
+export const MONTH_NAME_MAY = 'May';
+export const MONTH_NAME_JUNE = 'June';
+export const MONTH_NAME_JULY = 'July';
+export const MONTH_NAME_AUGUST = 'August';
+export const MONTH_NAME_SEPTEMBER = 'September';
+export const MONTH_NAME_OCTOBER = 'October';
+export const MONTH_NAME_NOVEMBER = 'November';
+export const MONTH_NAME_DECEMBER = 'December';
 export const MONTH_NAMES = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+  MONTH_NAME_JANUARY,
+  MONTH_NAME_FEBRUARY,
+  MONTH_NAME_MARCH,
+  MONTH_NAME_APRIL,
+  MONTH_NAME_MAY,
+  MONTH_NAME_JUNE,
+  MONTH_NAME_JULY,
+  MONTH_NAME_AUGUST,
+  MONTH_NAME_SEPTEMBER,
+  MONTH_NAME_OCTOBER,
+  MONTH_NAME_NOVEMBER,
+  MONTH_NAME_DECEMBER,
 ];
 export const LAST_MONTH_INDEX = MONTH_NAMES.length - 1;
 export const YEARS_PER_PAGE = 16;

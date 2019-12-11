@@ -17,6 +17,7 @@
   svg {
     margin-right: 8px;
     transition: transform .2s;
+    min-width: 24px;
   }
 
   &:hover {
@@ -38,11 +39,10 @@
 
 .ui-accordion-collapse.ui-animated {
   max-height: 0;
-  transition: max-height .4s;
+  transition: max-height .2s;
   overflow: hidden;
 
   &.ui-active {
-    transition-delay: .2s;
     max-height: 640px;
   }
 }

@@ -5,7 +5,6 @@ import Day from './Day';
 import IconChevronLeft from '../icons/ChevronLeft';
 import IconChevronRight from '../icons/ChevronRight';
 import {
-  DAY,
   WEEK_DAYS,
   WEEK_START,
   MONTH_NAMES,
@@ -21,10 +20,9 @@ class Content extends PureComponent {
   constructor(props) {
     super(props);
     const { dateObject } = props;
-    const today = new Date();
-    const year = (dateObject || today).getFullYear();
-    const month = (dateObject || today).getMonth();
-    const date = dateObject && dateObject.getDate();
+    const year = dateObject.getFullYear();
+    const month = dateObject.getMonth();
+    const date = dateObject.getDate();
     this.state = {
       currentYear: year,
       currentMonth: month,
@@ -173,6 +171,7 @@ class Content extends PureComponent {
   }
 
   renderYearView() {
+    const { monthNames } = this.props;
     const {
       currentYear,
       selectedYear,
@@ -204,7 +203,7 @@ class Content extends PureComponent {
           <Month
             key={name}
             month={index}
-            name={name}
+            name={monthNames ? monthNames[index] : name}
             selected={currentYear === selectedYear && index === selectedMonth}
             onClick={this.onMonthClick}
           />
@@ -214,7 +213,7 @@ class Content extends PureComponent {
   }
 
   renderMonthView() {
-    const { isDateAllowed } = this.props;
+    const { isDateAllowed, monthNames, dayNames } = this.props;
     const {
       currentYear,
       currentMonth,
@@ -229,7 +228,7 @@ class Content extends PureComponent {
       if (isNaN(dateObject.getDay())) {
         throw Error('isNaN(dateObject.getDay())');
       }
-      dateObject.setTime(dateObject.getTime() - DAY);
+      dateObject.setDate(dateObject.getDate() - 1);
     }
     const days = [];
     const labels = [];
@@ -239,7 +238,7 @@ class Content extends PureComponent {
       month = dateObject.getMonth();
       date = dateObject.getDate();
       if (labels.length < WEEK_DAYS.length) {
-        labels.push(WEEK_DAYS[dateObject.getDay()]);
+        labels.push((dayNames || WEEK_DAYS)[dateObject.getDay()]);
       }
       days.push({
         year: currentYear,
@@ -256,7 +255,7 @@ class Content extends PureComponent {
           day: dateObject.getDay(),
         }),
       });
-      dateObject.setTime(dateObject.getTime() + DAY);
+      dateObject.setDate(dateObject.getDate() + 1);
       if (isNaN(dateObject.getMonth())) {
         throw Error('isNaN(dateObject.getMonth())');
       }
@@ -278,7 +277,7 @@ class Content extends PureComponent {
             onClick={this.onMonthLabelClick}
             className="ui-datepicker-view-label"
           >
-            {MONTH_NAMES[currentMonth]}
+            {(monthNames || MONTH_NAMES)[currentMonth]}
             <span className="year-label">, {currentYear}</span>
           </div>
           <div
@@ -288,10 +287,10 @@ class Content extends PureComponent {
             <IconChevronRight />
           </div>
         </div>
-        {labels.map((item) => (
+        {labels.map((item, index) => (
           <div
             className="ui-datepicker-day-of-month-label ui-label"
-            key={item}
+            key={index}
           >
             {item}
           </div>

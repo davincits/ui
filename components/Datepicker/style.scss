@@ -26,8 +26,9 @@
 
   .ui-dropdown-content {
     padding: 8px;
-    width: 296px !important;
+    min-width: 296px;
     user-select: none;
+    overflow: hidden;
 
     .ui-datepicker-years {
       display: flex;
