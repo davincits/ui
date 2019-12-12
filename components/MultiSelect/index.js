@@ -20,8 +20,18 @@ class MultiSelect extends Component {
   }
 
   getButtonContent() {
-    const { value, options } = this.props;
-    if (!value || !value.length) return 'Choose...';
+    const {
+      value,
+      options,
+      placeholder = 'Choose...',
+      renderLabel,
+    } = this.props;
+    if (!value || !value.length) {
+      return placeholder;
+    }
+    if (renderLabel) {
+      return renderLabel(value);
+    }
     if (value.length === 1) {
       return options.find(i => i.value === value[0].value).label;
     }
@@ -43,6 +53,7 @@ class MultiSelect extends Component {
       imageSize,
       search,
       notFoundText = 'Nothing was found...',
+      disabled,
     } = this.props;
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();
@@ -56,6 +67,7 @@ class MultiSelect extends Component {
           buttonContent={buttonContent}
           inline={inline}
           name="ui-multiselect"
+          disabled={disabled}
         >
           {search && (
             <div className="ui-multiselect-search">

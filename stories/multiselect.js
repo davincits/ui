@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { MultiSelect } from '../components';
 import LIST from './mocks/users_list.json';
@@ -17,10 +16,7 @@ storiesOf('MultiSelect', module)
             label="Input label"
             value={value}
             options={LIST}
-            onChange={(val) => {
-              onChange(val);
-              action('changed')(val);
-            }}
+            onChange={onChange}
           />
         </div>
       )}
@@ -34,10 +30,7 @@ storiesOf('MultiSelect', module)
             label="Input label"
             value={value}
             options={LIST_24}
-            onChange={(val) => {
-              onChange(val);
-              action('changed')(val);
-            }}
+            onChange={onChange}
           />
         </div>
       )}
@@ -52,10 +45,7 @@ storiesOf('MultiSelect', module)
             value={value}
             options={LIST_40}
             imageSize="large"
-            onChange={(val) => {
-              onChange(val);
-              action('changed')(val);
-            }}
+            onChange={onChange}
           />
         </div>
       )}
@@ -69,10 +59,7 @@ storiesOf('MultiSelect', module)
             label="Input label"
             value={value}
             options={LIST_24}
-            onChange={(val) => {
-              onChange(val);
-              action('changed')(val);
-            }}
+            onChange={onChange}
             search
           />
         </div>
