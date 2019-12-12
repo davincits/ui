@@ -1,6 +1,12 @@
 #root {
   height: 100vh; }
 
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+body {
+  box-sizing: inherit; }
+
 .content {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: #333333;
@@ -56,33 +62,6 @@ hr {
 
 .u-padding-bottom {
   padding-bottom: 16px; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-alert {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -197,33 +176,6 @@ hr {
       .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item:hover {
         background-color: rgba(51, 51, 51, 0.05); }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-dropdown {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -255,6 +207,20 @@ hr {
   .ui-dropdown.disabled .ui-icon-expand-less,
   .ui-dropdown.disabled .ui-icon-expand-more {
     opacity: 0.1; }
+  .ui-dropdown .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgba(51, 51, 51, 0.6);
+    font-weight: 500;
+    line-height: 12px;
+    margin-bottom: 4px; }
+  .ui-dropdown .ui-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 
 .ui-dropdown-content {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -277,33 +243,6 @@ hr {
   width: 100%;
   z-index: 1;
   margin-top: 2px; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-button {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -479,33 +418,6 @@ hr {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0); } }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-text-field {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -517,6 +429,11 @@ hr {
     width: 100%;
     font-weight: normal; }
   .ui-text-field .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-weight: 500;
+    line-height: 12px;
+    margin-bottom: 4px;
     font-size: 11px;
     text-transform: uppercase;
     color: rgba(51, 51, 51, 0.6); }
@@ -623,42 +540,20 @@ hr {
     border-radius: 0 0 3px 0; }
     .ui-text-field .ui-text-field-number-control-minus::after {
       border-color: #dcdcdc transparent transparent; }
+  .ui-text-field .ui-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
-.loading-css-dotted {
+.ui-loading-dotted {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   box-sizing: border-box; }
-  .loading-css-dotted .dot {
+  .ui-loading-dotted > span {
     display: block;
     width: 6px;
     height: 6px;
@@ -667,51 +562,20 @@ hr {
     margin: 2px;
     -webkit-animation: blink .3s infinite alternate;
             animation: blink .3s infinite alternate; }
-  .loading-css-dotted .dot-second {
+  .ui-loading-dotted > span:nth-child(2) {
     -webkit-animation-delay: .1s;
             animation-delay: .1s; }
-  .loading-css-dotted .dot-third {
+  .ui-loading-dotted > span:nth-child(2) {
     -webkit-animation-delay: .2s;
             animation-delay: .2s; }
 
 @-webkit-keyframes blink {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  from {
+    opacity: 0; } }
 
 @keyframes blink {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+  from {
+    opacity: 0; } }
 
 .ui-list {
   width: 100%;
@@ -743,33 +607,6 @@ hr {
   .ui-list.ui-list-images-large .ui-list-item .ui-list-item-image {
     width: 40px;
     height: 40px; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-checkbox {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -804,6 +641,10 @@ hr {
   .ui-checkbox:hover > .ui-fake-checkbox {
     background-color: #f0f0f0; }
   .ui-checkbox > .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-weight: 500;
+    line-height: 12px;
     text-transform: uppercase;
     color: rgba(51, 51, 51, 0.6);
     font-size: 12px;
@@ -833,33 +674,6 @@ hr {
   display: flex;
   box-sizing: border-box;
   width: 100%; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-dialog {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -963,33 +777,6 @@ hr {
     -webkit-transform: translate3d(-50%, -50%, 0);
             transform: translate3d(-50%, -50%, 0); } }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-drop-area {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -1032,33 +819,6 @@ hr {
     border-color: #F53C3C; }
 
 @charset "UTF-8";
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-toaster-container {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -1140,33 +900,6 @@ hr {
     -webkit-transform: translate(100%, 0);
             transform: translate(100%, 0); } }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-file-field {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -1184,33 +917,6 @@ hr {
     width: 100%;
     height: 100%;
     cursor: pointer; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .component-full-size-modal {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1278,33 +984,6 @@ hr {
     z-index: 2; }
     .component-full-size-modal .component-full-size-modal-footer.with-shadow {
       box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2); }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .component-gallery {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1419,34 +1098,7 @@ hr {
   .component-gallery .control-next {
     right: 272px; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
-.loading-css-only {
+.ui-loading {
   position: absolute;
   left: 0;
   top: 0;
@@ -1460,10 +1112,10 @@ hr {
   -webkit-animation-duration: 600ms;
           animation-duration: 600ms;
   box-sizing: border-box; }
-  .loading-css-only.global {
+  .ui-loading.global {
     position: fixed;
     z-index: 10000; }
-  .loading-css-only::before, .loading-css-only::after {
+  .ui-loading::before, .ui-loading::after {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1482,7 +1134,7 @@ hr {
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     content: ""; }
-  .loading-css-only::after {
+  .ui-loading::after {
     width: 70px;
     height: 70px;
     margin: -35px 0 0 -35px;
@@ -1490,103 +1142,22 @@ hr {
     border-color: transparent #05B9E6; }
 
 @-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  from {
+    opacity: 0; } }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  from {
+    opacity: 0; } }
 
 @-webkit-keyframes rotationAnim {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
+  to {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); } }
 
 @keyframes rotationAnim {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
+  to {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); } }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
-.ui-option {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  line-height: 1.4;
-  box-sizing: border-box;
-  display: flex;
-  padding: 0 16px;
-  height: 40px;
-  align-items: center;
-  cursor: pointer; }
-  .ui-option:hover {
-    background-color: #f0f0f0; }
-  .ui-option.ui-selected {
-    font-weight: 500;
-    color: #05B9E6; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-radio {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1613,6 +1184,9 @@ hr {
   .ui-radio:hover > .ui-fake-radio {
     background-color: #f0f0f0; }
   .ui-radio > .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    line-height: 12px;
     text-transform: uppercase;
     color: rgba(51, 51, 51, 0.6);
     font-size: 12px;
@@ -1629,33 +1203,6 @@ hr {
 
 .ui-radio-group.ui-with-error .ui-radio > input + .ui-fake-radio {
   border-color: #F53C3C; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-range {
   padding: 12px 0;
@@ -1703,33 +1250,6 @@ hr {
         box-shadow: 4px 0 #05B9E6, 4px 4px #05B9E6, 0 4px #05B9E6, -4px 4px #05B9E6, -4px 0 #05B9E6;
         content: ""; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-select.ui-with-error .ui-dropdown .ui-dropdown-button {
   border-color: #F53C3C; }
 
@@ -1739,66 +1259,30 @@ hr {
   .ui-select_dropdown .ui-dropdown-content {
     padding: 0; }
 
+.ui-option {
+  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  box-sizing: border-box;
+  display: flex;
+  padding: 0 16px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer; }
+  .ui-option:hover {
+    background-color: #f0f0f0; }
+  .ui-option.ui-selected {
+    font-weight: 500;
+    color: #05B9E6; }
+  .ui-option .ui-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
 .ui-slider {
   cursor: pointer; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
-.ui-tab-list {
-  display: flex;
-  border-bottom: 1px solid #D6D6D6; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-tab {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1822,32 +1306,9 @@ hr {
   .ui-tab .ui-badge:last-child, .ui-tab .ui-badge-danger:last-child {
     margin-left: 8px; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+.ui-tab-list {
+  display: flex;
+  border-bottom: 1px solid #D6D6D6; }
 
 .ui-tooltip-container {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1915,33 +1376,6 @@ hr {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-multiselect_dropdown .ui-dropdown-content {
   padding: 0; }
   .ui-multiselect_dropdown .ui-dropdown-content .ui-multiselect-search {
@@ -1958,33 +1392,6 @@ hr {
       margin-right: 16px; }
     .ui-multiselect_dropdown .ui-dropdown-content .ui-multiselect-item:hover {
       background-color: #f0f0f0; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-table {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -2047,33 +1454,6 @@ hr {
 .ui-common-dialog-item .ui-dialog-actions .ui-button {
   margin-left: 8px; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-datepicker {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -2088,14 +1468,24 @@ hr {
       background-color: #f0f0f0; }
     .ui-datepicker .ui-datepicker-icon-container svg {
       display: block; }
+  .ui-datepicker .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgba(51, 51, 51, 0.6);
+    font-weight: 500;
+    line-height: 12px;
+    margin-bottom: 4px; }
 
 .ui-datepicker_dropdown .ui-dropdown-content {
   padding: 8px;
-  width: 296px !important;
+  min-width: 296px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  overflow: hidden; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years {
     display: flex;
     flex-wrap: wrap; }
@@ -2194,32 +1584,6 @@ hr {
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label .year-label {
         color: #cccccc; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
 
 .ui-timepicker {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -2371,33 +1735,6 @@ hr {
       -webkit-transform: rotate(-270deg);
               transform: rotate(-270deg); }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-tags-field {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -2455,33 +1792,15 @@ hr {
         display: block; }
       .ui-tags-field .ui-tags-field-tag .ui-tags-field-tag-remove:hover {
         opacity: 0.7; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
+  .ui-tags-field .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgba(51, 51, 51, 0.6);
+    font-weight: 500;
+    line-height: 12px;
+    margin-bottom: 4px; }
 
 .ui-tags-autocomplete {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -2512,41 +1831,10 @@ hr {
       .ui-tags-autocomplete_dropdown .ui-dropdown-content .ui-tags-autocomplete-items .ui-tags-autocomplete-item.ui-tags-autocomplete-item-loading {
         justify-content: center; }
 
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-.ui-label {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.6);
-  font-weight: 500;
-  line-height: 12px;
-  margin-bottom: 4px; }
-
-.ui-ellipsis {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.ui-paper {
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
-
 .ui-accordion-title {
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  color: #333333;
-  line-height: 1.4;
   font-weight: 500;
   color: #05B9E6;
   min-height: 48px;
@@ -2557,7 +1845,8 @@ hr {
     -webkit-transition: -webkit-transform .2s;
     transition: -webkit-transform .2s;
     transition: transform .2s;
-    transition: transform .2s, -webkit-transform .2s; }
+    transition: transform .2s, -webkit-transform .2s;
+    min-width: 24px; }
   .ui-accordion-title:hover {
     color: rgba(5, 185, 230, 0.7); }
 
@@ -2572,12 +1861,10 @@ hr {
 
 .ui-accordion-collapse.ui-animated {
   max-height: 0;
-  -webkit-transition: max-height .4s;
-  transition: max-height .4s;
+  -webkit-transition: max-height .2s;
+  transition: max-height .2s;
   overflow: hidden; }
   .ui-accordion-collapse.ui-animated.ui-active {
-    -webkit-transition-delay: .2s;
-            transition-delay: .2s;
     max-height: 640px; }
 
 
