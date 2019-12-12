@@ -6,7 +6,7 @@ import { number, func } from 'prop-types';
 import { classes } from '../utils';
 
 class Slider extends PureComponent {
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('mousemove', this.onMouseMove);
     window.addEventListener('mouseup', this.cancelTracking);
     window.addEventListener('mouseleave', this.cancelTracking);
@@ -80,7 +80,7 @@ class Slider extends PureComponent {
   render() {
     const { className } = this.props;
     const classList = classes({
-      'ui-range': true,
+      'ui-component ui-range': true,
       'ui-slider': true,
       [className]: className,
     });

@@ -1,7 +1,7 @@
+import './style.scss';
+
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
-
-import './style.scss';
 
 class Tooltip extends PureComponent {
   componentDidMount() {
@@ -23,7 +23,10 @@ class Tooltip extends PureComponent {
       left,
     } = this.props;
     return (
-      <div className={classes(['ui-tooltip', className])} style={{ left: `${left}px`, top: `${top}px` }}>
+      <div
+        className={classes(['ui-component ui-tooltip', className])}
+        style={{ left: `${left}px`, top: `${top}px` }}
+      >
         <div className="ui-tooltip-content" ref="tooltip">{children}</div>
       </div>
     );

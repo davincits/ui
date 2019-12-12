@@ -31,6 +31,9 @@
   }
 
   & > .ui-label {
+    font-family: $ui-font-family;
+    font-weight: 500;
+    line-height: $ui-font-size-xxs + 1;
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);
     font-size: $ui-font-size-xs;

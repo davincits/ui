@@ -81,13 +81,13 @@ class DropDown extends PureComponent {
     } = this.props;
     const { opened, dropDownStyle } = this.state;
     const classList = classes({
-      'ui-dropdown': true,
+      'ui-component ui-dropdown': true,
       'ui-dropdown-opened': opened,
       [className]: className,
       disabled,
     });
     const dropDown = children ? (
-      <div className={name ? `${name}_dropdown` : ''}>
+      <div className={`ui-component ${name || 'ui'}_dropdown`}>
         <div
           className="ui-dropdown-content"
           ref="dropdown"

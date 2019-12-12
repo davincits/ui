@@ -61,7 +61,7 @@ class Item extends PureComponent {
       <Dialog
         className={
           classes([
-            'ui-common-dialog-item',
+            'ui-component ui-common-dialog-item',
             `ui-common-dialog-item-type-${type}`,
             className,
           ])

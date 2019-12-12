@@ -25,7 +25,7 @@ class Datepicker extends PureComponent {
     } = this.props;
     const dateObject = value ? new Date(value) : new Date();
     return (
-      <div className={classes(['ui-datepicker', className])}>
+      <div className={classes(['ui-component ui-datepicker', className])}>
         <DropDown
           ref="dropdown"
           button={label || (

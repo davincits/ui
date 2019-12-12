@@ -16,7 +16,7 @@ class Toggle extends PureComponent {
     } = this.props;
     return (
       <div
-        className={classes(['ui-accordion-toggle', active && 'ui-active-state', className])}
+        className={classes(['ui-component ui-accordion-toggle', active && 'ui-active-state', className])}
         onClick={this.onClick}
       >
         {children}

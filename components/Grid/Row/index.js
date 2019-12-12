@@ -11,7 +11,7 @@ function Row({
   ...props
 }) {
   const classList = classes({
-    'ui-row': true,
+    'ui-component ui-row': true,
     'ui-row-gutter': gutter === true,
     [`ui-row-gutter-${gutter}`]: typeof gutter === 'string',
     [className]: className,

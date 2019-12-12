@@ -107,7 +107,7 @@ class TextField extends PureComponent {
     const { height } = this.state;
     const value = checkValue($value);
     const classList = classes({
-      'ui-text-field': true,
+      'ui-component ui-text-field': true,
       'ui-no-resize': !resize,
       'ui-inline': inline,
       'ui-type-search': search,

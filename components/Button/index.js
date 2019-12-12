@@ -26,7 +26,7 @@ function Button(props) {
   } = props;
   if (loading) rest.disabled = true;
   const classList = classes({
-    'ui-button': true,
+    'ui-component ui-button': true,
     'ui-button-loading': loading,
     'ui-button-primary': primary,
     'ui-button-danger': danger,

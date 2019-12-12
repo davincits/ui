@@ -14,6 +14,11 @@
   }
 
   .ui-label {
+    font-family: $ui-font-family;
+    color: $ui-font-color;
+    font-weight: 500;
+    line-height: $ui-font-size-xxs + 1;
+    margin-bottom: 4px;
     font-size: $ui-font-size-xxs;
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);
@@ -174,5 +179,12 @@
     &::after {
       border-color: #dcdcdc transparent transparent;
     }
+  }
+
+  .ui-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

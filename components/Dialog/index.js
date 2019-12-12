@@ -97,7 +97,7 @@ class Dialog extends PureComponent {
       width,
     } = this.props;
     const classList = classes({
-      'ui-dialog': true,
+      'ui-component ui-dialog': true,
       [className]: className,
       disabled,
     });

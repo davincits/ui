@@ -16,7 +16,7 @@ function List({
   ...props
 }) {
   return (
-    <div className={classes(['ui-list', className, `ui-list-images-${imageSize}`])} {...props}>
+    <div className={classes(['ui-component ui-list', className, `ui-list-images-${imageSize}`])} {...props}>
       {items ? items.map((item, index) => (
         <Item
           key={item.id || index}

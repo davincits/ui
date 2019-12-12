@@ -13,7 +13,7 @@ function Table({
   ...props
 }) {
   const classList = classes({
-    'ui-table': true,
+    'ui-component ui-table': true,
     [className]: className,
   });
   if (cellsWidth) {
@@ -25,6 +25,10 @@ function Table({
   }
   return (<div className={classList} {...props}>{children}</div>);
 }
+
+Table.Head = Head;
+Table.Row = Row;
+Table.Cell = Cell;
 
 export default Table;
 

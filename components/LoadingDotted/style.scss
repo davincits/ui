@@ -1,6 +1,6 @@
 @import "../common";
 
-.loading-css-dotted {
+.ui-loading-dotted {
   position: relative;
   display: flex;
   align-items: center;
@@ -8,7 +8,7 @@
   height: 100%;
   box-sizing: border-box;
 
-  .dot {
+  > span {
     display: block;
     width: 6px;
     height: 6px;
@@ -18,20 +18,17 @@
     animation: blink .3s infinite alternate;
   }
 
-  .dot-second {
+  > span:nth-child(2) {
     animation-delay: .1s;
   }
 
-  .dot-third {
+  > span:nth-child(2) {
     animation-delay: .2s;
   }
 }
 
 @keyframes blink {
-  0% {
+  from {
     opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

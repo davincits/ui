@@ -2,12 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
-import {
-  Table,
-  TR,
-  TH,
-  TD,
-} from '../components';
+import { Table } from '../components';
 
 const ROOMS = [
   { type: 'Single', amount: 3, price: 17 },
@@ -23,36 +18,36 @@ storiesOf('Table', module)
       {() => (
         <div style={{ width: '600px' }}>
           <Table cellsWidth={[13, 49, 11, 13, 14]}>
-            <TR>
-              <TH>ROOM</TH>
-              <TH>Interval</TH>
-              <TH>Count</TH>
-              <TH>Price, €</TH>
-              <TH>Total, €</TH>
-            </TR>
+            <Table.Row>
+              <Table.Head>ROOM</Table.Head>
+              <Table.Head>Interval</Table.Head>
+              <Table.Head>Count</Table.Head>
+              <Table.Head>Price, €</Table.Head>
+              <Table.Head>Total, €</Table.Head>
+            </Table.Row>
             {
               ROOMS.map(({ type, amount, price }, i) => (
-                <TR key={i}>
-                  <TD>{type}</TD>
-                  <TD>
+                <Table.Row key={type}>
+                  <Table.Cell>{type}</Table.Cell>
+                  <Table.Cell>
                     <span>12/12/20</span>
                     <span>&nbsp;-&nbsp;</span>
                     <span>13/12/20</span>
-                  </TD>
-                  <TD>{amount}</TD>
-                  <TD align="right">{price.toFixed(2)}</TD>
-                  <TD align="right">{(amount * price).toFixed(2)}</TD>
-                </TR>
+                  </Table.Cell>
+                  <Table.Cell>{amount}</Table.Cell>
+                  <Table.Cell align="right">{price.toFixed(2)}</Table.Cell>
+                  <Table.Cell align="right">{(amount * price).toFixed(2)}</Table.Cell>
+                </Table.Row>
               ))
             }
-            <TR>
-              <TD width="86" align="right"><b>Total</b></TD>
-              <TD width="14" align="right">
+            <Table.Row>
+              <Table.Cell width="86" align="right"><b>Total</b></Table.Cell>
+              <Table.Cell width="14" align="right">
                 <b>€{ROOMS.reduce((sum, { amount, price }) => sum + amount * price, 0)}</b>
-              </TD>
-            </TR>
+              </Table.Cell>
+            </Table.Row>
           </Table>
         </div>
       )}
     </Container>
-  ))
+  ));

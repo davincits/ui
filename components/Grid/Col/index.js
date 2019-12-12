@@ -18,7 +18,7 @@ function Col({
   else if (auto) style.width = 'auto';
   else style.flex = 1;
   return (
-    <div className={classes(['ui-column', className])} style={style} {...props}>{children}</div>
+    <div className={classes(['ui-component ui-column', className])} style={style} {...props}>{children}</div>
   );
 }
 

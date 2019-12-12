@@ -22,7 +22,7 @@ class Timepicker extends PureComponent {
       allowedTime,
     } = this.props;
     return (
-      <div className={classes(['ui-timepicker', className])}>
+      <div className={classes(['ui-component ui-timepicker', className])}>
         <DropDown
           ref="dropdown"
           button={label || (

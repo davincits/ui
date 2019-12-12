@@ -50,7 +50,7 @@ class MultiSelect extends Component {
       options.filter(i => !serchString || (i.label || i).toLocaleLowerCase().includes(searchStringLowercased)) :
       [];
     return (
-      <div className={classes(['ui-multiselect', className])}>
+      <div className={classes(['ui-component ui-multiselect', className])}>
         <DropDown
           label={label}
           buttonContent={buttonContent}

@@ -76,7 +76,7 @@ class TagsField extends PureComponent {
       placeholder,
     } = this.props;
     const classList = classes({
-      'ui-tags-field': true,
+      'ui-component ui-tags-field': true,
       'ui-disabled': disabled,
       'ui-focused': focused,
       'ui-tags-field-error': error,

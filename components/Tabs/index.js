@@ -1,6 +1,10 @@
+import './style.scss';
+
 import React, { PureComponent, Children, cloneElement } from 'react';
 import { classes } from '../utils';
-import TabList from '../TabList';
+import Tab from './Tab';
+import TabList from './TabList';
+import TabPanel from './TabPanel';
 
 class Tabs extends PureComponent {
   constructor(props) {
@@ -35,7 +39,7 @@ class Tabs extends PureComponent {
   render() {
     const { className } = this.props;
     const classList = classes({
-      'ui-tabs': true,
+      'ui-component ui-tabs': true,
       [className]: className,
     });
     return (
@@ -43,5 +47,9 @@ class Tabs extends PureComponent {
     );
   }
 }
+
+Tabs.Tab = Tab;
+Tabs.TabList = TabList;
+Tabs.TabPanel = TabPanel;
 
 export default Tabs;

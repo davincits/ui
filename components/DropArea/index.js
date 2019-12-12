@@ -69,7 +69,7 @@ class DropArea extends PureComponent {
     const { children, className } = this.props;
     const { dragOver, error } = this.state;
     const classList = classes({
-      'ui-drop-area': true,
+      'ui-component ui-drop-area': true,
       'drag-over': dragOver,
       'error-state': error,
       [className]: className,

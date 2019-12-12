@@ -1,5 +1,3 @@
-import './style.scss';
-
 import React, { PureComponent } from 'react';
 import { classes } from '../utils';
 
@@ -13,7 +11,7 @@ class Tab extends PureComponent {
   render() {
     const { className, active, children } = this.props;
     const classList = classes({
-      'ui-tab': true,
+      'ui-component ui-tab': true,
       'ui-active': active,
       [className]: className,
     });

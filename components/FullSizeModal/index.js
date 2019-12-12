@@ -82,7 +82,7 @@ class FullSizeModal extends PureComponent {
     } = this.props;
     return (
       <Portal>
-        <div className={classes(['component-full-size-modal', className])} onScroll={this.onScroll}>
+        <div className={classes(['ui-component component-full-size-modal', className])} onScroll={this.onScroll}>
           <div className="component-full-size-modal-header" ref="header">
             <div className="component-full-size-modal-header-main">
               <div className="component-full-size-modal-title">{title}</div>

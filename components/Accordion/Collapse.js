@@ -10,7 +10,7 @@ function Collapse({
   return (active || animated) ? (
     <div className={
       classes([
-        'ui-accordion-collapse',
+        'ui-component ui-accordion-collapse',
         animated && 'ui-animated',
         active && 'ui-active',
         className,

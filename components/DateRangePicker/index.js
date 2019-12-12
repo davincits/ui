@@ -46,7 +46,7 @@ class DateRangePicker extends PureComponent {
       );
     }
     return (
-      <div className={classes(['ui-datepicker ui-date-range-picker', className])}>
+      <div className={classes(['ui-component ui-datepicker ui-date-range-picker', className])}>
         <DropDown
           ref="dropdown"
           button={label || (

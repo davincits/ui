@@ -46,7 +46,7 @@ class TagsAutocomplete extends PureComponent {
     } = this.props;
     const { inputValue } = this.state;
     const classList = classes({
-      'ui-tags-autocomplete': true,
+      'ui-component ui-tags-autocomplete': true,
       'ui-disabled': disabled,
       [className]: className,
     });

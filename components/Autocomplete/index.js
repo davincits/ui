@@ -40,7 +40,7 @@ class Autocomplete extends Component {
       />
     );
     return (
-      <div className={classes(['ui-autocomplete', className])}>
+      <div className={classes(['ui-component ui-autocomplete', className])}>
         <DropDown
           button={textField}
           ref="dropdown"

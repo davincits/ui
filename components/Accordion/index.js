@@ -25,7 +25,7 @@ class Accordion extends PureComponent {
     let toggleIndex = 0;
     let collapseIndex = 0;
     return (
-      <div className={classes(['ui-accordion', className])}>
+      <div className={classes(['ui-component ui-accordion', className])}>
         {Children.map(children, (child) => {
           if (child.type === Toggle) {
             return cloneElement(child, {

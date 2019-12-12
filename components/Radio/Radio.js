@@ -5,8 +5,8 @@ import { classes } from '../utils';
 
 class Radio extends PureComponent {
   onChange = () => {
-    const { onChange, value } = this.props;
-    if (onChange) onChange(value);
+    const { value, disabled, onChange } = this.props;
+    if (onChange && !disabled) onChange(value);
   }
 
   render() {
@@ -18,7 +18,7 @@ class Radio extends PureComponent {
       ...rest
     } = this.props;
     return (
-      <div className={classes(['ui-radio', checked && 'ui-radio-checked', className])} onClick={this.onChange}>
+      <div className={classes(['ui-component  ui-radio', checked && 'ui-radio-checked', className])} onClick={this.onChange}>
         <input type="radio" onChange={this.onChange} checked={checked} {...rest} />
         <span className="ui-fake-radio" />
         {!!children && <div className="ui-label">{children}</div>}

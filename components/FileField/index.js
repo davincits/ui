@@ -50,7 +50,7 @@ class FileField extends PureComponent {
       ...props
     } = this.props;
     const classList = classes({
-      'ui-file-field': true,
+      'ui-component ui-file-field': true,
       'error-state': error,
       [className]: className,
     });

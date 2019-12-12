@@ -1,5 +1,3 @@
-import './style.scss';
-
 import React from 'react';
 import { classes } from '../utils';
 
@@ -10,7 +8,7 @@ function TabList({
   changeIndex,
 }) {
   const classList = classes({
-    'ui-tab-list': true,
+    'ui-component ui-tab-list': true,
     [className]: className,
   });
   return (

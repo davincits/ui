@@ -7,7 +7,7 @@ function Row({
   cellsWidth,
   ...props
 }) {
-  const classList = classes(['ui-table-row', className]);
+  const classList = classes(['ui-component ui-table-row', className]);
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>

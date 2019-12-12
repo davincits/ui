@@ -20,9 +20,6 @@ import Select from './Select';
 import Show from './Show';
 import Slider from './Slider';
 import Tabs from './Tabs';
-import Tab from './Tab';
-import TabList from './TabList';
-import TabPanel from './TabPanel';
 import TextField from './TextField';
 import Tooltip from './Tooltip';
 import MultiSelect from './MultiSelect';
@@ -40,6 +37,17 @@ import Timepicker from './Timepicker';
 import TagsField from './TagsField';
 import TagsAutocomplete from './TagsAutocomplete';
 import Accordion from './Accordion';
+
+const Tab = Tabs.Tab;
+const TabList = Tabs.TabList;
+const TabPanel = Tabs.TabPanel;
+const showToast = Toast;
+const showToastInfo = ToastInfo;
+const showToastSuccess = ToastSuccess;
+const showToastWarning = ToastWarning;
+const showToastDanger = ToastDanger;
+const showAlertDialog = AlertDialog;
+const showConfirmDialog = ConfirmDialog;
 
 export {
   Accordion,
@@ -65,9 +73,6 @@ export {
   Show,
   Slider,
   Tabs,
-  Tab,
-  TabList,
-  TabPanel,
   TextField,
   Tooltip,
   Table,
@@ -92,6 +97,16 @@ export {
   Timepicker,
   TagsField,
   TagsAutocomplete,
+  Tab,
+  TabList,
+  TabPanel,
+  showToast,
+  showToastInfo,
+  showToastSuccess,
+  showToastWarning,
+  showToastDanger,
+  showAlertDialog,
+  showConfirmDialog,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,

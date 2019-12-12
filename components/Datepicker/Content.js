@@ -290,7 +290,7 @@ class Content extends PureComponent {
         {labels.map((item, index) => (
           <div
             className="ui-datepicker-day-of-month-label ui-label"
-            key={index}
+            key={index} // eslint-disable-line react/no-array-index-key
           >
             {item}
           </div>

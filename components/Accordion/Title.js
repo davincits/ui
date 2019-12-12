@@ -4,7 +4,7 @@ import { classes } from '../utils';
 
 function Title({ className, children }) {
   return (
-    <div className={classes(['ui-accordion-title', className])}>
+    <div className={classes(['ui-component ui-accordion-title', className])}>
       <IconPlus />
       {children}
     </div>

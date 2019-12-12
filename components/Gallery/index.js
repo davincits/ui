@@ -89,7 +89,7 @@ class Gallery extends PureComponent {
     const { images = [] } = this.props;
     const hasImages = images.length;
     return hasImages ? (
-      <div className="component-gallery">
+      <div className="ui-component component-gallery">
         <div className="component-gallery-view">
           {
             (!images[current] || error) ? (<IconBroken />) : (

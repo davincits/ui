@@ -15,7 +15,7 @@ export default ({
     xmlns: 'http://www.w3.org/2000/svg',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
     className: classes({
-      'ui-svg-icon': true,
+      'ui-component ui-svg-icon': true,
       [`ui-icon-${iconName}`]: iconName,
       [className]: className,
     }),

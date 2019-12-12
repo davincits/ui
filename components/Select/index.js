@@ -25,7 +25,7 @@ class Select extends PureComponent {
       ...props
     } = this.props;
     const classList = classes({
-      'ui-select': true,
+      'ui-component ui-select': true,
       'ui-with-error': error,
       [className]: className,
     });

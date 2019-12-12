@@ -1,6 +1,6 @@
 @import "../common";
 
-.loading-css-only {
+.ui-loading {
   position: absolute;
   left: 0;
   top: 0;
@@ -46,19 +46,13 @@
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
 @keyframes rotationAnim {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+  to {
     transform: rotate(180deg);
   }
 }

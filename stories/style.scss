@@ -2,6 +2,14 @@
   height: 100vh;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: inherit;
+}
+
 .content {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: #333333;

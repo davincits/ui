@@ -86,7 +86,7 @@ class Range extends PureComponent {
   render() {
     const { className } = this.props;
     const classList = classes({
-      'ui-range': true,
+      'ui-component ui-range': true,
       [className]: className,
     });
     const [

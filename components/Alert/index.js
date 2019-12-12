@@ -36,7 +36,7 @@ class Alert extends PureComponent {
     } = this.props;
     const { showed, display } = this.state;
     return display && (
-      <div className={classes(['ui-alert', showed && 'ui-showed', className])} {...props}>
+      <div className={classes(['ui-component ui-alert', showed && 'ui-showed', className])} {...props}>
         {closeable && (
           <div className="ui-close" onClick={this.onCloseClick}>
             <IconClose />

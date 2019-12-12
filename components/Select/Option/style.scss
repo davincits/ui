@@ -20,4 +20,11 @@
     font-weight: 500;
     color: $ui-color-brand-primary;
   }
+
+  .ui-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

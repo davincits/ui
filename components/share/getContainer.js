@@ -3,9 +3,9 @@ import Portal from '../Portal';
 
 export default function getContainer({ item: Item, store, className }) {
   class Container extends PureComponent {
-    state = { items: [] }
-
-    componentWillMount() {
+    constructor(props) {
+      super(props);
+      this.state = { items: [] };
       this.unsubscribe = store.on('change', this.onStoreChange);
     }
 
@@ -22,8 +22,8 @@ export default function getContainer({ item: Item, store, className }) {
       const { items } = this.state;
       return (
         <Portal>
-          <div className={className}>
-            {items.map(item => (<Item key={item.uid} {...item} />))}
+          <div className={`ui-component ${className}`}>
+            {items.map((item) => (<Item key={item.uid} {...item} />))}
           </div>
         </Portal>
       );

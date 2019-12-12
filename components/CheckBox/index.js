@@ -25,7 +25,7 @@ class CheckBox extends PureComponent {
     return (
       <div
         className={classes([
-          'ui-checkbox',
+          'ui-component ui-checkbox',
           value && 'ui-checkbox-checked',
           error && 'ui-with-error',
           className
