@@ -1480,15 +1480,21 @@ hr {
 
 .ui-datepicker_dropdown .ui-dropdown-content {
   padding: 8px;
-  min-width: 296px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   overflow: hidden; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row {
+    display: flex; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row .ui-datepicker-month-col {
+      flex: 1 1; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row .ui-datepicker-month-col + .ui-datepicker-month-col {
+        margin-left: 16px; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 280px; }
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-years .ui-datepicker-year-label {
       width: 70px;
       height: 32px;
@@ -1511,7 +1517,8 @@ hr {
         cursor: default; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 280px; }
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-monthes-of-year .ui-datepicker-month-of-year-label {
       width: 93px;
       height: 32px;
@@ -1534,7 +1541,8 @@ hr {
         cursor: default; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 280px; }
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month,
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month-label {
       display: flex;
@@ -1549,14 +1557,22 @@ hr {
         color: #dcdcdc; }
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month:hover {
         background-color: #f0f0f0; }
-      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected {
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected, .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected-range-end {
         color: #05B9E6;
+        border: 2px solid #05B9E6;
         font-weight: 500; }
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.disabled {
         color: #D6D6D6;
         font-weight: normal;
         background-color: inherit;
         cursor: default; }
+    .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-days-of-month-row {
+      width: 100%;
+      display: flex; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-days-of-month-row .ui-datepicker-days-of-month-col {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header {
     display: flex;
     width: 100%; }
@@ -1584,6 +1600,12 @@ hr {
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label .year-label {
         color: #cccccc; }
 
+.ui-datepicker_dropdown .ui-datepicker-day-of-month.selected,
+.ui-datepicker_dropdown .ui-datepicker-day-of-month.selected-range-end {
+  border: 2px solid #05B9E6; }
+
+.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-day-of-month.highlighted {
+  border: 2px solid rgba(5, 185, 230, 0.2); }
 
 .ui-timepicker {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;

@@ -53,4 +53,21 @@ storiesOf('Date picker', module)
         />
       )}
     </Container>
+  ))
+  .add('range', () => (
+    <Container>
+      {({ value = [], onChange }) => (
+        <Datepicker
+          label={(
+            <Button>
+              <IconCalendar />
+              {value.length ? JSON.stringify(value) : 'Select a date'}
+            </Button>
+          )}
+          onChange={onChange}
+          value={value}
+          range
+        />
+      )}
+    </Container>
   ));

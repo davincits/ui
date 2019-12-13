@@ -5,7 +5,6 @@ import './autocomplete';
 import './button';
 import './checkbox';
 import './common-dialogs';
-import './date-range-picker';
 import './datepicker';
 import './dialog';
 import './drop-area';

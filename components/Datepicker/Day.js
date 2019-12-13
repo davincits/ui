@@ -1,11 +1,18 @@
 import React, { PureComponent } from 'react';
+import { classes } from '../utils';
 
 class Day extends PureComponent {
   onClick = () => {
     const {
-      year, month, date, disabled, onClick,
+      year,
+      month,
+      date,
+      disabled,
+      muted,
+      range,
+      onClick,
     } = this.props;
-    if (!disabled) onClick({ year, month, date });
+    if (!disabled || (range && muted)) onClick({ year, month, date });
   }
 
   render() {
@@ -14,13 +21,23 @@ class Day extends PureComponent {
       muted,
       selected,
       disabled,
+      range,
+      rangeEnd,
+      highlighted,
     } = this.props;
     return (
       <div
-        className={`ui-datepicker-day-of-month${muted ? ' muted' : ''}${selected ? ' selected' : ''}${disabled ? ' disabled' : ''}`}
+        className={classes([
+          'ui-datepicker-day-of-month',
+          muted && 'muted',
+          selected && 'selected',
+          disabled && 'disabled',
+          rangeEnd && 'selected-range-end',
+          !muted && highlighted && 'highlighted',
+        ])}
         onClick={this.onClick}
       >
-        {date}
+        {(range && muted) ? '' : date}
       </div>
     );
   }

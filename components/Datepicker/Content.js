@@ -11,6 +11,7 @@ import {
   LAST_MONTH_INDEX,
   YEARS_PER_PAGE,
 } from './constants';
+import { classes } from '../utils';
 
 const MONTH_VIEW = 1;
 const YEAR_VIEW = 2;
@@ -19,27 +20,22 @@ const YEARS_VIEW = 3;
 class Content extends PureComponent {
   constructor(props) {
     super(props);
-    const { dateObject } = props;
-    const year = dateObject.getFullYear();
-    const month = dateObject.getMonth();
-    const date = dateObject.getDate();
+    const { startDate = new Date() } = props;
+    const year = startDate.getFullYear();
+    const month = startDate.getMonth();
     this.state = {
       currentYear: year,
       currentMonth: month,
       selectedYear: year,
       selectedMonth: month,
-      selectedDate: date,
       view: MONTH_VIEW,
     };
   }
 
   onChange = ({ year, month, date }) => {
     const { onChange } = this.props;
-    if (onChange) {
-      onChange(
-        `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`,
-      );
-    }
+    const startDateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+    onChange(startDateString);
   }
 
   setCurrentMonth = (currentMonth) => {
@@ -212,17 +208,29 @@ class Content extends PureComponent {
     );
   }
 
-  renderMonthView() {
-    const { isDateAllowed, monthNames, dayNames } = this.props;
+  renderMonthView(isSecondMonth) {
     const {
-      currentYear,
-      currentMonth,
-      selectedYear,
-      selectedMonth,
-      selectedDate,
+      range,
+      isDateAllowed,
+      monthNames,
+      dayNames,
+      startDate,
+      endDate,
+    } = this.props;
+    const {
+      currentYear: _currentYear,
+      currentMonth: _currentMonth,
     } = this.state;
+    const selectedYear = startDate && startDate.getFullYear();
+    const selectedMonth = startDate && startDate.getMonth();
+    const selectedDate = startDate && startDate.getDate();
+    const selectedEndYear = endDate && endDate.getFullYear();
+    const selectedEndMonth = endDate && endDate.getMonth();
+    const selectedEndDate = endDate && endDate.getDate();
     const weekStartIndex = WEEK_DAYS.indexOf(WEEK_START);
-    const dateObject = new Date(currentYear, currentMonth, 1);
+    const dateObject = new Date(_currentYear, _currentMonth + (isSecondMonth ? 1 : 0), 1);
+    const currentYear = dateObject.getFullYear();
+    const currentMonth = dateObject.getMonth();
     const previousMonth = currentMonth > 0 ? currentMonth - 1 : LAST_MONTH_INDEX;
     while (dateObject.getDay() !== weekStartIndex) {
       if (isNaN(dateObject.getDay())) {
@@ -248,12 +256,17 @@ class Content extends PureComponent {
         selected: currentYear === selectedYear
           && month === selectedMonth
           && date === selectedDate,
+        rangeEnd: currentYear === selectedEndYear
+          && month === selectedEndMonth
+          && date === selectedEndDate,
+        highlighted: dateObject > startDate && dateObject < endDate,
         disabled: !isDateAllowed({
           year: currentYear,
           month,
           date,
           day: dateObject.getDay(),
         }),
+        range,
       });
       dateObject.setDate(dateObject.getDate() + 1);
       if (isNaN(dateObject.getMonth())) {
@@ -267,12 +280,14 @@ class Content extends PureComponent {
     return (
       <div className="ui-datepicker-days-of-month">
         <div className="ui-datepicker-view-header">
-          <div
-            className="ui-datepicker-view-previous"
-            onClick={this.onPrevMonthClick}
-          >
-            <IconChevronLeft />
-          </div>
+          {!isSecondMonth && (
+            <div
+              className="ui-datepicker-view-previous"
+              onClick={this.onPrevMonthClick}
+            >
+              <IconChevronLeft />
+            </div>
+          )}
           <div
             onClick={this.onMonthLabelClick}
             className="ui-datepicker-view-label"
@@ -280,12 +295,14 @@ class Content extends PureComponent {
             {(monthNames || MONTH_NAMES)[currentMonth]}
             <span className="year-label">, {currentYear}</span>
           </div>
-          <div
-            className="ui-datepicker-view-next"
-            onClick={this.onNextMonthClick}
-          >
-            <IconChevronRight />
-          </div>
+          {(isSecondMonth || !range) && (
+            <div
+              className="ui-datepicker-view-next"
+              onClick={this.onNextMonthClick}
+            >
+              <IconChevronRight />
+            </div>
+          )}
         </div>
         {labels.map((item, index) => (
           <div
@@ -304,7 +321,10 @@ class Content extends PureComponent {
             date={item.date}
             muted={item.muted}
             selected={item.selected}
+            rangeEnd={item.rangeEnd}
             disabled={item.disabled}
+            range={item.range}
+            highlighted={item.highlighted}
           />
         ))}
       </div>
@@ -312,6 +332,7 @@ class Content extends PureComponent {
   }
 
   renderContent() {
+    const { range } = this.props;
     const { view } = this.state;
     switch (view) {
       case YEARS_VIEW:
@@ -319,13 +340,25 @@ class Content extends PureComponent {
       case YEAR_VIEW:
         return this.renderYearView();
       default:
-        return this.renderMonthView();
+        return (
+          <div className="ui-datepicker-month-row">
+            <div className="ui-datepicker-month-col">
+              {this.renderMonthView()}
+            </div>
+            {range && (
+              <div className="ui-datepicker-month-col">
+                {this.renderMonthView(true)}
+              </div>
+            )}
+          </div>
+        );
     }
   }
 
   render() {
+    const { range } = this.props;
     return (
-      <div className="ui-datepicker-content">
+      <div className={`ui-datepicker-content${range ? ' ui-datepicker-range-content' : ''}`}>
         {this.renderContent()}
       </div>
     );

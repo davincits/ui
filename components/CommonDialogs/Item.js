@@ -7,14 +7,18 @@ export const DIALOG_ALERT = 'alert';
 export const DIALOG_CONFIRM = 'confirm';
 
 class Item extends PureComponent {
-  state = {}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   onChange = (value) => {
     this.setState({ value });
   }
 
-  onConfirm = (value = this.state.value) => { // eslint-disable-line
+  onConfirm = () => {
     const { onConfirm } = this.props;
+    const { value } = this.state;
     if (!this.confirmHook || this.confirmHook()) {
       onConfirm(value);
     }
