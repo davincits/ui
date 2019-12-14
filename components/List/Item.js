@@ -8,8 +8,8 @@ const Image = ({ src }) => (<div className="ui-list-item-image" style={{ backgro
 
 class Item extends PureComponent {
   onClick = (event) => {
-    const { item, onClick } = this.props;
-    onClick(item, event);
+    const { item, notActive, onClick } = this.props;
+    if (onClick && !notActive) onClick(item, event);
   }
 
   render() {

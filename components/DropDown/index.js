@@ -39,31 +39,36 @@ class DropDown extends PureComponent {
     this.toggleOpenState(false);
   };
 
+  checkPosition = () => {
+    const { button } = this.refs;
+    const { autoWidth } = this.props;
+    const { innerHeight: windowHeight } = window;
+    const {
+      width,
+      left,
+      top,
+      bottom,
+      height,
+    } = button.getBoundingClientRect();
+    const onTop = top > (windowHeight + height) / 2;
+    this.setState({
+      dropDownStyle: {
+        width: autoWidth ? '' : width,
+        left,
+        top: onTop ? '' : bottom,
+        bottom: onTop ? windowHeight - top : '',
+        maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
+      },
+    });
+  }
+
   toggleOpenState(...args) {
     const { opened: stateOpened } = this.state;
-    const { inline = true, autoWidth } = this.props;
-    const { button } = this.refs;
-    const { innerHeight: windowHeight } = window;
+    const { inline = true } = this.props;
     const [opened = !stateOpened] = args;
     this.setState({ opened }, () => {
       if (inline || !opened) return;
-      const {
-        width,
-        left,
-        top,
-        bottom,
-        height,
-      } = button.getBoundingClientRect();
-      const onTop = top > (windowHeight + height) / 2;
-      this.setState({
-        dropDownStyle: {
-          width: autoWidth ? '' : width,
-          left,
-          top: onTop ? '' : bottom,
-          bottom: onTop ? windowHeight - top : '',
-          maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
-        },
-      });
+      this.checkPosition();
     });
   }
 

@@ -38,7 +38,7 @@
   .ui-dropdown-content {
     padding: 8px;
     user-select: none;
-    overflow: hidden;
+    overflow: auto;
 
     .ui-datepicker-month-row {
       display: flex;
