@@ -1554,12 +1554,13 @@ hr {
       cursor: pointer;
       border-radius: 4px; }
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.muted {
-        color: #dcdcdc; }
-      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month:hover {
+        color: #dcdcdc;
+        cursor: default; }
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month:not(.muted):hover {
         background-color: #f0f0f0; }
-      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected, .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected-range-end {
-        color: #05B9E6;
-        border: 2px solid #05B9E6;
+      .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected {
+        border: 1px solid #05B9E6;
+        background-color: rgba(5, 185, 230, 0.1);
         font-weight: 500; }
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.disabled {
         color: #D6D6D6;
@@ -1600,12 +1601,23 @@ hr {
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label .year-label {
         color: #cccccc; }
 
-.ui-datepicker_dropdown .ui-datepicker-day-of-month.selected,
-.ui-datepicker_dropdown .ui-datepicker-day-of-month.selected-range-end {
-  border: 2px solid #05B9E6; }
+.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected {
+  border-right: none;
+  border-radius: 4px 0 0 4px; }
 
-.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-day-of-month.highlighted {
-  border: 2px solid rgba(5, 185, 230, 0.2); }
+.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected-range-end {
+  border: 1px solid #05B9E6;
+  font-weight: 500;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: rgba(5, 185, 230, 0.1); }
+
+.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.highlighted {
+  border: 1px solid #05B9E6;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  background-color: rgba(5, 185, 230, 0.1); }
 
 .ui-timepicker {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;

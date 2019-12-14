@@ -3,9 +3,9 @@
   "version": "0.4.0",
   "private": true,
   "scripts": {
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "build": "webpack --mode production",
+    "start": "start-storybook -p 9009 -s public",
+    "build": "build-storybook -s public",
+    "package": "webpack --mode production",
     "build:test": "webpack --env dev"
   },
   "eslintConfig": {

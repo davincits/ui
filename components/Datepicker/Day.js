@@ -9,10 +9,11 @@ class Day extends PureComponent {
       date,
       disabled,
       muted,
-      range,
       onClick,
     } = this.props;
-    if (!disabled || (range && muted)) onClick({ year, month, date });
+    if (!disabled && !muted) {
+      onClick({ year, month, date });
+    }
   }
 
   render() {
@@ -21,7 +22,6 @@ class Day extends PureComponent {
       muted,
       selected,
       disabled,
-      range,
       rangeEnd,
       highlighted,
     } = this.props;
@@ -30,14 +30,14 @@ class Day extends PureComponent {
         className={classes([
           'ui-datepicker-day-of-month',
           muted && 'muted',
-          selected && 'selected',
-          disabled && 'disabled',
-          rangeEnd && 'selected-range-end',
+          !muted && selected && 'selected',
+          !muted && disabled && 'disabled',
+          !muted && rangeEnd && 'selected-range-end',
           !muted && highlighted && 'highlighted',
         ])}
         onClick={this.onClick}
       >
-        {(range && muted) ? '' : date}
+        {muted ? '' : date}
       </div>
     );
   }
