@@ -22,6 +22,7 @@ class Select extends PureComponent {
       disabled,
       error,
       placeholder,
+      inline = false,
       ...props
     } = this.props;
     const classList = classes({
@@ -39,7 +40,7 @@ class Select extends PureComponent {
           label={label}
           buttonContent={selected ? selected.label : placeholderText}
           disabled={disabled}
-          inline={false}
+          inline={inline}
           name="ui-select"
           ref="dropdown"
         >
