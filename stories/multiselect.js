@@ -17,6 +17,9 @@ storiesOf('MultiSelect', module)
             value={value}
             options={LIST}
             onChange={onChange}
+            isSelected={(item, selected) => (
+              Boolean(selected && selected.find((i) => i.id === item.id))
+            )}
           />
         </div>
       )}

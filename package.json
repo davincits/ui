@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 9009 -s public",
     "build": "build-storybook -s public",
+    "build-storybook": "build-storybook -s public",
     "package": "webpack --mode production",
     "build:test": "webpack --env dev"
   },

@@ -8,10 +8,11 @@ function List({
   className,
   children,
   items,
+  value,
   onClick,
   imageSize = 'medium',
   checkbox,
-  isChecked,
+  isSelected,
   notActive,
   ...props
 }) {
@@ -23,7 +24,7 @@ function List({
           item={item}
           onClick={onClick}
           checkbox={checkbox}
-          checked={isChecked && isChecked(item)}
+          checked={isSelected(item, value)}
           notActive={notActive}
         />
       )) : children}

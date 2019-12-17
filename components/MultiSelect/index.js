@@ -54,12 +54,16 @@ class MultiSelect extends Component {
       search,
       notFoundText = 'Nothing was found...',
       disabled,
+      isSelected = (item, value) => Boolean(value && value.includes(item)),
     } = this.props;
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();
-    const items = Array.isArray(options) ?
-      options.filter(i => !serchString || (i.label || i).toLocaleLowerCase().includes(searchStringLowercased)) :
-      [];
+    const items = Array.isArray(options)
+      ? options
+        .filter(i => !serchString || (i.label || i)
+        .toLocaleLowerCase()
+        .includes(searchStringLowercased))
+      : [];
     return (
       <div className={classes(['ui-component ui-multiselect', className])}>
         <DropDown
@@ -82,9 +86,10 @@ class MultiSelect extends Component {
             ? (items.length ? (
               <List
                 items={items}
+                value={value}
                 onClick={this.onSelect}
                 imageSize={imageSize}
-                isChecked={i => Boolean(value && value.includes(i))}
+                isSelected={isSelected}
                 checkbox
               />
             ) : (
