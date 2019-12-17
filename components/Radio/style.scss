@@ -9,14 +9,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-
   & > input {
     position: absolute;
     display: none;
     opacity: 0;
     visibility: hidden;
   }
-
   & > .ui-fake-radio {
     min-width: 16px;
     min-height: 16px;
@@ -25,11 +23,9 @@
     border-radius: 8px;
     transition: border 0.25s;
   }
-
   &:hover > .ui-fake-radio {
     background-color: $ui-color-gray-light-2;
   }
-
   & > .ui-label {
     font-family: $ui-font-family;
     font-weight: 500;
@@ -44,16 +40,20 @@
     height: 32px;
     margin-bottom: 0;
   }
-
   &.ui-radio-checked > .ui-fake-radio {
     border: 4px solid $ui-color-brand-primary;
   }
-
-  & > input[disabled] + .ui-fake-radio {
-    border-color: $ui-color-disabled;
+  &.ui-disabled {
+    cursor: default;
+    .ui-fake-radio {
+      border-color: rgba($ui-color-disabled, 0.8);
+      background-color: $ui-color-white;
+    }
+    .ui-label {
+      color: rgba($ui-font-color, 0.3);
+    }
   }
 }
-
 .ui-radio-group.ui-with-error .ui-radio > input + .ui-fake-radio {
   border-color: $ui-color-brand-danger;
 }

@@ -7,6 +7,10 @@ import LIST from './mocks/users_list.json';
 import LIST_24 from './mocks/users_list_img_24.json';
 import LIST_40 from './mocks/users_list_img_40.json';
 
+const USERS = LIST.map((user) => ({ ...user, value: user.id }));
+const USERS_WITH_ICON = LIST_24.map((user) => ({ ...user, value: user.id }));
+const USERS_WITH_LARGE_ICON = LIST_40.map((user) => ({ ...user, value: user.id }));
+
 storiesOf('MultiSelect', module)
   .add('common', () => (
     <Container>
@@ -15,11 +19,8 @@ storiesOf('MultiSelect', module)
           <MultiSelect
             label="Input label"
             value={value}
-            options={LIST}
+            options={USERS}
             onChange={onChange}
-            isSelected={(item, selected) => (
-              Boolean(selected && selected.find((i) => i.id === item.id))
-            )}
           />
         </div>
       )}
@@ -32,7 +33,7 @@ storiesOf('MultiSelect', module)
           <MultiSelect
             label="Input label"
             value={value}
-            options={LIST_24}
+            options={USERS_WITH_ICON}
             onChange={onChange}
           />
         </div>
@@ -46,7 +47,7 @@ storiesOf('MultiSelect', module)
           <MultiSelect
             label="Input label"
             value={value}
-            options={LIST_40}
+            options={USERS_WITH_LARGE_ICON}
             imageSize="large"
             onChange={onChange}
           />
@@ -61,7 +62,7 @@ storiesOf('MultiSelect', module)
           <MultiSelect
             label="Input label"
             value={value}
-            options={LIST_24}
+            options={USERS_WITH_ICON}
             onChange={onChange}
             search
           />

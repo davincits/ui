@@ -12,11 +12,14 @@ class MultiSelect extends Component {
     serchString: '',
   };
 
-  onSelect = (val) => {
+  onSelect = (item) => {
     const { value, onChange } = this.props;
     if (!onChange) return;
-    if (!value) return onChange([val]);
-    onChange(value.includes(val) ? value.filter(item => item !== val) : [...value, val]);
+    if (!value) return onChange([item]);
+    if ((value || []).find((current) => item.value === current.value)) {
+      return onChange((value || []).filter((current) => item.value !== current.value));
+    }
+    onChange([...value, item]);
   }
 
   getButtonContent() {
@@ -54,15 +57,16 @@ class MultiSelect extends Component {
       search,
       notFoundText = 'Nothing was found...',
       disabled,
-      isSelected = (item, value) => Boolean(value && value.includes(item)),
     } = this.props;
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();
     const items = Array.isArray(options)
       ? options
-        .filter(i => !serchString || (i.label || i)
-        .toLocaleLowerCase()
-        .includes(searchStringLowercased))
+          .filter(item =>
+            !serchString || item.label
+            .toLocaleLowerCase()
+            .includes(searchStringLowercased)
+          )
       : [];
     return (
       <div className={classes(['ui-component ui-multiselect', className])}>
@@ -89,7 +93,9 @@ class MultiSelect extends Component {
                 value={value}
                 onClick={this.onSelect}
                 imageSize={imageSize}
-                isSelected={isSelected}
+                isSelected={
+                  (current) => Boolean((value || []).find((item) => item.value === current.value))
+                }
                 checkbox
               />
             ) : (
