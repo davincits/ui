@@ -8,13 +8,10 @@ import { classes, uniqid } from "../utils";
 import SearchIcon from "../icons/Search";
 import CloseIcon from "../icons/Close";
 
-const FIELD_TYPE_TEXT = "text";
-const FIELD_TYPE_NUMBER = "number";
-const normalizeFieldType = (type) => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
-
 const checkValue = (value) => (
   (value === null) || (value === undefined) || (value !== value) ? "" : value // eslint-disable-line no-self-compare
 );
+const FIELD_TYPE_NUMBER = "number";
 
 class TextField extends PureComponent {
   constructor(props) {
@@ -62,33 +59,6 @@ class TextField extends PureComponent {
     if (onChange) onChange("", event);
   };
 
-  onPlusClick = () => {
-    const { value, onChange } = this.props;
-    if (onChange) {
-      onChange((isNaN(value) ? 0 : Number(value)) + 1);
-    }
-  }
-
-  onMinusClick = () => {
-    const { value, natural, onChange } = this.props;
-    if (onChange && !isNaN(value) && (!natural || Number(value) > 1)) {
-      onChange(Number(value) - 1);
-    }
-  }
-
-  control() {
-    const { search, value, type } = this.props;
-    if (search) {
-      return value
-        ? (<CloseIcon onClick={this.onResetClick} />)
-        : (<SearchIcon />);
-    }
-    return type === FIELD_TYPE_NUMBER ? [
-      (<div key="plus" className="ui-text-field-number-control-plus" onClick={this.onPlusClick} />),
-      (<div key="minus" className="ui-text-field-number-control-minus" onClick={this.onMinusClick} />),
-    ] : null;
-  }
-
   render() {
     const {
       className,
@@ -99,7 +69,7 @@ class TextField extends PureComponent {
       onChange,
       onBlur,
       value: $value,
-      type = FIELD_TYPE_TEXT,
+      type = "text",
       autoheight = true,
       search,
       error,
@@ -139,8 +109,12 @@ class TextField extends PureComponent {
           </div>
         ) : (
           <div className="ui-text-field-input-wrap">
-            <input type={normalizeFieldType(type)} id={id} {...props} />
-            {this.control()}
+            <input type={type} id={id} {...props} />
+            {search ? (
+              value
+              ? (<CloseIcon onClick={this.onResetClick} />)
+              : (<SearchIcon />)
+            ) : null}
           </div>
         )}
       </div>

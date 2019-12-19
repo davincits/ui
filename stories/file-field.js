@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { FileField } from '../components';
 
@@ -9,7 +8,7 @@ storiesOf('FileField', module)
   .add('common', () => (
     <Container>
       {() => (
-        <FileField onChange={action('changed')}>
+        <FileField onChange={() => console.log('changed')}>
           Click to select a file
         </FileField>
       )}
@@ -21,11 +20,9 @@ storiesOf('FileField', module)
         <FileField
           onChange={(value) => {
             onChange(false);
-            action('changed')(value)
           }}
           onError={(value) => {
             onChange(true);
-            action('error')(value)
           }}
           error={error}
           maxSize={1024}
@@ -36,4 +33,4 @@ storiesOf('FileField', module)
         </FileField>
       )}
     </Container>
-  ))
+  ));

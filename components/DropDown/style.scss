@@ -7,7 +7,6 @@
   line-height: $ui-line-height;
   box-sizing: border-box;
   position: relative;
-
   & > .ui-icon-expand-less,
   & > .ui-icon-expand-more {
     right: 4px;
@@ -16,37 +15,30 @@
     position: absolute;
     pointer-events: none;
   }
-
   .ui-dropdown-button {
     height: 32px;
     width: 100%;
     padding-left: 12px;
     padding-right: 28px;
     text-align: left;
-
     &[disabled] {
       background-color: $ui-color-gray-light-3 !important;
       color: $ui-font-color !important;
     }
   }
-
   .ui-dropdown-button-container {
     position: relative;
   }
-
   .ui-dropdown-label ~ .ui-icon-expand-less,
   .ui-dropdown-label ~ .ui-icon-expand-more {
     margin-top: -5px;
   }
-
   &.disabled {
-
     .ui-icon-expand-less,
     .ui-icon-expand-more {
       opacity: 0.1;
     }
   }
-
   .ui-label {
     font-family: $ui-font-family;
     color: $ui-font-color;
@@ -57,7 +49,6 @@
     line-height: $ui-font-size-xxs + 1;
     margin-bottom: 4px;
   }
-
   .ui-ellipsis {
     width: 100%;
     overflow: hidden;
@@ -65,7 +56,6 @@
     white-space: nowrap;
   }
 }
-
 .ui-dropdown-content {
   font-family: $ui-font-family;
   font-size: $ui-font-size;
@@ -76,19 +66,15 @@
   background-color: $ui-color-white;
   border-radius: $ui-border-radius;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-  z-index: 100;
   padding: 24px;
   overflow: auto;
 }
-
 .ui-dropdown {
-
   .ui-dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    z-index: 1;
     margin-top: 2px;
   }
 }

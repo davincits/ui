@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { List } from '../components';
 import LIST from './mocks/users_list.json';
@@ -12,21 +11,21 @@ storiesOf('List', module)
   .add('common', () => (
     <Container width="240px">
       {() => (
-        <List items={LIST} onClick={action('selected')} />
+        <List items={LIST} onClick={console.log} />
       )}
     </Container>
   ))
   .add('with image', () => (
     <Container width="240px">
       {() => (
-        <List items={LIST_24} onClick={action('selected')} />
+        <List items={LIST_24} onClick={console.log} />
       )}
     </Container>
   ))
   .add('with large image', () => (
     <Container width="240px">
       {() => (
-        <List items={LIST_40} onClick={action('selected')} imageSize="large" />
+        <List items={LIST_40} onClick={console.log} imageSize="large" />
       )}
     </Container>
   ));

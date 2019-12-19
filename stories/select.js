@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { Select } from '../components';
-
-const onChangeAction = action('changed');
 
 const OPTIONS = [
   {
@@ -27,24 +24,21 @@ const OPTIONS = [
   {
     value: 'fifth',
     label: 'Fifth option',
-  }
+  },
 ];
 
 storiesOf('Select', module)
   .add('common', () => (
     <Container>
       {({ value = OPTIONS[0].value, onChange }) => (
-        <div style={{ width: '240px'}}>
+        <div style={{ width: '240px' }}>
           <Select
             label="Input label"
             value={value}
             options={OPTIONS}
-            onChange={(value) => {
-              onChange(value);
-              onChangeAction(value);
-            }}
+            onChange={onChange}
           />
         </div>
       )}
     </Container>
-  ))
+  ));

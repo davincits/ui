@@ -27,7 +27,9 @@ class TagsField extends PureComponent {
     const inputValue = target.value.trim();
     const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
     if (KEY_NAMES.includes(key) && inputValues.length && onChange && !noCustom) {
-      onChange(Array.isArray(value) ? [...value, ...inputValues] : inputValues);
+      const uniqValues = inputValues.filter((item) => !(value || []).includes(item));
+      console.log(uniqValues);
+      onChange(Array.isArray(value) ? [...value, ...uniqValues] : uniqValues);
       if (onInputChange) onInputChange('');
       event.preventDefault();
       this.setState({ inputValue: '' });

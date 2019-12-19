@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { CheckBox } from '../components';
-
-const onChangeAction = action('changed');
 
 storiesOf('CheckBox', module)
   .add('common', () => (
@@ -14,10 +11,7 @@ storiesOf('CheckBox', module)
         <CheckBox
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            onChangeAction(val);
-          }}
+          onChange={onChange}
         />
       )}
     </Container>

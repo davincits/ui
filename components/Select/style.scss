@@ -1,16 +1,12 @@
 @import '../common.scss';
 
 .ui-select {
-
   &.ui-with-error .ui-dropdown .ui-dropdown-button {
     border-color: $ui-color-brand-danger;
   }
 }
-
 .ui-select_dropdown {
   position: relative;
-  z-index: 1501;
-
   .ui-dropdown-content {
     padding: 0;
   }

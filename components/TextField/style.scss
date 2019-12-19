@@ -6,13 +6,11 @@
   color: $ui-font-color;
   line-height: $ui-line-height;
   box-sizing: border-box;
-
   label {
     display: block;
     width: 100%;
     font-weight: normal;
   }
-
   .ui-label {
     font-family: $ui-font-family;
     color: $ui-font-color;
@@ -23,13 +21,11 @@
     text-transform: uppercase;
     color: rgba($ui-font-color, 0.6);
   }
-
   .ui-text-field-input-wrap {
     display: flex;
     position: relative;
     background-color: $ui-color-white;
   }
-
   input,
   textarea {
     color: $ui-font-color;
@@ -42,45 +38,36 @@
     border: 1px solid $ui-color-gray;
     background-color: $ui-color-white;
     border-radius: $ui-border-radius;
-
     &:hover:not(:focus):not([disabled]) {
       background-color: $ui-color-gray-lightest;
     }
-
     &:focus {
       border-color: $ui-color-brand-primary;
       box-shadow: 0 0 0 2px $ui-color-brand-primary-light;
     }
-
     &[disabled] {
       border-color: $ui-color-gray-light-3;
       background-color: $ui-color-gray-light-3;
     }
   }
-
   .ui-text-area-wrapper {
     position: relative;
   }
-
   input {
     height: 32px;
   }
-
   textarea {
     min-height: 48px;
     resize: vertical;
   }
-
   &.ui-no-resize {
 
     textarea {
       resize: none;
     }
   }
-
   &.ui-inline {
     display: flex;
-
     .ui-label {
       font-size: $ui-font-size-xs;
       align-items: center;
@@ -91,13 +78,10 @@
       margin-bottom: 0;
     }
   }
-
   &.ui-type-search {
-
     input {
       padding-right: 28px;
     }
-
     .ui-icon-search,
     .ui-icon-close {
       position: absolute;
@@ -105,82 +89,46 @@
       top: 4px;
       color: $ui-color-gray;
     }
-
     .ui-icon-close {
       cursor: pointer;
       color: $ui-color-white;
       background: $ui-color-gray;
       border-radius: 50%;
       opacity: 0.75;
-
       &:hover {
         opacity: 1;
       }
     }
-
     input:focus + .ui-icon-close {
       background: $ui-color-brand-primary;
     }
   }
-
   &.ui-state-error {
-
     input,
     textarea {
       border-color: $ui-color-brand-danger;
-
       &:focus {
         box-shadow: 0 0 0 2px rgba($ui-color-brand-danger, 0.25);
       }
     }
   }
-
-  .ui-text-field-number-control-plus,
-  .ui-text-field-number-control-minus {
-    position: absolute;
-    width: 16px;
-    right: 1px;
-    cursor: pointer;
-    z-index: 1;
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: 4px;
-      border: 4px solid;
-      top: 4px;
-    }
-
-    &:hover {
-      background-color: #f0f0f0;
-    }
-
-    &:active {
-      background-color: #eeeeee;
-    }
-  }
-
   .ui-text-field-number-control-plus {
     top: 1px;
     bottom: 50%;
     border-radius: 0 3px 0 0;
     border-bottom: none;
-
     &::after {
       border-color: transparent transparent #dcdcdc;
     }
   }
-
   .ui-text-field-number-control-minus {
     top: 50%;
     bottom: 1px;
     border-radius: 0 0 3px 0;
-
     &::after {
       border-color: #dcdcdc transparent transparent;
     }
   }
-
   .ui-ellipsis {
     width: 100%;
     overflow: hidden;

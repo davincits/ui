@@ -247,7 +247,6 @@
   &.ui-button-loading::after {
     position: absolute;
     background-color: rgba($ui-color-white, 0.3);
-    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;

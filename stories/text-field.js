@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import { TextField } from '../components';
 
@@ -11,10 +10,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
         />
       )}
     </Container>
@@ -25,10 +21,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           inline
         />
       )}
@@ -40,10 +33,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           search
         />
       )}
@@ -55,10 +45,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           type="number"
         />
       )}
@@ -70,10 +57,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           type="number"
           natural
         />
@@ -86,10 +70,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           error
         />
       )}
@@ -101,10 +82,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           multiline
         />
       )}
@@ -116,10 +94,7 @@ storiesOf('TextField', module)
         <TextField
           label="Input label"
           value={value}
-          onChange={(val) => {
-            onChange(val);
-            action('changed')(val);
-          }}
+          onChange={onChange}
           multiline
           autoheight={false}
         />

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Container from './Container';
 import {
   DialogsContainer, showAlertDialog, showConfirmDialog, Button,
@@ -9,14 +8,14 @@ import {
 
 const openAlertDialog = async () => {
   await showAlertDialog({ title: 'Alert dialog title', message: 'Alert dialog message' });
-  action('closed')();
+  console.log('closed');
 };
 
 const openConfirmDialog = async () => {
   if (await showConfirmDialog({ title: 'Confirm dialog title', message: 'Are you sure about that?' })) {
-    action('closed')('I\'m pretty sure');
+    console.log('I\'m pretty sure');
   } else {
-    action('closed')('I\'m not sure');
+    console.log('I\'m not sure');
   }
 };
 

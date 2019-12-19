@@ -8,6 +8,7 @@ import ArrowRight from '../components/icons/ArrowRight';
 import Attention from '../components/icons/Attention';
 import Bell from '../components/icons/Bell';
 import Broken from '../components/icons/Broken';
+import Calendar from '../components/icons/Calendar';
 import Caret from '../components/icons/Caret';
 import Check from '../components/icons/Check';
 import ChevronLeft from '../components/icons/ChevronLeft';
@@ -21,20 +22,26 @@ import Cup from '../components/icons/Cup';
 import Document from '../components/icons/Document';
 import DocumentBlank from '../components/icons/DocumentBlank';
 import Dollar from '../components/icons/Dollar';
+import Done from '../components/icons/Done';
 import Download from '../components/icons/Download';
 import ExpandLess from '../components/icons/ExpandLess';
 import ExpandMore from '../components/icons/ExpandMore';
 import Favorite from '../components/icons/Favorite';
+import Info from '../components/icons/Info';
+import Minus from '../components/icons/Minus';
 import NotAllowed from '../components/icons/NotAllowed';
 import Parking from '../components/icons/Parking';
 import Picture from '../components/icons/Picture';
+import Plus from '../components/icons/Plus';
 import Reception from '../components/icons/Reception';
 import Restore from '../components/icons/Restore';
 import Search from '../components/icons/Search';
 import SearchNoResult from '../components/icons/SearchNoResult';
 import Spinner from '../components/icons/Spinner';
 import Star from '../components/icons/Star';
+import Svg from '../components/icons/Svg';
 import ThumbUp from '../components/icons/ThumbUp';
+import Time from '../components/icons/Time';
 import Unlink from '../components/icons/Unlink';
 import User from '../components/icons/User';
 import Verified from '../components/icons/Verified';
@@ -69,6 +76,10 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Broken /&gt;</span>
             </div>
             <div className="icon-container">
+              <Calendar />
+              <span className="icon-title">&lt;Calendar /&gt;</span>
+            </div>
+            <div className="icon-container">
               <Caret />
               <span className="icon-title">&lt;Caret /&gt;</span>
             </div>
@@ -93,7 +104,7 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Close /&gt;</span>
             </div>
             <div className="icon-container">
-              <CloseAnim delay={10000} />
+              <CloseAnim />
               <span className="icon-title">&lt;CloseAnim /&gt;</span>
             </div>
             <div className="icon-container">
@@ -121,6 +132,10 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Dollar /&gt;</span>
             </div>
             <div className="icon-container">
+              <Done />
+              <span className="icon-title">&lt;Done /&gt;</span>
+            </div>
+            <div className="icon-container">
               <Download />
               <span className="icon-title">&lt;Download /&gt;</span>
             </div>
@@ -133,12 +148,16 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;ExpandMore /&gt;</span>
             </div>
             <div className="icon-container">
-              <ExpandMore />
-              <span className="icon-title">&lt;ExpandMore /&gt;</span>
-            </div>
-            <div className="icon-container">
               <Favorite />
               <span className="icon-title">&lt;Favorite /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <Info />
+              <span className="icon-title">&lt;Info /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <Minus />
+              <span className="icon-title">&lt;Minus /&gt;</span>
             </div>
             <div className="icon-container">
               <NotAllowed />
@@ -151,6 +170,10 @@ storiesOf('Icons', module)
             <div className="icon-container">
               <Picture />
               <span className="icon-title">&lt;Picture /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <Plus />
+              <span className="icon-title">&lt;Plus /&gt;</span>
             </div>
             <div className="icon-container">
               <Reception />
@@ -177,8 +200,16 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Star /&gt;</span>
             </div>
             <div className="icon-container">
+              <Svg />
+              <span className="icon-title">&lt;Svg /&gt;</span>
+            </div>
+            <div className="icon-container">
               <ThumbUp />
               <span className="icon-title">&lt;ThumbUp /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <Time />
+              <span className="icon-title">&lt;Time /&gt;</span>
             </div>
             <div className="icon-container">
               <Unlink />
