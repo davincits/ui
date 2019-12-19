@@ -40,7 +40,6 @@ module.exports = {
   },
   entry: {
     index: './src/index.js',
-    icons: './src/icons.js',
   },
   output: {
     filename: '[name].js',

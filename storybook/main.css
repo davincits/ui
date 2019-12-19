@@ -160,20 +160,19 @@ hr {
   position: relative;
   z-index: 2; }
 
-.ui-autocomplete .ui-dropdown .ui-dropdown-content {
+.ui-autocomplete_dropdown .ui-dropdown-content {
   padding: 0; }
-  .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items {
+  .ui-autocomplete_dropdown .ui-dropdown-content .ui-autocomplete-items {
     box-shadow: inset 0 1px 0 #f0f0f0;
     max-height: 260px;
-    overflow-x: hidden;
     overflow-y: auto; }
-    .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item {
+    .ui-autocomplete_dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item {
       display: flex;
       min-height: 40px;
       align-items: center;
       padding: 8px 16px;
       cursor: pointer; }
-      .ui-autocomplete .ui-dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item:hover {
+      .ui-autocomplete_dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item:hover {
         background-color: rgba(51, 51, 51, 0.05); }
 
 .ui-dropdown {
@@ -616,7 +615,8 @@ hr {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
   .ui-checkbox > input {
     display: none; }
   .ui-checkbox > .ui-fake-checkbox {
@@ -1198,8 +1198,13 @@ hr {
     margin-bottom: 0; }
   .ui-radio.ui-radio-checked > .ui-fake-radio {
     border: 4px solid #05B9E6; }
-  .ui-radio > input[disabled] + .ui-fake-radio {
-    border-color: #EAEAEA; }
+  .ui-radio.ui-disabled {
+    cursor: default; }
+    .ui-radio.ui-disabled .ui-fake-radio {
+      border-color: rgba(234, 234, 234, 0.8);
+      background-color: #ffffff; }
+    .ui-radio.ui-disabled .ui-label {
+      color: rgba(51, 51, 51, 0.3); }
 
 .ui-radio-group.ui-with-error .ui-radio > input + .ui-fake-radio {
   border-color: #F53C3C; }
@@ -1460,8 +1465,7 @@ hr {
   color: #333333;
   line-height: 1.4;
   box-sizing: border-box;
-  font-weight: 400;
-  display: inline-block; }
+  font-weight: 400; }
   .ui-datepicker .ui-datepicker-icon-container {
     cursor: pointer; }
     .ui-datepicker .ui-datepicker-icon-container:hover {
