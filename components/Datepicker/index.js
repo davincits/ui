@@ -1,10 +1,10 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import DropDown from '../DropDown';
-import IconCalendar from '../icons/Calendar';
-import Content from './Content';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import DropDown from "../DropDown";
+import IconCalendar from "../icons/Calendar";
+import Content from "./Content";
+import { classes } from "../utils";
 
 class Datepicker extends PureComponent {
   onChange = (date) => {
@@ -47,7 +47,7 @@ class Datepicker extends PureComponent {
       [startDateString, endDateString] = value;
     }
     if (startDateString) {
-      const parts = startDateString.split('-');
+      const parts = startDateString.split("-");
       startDate = new Date(
         parseInt(parts[0], 10),
         parseInt(parts[1], 10) - 1,
@@ -55,7 +55,7 @@ class Datepicker extends PureComponent {
       );
     }
     if (endDateString) {
-      const parts = endDateString.split('-');
+      const parts = endDateString.split("-");
       endDate = new Date(
         parseInt(parts[0], 10),
         parseInt(parts[1], 10) - 1,
@@ -64,9 +64,9 @@ class Datepicker extends PureComponent {
     }
     return (
       <div className={classes([
-        'ui-component ui-datepicker',
-        range && 'ui-datepicker-range',
-        className
+        "ui-component ui-datepicker",
+        range && "ui-datepicker-range",
+        className,
       ])}>
         <DropDown
           ref="dropdown"
@@ -77,8 +77,7 @@ class Datepicker extends PureComponent {
           )}
           inline={false}
           autoWidth
-          name="ui-datepicker"
-        >
+          name="ui-datepicker">
           <Content
             startDate={startDate}
             endDate={endDate}
@@ -86,8 +85,7 @@ class Datepicker extends PureComponent {
             isDateAllowed={isDateAllowed}
             monthNames={monthNames}
             dayNames={dayNames}
-            range={range}
-          />
+            range={range} />
         </DropDown>
       </div>
     );

@@ -1,8 +1,8 @@
-import './style.scss';
+import "./style.scss";
 
-import React from 'react';
-import { bool, string, oneOfType } from 'prop-types';
-import { classes } from '../../utils';
+import React from "react";
+import { bool, string, oneOfType } from "prop-types";
+import { classes } from "../../utils";
 
 function Row({
   className,
@@ -11,9 +11,9 @@ function Row({
   ...props
 }) {
   const classList = classes({
-    'ui-component ui-row': true,
-    'ui-row-gutter': gutter === true,
-    [`ui-row-gutter-${gutter}`]: typeof gutter === 'string',
+    "ui-component ui-row": true,
+    "ui-row-gutter": gutter === true,
+    [`ui-row-gutter-${gutter}`]: typeof gutter === "string",
     [className]: className,
   });
   return (

@@ -1,28 +1,31 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import Button from '../Button';
-import { classes } from '../utils';
-import IconExpandMore from '../icons/ExpandMore';
-import IconExpandLess from '../icons/ExpandLess';
-import Portal from '../Portal';
+import React, { PureComponent } from "react";
+import Button from "../Button";
+import { classes } from "../utils";
+import IconExpandMore from "../icons/ExpandMore";
+import IconExpandLess from "../icons/ExpandLess";
+import Portal from "../Portal";
 
 const MARGIN = 0;
 
 class DropDown extends PureComponent {
-  state = { opened: false }
+  constructor(props) {
+    super(props);
+    this.state = { opened: false };
+  }
 
   componentDidMount() {
-    window.addEventListener('click', this.windowClickHandler);
+    window.addEventListener("click", this.windowClickHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.windowClickHandler);
+    window.removeEventListener("click", this.windowClickHandler);
   }
 
   clickHandler = () => {
-    const { disabled, manual } = this.props;
-    if (disabled || manual) return;
+    const { disabled } = this.props;
+    if (disabled) return;
     this.toggleOpenState();
   };
 
@@ -53,19 +56,22 @@ class DropDown extends PureComponent {
     const onTop = top > (windowHeight + height) / 2;
     this.setState({
       dropDownStyle: {
-        width: autoWidth ? '' : width,
+        width: autoWidth ? "" : width,
         left,
-        top: onTop ? '' : bottom,
-        bottom: onTop ? windowHeight - top : '',
+        top: onTop ? "" : bottom,
+        bottom: onTop ? windowHeight - top : "",
         maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
       },
     });
   }
 
   toggleOpenState(...args) {
+    const { inline = true, manual } = this.props;
     const { opened: stateOpened } = this.state;
-    const { inline = true } = this.props;
     const [opened = !stateOpened] = args;
+    if (manual && !opened) {
+      return this.checkPosition();
+    }
     this.setState({ opened }, () => {
       if (inline || !opened) return;
       this.checkPosition();
@@ -89,18 +95,17 @@ class DropDown extends PureComponent {
     } = this.props;
     const { opened, dropDownStyle } = this.state;
     const classList = classes({
-      'ui-component ui-dropdown': true,
-      'ui-dropdown-opened': opened,
+      "ui-component ui-dropdown": true,
+      "ui-dropdown-opened": opened,
       [className]: className,
       disabled,
     });
     const dropDown = children ? (
-      <div className={`ui-component ${name || 'ui'}_dropdown`}>
+      <div className={`ui-component ${name || "ui"}_dropdown`}>
         <div
           className="ui-dropdown-content"
           ref="dropdown"
-          style={inline ? null : dropDownStyle}
-        >
+          style={inline ? null : dropDownStyle}>
           {children}
         </div>
       </div>
@@ -119,8 +124,7 @@ class DropDown extends PureComponent {
               className="ui-dropdown-button"
               focus={opened}
               disabled={disabled}
-              onClick={this.clickHandler}
-            >
+              onClick={this.clickHandler}>
               <div className="ui-ellipsis">{buttonContent}</div>
             </Button>
           )}

@@ -1,11 +1,11 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { Component } from 'react';
-import DropDown from '../DropDown';
-import TextField from '../TextField';
-import Loading from '../LoadingDotted';
-import List from '../List';
-import { classes } from '../utils';
+import React, { Component } from "react";
+import DropDown from "../DropDown";
+import TextField from "../TextField";
+import Loading from "../LoadingDotted";
+import List from "../List";
+import { classes } from "../utils";
 
 class Autocomplete extends Component {
   onSelect = (value) => {
@@ -23,10 +23,10 @@ class Autocomplete extends Component {
   render() {
     const {
       className,
-      notFoundText = 'Nothing was found...',
+      notFoundText = "Nothing was found...",
       items,
       label,
-      value = '',
+      value = "",
       onChange,
       loading,
     } = this.props;
@@ -36,16 +36,16 @@ class Autocomplete extends Component {
         value={value}
         onChange={onChange}
         onFocus={this.onFocus}
-        search
-      />
+        search />
     );
     return (
-      <div className={classes(['ui-component ui-autocomplete', className])}>
+      <div className={classes(["ui-component ui-autocomplete", className])}>
         <DropDown
           button={textField}
           ref="dropdown"
-          manual
-        >
+          inline={false}
+          name="ui-autocomplete"
+          manual>
           <div className="ui-autocomplete-items">
             {items
               ? (items.length ? (
@@ -53,15 +53,13 @@ class Autocomplete extends Component {
               ) : (
                 <List
                   items={[notFoundText]}
-                  notActive
-                />
+                  notActive />
               )) : (loading && (
                 <List
                   items={[<Loading />]}
-                  notActive
-                />
+                  notActive />
               )
-            )}
+              )}
           </div>
         </DropDown>
       </div>

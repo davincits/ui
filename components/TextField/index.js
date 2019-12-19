@@ -1,29 +1,32 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
   bool, string, func, element, oneOfType,
-} from 'prop-types';
-import { classes, uniqid } from '../utils';
-import SearchIcon from '../icons/Search';
-import CloseIcon from '../icons/Close';
+} from "prop-types";
+import { classes, uniqid } from "../utils";
+import SearchIcon from "../icons/Search";
+import CloseIcon from "../icons/Close";
 
-const FIELD_TYPE_TEXT = 'text';
-const FIELD_TYPE_NUMBER = 'number';
+const FIELD_TYPE_TEXT = "text";
+const FIELD_TYPE_NUMBER = "number";
 const normalizeFieldType = (type) => ((type === FIELD_TYPE_NUMBER) ? FIELD_TYPE_TEXT : type);
 
 const checkValue = (value) => (
-  (value === null) || (value === undefined) || (value !== value) ? '' : value // eslint-disable-line no-self-compare
+  (value === null) || (value === undefined) || (value !== value) ? "" : value // eslint-disable-line no-self-compare
 );
 
 class TextField extends PureComponent {
-  state = { height: null }
+  constructor(props) {
+    super(props);
+    this.state = { height: null };
+  }
 
   onChange = (event) => {
     const { value } = event.target;
     const { onChange, type, natural } = this.props;
     const isNumberType = type === FIELD_TYPE_NUMBER;
-    if (onChange && (!isNumberType || (value === '') || !isNaN(value))) {
+    if (onChange && (!isNumberType || (value === "") || !isNaN(value))) {
       if (natural) {
         return onChange(Math.abs(parseInt(value, 10)), event);
       }
@@ -40,15 +43,15 @@ class TextField extends PureComponent {
     const { onKeyDown } = this.props;
     if (onKeyDown) onKeyDown(event);
     const { target } = event;
-    target.style.overflow = 'hidden';
+    target.style.overflow = "hidden";
     setTimeout(() => {
-      target.style.height = 'auto';
+      target.style.height = "auto";
       const height = `${target.scrollHeight}px`;
       target.style.height = height;
       if (
         target.scrollHeight > parseInt(getComputedStyle(target).maxHeight, 10)
       ) {
-        target.style.overflow = '';
+        target.style.overflow = "";
       }
       this.setState({ height });
     }, 0);
@@ -56,7 +59,7 @@ class TextField extends PureComponent {
 
   onResetClick = (event) => {
     const { onChange } = this.props;
-    if (onChange) onChange('', event);
+    if (onChange) onChange("", event);
   };
 
   onPlusClick = () => {
@@ -107,11 +110,11 @@ class TextField extends PureComponent {
     const { height } = this.state;
     const value = checkValue($value);
     const classList = classes({
-      'ui-component ui-text-field': true,
-      'ui-no-resize': !resize,
-      'ui-inline': inline,
-      'ui-type-search': search,
-      'ui-state-error': error,
+      "ui-component ui-text-field": true,
+      "ui-no-resize": !resize,
+      "ui-inline": inline,
+      "ui-type-search": search,
+      "ui-state-error": error,
       [className]: className,
     });
     const props = {
@@ -131,7 +134,7 @@ class TextField extends PureComponent {
           </label>
         ) : null}
         {multiline ? (
-          <div className="ui-text-area-wrapper" style={{ height: height || 'auto' }}>
+          <div className="ui-text-area-wrapper" style={{ height: height || "auto" }}>
             <textarea {...props} id={id} />
           </div>
         ) : (

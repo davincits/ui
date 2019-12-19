@@ -1,11 +1,11 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import Portal from '../Portal';
-import IconClose from '../icons/Close';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import Portal from "../Portal";
+import IconClose from "../icons/Close";
+import { classes } from "../utils";
 
-const ESC_CODE = 'Escape';
+const ESC_CODE = "Escape";
 
 class Dialog extends PureComponent {
   componentDidMount() {
@@ -14,9 +14,9 @@ class Dialog extends PureComponent {
     } else {
       document.body.__opened_modals__++;
     }
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', this.keyPressHandler);
-    window.addEventListener('resize', this.resizeHandler);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", this.keyPressHandler);
+    window.addEventListener("resize", this.resizeHandler);
     this.detectFooterCovering();
     setTimeout(() => this.detectFooterCovering(), 200);
   }
@@ -26,11 +26,11 @@ class Dialog extends PureComponent {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyPressHandler);
-    window.removeEventListener('resize', this.resizeHandler);
+    window.removeEventListener("keydown", this.keyPressHandler);
+    window.removeEventListener("resize", this.resizeHandler);
     document.body.__opened_modals__--;
     if (document.body.__opened_modals__ > 0) return;
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   }
 
   resizeHandler = () => {
@@ -43,9 +43,9 @@ class Dialog extends PureComponent {
     const { scrollHeight, scrollTop, offsetHeight } = content;
     if (footer) {
       if (Math.ceil(offsetHeight + scrollTop) === scrollHeight) {
-        footer.classList.remove('with-shadow');
+        footer.classList.remove("with-shadow");
       } else {
-        footer.classList.add('with-shadow');
+        footer.classList.add("with-shadow");
       }
     }
   }
@@ -53,9 +53,9 @@ class Dialog extends PureComponent {
   onScroll = (event) => {
     const { header } = this.refs;
     if (event.target.scrollTop) {
-      header.classList.add('with-shadow');
+      header.classList.add("with-shadow");
     } else {
-      header.classList.remove('with-shadow');
+      header.classList.remove("with-shadow");
     }
     this.detectFooterCovering();
   };
@@ -97,7 +97,7 @@ class Dialog extends PureComponent {
       width,
     } = this.props;
     const classList = classes({
-      'ui-component ui-dialog': true,
+      "ui-component ui-dialog": true,
       [className]: className,
       disabled,
     });
