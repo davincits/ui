@@ -60,6 +60,9 @@ hr {
 .u-padding-top {
   padding-top: 16px; }
 
+.u-margin-top {
+  padding-top: 16px; }
+
 .u-padding-bottom {
   padding-bottom: 16px; }
 
@@ -231,7 +234,8 @@ hr {
   border-radius: 4px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 24px;
-  overflow: auto; }
+  overflow: auto;
+  z-index: 1; }
 
 .ui-dropdown .ui-dropdown-content {
   position: absolute;
@@ -666,7 +670,7 @@ hr {
           transform: translate3d(0, 0, 0);
   -webkit-animation: uiDialogBgAnimation 0.25s forwards;
           animation: uiDialogBgAnimation 0.25s forwards;
-  z-index: 1; }
+  z-index: 10; }
   .ui-dialog .ui-dialog-window {
     display: flex;
     flex-direction: column;
