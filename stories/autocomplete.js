@@ -66,12 +66,22 @@ storiesOf('Autocomplete', module)
         const items = CITIES.filter((city) => city.toLocaleLowerCase().includes(search));
         return (
           <div style={{ width: '286px' }}>
-            <Autocomplete
-              label="Autocomplete"
-              value={value}
-              items={items}
-              onChange={onChange}
-            />
+            <div>
+              <Autocomplete
+                label="Autocomplete"
+                value={value}
+                items={items}
+                onChange={onChange}
+              />
+            </div>
+            <div className="u-margin-top">
+              <Autocomplete
+                label="Autocomplete"
+                value={value}
+                items={items}
+                onChange={onChange}
+              />
+            </div>
           </div>
         );
       }}

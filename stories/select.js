@@ -32,12 +32,30 @@ storiesOf('Select', module)
     <Container>
       {({ value = OPTIONS[0].value, onChange }) => (
         <div style={{ width: '240px' }}>
-          <Select
-            label="Input label"
-            value={value}
-            options={OPTIONS}
-            onChange={onChange}
-          />
+          <div>
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange}
+            />
+          </div>
+          <div className="u-padding-top">
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange}
+            />
+          </div>
+          <div className="u-padding-top">
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange}
+            />
+          </div>
         </div>
       )}
     </Container>
