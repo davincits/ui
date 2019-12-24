@@ -29,7 +29,7 @@ storiesOf('Accordion', module)
           <Accordion.Collapse animated>
             <div className="u-padding-top u-padding-bottom">{LOREM}</div>
           </Accordion.Collapse>
-          <Accordion.Toggle>
+          <Accordion.Toggle disabled>
             <Accordion.Title>Comment</Accordion.Title>
           </Accordion.Toggle>
           <Accordion.Collapse animated>

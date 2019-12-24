@@ -17,11 +17,12 @@ function Col({
   ...props
 }) {
   if (width) {
-    const _width = REGEXP.test(width) ? `${String(width)}%` : width;
-    style.width = _width;
-    style.minWidth = _width;
-  } else if (auto) style.width = "auto";
-  else style.flex = 1;
+    style.width = REGEXP.test(width) ? `${String(width)}%` : width;
+  } else if (auto) {
+    style.width = "auto";
+  } else {
+    style.flex = 1;
+  }
   return (
     <div className={classes(["ui-component ui-column", className])} style={style} {...props}>{children}</div>
   );

@@ -12,7 +12,7 @@ class Accordion extends PureComponent {
     this.state = { index: 0 };
   }
 
-  changeIndex = (index) => {
+  handleChangeIndex = (index) => {
     this.setState({ index });
   }
 
@@ -29,7 +29,7 @@ class Accordion extends PureComponent {
         {Children.map(children, (child) => {
           if (child.type === Toggle) {
             return cloneElement(child, {
-              changeIndex: this.changeIndex,
+              onChangeIndex: this.handleChangeIndex,
               index: toggleIndex,
               active: index === toggleIndex++,
             });

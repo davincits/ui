@@ -9,35 +9,34 @@
   min-height: 48px;
   border-top: 1px solid #D6D6D6;
   cursor: pointer;
-
   svg {
     margin-right: 8px;
     transition: transform .2s;
     min-width: 24px;
   }
-
   &:hover {
     color: rgba($ui-color-brand-primary, 0.7);
   }
 }
-
-.ui-accordion-toggle.ui-active-state .ui-accordion-title {
-  color: $ui-font-color;
-
-  svg {
-    transform: rotate(45deg);
+.ui-accordion-toggle {
+  &.ui-active .ui-accordion-title {
+    color: $ui-font-color;
+    svg {
+      transform: rotate(45deg);
+    }
+  }
+  &.ui-disabled .ui-accordion-title {
+    color: rgba($ui-font-color, 0.3);
+    cursor: default;
   }
 }
-
 .ui-accordion > .ui-accordion-toggle:first-child > .ui-accordion-title {
   border-top: none;
 }
-
 .ui-accordion-collapse.ui-animated {
   max-height: 0;
   transition: max-height .2s;
   overflow: hidden;
-
   &.ui-active {
     max-height: 640px;
   }

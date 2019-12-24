@@ -29,21 +29,23 @@ class Autocomplete extends Component {
       value = "",
       onChange,
       loading,
+      disabled,
     } = this.props;
-    const textField = (
-      <TextField
-        label={label}
-        value={value}
-        onChange={onChange}
-        onFocus={this.onFocus}
-        search />
-    );
     return (
       <div className={classes(["ui-component ui-autocomplete", className])}>
         <DropDown
-          button={textField}
-          ref="dropdown"
+          button={(
+            <TextField
+              label={label}
+              value={value}
+              onChange={onChange}
+              onFocus={this.onFocus}
+              disabled={disabled}
+              search />
+          )}
+          disabled={disabled}
           inline={false}
+          ref="dropdown"
           name="ui-autocomplete"
           manual>
           <div className="ui-autocomplete-items">

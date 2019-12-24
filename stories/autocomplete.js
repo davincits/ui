@@ -80,6 +80,7 @@ storiesOf('Autocomplete', module)
                 value={value}
                 items={items}
                 onChange={onChange}
+                disabled
               />
             </div>
           </div>
