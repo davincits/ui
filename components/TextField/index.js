@@ -99,9 +99,7 @@ class TextField extends PureComponent {
     return (
       <div className={classList}>
         {label ? (
-          <label className="ui-label" htmlFor={id}>
-            <div className="ui-ellipsis">{label}</div>
-          </label>
+          <label className="ui-label" htmlFor={id}>{label}</label>
         ) : null}
         {multiline ? (
           <div className="ui-text-area-wrapper" style={{ height: height || "auto" }}>

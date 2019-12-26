@@ -2,18 +2,12 @@
 
 [Storybook](https://davincits.github.io/ui/storybook)
 
-### Current version
-
-```
-v0.5.1
-```
-
 ### Usage
 
 Add to dependencies (package.json)
 
 ```
-"ui": "git+https://github.com/davincits/ui.git#v0.5.1"
+"ui": "git+https://github.com/davincits/ui.git#{version}"
 ```
 
 Import in main `app.js` file

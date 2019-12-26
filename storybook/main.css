@@ -519,11 +519,6 @@ hr {
     border-radius: 0 0 3px 0; }
     .ui-text-field .ui-text-field-number-control-minus::after {
       border-color: #dcdcdc transparent transparent; }
-  .ui-text-field .ui-ellipsis {
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; }
 
 .ui-loading-dotted {
   position: relative;
@@ -670,7 +665,7 @@ hr {
           transform: translate3d(0, 0, 0);
   -webkit-animation: uiDialogBgAnimation 0.25s forwards;
           animation: uiDialogBgAnimation 0.25s forwards;
-  z-index: 10; }
+  z-index: 1; }
   .ui-dialog .ui-dialog-window {
     display: flex;
     flex-direction: column;
@@ -1241,7 +1236,8 @@ hr {
 .ui-select_dropdown {
   position: relative; }
   .ui-select_dropdown .ui-dropdown-content {
-    padding: 0; }
+    padding: 0;
+    max-height: 240px; }
 
 .ui-option {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1866,11 +1862,15 @@ hr {
   .ui-accordion-title:hover {
     color: rgba(5, 185, 230, 0.7); }
 
-.ui-accordion-toggle.ui-active-state .ui-accordion-title {
+.ui-accordion-toggle.ui-active .ui-accordion-title {
   color: #333333; }
-  .ui-accordion-toggle.ui-active-state .ui-accordion-title svg {
+  .ui-accordion-toggle.ui-active .ui-accordion-title svg {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
+
+.ui-accordion-toggle.ui-disabled .ui-accordion-title {
+  color: rgba(51, 51, 51, 0.3);
+  cursor: default; }
 
 .ui-accordion > .ui-accordion-toggle:first-child > .ui-accordion-title {
   border-top: none; }
