@@ -16,11 +16,11 @@ class DropDown extends PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener("click", this.windowClickHandler);
+    window.addEventListener("mousedown", this.windowMouseDownHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("click", this.windowClickHandler);
+    window.removeEventListener("mousedown", this.windowMouseDownHandler);
   }
 
   clickHandler = () => {
@@ -29,7 +29,7 @@ class DropDown extends PureComponent {
     this.toggleOpenState();
   };
 
-  windowClickHandler = (event) => {
+  windowMouseDownHandler = (event) => {
     const { disabled } = this.props;
     const { opened } = this.state;
     if (disabled || !opened) return;
