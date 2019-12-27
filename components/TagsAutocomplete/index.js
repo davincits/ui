@@ -8,8 +8,9 @@ import List from '../List';
 import { classes } from '../utils';
 
 class TagsAutocomplete extends PureComponent {
-  state = {
-    inputValue: '',
+  constructor(props) {
+    super(props);
+    this.state = { inputValue: '' };
   }
 
   onSelect = (selected) => {
@@ -17,12 +18,13 @@ class TagsAutocomplete extends PureComponent {
     const { dropdown } = this.refs;
     onChange(Array.isArray(value) ? [...value, selected] : [selected]);
     this.setState({ inputValue: '' });
-    dropdown.clickHandler();
+    dropdown.setState({ opened: false });
   }
 
   onFocus = () => {
     const { dropdown } = this.refs;
-    dropdown.clickHandler();
+    dropdown.setState({ opened: true });
+    dropdown.checkPosition();
   }
 
   onInputChange = (inputValue) => {
@@ -45,11 +47,11 @@ class TagsAutocomplete extends PureComponent {
       placeholder,
     } = this.props;
     const { inputValue } = this.state;
-    const classList = classes({
-      'ui-component ui-tags-autocomplete': true,
-      'ui-disabled': disabled,
-      [className]: className,
-    });
+    const classList = classes([
+      'ui-component ui-tags-autocomplete',
+      disabled && 'ui-disabled',
+      className,
+    ]);
     return (
       <div className={classList} onClick={this.onClick}>
         <DropDown
@@ -63,14 +65,13 @@ class TagsAutocomplete extends PureComponent {
               error={error}
               disabled={disabled}
               placeholder={placeholder}
-              noCustom
-            />
+              noCustom />
           )}
           label={label}
           ref="dropdown"
           inline={false}
           name="ui-tags-autocomplete"
-        >
+          manual>
           <div className="ui-tags-autocomplete-items">
             {items
               ? (items.length ? (

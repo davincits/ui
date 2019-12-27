@@ -10,11 +10,9 @@
   align-items: center;
   cursor: pointer;
   position: relative;
-
   & > input {
     display: none;
   }
-
   & > .ui-fake-checkbox {
     width: 16px;
     height: 16px;
@@ -23,7 +21,6 @@
     border-radius: 2px;
     display: inline-block;
     transition: background-color 0.1s;
-
     &::after {
       position: absolute;
       width: 10px;
@@ -35,11 +32,9 @@
       content: "";
     }
   }
-
   &:hover > .ui-fake-checkbox {
     background-color: $ui-color-gray-light-2;
   }
-
   & > .ui-label {
     font-family: $ui-font-family;
     color: $ui-font-color;
@@ -54,17 +49,18 @@
     height: 32px;
     margin-bottom: 0;
   }
-
   & > input:checked + .ui-fake-checkbox {
     background-color: $ui-color-brand-primary;
     border-color: $ui-color-brand-primary;
-
     &::after {
       opacity: 1;
     }
   }
-
   &.ui-with-error > .ui-fake-checkbox {
     border-color: $ui-color-brand-danger;
+  }
+  &.ui-disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 }

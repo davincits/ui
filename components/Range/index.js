@@ -22,7 +22,8 @@ class Range extends PureComponent {
   }
 
   onMouseDown = (event) => {
-    const { value } = this.props;
+    const { value, disabled } = this.props;
+    if (disabled) return;
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
     this.clientXStart = event.clientX;
     this.sliderIndex = event.target.nextSibling ? 0 : 1;
@@ -65,7 +66,6 @@ class Range extends PureComponent {
     const delta = max - min;
     const firstSliderLeft = (first - min) / delta * 100;
     const secondSliderLeft = (second - min) / delta * 100;
-
     const trackStyle = {
       left: `${firstSliderLeft}%`,
       right: `${100 - secondSliderLeft}%`,
@@ -84,9 +84,10 @@ class Range extends PureComponent {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, disabled } = this.props;
     const classList = classes({
       'ui-component ui-range': true,
+      'ui-disabled': disabled,
       [className]: className,
     });
     const [

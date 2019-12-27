@@ -48,15 +48,19 @@ class Example extends Component {
   }
 
   render() {
-    const { value, items, loading } = this.state;
+    const { disabled } = this.props;
+    const {
+      value, items, loading,
+    } = this.state;
     return (
       <TagsAutocomplete
-        label="Autocomplete"
+        label="Tags autocomplete"
         value={value}
         items={items}
         loading={loading}
         onChange={this.onChange}
         onInputChange={this.onInputChange}
+        disabled={disabled}
       />
     );
   }
@@ -65,6 +69,15 @@ class Example extends Component {
 storiesOf('TagsAutocomplete', module)
   .add('common', () => (
     <Container width="480px">
-      {() => (<Example />)}
+      {() => (
+        <Example />
+      )}
+    </Container>
+  ))
+  .add('disabled', () => (
+    <Container width="480px">
+      {() => (
+        <Example disabled />
+      )}
     </Container>
   ));

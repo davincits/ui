@@ -67,4 +67,17 @@ storiesOf('Date picker', module)
         </div>
       )}
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container>
+      {({ value = '', onChange }) => (
+        <div>
+          <Datepicker
+            onChange={onChange}
+            value={value}
+            disabled
+          />
+        </div>
+      )}
+    </Container>
   ));

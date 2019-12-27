@@ -69,4 +69,19 @@ storiesOf('MultiSelect', module)
         </div>
       )}
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container>
+      {({ value, onChange }) => (
+        <div style={{ width: '280px' }}>
+          <MultiSelect
+            label="Input label"
+            value={value}
+            options={USERS_WITH_ICON}
+            onChange={onChange}
+            disabled
+          />
+        </div>
+      )}
+    </Container>
   ));

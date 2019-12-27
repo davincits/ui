@@ -24,8 +24,8 @@ class DropDown extends PureComponent {
   }
 
   clickHandler = () => {
-    const { disabled } = this.props;
-    if (disabled) return;
+    const { disabled, manual } = this.props;
+    if (disabled || manual) return;
     this.toggleOpenState();
   };
 
@@ -69,9 +69,6 @@ class DropDown extends PureComponent {
     const { inline = true, manual } = this.props;
     const { opened: stateOpened } = this.state;
     const [opened = !stateOpened] = args;
-    if (manual && !opened) {
-      return this.checkPosition();
-    }
     this.setState({ opened }, () => {
       if (inline || !opened) return;
       this.checkPosition();
@@ -97,8 +94,8 @@ class DropDown extends PureComponent {
     const classList = classes({
       "ui-component ui-dropdown": true,
       "ui-dropdown-opened": opened,
+      "ui-disabled": disabled,
       [className]: className,
-      disabled,
     });
     const dropDown = children ? (
       <div className={`ui-component ${name || "ui"}_dropdown`}>
@@ -122,7 +119,7 @@ class DropDown extends PureComponent {
           ) : (
             <Button
               className="ui-dropdown-button"
-              focus={opened}
+              focused={opened}
               disabled={disabled}
               onClick={this.clickHandler}>
               <div className="ui-ellipsis">{buttonContent}</div>

@@ -20,9 +20,14 @@ class Timepicker extends PureComponent {
       label,
       className,
       allowedTime,
+      disabled,
     } = this.props;
     return (
-      <div className={classes(['ui-component ui-timepicker', className])}>
+      <div className={classes([
+        'ui-component ui-timepicker',
+        disabled && 'ui-disabled',
+        className
+        ])}>
         <DropDown
           ref="dropdown"
           button={label || (
@@ -31,6 +36,7 @@ class Timepicker extends PureComponent {
             </div>
           )}
           inline={false}
+          disabled={disabled}
           name="ui-timepicker"
         >
           <Content

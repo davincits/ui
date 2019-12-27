@@ -28,7 +28,8 @@ class Slider extends PureComponent {
   }
 
   onMouseDown = (event) => {
-    const { value } = this.props;
+    const { value, disabled } = this.props;
+    if (disabled) return;
     this.tracking = true;
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
     this.clientXStart = event.clientX;
@@ -48,7 +49,8 @@ class Slider extends PureComponent {
 
   onClick = (event) => {
     event.stopPropagation();
-    const { min, max, onChange } = this.props;
+    const { min, max, onChange, disabled } = this.props;
+    if (disabled) return;
     const delta = max - min;
     const bounding = this.refs.track.getBoundingClientRect();
     const position = (event.clientX - bounding.left) / bounding.width;
@@ -78,12 +80,12 @@ class Slider extends PureComponent {
   }
 
   render() {
-    const { className } = this.props;
-    const classList = classes({
-      'ui-component ui-range': true,
-      'ui-slider': true,
-      [className]: className,
-    });
+    const { className, disabled } = this.props;
+    const classList = classes([
+      'ui-component ui-range ui-slider',
+      disabled && 'ui-disabled',
+      className,
+    ]);
     const [trackStyle, sliderStyle] = this.getStyles();
     return (
       <div className={classList} onClick={this.onClick}>

@@ -54,6 +54,7 @@ storiesOf('Select', module)
               value={value}
               options={OPTIONS}
               onChange={onChange}
+              disabled
             />
           </div>
         </div>

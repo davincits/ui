@@ -129,4 +129,14 @@ storiesOf('Button', module)
     <Container>
       {() => <Button onClick={console.log} disabled>Hello Button</Button>}
     </Container>
+  ))
+  .add('focused', () => (
+    <Container>
+      {() => <Button onClick={console.log} focused>Hello Button</Button>}
+    </Container>
+  ))
+  .add('hovered', () => (
+    <Container>
+      {() => <Button onClick={console.log} hovered>Hello Button</Button>}
+    </Container>
   ));

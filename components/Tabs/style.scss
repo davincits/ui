@@ -3,7 +3,6 @@
 .ui-tab {
   font-family: $ui-font-family;
   font-size: $ui-font-size;
-  color: $ui-font-color;
   line-height: $ui-line-height;
   box-sizing: border-box;
   display: flex;
@@ -14,24 +13,25 @@
   cursor: pointer;
   margin-right: 24px;
   font-weight: 500;
-
   &:hover {
     color: $ui-color-gray-dark;
   }
-
   &.ui-active {
     color: $ui-font-color;
-    box-shadow: 0 1px 0 $ui-color-brand-primary, inset 0 -1px 0 $ui-color-brand-primary;
+    box-shadow:
+      0 1px 0 $ui-color-brand-primary,
+      inset 0 -1px 0 $ui-color-brand-primary;
   }
-
   .ui-badge, .ui-badge-danger {
-
     &:last-child {
       margin-left: 8px;
     }
   }
+  &.ui-disabled {
+    cursor: default;
+    color: rgba($ui-color-gray-light, 0.3);
+  }
 }
-
 .ui-tab-list {
   display: flex;
   border-bottom: 1px solid $ui-color-gray;

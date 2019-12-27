@@ -16,6 +16,15 @@
       display: block;
     }
   }
+  &.ui-disabled .ui-datepicker-icon-container {
+    cursor: default;
+    &:hover {
+      background-color: inherit;
+    }
+    svg {
+      opacity: 0.5;
+    }
+  }
   .ui-label {
     font-family: $ui-font-family;
     color: $ui-font-color;

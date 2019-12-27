@@ -8,32 +8,31 @@
   box-sizing: border-box;
   font-weight: 400;
   display: inline-block;
-
   .ui-timepicker-icon-container {
     cursor: pointer;
-
     &:hover {
       background-color: #f0f0f0;
     }
-
     svg {
       display: block;
     }
   }
+  &.ui-disabled .ui-timepicker-icon-container {
+    cursor: default;
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
 }
-
 .ui-timepicker_dropdown {
-
   .ui-dropdown-content {
     padding: 8px;
     width: 256px !important;
     user-select: none;
-
     .ui-timepicker-hours-view,
     .ui-timepicker-minutes-view {
       position: relative;
       height: 256px;
-
       .ui-timepicker-hour-label,
       .ui-timepicker-minute-label {
         font-weight: 500;
@@ -45,7 +44,6 @@
         top: 50%;
         width: 50%;
         font-size: 18px;
-
         span {
           display: flex;
           align-items: center;
@@ -55,122 +53,94 @@
           border-radius: 50%;
           cursor: pointer;
           color: #777777;
-
           &:hover {
             background-color: #f0f0f0;
             color: #333333;
           }
         }
-
         &.disabled span {
           color: #dcdcdc;
           cursor: default;
           background-color: inherit;
         }
-
         &.selected span {
           background-color: #f0f0f0;
           color: #333333;
         }
-
         &.inner {
           width: 36%;
           font-size: 17px;
         }
       }
     }
-
     .position-1 {
       transform: translate(0, -50%) rotate(-60deg);
-
       span {
         transform: rotate(60deg);
       }
     }
-
     .position-2 {
       transform: translate(0, -50%) rotate(-30deg);
-
       span {
         transform: rotate(30deg);
       }
     }
-
     .position-3 {
       transform: translate(0, -50%) rotate(0);
-
       span {
         transform: rotate(0);
       }
     }
-
     .position-4 {
       transform: translate(0, -50%) rotate(30deg);
-
       span {
         transform: rotate(-30deg);
       }
     }
-
     .position-5 {
       transform: translate(0, -50%) rotate(60deg);
-
       span {
         transform: rotate(-60deg);
       }
     }
-
     .position-6 {
       transform: translate(0, -50%) rotate(90deg);
-
       span {
         transform: rotate(-90deg);
       }
     }
-
     .position-7 {
       transform: translate(0, -50%) rotate(120deg);
-
       span {
         transform: rotate(-120deg);
       }
     }
-
     .position-8 {
       transform: translate(0, -50%) rotate(150deg);
-
       span {
         transform: rotate(-150deg);
       }
     }
-
     .position-9 {
       transform: translate(0, -50%) rotate(180deg);
-
       span {
         transform: rotate(-180deg);
       }
     }
-
     .position-10 {
       transform: translate(0, -50%) rotate(210deg);
-
       span {
         transform: rotate(-210deg);
       }
     }
-
     .position-11 {
       transform: translate(0, -50%) rotate(240deg);
-
       span {
         transform: rotate(-240deg);
       }
     }
-
     .position-12 {
       transform: translate(0, -50%) rotate(270deg);
-
       span {
         transform: rotate(-270deg);
       }

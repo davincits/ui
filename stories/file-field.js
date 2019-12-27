@@ -33,4 +33,13 @@ storiesOf('FileField', module)
         </FileField>
       )}
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container>
+      {() => (
+        <FileField onChange={() => console.log('changed')} disabled>
+          Click to select a file
+        </FileField>
+      )}
+    </Container>
   ));

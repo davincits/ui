@@ -63,26 +63,15 @@ storiesOf('Autocomplete', module)
     <Container>
       {({ value, onChange }) => {
         const search = (value || '').toLocaleLowerCase();
-        const items = CITIES.filter((city) => city.toLocaleLowerCase().includes(search));
+        const items = search ? CITIES.filter((city) => city.toLocaleLowerCase().includes(search)) : [];
         return (
           <div style={{ width: '286px' }}>
-            <div>
-              <Autocomplete
-                label="Autocomplete"
-                value={value}
-                items={items}
-                onChange={onChange}
-              />
-            </div>
-            <div className="u-margin-top">
-              <Autocomplete
-                label="Autocomplete"
-                value={value}
-                items={items}
-                onChange={onChange}
-                disabled
-              />
-            </div>
+            <Autocomplete
+              label="Autocomplete"
+              value={value}
+              items={items}
+              onChange={onChange}
+            />
           </div>
         );
       }}
@@ -95,5 +84,24 @@ storiesOf('Autocomplete', module)
           <Example />
         </div>
       )}
+    </Container>
+  ))
+  .add('disabled', () => (
+    <Container>
+      {({ value, onChange }) => {
+        const search = (value || '').toLocaleLowerCase();
+        const items = CITIES.filter((city) => city.toLocaleLowerCase().includes(search));
+        return (
+          <div style={{ width: '286px' }}>
+            <Autocomplete
+              label="Autocomplete"
+              value={value}
+              items={items}
+              onChange={onChange}
+              disabled
+            />
+          </div>
+        );
+      }}
     </Container>
   ));

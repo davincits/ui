@@ -205,8 +205,8 @@ hr {
   .ui-dropdown .ui-dropdown-label ~ .ui-icon-expand-less,
   .ui-dropdown .ui-dropdown-label ~ .ui-icon-expand-more {
     margin-top: -5px; }
-  .ui-dropdown.disabled .ui-icon-expand-less,
-  .ui-dropdown.disabled .ui-icon-expand-more {
+  .ui-dropdown.ui-disabled .ui-icon-expand-less,
+  .ui-dropdown.ui-disabled .ui-icon-expand-more {
     opacity: 0.1; }
   .ui-dropdown .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -269,105 +269,105 @@ hr {
   .ui-button svg:first-child {
     margin-right: 10px;
     margin-left: -4px; }
-  .ui-button:hover, .ui-button.ui-button-hover {
+  .ui-button:hover, .ui-button.ui-button-hovered {
     background-color: #F5F5F5; }
   .ui-button:active, .ui-button.ui-button-active {
     border-color: #D6D6D6;
     background-color: #D6D6D6;
     box-shadow: none; }
-  .ui-button.ui-button-focus {
+  .ui-button.ui-button-focused {
     border-color: #05B9E6;
     box-shadow: 0 0 0 2px #CDF1FA; }
   .ui-button.ui-button-primary {
     background-color: #05B9E6;
     color: #ffffff;
     border: none; }
-    .ui-button.ui-button-primary:hover, .ui-button.ui-button-primary.ui-button-hover {
+    .ui-button.ui-button-primary:hover, .ui-button.ui-button-primary.ui-button-hovered {
       background-color: #44CBED; }
     .ui-button.ui-button-primary:active, .ui-button.ui-button-primary.ui-button-active {
       background-color: #82DCF2; }
-    .ui-button.ui-button-primary.ui-button-focus {
+    .ui-button.ui-button-primary.ui-button-focused {
       background-color: #05B9E6;
       box-shadow: 0 0 0 2px #82DCF2; }
     .ui-button.ui-button-primary.ui-button-stroke {
       color: #05B9E6;
       border: 1px solid rgba(5, 185, 230, 0.3);
       background-color: #ffffff; }
-      .ui-button.ui-button-primary.ui-button-stroke:hover, .ui-button.ui-button-primary.ui-button-stroke.ui-button-hover {
+      .ui-button.ui-button-primary.ui-button-stroke:hover, .ui-button.ui-button-primary.ui-button-stroke.ui-button-hovered {
         border-color: rgba(5, 185, 230, 0.6); }
       .ui-button.ui-button-primary.ui-button-stroke:active, .ui-button.ui-button-primary.ui-button-stroke.ui-button-active {
         border-color: rgba(5, 185, 230, 0.6);
         background-color: rgba(5, 185, 230, 0.6); }
-      .ui-button.ui-button-primary.ui-button-stroke.ui-button-focus {
+      .ui-button.ui-button-primary.ui-button-stroke.ui-button-focused {
         border-color: #05B9E6;
         box-shadow: 0 0 0 2px rgba(5, 185, 230, 0.2); }
   .ui-button.ui-button-danger {
     background-color: #F53C3C;
     color: #ffffff;
     border: none; }
-    .ui-button.ui-button-danger:hover, .ui-button.ui-button-danger.ui-button-hover {
+    .ui-button.ui-button-danger:hover, .ui-button.ui-button-danger.ui-button-hovered {
       background-color: #F77268; }
     .ui-button.ui-button-danger:active, .ui-button.ui-button-danger.ui-button-active {
       background-color: #F9A19A; }
-    .ui-button.ui-button-danger.ui-button-focus {
+    .ui-button.ui-button-danger.ui-button-focused {
       background-color: #F44335;
       box-shadow: 0 0 0 2px rgba(244, 67, 53, 0.3); }
     .ui-button.ui-button-danger.ui-button-stroke {
       color: #F53C3C;
       border: 1px solid rgba(245, 60, 60, 0.3);
       background-color: #ffffff; }
-      .ui-button.ui-button-danger.ui-button-stroke:hover, .ui-button.ui-button-danger.ui-button-stroke.ui-button-hover {
+      .ui-button.ui-button-danger.ui-button-stroke:hover, .ui-button.ui-button-danger.ui-button-stroke.ui-button-hovered {
         border-color: rgba(245, 60, 60, 0.6); }
       .ui-button.ui-button-danger.ui-button-stroke:active, .ui-button.ui-button-danger.ui-button-stroke.ui-button-active {
         border-color: rgba(245, 60, 60, 0.6);
         background-color: rgba(245, 60, 60, 0.6); }
-      .ui-button.ui-button-danger.ui-button-stroke.ui-button-focus {
+      .ui-button.ui-button-danger.ui-button-stroke.ui-button-focused {
         border-color: #F53C3C;
         box-shadow: 0 0 0 2px rgba(245, 60, 60, 0.2); }
   .ui-button.ui-button-success {
     background-color: #83C833;
     color: #ffffff;
     border: none; }
-    .ui-button.ui-button-success:hover, .ui-button.ui-button-success.ui-button-hover {
+    .ui-button.ui-button-success:hover, .ui-button.ui-button-success.ui-button-hovered {
       background-color: #9FDE59; }
     .ui-button.ui-button-success:active, .ui-button.ui-button-success.ui-button-active {
       background-color: #BEE990; }
-    .ui-button.ui-button-success.ui-button-focus {
+    .ui-button.ui-button-success.ui-button-focused {
       background-color: #83C833;
       box-shadow: 0 0 0 2px rgba(131, 200, 51, 0.3); }
     .ui-button.ui-button-success.ui-button-stroke {
       color: #83C833;
       border: 1px solid rgba(131, 200, 51, 0.3);
       background-color: #ffffff; }
-      .ui-button.ui-button-success.ui-button-stroke:hover, .ui-button.ui-button-success.ui-button-stroke.ui-button-hover {
+      .ui-button.ui-button-success.ui-button-stroke:hover, .ui-button.ui-button-success.ui-button-stroke.ui-button-hovered {
         border-color: rgba(131, 200, 51, 0.6); }
       .ui-button.ui-button-success.ui-button-stroke:active, .ui-button.ui-button-success.ui-button-stroke.ui-button-active {
         border-color: rgba(131, 200, 51, 0.6);
         background-color: rgba(131, 200, 51, 0.6); }
-      .ui-button.ui-button-success.ui-button-stroke.ui-button-focus {
+      .ui-button.ui-button-success.ui-button-stroke.ui-button-focused {
         border-color: #83C833;
         box-shadow: 0 0 0 2px rgba(131, 200, 51, 0.2); }
   .ui-button.ui-button-warning {
     background-color: #F6A622;
     color: #ffffff;
     border: none; }
-    .ui-button.ui-button-warning:hover, .ui-button.ui-button-warning.ui-button-hover {
+    .ui-button.ui-button-warning:hover, .ui-button.ui-button-warning.ui-button-hovered {
       background-color: #F8BC5A; }
     .ui-button.ui-button-warning:active, .ui-button.ui-button-warning.ui-button-active {
       background-color: #FAD291; }
-    .ui-button.ui-button-warning.ui-button-focus {
+    .ui-button.ui-button-warning.ui-button-focused {
       background-color: #F6A622;
       box-shadow: 0 0 0 2px rgba(246, 166, 34, 0.3); }
     .ui-button.ui-button-warning.ui-button-stroke {
       color: #F6A622;
       border: 1px solid rgba(246, 166, 34, 0.3);
       background-color: #ffffff; }
-      .ui-button.ui-button-warning.ui-button-stroke:hover, .ui-button.ui-button-warning.ui-button-stroke.ui-button-hover {
+      .ui-button.ui-button-warning.ui-button-stroke:hover, .ui-button.ui-button-warning.ui-button-stroke.ui-button-hovered {
         border-color: rgba(246, 166, 34, 0.6); }
       .ui-button.ui-button-warning.ui-button-stroke:active, .ui-button.ui-button-warning.ui-button-stroke.ui-button-active {
         border-color: rgba(246, 166, 34, 0.6);
         background-color: rgba(246, 166, 34, 0.6); }
-      .ui-button.ui-button-warning.ui-button-stroke.ui-button-focus {
+      .ui-button.ui-button-warning.ui-button-stroke.ui-button-focused {
         border-color: #F6A622;
         box-shadow: 0 0 0 2px rgba(246, 166, 34, 0.2); }
   .ui-button.ui-button-block {
@@ -635,6 +635,9 @@ hr {
       opacity: 1; }
   .ui-checkbox.ui-with-error > .ui-fake-checkbox {
     border-color: #F53C3C; }
+  .ui-checkbox.ui-disabled {
+    opacity: 0.5;
+    cursor: default; }
 
 .ui-row-gutter > .ui-column + .ui-column {
   margin-left: 16px; }
@@ -892,6 +895,8 @@ hr {
     width: 100%;
     height: 100%;
     cursor: pointer; }
+  .ui-file-field.ui-disabled {
+    opacity: 0.5; }
 
 .component-full-size-modal {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1215,7 +1220,8 @@ hr {
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
-              user-select: none; }
+              user-select: none;
+      color: #05B9E6; }
       .ui-range .ui-range-track .ui-range-slider:hover {
         background-color: #CDF1FA; }
       .ui-range .ui-range-track .ui-range-slider:active {
@@ -1224,11 +1230,20 @@ hr {
         position: absolute;
         left: 9px;
         top: 7px;
-        width: 2px;
-        height: 2px;
-        background-color: #05B9E6;
-        box-shadow: 4px 0 #05B9E6, 4px 4px #05B9E6, 0 4px #05B9E6, -4px 4px #05B9E6, -4px 0 #05B9E6;
+        border: 1px solid;
+        box-shadow: 4px 0, 4px 4px, 0 4px, -4px 4px, -4px 0;
         content: ""; }
+  .ui-range.ui-disabled {
+    opacity: 0.5; }
+    .ui-range.ui-disabled .ui-range-track {
+      cursor: default; }
+      .ui-range.ui-disabled .ui-range-track .ui-range-track-active {
+        background-color: #969696; }
+      .ui-range.ui-disabled .ui-range-track .ui-range-slider {
+        border-color: #969696;
+        color: #969696; }
+        .ui-range.ui-disabled .ui-range-track .ui-range-slider:hover, .ui-range.ui-disabled .ui-range-track .ui-range-slider:active {
+          background-color: #ffffff; }
 
 .ui-select.ui-with-error .ui-dropdown .ui-dropdown-button {
   border-color: #F53C3C; }
@@ -1261,13 +1276,12 @@ hr {
     text-overflow: ellipsis;
     white-space: nowrap; }
 
-.ui-slider {
+.ui-slider:not(.ui-disabled) {
   cursor: pointer; }
 
 .ui-tab {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
-  color: #333333;
   line-height: 1.4;
   box-sizing: border-box;
   display: flex;
@@ -1285,6 +1299,9 @@ hr {
     box-shadow: 0 1px 0 #05B9E6, inset 0 -1px 0 #05B9E6; }
   .ui-tab .ui-badge:last-child, .ui-tab .ui-badge-danger:last-child {
     margin-left: 8px; }
+  .ui-tab.ui-disabled {
+    cursor: default;
+    color: rgba(173, 173, 173, 0.3); }
 
 .ui-tab-list {
   display: flex;
@@ -1446,6 +1463,12 @@ hr {
       background-color: #f0f0f0; }
     .ui-datepicker .ui-datepicker-icon-container svg {
       display: block; }
+  .ui-datepicker.ui-disabled .ui-datepicker-icon-container {
+    cursor: default; }
+    .ui-datepicker.ui-disabled .ui-datepicker-icon-container:hover {
+      background-color: inherit; }
+    .ui-datepicker.ui-disabled .ui-datepicker-icon-container svg {
+      opacity: 0.5; }
   .ui-datepicker .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: #333333;
@@ -1611,6 +1634,10 @@ hr {
       background-color: #f0f0f0; }
     .ui-timepicker .ui-timepicker-icon-container svg {
       display: block; }
+  .ui-timepicker.ui-disabled .ui-timepicker-icon-container {
+    cursor: default; }
+    .ui-timepicker.ui-disabled .ui-timepicker-icon-container:hover {
+      background-color: #ffffff; }
 
 .ui-timepicker_dropdown .ui-dropdown-content {
   padding: 8px;
@@ -1765,9 +1792,9 @@ hr {
   .ui-tags-field.ui-focused .ui-tags-field-content {
     border-color: #05B9E6;
     box-shadow: 0 0 0 2px #CDF1FA; }
-  .ui-tags-field.ui-tags-field-error .ui-tags-field-content {
+  .ui-tags-field.ui-with-error .ui-tags-field-content {
     border-color: #F53C3C; }
-  .ui-tags-field.ui-tags-field-error.ui-focused .ui-tags-field-content {
+  .ui-tags-field.ui-with-error.ui-focused .ui-tags-field-content {
     box-shadow: 0 0 0 2px rgba(245, 60, 60, 0.25); }
   .ui-tags-field.ui-disabled .ui-tags-field-content {
     border-color: #EAEAEA;
@@ -1781,7 +1808,8 @@ hr {
     outline: none;
     padding: 0 4px;
     height: 26px;
-    margin-bottom: 2px; }
+    margin-bottom: 2px;
+    background: none; }
   .ui-tags-field .ui-tags-field-tag {
     height: 26px;
     background-color: #05B9E6;
@@ -1804,6 +1832,14 @@ hr {
         display: block; }
       .ui-tags-field .ui-tags-field-tag .ui-tags-field-tag-remove:hover {
         opacity: 0.7; }
+  .ui-tags-field.ui-disabled .ui-tags-field-content {
+    cursor: default; }
+  .ui-tags-field.ui-disabled .ui-tags-field-tag {
+    background-color: #D6D6D6; }
+    .ui-tags-field.ui-disabled .ui-tags-field-tag .ui-tags-field-tag-remove {
+      cursor: default; }
+      .ui-tags-field.ui-disabled .ui-tags-field-tag .ui-tags-field-tag-remove:hover {
+        opacity: 1; }
   .ui-tags-field .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: #333333;

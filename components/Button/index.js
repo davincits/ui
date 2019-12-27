@@ -20,8 +20,8 @@ function Button(props) {
     large,
     small,
     active,
-    hover,
-    focus,
+    hovered,
+    focused,
     ...rest
   } = props;
   if (loading) rest.disabled = true;
@@ -39,8 +39,8 @@ function Button(props) {
     'ui-button-large': large,
     'ui-button-small': small,
     'ui-button-active': active,
-    'ui-button-hover': hover,
-    'ui-button-focus': focus,
+    'ui-button-hovered': hovered,
+    'ui-button-focused': focused,
     [className]: className,
   });
   return (
@@ -68,8 +68,8 @@ Button.propsTypes = {
   large: bool,
   small: bool,
   active: bool,
-  hover: bool,
-  focus: bool,
+  hovered: bool,
+  focused: bool,
 };
 
 export default Button;

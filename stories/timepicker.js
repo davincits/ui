@@ -19,6 +19,20 @@ storiesOf('Time picker', module)
       )}
     </Container>
   ))
+  .add('disabled', () => (
+    <Container>
+      {({ value = '', onChange }) => (
+        <div>
+          <Timepicker
+            onChange={onChange}
+            value={value}
+            disabled
+          />
+          <p>Selected time: {value}</p>
+        </div>
+      )}
+    </Container>
+  ))
   .add('allowed time', () => (
     <Container>
       {({ value = '', onChange }) => (

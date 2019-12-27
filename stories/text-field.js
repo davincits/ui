@@ -100,4 +100,27 @@ storiesOf('TextField', module)
         />
       )}
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container width="240px">
+      {({ value = 'Lorem ipsum', onChange }) => (
+        <div>
+          <TextField
+            label="Input label"
+            value={value}
+            onChange={onChange}
+            disabled
+          />
+          <div className="u-margin-top">
+            <TextField
+              label="Input label"
+              value={value}
+              onChange={onChange}
+              multiline
+              disabled
+            />
+          </div>
+        </div>
+      )}
+    </Container>
   ));

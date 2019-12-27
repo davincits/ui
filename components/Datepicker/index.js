@@ -38,6 +38,7 @@ class Datepicker extends PureComponent {
       monthNames,
       dayNames,
       range,
+      disabled,
     } = this.props;
     let startDateString = value;
     let endDateString;
@@ -66,6 +67,7 @@ class Datepicker extends PureComponent {
       <div className={classes([
         "ui-component ui-datepicker",
         range && "ui-datepicker-range",
+        disabled && "ui-disabled",
         className,
       ])}>
         <DropDown
@@ -75,6 +77,7 @@ class Datepicker extends PureComponent {
               <IconCalendar />
             </div>
           )}
+          disabled={disabled}
           inline={false}
           autoWidth
           name="ui-datepicker">

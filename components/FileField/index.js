@@ -47,18 +47,20 @@ class FileField extends PureComponent {
       maxSize,
       onChange,
       error,
+      disabled,
       ...props
     } = this.props;
     const classList = classes({
       'ui-component ui-file-field': true,
       'error-state': error,
+      'ui-disabled': disabled,
       [className]: className,
     });
     if (fileTypes) props.accept = fileTypes;
     return (
       <div className={classList}>
         <div className="ui-file-field-content">{children}</div>
-        <input type="file" onChange={this.changeHandler} {...props} />
+        <input type="file" onChange={this.changeHandler} disabled={disabled} {...props} />
       </div>
     );
   }

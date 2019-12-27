@@ -7,10 +7,13 @@ import Tag from './Tag';
 const KEY_NAMES = ['Enter', ',', ' '];
 
 class TagsField extends PureComponent {
-  state = {
-    inputValue: '',
-    focused: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: '',
+      focused: false,
+    };
+  }
 
   onInputChange = (event) => {
     const { onInputChange } = this.props;
@@ -37,8 +40,8 @@ class TagsField extends PureComponent {
   };
 
   onRemove = (index) => {
-    const { value, onChange } = this.props;
-    if (onChange) {
+    const { value, disabled, onChange } = this.props;
+    if (onChange && !disabled) {
       onChange(value.filter((v, i) => i !== index));
     }
   }
@@ -77,13 +80,13 @@ class TagsField extends PureComponent {
       inputValue = inputValueFromState,
       placeholder,
     } = this.props;
-    const classList = classes({
-      'ui-component ui-tags-field': true,
-      'ui-disabled': disabled,
-      'ui-focused': focused,
-      'ui-tags-field-error': error,
-      [className]: className,
-    });
+    const classList = classes([
+      'ui-component ui-tags-field',
+      disabled && 'ui-disabled',
+      focused && 'ui-focused',
+      error && 'ui-with-error',
+      className
+    ]);
     const tags = Array.isArray(value) ? value : [];
     return (
       <div className={classList}>

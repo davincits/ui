@@ -25,4 +25,16 @@ storiesOf('TagsField', module)
         />
       )}
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container width="480px">
+      {({ value = ['Brno', 'Ostrave', 'Plzen'], onChange }) => (
+        <TagsField
+          label="Tags"
+          value={value}
+          onChange={onChange}
+          disabled
+        />
+      )}
+    </Container>
   ));

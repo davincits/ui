@@ -7,15 +7,27 @@ import { Slider } from '../components';
 storiesOf('Slider', module)
   .add('common', () => (
     <Container>
-      {({ value = 50, onChange }) => (
+      {({ value: [first, second] = [50, 60], onChange }) => (
         <div>
-          <span>Value: {value}</span>
-          <Slider
-            min={10}
-            max={100}
-            value={value}
-            onChange={onChange}
-          />
+          <div>
+            <span>Value: {first}</span>
+            <Slider
+              min={10}
+              max={100}
+              value={first}
+              onChange={(val) => onChange([val, second])}
+            />
+          </div>
+          <div>
+            <span>Value: {second}</span>
+            <Slider
+              min={0}
+              max={77}
+              value={second}
+              onChange={(val) => onChange([first, val])}
+              disabled
+            />
+          </div>
         </div>
       )}
     </Container>

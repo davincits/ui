@@ -18,6 +18,7 @@ class Autocomplete extends Component {
   onFocus = () => {
     const { dropdown } = this.refs;
     dropdown.setState({ opened: true });
+    dropdown.checkPosition();
   }
 
   render() {
@@ -32,6 +33,7 @@ class Autocomplete extends Component {
       disabled,
       placeholder,
     } = this.props;
+    console.log(items)
     return (
       <div className={classes(["ui-component ui-autocomplete", className])}>
         <DropDown
