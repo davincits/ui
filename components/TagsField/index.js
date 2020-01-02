@@ -15,6 +15,20 @@ class TagsField extends PureComponent {
     };
   }
 
+  completeInput = (target) => {
+    const {
+      value, onChange, onInputChange, noCustom,
+    } = this.props;
+    const inputValue = target.value.trim();
+    const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
+    if (inputValues.length && onChange && !noCustom) {
+      const uniqValues = inputValues.filter((item) => !(value || []).includes(item));
+      onChange(Array.isArray(value) ? [...value, ...uniqValues] : uniqValues);
+      if (onInputChange) onInputChange('');
+      this.setState({ inputValue: '' });
+    }
+  }
+
   onInputChange = (event) => {
     const { onInputChange } = this.props;
     const { target: { value: inputValue } } = event;
@@ -24,17 +38,10 @@ class TagsField extends PureComponent {
 
   onInputKeyPress = (event) => {
     const { key, target } = event;
-    const {
-      value, onChange, onInputChange, noCustom,
-    } = this.props;
     const inputValue = target.value.trim();
-    const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
-    if (KEY_NAMES.includes(key) && inputValues.length && onChange && !noCustom) {
-      const uniqValues = inputValues.filter((item) => !(value || []).includes(item));
-      onChange(Array.isArray(value) ? [...value, ...uniqValues] : uniqValues);
-      if (onInputChange) onInputChange('');
+    if (KEY_NAMES.includes(key)) {
       event.preventDefault();
-      this.setState({ inputValue: '' });
+      this.completeInput(target);
     }
   };
 
@@ -60,9 +67,11 @@ class TagsField extends PureComponent {
   }
 
   onBlur = (event) => {
+    const { target } = event;
     const { onBlur } = this.props;
     if (onBlur) onBlur(event);
     this.setState({ focused: false });
+    this.completeInput(target);
   }
 
   render() {
