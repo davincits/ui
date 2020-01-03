@@ -1,12 +1,6 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
-  ],
   module: {
     rules: [
       {
@@ -25,9 +19,6 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
           'css-loader',
           'sass-loader',
         ],
@@ -42,9 +33,7 @@ module.exports = {
     index: './src/index.js',
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname),
-    libraryTarget: 'umd',
   },
   externals: ['react', 'react-dom'],
 };

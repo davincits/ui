@@ -81,31 +81,29 @@ class FullSizeModal extends PureComponent {
       className,
     } = this.props;
     return (
-      <Portal>
-        <div className={classes(['ui-component component-full-size-modal', className])} onScroll={this.onScroll}>
-          <div className="component-full-size-modal-header" ref="header">
-            <div className="component-full-size-modal-header-main">
-              <div className="component-full-size-modal-title">{title}</div>
-              <div
-                className="component-full-size-modal-close"
-                onClick={this.onClose}
-              >
-                <span>{closeLabel}</span>
-                <span className="component-full-size-modal-close-key">(esc)</span>
-              </div>
+      <div className={classes(['ui-component component-full-size-modal', className])} onScroll={this.onScroll}>
+        <div className="component-full-size-modal-header" ref="header">
+          <div className="component-full-size-modal-header-main">
+            <div className="component-full-size-modal-title">{title}</div>
+            <div
+              className="component-full-size-modal-close"
+              onClick={this.onClose}
+            >
+              <span>{closeLabel}</span>
+              <span className="component-full-size-modal-close-key">(esc)</span>
             </div>
-            {subtitle && <div className="component-full-size-modal-header-subtitle">{subtitle}</div>}
           </div>
-          <div className="component-full-size-modal-content" ref="content">
-            {children}
-          </div>
-          {footer && (
-            <div className="component-full-size-modal-footer" ref="footer">
-              {footer}
-            </div>
-          )}
+          {subtitle && <div className="component-full-size-modal-header-subtitle">{subtitle}</div>}
         </div>
-      </Portal>
+        <div className="component-full-size-modal-content" ref="content">
+          {children}
+        </div>
+        {footer && (
+          <div className="component-full-size-modal-footer" ref="footer">
+            {footer}
+          </div>
+        )}
+      </div>
     );
   }
 }

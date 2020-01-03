@@ -102,26 +102,24 @@ class Dialog extends PureComponent {
       disabled,
     });
     return (
-      <Portal>
-        <div className={classList} onClick={this.backDropClickHandler} onScroll={this.onScroll}>
-          <div className="ui-dialog-window" onMouseDown={this.mouseDownHandler} style={{ width }}>
-            <div className="ui-dialog-header" ref="header">
-              <div className="ui-dialog-title">{title}</div>
-              <div className="ui-dialog-close" onClick={this.closeClickHandler}>
-                <IconClose />
-              </div>
-            </div>
-            <div className="ui-dialog-content" ref="content">{children}</div>
-            <div className="ui-dialog-actions" ref="footer">
-              {actions.length
-                ? React.Children.map(actions, (action, key) => (
-                  React.cloneElement(action, { key })
-                ))
-                : actions}
+      <div className={classList} onClick={this.backDropClickHandler} onScroll={this.onScroll}>
+        <div className="ui-dialog-window" onMouseDown={this.mouseDownHandler} style={{ width }}>
+          <div className="ui-dialog-header" ref="header">
+            <div className="ui-dialog-title">{title}</div>
+            <div className="ui-dialog-close" onClick={this.closeClickHandler}>
+              <IconClose />
             </div>
           </div>
+          <div className="ui-dialog-content" ref="content">{children}</div>
+          <div className="ui-dialog-actions" ref="footer">
+            {actions.length
+              ? React.Children.map(actions, (action, key) => (
+                React.cloneElement(action, { key })
+              ))
+              : actions}
+          </div>
         </div>
-      </Portal>
+      </div>
     );
   }
 }
