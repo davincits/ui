@@ -8,7 +8,7 @@ class Dispatcher {
   }
 
   dispatch(action) {
-    this.listeners.forEach(listener => listener(action));
+    this.listeners.forEach((listener) => listener(action));
   }
 }
 
