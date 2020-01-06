@@ -19,7 +19,7 @@ export function ConfirmDialog(params) {
   return add(params, DIALOG_CONFIRM);
 }
 
-export default getContainer({ item: Item, store });
+export default getContainer({ item: Item, store, className: 'ui-common-dialogs-container' });
 
 function remove(payload, callback) {
   dispatcher.dispatch({ type: REMOVE, payload });
