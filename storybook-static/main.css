@@ -1342,7 +1342,8 @@ hr {
   margin-top: -4px;
   margin-left: -120px;
   -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%); }
+          transform: translate(0, -100%);
+  z-index: 1; }
   .ui-tooltip .ui-tooltip-content {
     font-weight: normal;
     padding: 4px 8px;
