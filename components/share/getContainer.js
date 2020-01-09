@@ -3,8 +3,8 @@ import Portal from '../Portal';
 
 export default function getContainer({ item: Item, store, className }) {
   class Container extends PureComponent {
-    constructor(props) {
-      super(props);
+    constructor(props, context) {
+      super(props, context);
       this.state = { items: [] };
       this.unsubscribe = store.on('change', this.onStoreChange);
     }

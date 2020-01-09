@@ -7,8 +7,8 @@ export const DIALOG_ALERT = 'alert';
 export const DIALOG_CONFIRM = 'confirm';
 
 class Item extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {};
   }
 

@@ -13,8 +13,8 @@ const isTimeAllowed = ({ hours: h, minutes: m }, a) => (!a || a.some(([[h1, m1],
 }));
 
 class Datepicker extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     const { value } = props;
     let hours = null;
     let minutes = null;

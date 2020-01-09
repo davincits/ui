@@ -14,8 +14,8 @@ const checkValue = (value) => (
 const FIELD_TYPE_NUMBER = "number";
 
 class TextField extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { height: null };
   }
 

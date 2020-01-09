@@ -8,8 +8,8 @@ import List from '../List';
 import { classes } from '../utils';
 
 class TagsAutocomplete extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { inputValue: '' };
   }
 

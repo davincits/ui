@@ -7,8 +7,8 @@ import TabList from './TabList';
 import TabPanel from './TabPanel';
 
 class Tabs extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { index: props.active || 0 };
   }
 

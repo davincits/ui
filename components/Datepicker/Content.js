@@ -12,8 +12,8 @@ const YEAR_VIEW = 2;
 const YEARS_VIEW = 3;
 
 class Content extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     const { startDate = new Date() } = props;
     const year = startDate.getFullYear();
     const month = startDate.getMonth();

@@ -10,8 +10,8 @@ import Portal from "../Portal";
 const MARGIN = 0;
 
 class DropDown extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { opened: false };
   }
 

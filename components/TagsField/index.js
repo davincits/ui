@@ -7,8 +7,8 @@ import Tag from './Tag';
 const KEY_NAMES = ['Enter', ',', ' '];
 
 class TagsField extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       inputValue: '',
       focused: false,
