@@ -36,8 +36,9 @@ class TagsField extends PureComponent {
     if (onInputChange) onInputChange(inputValue);
   };
 
-  onInputKeyPress = (event) => {
-    const { key, target } = event;
+  onInputKeyPress = ({ key, target }) => {
+    const { splitKeys = KEY_NAMES } = this.props;
+    if (!splitKeys) return;
     const inputValue = target.value.trim();
     if (KEY_NAMES.includes(key)) {
       event.preventDefault();

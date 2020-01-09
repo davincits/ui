@@ -65,6 +65,7 @@ class TagsAutocomplete extends PureComponent {
               error={error}
               disabled={disabled}
               placeholder={placeholder}
+              splitKeys={null}
               noCustom />
           )}
           label={label}
