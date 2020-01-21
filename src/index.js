@@ -40,6 +40,7 @@ import Accordion from '../components/Accordion';
 import ArrowLeft from '../components/icons/ArrowLeft';
 import ArrowRight from '../components/icons/ArrowRight';
 import Attention from '../components/icons/Attention';
+import Bed from '../components/icons/Bed';
 import Bell from '../components/icons/Bell';
 import Broken from '../components/icons/Broken';
 import Calendar from '../components/icons/Calendar';
@@ -79,6 +80,7 @@ import Time from '../components/icons/Time';
 import Unlink from '../components/icons/Unlink';
 import User from '../components/icons/User';
 import Verified from '../components/icons/Verified';
+import WallCalendar from '../components/icons/WallCalendar';
 
 const Tab = Tabs.Tab;
 const TabList = Tabs.TabList;
@@ -95,6 +97,7 @@ const Icons = {
   ArrowLeft,
   ArrowRight,
   Attention,
+  Bed,
   Bell,
   Broken,
   Calendar,
@@ -134,6 +137,7 @@ const Icons = {
   Unlink,
   User,
   Verified,
+  WallCalendar
 };
 
 export {
