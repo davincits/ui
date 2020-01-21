@@ -6,6 +6,7 @@ import Container from './Container';
 import ArrowLeft from '../components/icons/ArrowLeft';
 import ArrowRight from '../components/icons/ArrowRight';
 import Attention from '../components/icons/Attention';
+import Bed from '../components/icons/Bed';
 import Bell from '../components/icons/Bell';
 import Broken from '../components/icons/Broken';
 import Calendar from '../components/icons/Calendar';
@@ -45,6 +46,7 @@ import Time from '../components/icons/Time';
 import Unlink from '../components/icons/Unlink';
 import User from '../components/icons/User';
 import Verified from '../components/icons/Verified';
+import WallCalendar from '../components/icons/WallCalendar';
 
 storiesOf('Icons', module)
   .add('common', () => (
@@ -66,6 +68,10 @@ storiesOf('Icons', module)
             <div className="icon-container">
               <Attention />
               <span className="icon-title">&lt;Attention /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <Bed />
+              <span className="icon-title">&lt;Bed /&gt;</span>
             </div>
             <div className="icon-container">
               <Bell />
@@ -222,6 +228,10 @@ storiesOf('Icons', module)
             <div className="icon-container">
               <Verified />
               <span className="icon-title">&lt;Verified /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <WallCalendar />
+              <span className="icon-title">&lt;WallCalendar /&gt;</span>
             </div>
           </div>
         </div>

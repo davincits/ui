@@ -2,6 +2,7 @@
   "ArrowLeft",
   "ArrowRight",
   "Attention",
+  "Bed",
   "Bell",
   "Broken",
   "Caret",
@@ -33,5 +34,6 @@
   "ThumbUp",
   "Unlink",
   "User",
-  "Verified"
+  "Verified",
+  "WallCalendar"
 ]
