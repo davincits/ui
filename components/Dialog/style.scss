@@ -13,8 +13,7 @@
   left: 0;
   transform: translate3d(0, 0, 0);
   animation: uiDialogBgAnimation 0.25s forwards;
-  z-index: 1;
-
+  z-index: 10;
   .ui-dialog-window {
     display: flex;
     flex-direction: column;
@@ -28,18 +27,15 @@
     max-height: 100%;
     transform: translate3d(0, 0, 0);
     animation: uiDialogWindowAnimation 0.25s forwards;
-
     .ui-dialog-header {
       position: relative;
       display: flex;
       align-items: center;
       min-height: 64px;
       padding: 0 48px 0 24px;
-
       .ui-dialog-title {
         font-weight: bold;
       }
-
       .ui-dialog-close {
         position: absolute;
         cursor: pointer;
@@ -50,38 +46,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
         &:hover {
           opacity: 0.75;
         }
       }
-
       &.with-shadow {
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
       }
     }
-
     .ui-dialog-content {
       padding: 8px 24px;
       height: 100%;
       overflow: auto;
     }
-
     .ui-dialog-actions {
       padding: 8px 24px 16px;
       display: flex;
       justify-content: flex-end;
-
       .ui-button {
         margin-left: 8px;
       }
-
       &.with-shadow {
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
       }
     }
   }
-
   &.disabled {
     cursor: not-allowed;
     .ui-dialog-window {
@@ -93,7 +82,6 @@
     }
   }
 }
-
 @keyframes uiDialogBgAnimation {
   from {
     background-color: rgba(0, 0, 0, 0);
@@ -102,7 +90,6 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-
 @keyframes uiDialogWindowAnimation {
   from {
     opacity: 0;

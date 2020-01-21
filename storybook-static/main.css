@@ -235,7 +235,8 @@ hr {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 24px;
   overflow: auto;
-  z-index: 1; }
+  z-index: 1;
+  max-height: 240px; }
 
 .ui-dropdown .ui-dropdown-content {
   position: absolute;
@@ -266,7 +267,7 @@ hr {
   transition: background-color 0.25s, border-color 0.25s;
   outline: none;
   text-align: center; }
-  .ui-button svg:first-child {
+  .ui-button > svg:first-child {
     margin-right: 10px;
     margin-left: -4px; }
   .ui-button:hover, .ui-button.ui-button-hovered {
@@ -668,7 +669,7 @@ hr {
           transform: translate3d(0, 0, 0);
   -webkit-animation: uiDialogBgAnimation 0.25s forwards;
           animation: uiDialogBgAnimation 0.25s forwards;
-  z-index: 1; }
+  z-index: 10; }
   .ui-dialog .ui-dialog-window {
     display: flex;
     flex-direction: column;

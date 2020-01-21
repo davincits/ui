@@ -21,229 +21,187 @@
   transition: background-color 0.25s, border-color 0.25s;
   outline: none;
   text-align: center;
-
-  svg:first-child {
+  > svg:first-child {
     margin-right: 10px;
     margin-left: -4px;
   }
-
   &:hover,
   &.ui-button-hovered {
     background-color: $ui-color-gray-lightest;
   }
-
   &:active,
   &.ui-button-active {
     border-color: $ui-color-gray;
     background-color: $ui-color-gray;
     box-shadow: none;
   }
-
   &.ui-button-focused {
     border-color: $ui-color-brand-primary;
     box-shadow: 0 0 0 2px #CDF1FA;
   }
-
   &.ui-button-primary {
     background-color: $ui-color-brand-primary;
     color: $ui-color-white;
     border: none;
-
     &:hover,
     &.ui-button-hovered {
       background-color: #44CBED;
     }
-
     &:active,
     &.ui-button-active {
       background-color: #82DCF2;
     }
-
     &.ui-button-focused {
       background-color: #05B9E6;
       box-shadow: 0 0 0 2px #82DCF2;
     }
-
     &.ui-button-stroke {
       color: $ui-color-brand-primary;
       border: 1px solid rgba($ui-color-brand-primary, 0.3);
       background-color: $ui-color-white;
-
       &:hover,
       &.ui-button-hovered {
         border-color: rgba($ui-color-brand-primary, 0.6);
       }
-
       &:active,
       &.ui-button-active {
         border-color: rgba($ui-color-brand-primary, 0.6);
         background-color: rgba($ui-color-brand-primary, 0.6);
       }
-
       &.ui-button-focused {
         border-color: $ui-color-brand-primary;
         box-shadow: 0 0 0 2px rgba($ui-color-brand-primary, 0.2);
       }
     }
   }
-
   &.ui-button-danger {
     background-color: $ui-color-brand-danger;
     color: $ui-color-white;
     border: none;
-
     &:hover,
     &.ui-button-hovered {
       background-color: #F77268;
     }
-
     &:active,
     &.ui-button-active {
       background-color: #F9A19A;
     }
-
     &.ui-button-focused {
       background-color: #F44335;
       box-shadow: 0 0 0 2px rgba(#F44335, 0.3);
     }
-
     &.ui-button-stroke {
       color: $ui-color-brand-danger;
       border: 1px solid rgba($ui-color-brand-danger, 0.3);
       background-color: $ui-color-white;
-
       &:hover,
       &.ui-button-hovered {
         border-color: rgba($ui-color-brand-danger, 0.6);
       }
-
       &:active,
       &.ui-button-active {
         border-color: rgba($ui-color-brand-danger, 0.6);
         background-color: rgba($ui-color-brand-danger, 0.6);
       }
-
       &.ui-button-focused {
         border-color: $ui-color-brand-danger;
         box-shadow: 0 0 0 2px rgba($ui-color-brand-danger, 0.2);
       }
     }
   }
-
   &.ui-button-success {
     background-color: $ui-color-brand-success;
     color: $ui-color-white;
     border: none;
-
     &:hover,
     &.ui-button-hovered {
       background-color: #9FDE59;
     }
-
     &:active,
     &.ui-button-active {
       background-color: #BEE990;
     }
-
     &.ui-button-focused {
       background-color: $ui-color-brand-success;
       box-shadow: 0 0 0 2px rgba($ui-color-brand-success, 0.3);
     }
-
     &.ui-button-stroke {
       color: $ui-color-brand-success;
       border: 1px solid rgba($ui-color-brand-success, 0.3);
       background-color: $ui-color-white;
-
       &:hover,
       &.ui-button-hovered {
         border-color: rgba($ui-color-brand-success, 0.6);
       }
-
       &:active,
       &.ui-button-active {
         border-color: rgba($ui-color-brand-success, 0.6);
         background-color: rgba($ui-color-brand-success, 0.6);
       }
-
       &.ui-button-focused {
         border-color: $ui-color-brand-success;
         box-shadow: 0 0 0 2px rgba($ui-color-brand-success, 0.2);
       }
     }
   }
-
   &.ui-button-warning {
     background-color: $ui-color-brand-warning;
     color: $ui-color-white;
     border: none;
-
     &:hover,
     &.ui-button-hovered {
       background-color: #F8BC5A;
     }
-
     &:active,
     &.ui-button-active {
       background-color: #FAD291;
     }
-
     &.ui-button-focused {
       background-color: $ui-color-brand-warning;
       box-shadow: 0 0 0 2px rgba($ui-color-brand-warning, 0.3);
     }
-
     &.ui-button-stroke {
       color: $ui-color-brand-warning;
       border: 1px solid rgba($ui-color-brand-warning, 0.3);
       background-color: $ui-color-white;
-
       &:hover,
       &.ui-button-hovered {
         border-color: rgba($ui-color-brand-warning, 0.6);
       }
-
       &:active,
       &.ui-button-active {
         border-color: rgba($ui-color-brand-warning, 0.6);
         background-color: rgba($ui-color-brand-warning, 0.6);
       }
-
       &.ui-button-focused {
         border-color: $ui-color-brand-warning;
         box-shadow: 0 0 0 2px rgba($ui-color-brand-warning, 0.2);
       }
     }
   }
-
   &.ui-button-block {
     width: 100%;
     justify-content: center;
   }
-
   &.ui-button-unbordered {
     border-color: transparent;
   }
-
   &.ui-button-large {
     height: 48px;
     padding-left: 16px;
     padding-right: 16px;
   }
-
   &.ui-button-small {
     height: 32px;
     padding-left: 12px;
     padding-right: 12px;
   }
-
   &[disabled] {
     background-color: $ui-color-gray-lightest !important;
     color: rgba($ui-font-color, 0.2) !important;
     border: none !important;
     cursor: default !important;
   }
-
   &.ui-button-loading::after {
     position: absolute;
     background-color: rgba($ui-color-white, 0.3);
@@ -254,12 +212,10 @@
     animation: buttonLoadingAnimation 2s linear infinite;
     content: "";
   }
-
   &.ui-uppercase {
     text-transform: uppercase;
   }
 }
-
 @keyframes buttonLoadingAnimation {
   from {
     transform: translate3d(-100%, 0, 0);
