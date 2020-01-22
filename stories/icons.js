@@ -16,6 +16,7 @@ import ChevronLeft from '../components/icons/ChevronLeft';
 import ChevronRight from '../components/icons/ChevronRight';
 import Clock from '../components/icons/Clock';
 import Close from '../components/icons/Close';
+import CloseFilled from '../components/icons/CloseFilled';
 import CloseAnim from '../components/icons/CloseAnim';
 import CloudBackup from '../components/icons/CloudBackup';
 import Comment from '../components/icons/Comment';
@@ -40,7 +41,6 @@ import Search from '../components/icons/Search';
 import SearchNoResult from '../components/icons/SearchNoResult';
 import Spinner from '../components/icons/Spinner';
 import Star from '../components/icons/Star';
-import Svg from '../components/icons/Svg';
 import ThumbUp from '../components/icons/ThumbUp';
 import Time from '../components/icons/Time';
 import Unlink from '../components/icons/Unlink';
@@ -110,7 +110,11 @@ storiesOf('Icons', module)
               <span className="icon-title">&lt;Close /&gt;</span>
             </div>
             <div className="icon-container">
-              <CloseAnim />
+              <CloseFilled />
+              <span className="icon-title">&lt;CloseFilled /&gt;</span>
+            </div>
+            <div className="icon-container">
+              <CloseAnim delay={3000} />
               <span className="icon-title">&lt;CloseAnim /&gt;</span>
             </div>
             <div className="icon-container">
@@ -204,10 +208,6 @@ storiesOf('Icons', module)
             <div className="icon-container">
               <Star />
               <span className="icon-title">&lt;Star /&gt;</span>
-            </div>
-            <div className="icon-container">
-              <Svg />
-              <span className="icon-title">&lt;Svg /&gt;</span>
             </div>
             <div className="icon-container">
               <ThumbUp />

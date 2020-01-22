@@ -36,8 +36,8 @@ class Item extends PureComponent {
       onCancel,
       textConfirm = 'Confirm',
       textCancel = 'Cancel',
-      confirmButton = (<Button primary stroke uppercase>{textConfirm || 'Confirm'}</Button>),
-      cancelButton = (<Button danger stroke uppercase>{textCancel}</Button>),
+      confirmButton = (<Button primary stroke>{textConfirm || 'Confirm'}</Button>),
+      cancelButton = (<Button danger stroke>{textCancel}</Button>),
       render,
       className,
     } = this.props;

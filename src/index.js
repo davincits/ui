@@ -50,6 +50,7 @@ import ChevronLeft from '../components/icons/ChevronLeft';
 import ChevronRight from '../components/icons/ChevronRight';
 import Clock from '../components/icons/Clock';
 import Close from '../components/icons/Close';
+import CloseFilled from '../components/icons/CloseFilled';
 import CloseAnim from '../components/icons/CloseAnim';
 import CloudBackup from '../components/icons/CloudBackup';
 import Comment from '../components/icons/Comment';
@@ -107,6 +108,7 @@ const Icons = {
   ChevronRight,
   Clock,
   Close,
+  CloseFilled,
   CloseAnim,
   CloudBackup,
   Comment,

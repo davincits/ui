@@ -33,7 +33,7 @@ body {
     .icons-contaniner .icon-container .icon-title {
       position: absolute;
       left: 0;
-      top: -18px;
+      top: 100%;
       width: 100%;
       text-align: center;
       font-family: Consolas, monospace;
@@ -399,7 +399,7 @@ hr {
     -webkit-animation: buttonLoadingAnimation 2s linear infinite;
             animation: buttonLoadingAnimation 2s linear infinite;
     content: ""; }
-  .ui-button.ui-uppercase {
+  .ui-button.ui-uppercased {
     text-transform: uppercase; }
 
 @-webkit-keyframes buttonLoadingAnimation {
@@ -692,7 +692,8 @@ hr {
       min-height: 64px;
       padding: 0 48px 0 24px; }
       .ui-dialog .ui-dialog-window .ui-dialog-header .ui-dialog-title {
-        font-weight: bold; }
+        font-weight: bold;
+        font-size: 18px; }
       .ui-dialog .ui-dialog-window .ui-dialog-header .ui-dialog-close {
         position: absolute;
         cursor: pointer;
@@ -942,8 +943,15 @@ hr {
         .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-close .component-full-size-modal-close-key {
           color: #969696;
           margin-left: 4px; }
+        .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-close .ui-icon-close-filled {
+          margin-left: 8px;
+          color: #05B9E6;
+          -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s; }
         .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-close:hover {
           color: #05B9E6; }
+          .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-close:hover .ui-icon-close-filled {
+            opacity: 0.8; }
     .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-subtitle {
       padding-left: 32px;
       padding-right: 32px; }

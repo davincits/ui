@@ -60,7 +60,7 @@ class DropDown extends PureComponent {
         left,
         top: onTop ? "" : bottom,
         bottom: onTop ? windowHeight - top : "",
-        maxHeight: (onTop ? top : windowHeight - bottom) - MARGIN,
+        height: (onTop ? top : windowHeight - bottom) - MARGIN,
       },
     });
   }
@@ -121,7 +121,8 @@ class DropDown extends PureComponent {
               className="ui-dropdown-button"
               focused={opened}
               disabled={disabled}
-              onClick={this.clickHandler}>
+              onClick={this.clickHandler}
+              uppercased={false}>
               <div className="ui-ellipsis">{buttonContent}</div>
             </Button>
           )}

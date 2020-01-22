@@ -1,6 +1,7 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
+import IconCloseFilled from "../icons/CloseFilled";
 import { classes } from '../utils';
 
 const ESC_CODE = 'Escape';
@@ -90,6 +91,7 @@ class FullSizeModal extends PureComponent {
             >
               <span>{closeLabel}</span>
               <span className="component-full-size-modal-close-key">(esc)</span>
+              <IconCloseFilled />
             </div>
           </div>
           {subtitle && <div className="component-full-size-modal-header-subtitle">{subtitle}</div>}
