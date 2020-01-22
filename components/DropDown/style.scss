@@ -68,12 +68,13 @@
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 24px;
   overflow: auto;
-  z-index: 1;
+  z-index: 10;
   max-height: 240px;
 }
 .ui-dropdown {
   .ui-dropdown-content {
     position: absolute;
+    z-index: 1;
     top: 100%;
     left: 0;
     width: 100%;

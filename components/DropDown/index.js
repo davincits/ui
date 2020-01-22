@@ -60,7 +60,6 @@ class DropDown extends PureComponent {
         left,
         top: onTop ? "" : bottom,
         bottom: onTop ? windowHeight - top : "",
-        height: (onTop ? top : windowHeight - bottom) - MARGIN,
       },
     });
   }

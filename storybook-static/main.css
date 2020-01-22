@@ -166,7 +166,6 @@ hr {
   padding: 0; }
   .ui-autocomplete_dropdown .ui-dropdown-content .ui-autocomplete-items {
     box-shadow: inset 0 1px 0 #f0f0f0;
-    max-height: 260px;
     overflow-y: auto; }
     .ui-autocomplete_dropdown .ui-dropdown-content .ui-autocomplete-items .ui-autocomplete-item {
       display: flex;
@@ -235,11 +234,12 @@ hr {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 24px;
   overflow: auto;
-  z-index: 1;
+  z-index: 10;
   max-height: 240px; }
 
 .ui-dropdown .ui-dropdown-content {
   position: absolute;
+  z-index: 1;
   top: 100%;
   left: 0;
   width: 100%;
@@ -1871,7 +1871,6 @@ hr {
   padding: 0; }
   .ui-tags-autocomplete_dropdown .ui-dropdown-content .ui-tags-autocomplete-items {
     box-shadow: inset 0 1px 0 #f0f0f0;
-    max-height: 260px;
     overflow-x: hidden;
     overflow-y: auto; }
     .ui-tags-autocomplete_dropdown .ui-dropdown-content .ui-tags-autocomplete-items .ui-tags-autocomplete-item {
