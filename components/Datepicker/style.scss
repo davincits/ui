@@ -41,6 +41,7 @@
     padding: 8px;
     user-select: none;
     overflow: auto;
+    max-height: none;
     .ui-datepicker-month-row {
       display: flex;
       .ui-datepicker-month-col {

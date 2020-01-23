@@ -1495,7 +1495,8 @@ hr {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  overflow: auto; }
+  overflow: auto;
+  max-height: none; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row {
     display: flex; }
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row .ui-datepicker-month-col {

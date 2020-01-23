@@ -12,6 +12,7 @@ function Button(props) {
     warning,
     success,
     stroke,
+    uppercase,
     uppercased = true,
     className,
     block,
