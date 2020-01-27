@@ -24,6 +24,9 @@
       display: flex;
       justify-content: space-between;
       padding-left: 32px;
+      .component-full-size-modal-title {
+        font-size: 18px;
+      }
       .component-full-size-modal-title,
       .component-full-size-modal-close {
         height: 64px;

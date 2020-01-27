@@ -9,14 +9,17 @@ import { classes } from '../utils';
 
 class CheckBox extends PureComponent {
   onChange = () => {
-    const { value, disabled, onChange } = this.props;
-    if (onChange && !disabled) onChange(!value);
+    const {
+      value, name, disabled, onChange,
+    } = this.props;
+    if (onChange && !disabled) onChange(!value, name);
   }
 
   render() {
     const {
       className,
       label,
+      children,
       onChange,
       value = false,
       error,
@@ -36,7 +39,8 @@ class CheckBox extends PureComponent {
       >
         <input type="checkbox" onChange={this.onChange} checked={value} disabled={disabled} {...rest} />
         <div className="ui-fake-checkbox" />
-        {!!label && <div className="ui-label">{label}</div>}
+        {label ? (<div className="ui-label">{children}</div>) : null}
+        {children}
       </div>
     );
   }
