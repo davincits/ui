@@ -39,7 +39,7 @@ class CheckBox extends PureComponent {
       >
         <input type="checkbox" onChange={this.onChange} checked={value} disabled={disabled} {...rest} />
         <div className="ui-fake-checkbox" />
-        {label ? (<div className="ui-label">{children}</div>) : null}
+        {!!label && (<div className="ui-label">{label}</div>)}
         {children}
       </div>
     );
