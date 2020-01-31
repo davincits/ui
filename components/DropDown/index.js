@@ -17,13 +17,11 @@ class DropDown extends PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener("mousedown", this.windowMouseDownHandler);
-    window.addEventListener('keydown', this.handleKeyPress);
+    window.addEventListener('mousedown', this.windowMouseDownHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousedown", this.windowMouseDownHandler);
-    window.removeEventListener('keydown', this.handleKeyPress);
+    window.removeEventListener('mousedown', this.windowMouseDownHandler);
   }
 
   windowMouseDownHandler = (event) => {
@@ -43,8 +41,8 @@ class DropDown extends PureComponent {
     const { opened } = this.state;
     const { key } = event;
     if (opened ? (key !== KEY_ESC) : (key !== KEY_DOWN)) return;
-    event.stopImmediatePropagation();
     event.preventDefault();
+    event.nativeEvent.stopImmediatePropagation();
     this.toggleOpenState();
   };
 
@@ -119,7 +117,7 @@ class DropDown extends PureComponent {
       </div>
     ) : null;
     return (
-      <div className={classList} {...rest}>
+      <div className={classList} {...rest} onKeyDown={this.handleKeyPress}>
         {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
         <div className="ui-dropdown-button-container" ref="button">
           {button ? (
