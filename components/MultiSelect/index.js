@@ -93,9 +93,7 @@ class MultiSelect extends Component {
                 value={value}
                 onClick={this.onSelect}
                 imageSize={imageSize}
-                isSelected={
-                  (current) => Boolean((value || []).find((item) => item.value === current.value))
-                }
+                isSelected={(current) => Boolean((value || []).find((item) => item.value === current.value))}
                 checkbox
               />
             ) : (

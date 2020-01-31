@@ -568,6 +568,9 @@ hr {
     .ui-list .ui-list-item:not(.ui-list-item-not-active):hover {
       background-color: rgba(51, 51, 51, 0.05);
       cursor: pointer; }
+    .ui-list .ui-list-item:not(.ui-list-item-not-active).ui-list-item-selected {
+      background-color: #05B9E6;
+      color: #ffffff; }
     .ui-list .ui-list-item .ui-checkbox {
       margin-right: 16px; }
     .ui-list .ui-list-item .ui-list-item-image {
@@ -639,6 +642,8 @@ hr {
   .ui-checkbox.ui-disabled {
     opacity: 0.5;
     cursor: default; }
+    .ui-checkbox.ui-disabled .ui-fake-checkbox {
+      background-color: #D6D6D6; }
 
 .ui-row-gutter > .ui-column + .ui-column {
   margin-left: 16px; }
@@ -925,6 +930,8 @@ hr {
       display: flex;
       justify-content: space-between;
       padding-left: 32px; }
+      .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-title {
+        font-size: 18px; }
       .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-title,
       .component-full-size-modal .component-full-size-modal-header .component-full-size-modal-header-main .component-full-size-modal-close {
         height: 64px;
@@ -1352,7 +1359,7 @@ hr {
   margin-left: -120px;
   -webkit-transform: translate(0, -100%);
           transform: translate(0, -100%);
-  z-index: 1; }
+  z-index: 10; }
   .ui-tooltip .ui-tooltip-content {
     font-weight: normal;
     padding: 4px 8px;

@@ -21,6 +21,16 @@ class Autocomplete extends Component {
     dropdown.checkPosition();
   }
 
+  handleChange = (value, event) => {
+    const { dropdown } = this.refs;
+    const { onChange } = this.props;
+    if (!dropdown.state.opened) {
+      dropdown.setState({ opened: true });
+      dropdown.checkPosition();
+    }
+    if (onChange) onChange(value, event);
+  }
+
   render() {
     const {
       className,
@@ -40,7 +50,7 @@ class Autocomplete extends Component {
             <TextField
               label={label}
               value={value}
-              onChange={onChange}
+              onChange={this.handleChange}
               onFocus={this.onFocus}
               disabled={disabled}
               placeholder={placeholder}

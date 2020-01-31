@@ -2,6 +2,7 @@ import "./style.scss";
 
 import React, { PureComponent } from "react";
 import Button from "../Button";
+import { KEY_ESC, KEY_DOWN } from "../constants";
 import { classes } from "../utils";
 import IconExpandMore from "../icons/ExpandMore";
 import IconExpandLess from "../icons/ExpandLess";
@@ -17,17 +18,13 @@ class DropDown extends PureComponent {
 
   componentDidMount() {
     window.addEventListener("mousedown", this.windowMouseDownHandler);
+    window.addEventListener('keydown', this.handleKeyPress);
   }
 
   componentWillUnmount() {
     window.removeEventListener("mousedown", this.windowMouseDownHandler);
+    window.removeEventListener('keydown', this.handleKeyPress);
   }
-
-  clickHandler = () => {
-    const { disabled, manual } = this.props;
-    if (disabled || manual) return;
-    this.toggleOpenState();
-  };
 
   windowMouseDownHandler = (event) => {
     const { disabled } = this.props;
@@ -40,6 +37,21 @@ class DropDown extends PureComponent {
       parent = parent.parentNode;
     }
     this.toggleOpenState(false);
+  };
+
+  handleKeyPress = (event) => {
+    const { opened } = this.state;
+    const { key } = event;
+    if (opened ? (key !== KEY_ESC) : (key !== KEY_DOWN)) return;
+    event.stopImmediatePropagation();
+    event.preventDefault();
+    this.toggleOpenState();
+  };
+
+  clickHandler = () => {
+    const { disabled, manual } = this.props;
+    if (disabled || manual) return;
+    this.toggleOpenState();
   };
 
   checkPosition = () => {

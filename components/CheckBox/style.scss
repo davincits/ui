@@ -62,5 +62,8 @@
   &.ui-disabled {
     opacity: 0.5;
     cursor: default;
+    .ui-fake-checkbox {
+      background-color: $ui-color-gray;
+    }
   }
 }
