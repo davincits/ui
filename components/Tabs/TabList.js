@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, cloneElement } from 'react';
 import { classes } from '../utils';
 
 function TabList({
@@ -13,7 +13,7 @@ function TabList({
   });
   return (
     <div className={classList}>
-      {React.Children.map(children, (child, i) => React.cloneElement(child, {
+      {Children.map(children, (child, i) => child && cloneElement(child, {
         active: index === i,
         index: i,
         changeIndex,
