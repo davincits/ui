@@ -10,12 +10,14 @@ storiesOf('Tabs', module)
       {() => (
         <Tabs>
           <Tabs.TabList>
+            {null}
             <Tabs.Tab>First tab</Tabs.Tab>
             <Tabs.Tab>Second tab</Tabs.Tab>
             <Tabs.Tab>Third tab</Tabs.Tab>
             <Tabs.Tab>Fourth tab</Tabs.Tab>
             <Tabs.Tab disabled>Fifth tab</Tabs.Tab>
           </Tabs.TabList>
+          {null}
           <Tabs.TabPanel>
             <h3>First tab content</h3>
             <p>
