@@ -17,17 +17,18 @@ class DropDown extends PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener('mousedown', this.windowMouseDownHandler);
+    window.addEventListener('mousedown', this.windowMouseDownHandler, true);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousedown', this.windowMouseDownHandler);
+    window.removeEventListener('mousedown', this.windowMouseDownHandler, true);
   }
 
   windowMouseDownHandler = (event) => {
     const { disabled } = this.props;
     const { opened } = this.state;
     if (disabled || !opened) return;
+    event.stopImmediatePropagation();
     const { button, dropdown } = this.refs;
     let parent = event.target;
     while (parent) {
