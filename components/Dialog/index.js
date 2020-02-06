@@ -89,7 +89,7 @@ class Dialog extends PureComponent {
       title,
       children,
       className,
-      actions = [],
+      actions,
       disabled,
       width,
     } = this.props;
