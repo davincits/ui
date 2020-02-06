@@ -43,9 +43,9 @@ class Item extends PureComponent {
       cancelButton = (<Button danger stroke>{textCancel}</Button>),
       render,
       className,
+      actions = [],
     } = this.props;
     const { value } = this.state;
-    const actions = [];
     if (type === DIALOG_CONFIRM) {
       actions.push((
         <div
