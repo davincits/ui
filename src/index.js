@@ -29,7 +29,7 @@ import Table, { Row as TR, Head as TH, Cell as TD } from '../components/Table';
 import ToastrContainer, {
   Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger,
 } from '../components/Toastr';
-import DialogsContainer, { showAlertDialog, showConfirmDialog } from '../components/CommonDialogs';
+import DialogsContainer, { showAlertDialog, showConfirmDialog, showCustomDialog } from '../components/CommonDialogs';
 import Datepicker from '../components/Datepicker';
 import DatePicker from '../components/Datepicker';
 import Timepicker from '../components/Timepicker';
@@ -200,6 +200,7 @@ export {
   showToastDanger,
   showAlertDialog,
   showConfirmDialog,
+  showCustomDialog,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,

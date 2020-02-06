@@ -29,7 +29,7 @@ import Table, { Row as TR, Head as TH, Cell as TD } from './Table';
 import ToastrContainer, {
   Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger,
 } from './Toastr';
-import DialogsContainer, { showAlertDialog, showConfirmDialog } from './CommonDialogs';
+import DialogsContainer, { showAlertDialog, showConfirmDialog, showCustomDialog } from './CommonDialogs';
 import Datepicker from './Datepicker';
 import DatePicker from './Datepicker';
 import Timepicker from './Timepicker';
@@ -105,6 +105,7 @@ export {
   showToastDanger,
   showAlertDialog,
   showConfirmDialog,
+  showCustomDialog,
   FILES_COUNT_ERROR,
   FILE_TYPE_ERROR,
   FILE_SIZE_ERROR,
