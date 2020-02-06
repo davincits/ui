@@ -108,13 +108,15 @@ class Dialog extends PureComponent {
             </div>
           </div>
           <div className="ui-dialog-content" ref="content">{children}</div>
-          <div className="ui-dialog-actions" ref="footer">
-            {actions.length
-              ? React.Children.map(actions, (action, key) => (
-                React.cloneElement(action, { key })
-              ))
-              : actions}
-          </div>
+          {!!actions && (
+            <div className="ui-dialog-actions" ref="footer">
+              {actions.length
+                ? React.Children.map(actions, (action, key) => (
+                  React.cloneElement(action, { key })
+                ))
+                : actions}
+            </div>
+          )}
         </div>
       </div>
     );
