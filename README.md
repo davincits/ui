@@ -653,7 +653,7 @@ function Example({ isOpen, onClose }) {
 ### Import
 
 ```jsx
-import { DialogsContainer, AlertDialog, ConfirmDialog } from 'ui';
+import { DialogsContainer, showAlertDialog, showConfirmDialog } from 'ui';
 ```
 
 ### Props

@@ -29,7 +29,7 @@ import Table, { Row as TR, Head as TH, Cell as TD } from '../components/Table';
 import ToastrContainer, {
   Toast, ToastInfo, ToastSuccess, ToastWarning, ToastDanger,
 } from '../components/Toastr';
-import DialogsContainer, { AlertDialog, ConfirmDialog } from '../components/CommonDialogs';
+import DialogsContainer, { showAlertDialog, showConfirmDialog } from '../components/CommonDialogs';
 import Datepicker from '../components/Datepicker';
 import DatePicker from '../components/Datepicker';
 import Timepicker from '../components/Timepicker';
@@ -91,8 +91,8 @@ const showToastInfo = ToastInfo;
 const showToastSuccess = ToastSuccess;
 const showToastWarning = ToastWarning;
 const showToastDanger = ToastDanger;
-const showAlertDialog = AlertDialog;
-const showConfirmDialog = ConfirmDialog;
+const AlertDialog = showAlertDialog;
+const ConfirmDialog = showConfirmDialog;
 
 const Icons = {
   ArrowLeft,

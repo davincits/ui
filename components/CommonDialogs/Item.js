@@ -5,6 +5,7 @@ import Button from '../Button';
 
 export const DIALOG_ALERT = 'alert';
 export const DIALOG_CONFIRM = 'confirm';
+export const DIALOG_CUSTOM = 'custom';
 
 class Item extends PureComponent {
   constructor(props, context) {
@@ -16,12 +17,14 @@ class Item extends PureComponent {
     this.setState({ value });
   }
 
-  onConfirm = () => {
+  onConfirm = (data) => {
     const { onConfirm } = this.props;
     const { value } = this.state;
-    if (!this.confirmHook || this.confirmHook()) {
-      onConfirm(value);
+    if (this.confirmHook && !this.confirmHook()) return;
+    if (data && !data.nativeEvent) {
+      return onConfirm(data);
     }
+    onConfirm(value);
   }
 
   setConfirmHook = (hook) => {
@@ -53,14 +56,16 @@ class Item extends PureComponent {
         </div>
       ));
     }
-    actions.push((
-      <div
-        className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper"
-        onClick={this.onConfirm}
-      >
-        {confirmButton}
-      </div>
-    ));
+    if (type !== DIALOG_CUSTOM) {
+      actions.push((
+        <div
+          className="ui-common-dialog-button-wrapper ui-common-dialog-button-confirm-wrapper"
+          onClick={this.onConfirm}
+        >
+          {confirmButton}
+        </div>
+      ));
+    }
     return (
       <Dialog
         className={
@@ -78,9 +83,9 @@ class Item extends PureComponent {
         {render && render({
           value,
           onChange: this.onChange,
-          setConfirmHook: this.setConfirmHook,
-          onCancel,
           onConfirm: this.onConfirm,
+          onCancel,
+          setConfirmHook: this.setConfirmHook,
         })}
       </Dialog>
     );
