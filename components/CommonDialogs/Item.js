@@ -66,7 +66,7 @@ class Item extends PureComponent {
         </div>
       ));
     }
-    return (type === DIALOG_CUSTOM) ? (
+    return (type === DIALOG_CUSTOM) ? render({ onConfirm: this.onConfirm, onCancel }) : (
       <Dialog
         className={
           classes([
@@ -88,7 +88,7 @@ class Item extends PureComponent {
           setConfirmHook: this.setConfirmHook,
         })}
       </Dialog>
-    ) : render({ onConfirm: this.onConfirm, onCancel });
+    );
   }
 }
 
