@@ -3,6 +3,7 @@ import "./style.scss";
 import React, { PureComponent } from "react";
 import DropDown from "../DropDown";
 import IconCalendar from "../icons/Calendar";
+import { classes } from "../utils";
 import Content, { DAYS_VIEW, MONTHES_VIEW, YEARS_VIEW } from "./Content";
 
 class Datepicker extends PureComponent {
