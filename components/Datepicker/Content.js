@@ -7,14 +7,14 @@ import {
   YEARS_PER_PAGE,
 } from './constants';
 
-export const MONTH_VIEW = 1;
-export const YEAR_VIEW = 2;
+export const DAYS_VIEW = 1;
+export const MONTHES_VIEW = 2;
 export const YEARS_VIEW = 3;
 
 class Content extends PureComponent {
   constructor(props, context) {
     super(props, context);
-    const { startDate = new Date(), view = MONTH_VIEW } = props;
+    const { startDate = new Date(), view = DAYS_VIEW } = props;
     const year = startDate.getFullYear();
     const month = startDate.getMonth();
     this.state = {
@@ -78,7 +78,7 @@ class Content extends PureComponent {
 
   onMonthLabelClick = () => {
     setTimeout(() => {
-      this.setState({ view: YEAR_VIEW });
+      this.setState({ view: MONTHES_VIEW });
     }, 0);
   }
 
@@ -91,14 +91,14 @@ class Content extends PureComponent {
   onMonthClick = (month) => {
     this.setCurrentMonth(month);
     setTimeout(() => {
-      this.setState({ view: MONTH_VIEW });
+      this.setState({ view: DAYS_VIEW });
     }, 0);
   }
 
   onYearClick = (year) => {
     this.setCurrentYear(year);
     setTimeout(() => {
-      this.setState({ view: YEAR_VIEW });
+      this.setState({ view: MONTHES_VIEW });
     }, 0);
   }
 
@@ -137,7 +137,7 @@ class Content extends PureComponent {
             onPrevYearsClick={this.onPrevYearsClick}
           />
         );
-      case YEAR_VIEW:
+      case MONTHES_VIEW:
         return (
           <Months
             onMonthClick={this.onMonthClick}

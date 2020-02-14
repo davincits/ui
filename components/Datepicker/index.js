@@ -3,8 +3,7 @@ import "./style.scss";
 import React, { PureComponent } from "react";
 import DropDown from "../DropDown";
 import IconCalendar from "../icons/Calendar";
-import Content from "./Content";
-import { classes } from "../utils";
+import Content, { DAYS_VIEW, MONTHES_VIEW, YEARS_VIEW } from "./Content";
 
 class Datepicker extends PureComponent {
   onChange = (date) => {
@@ -99,5 +98,9 @@ class Datepicker extends PureComponent {
     );
   }
 }
+
+Datepicker.DAYS_VIEW = DAYS_VIEW;
+Datepicker.MONTHES_VIEW = MONTHES_VIEW;
+Datepicker.YEARS_VIEW = YEARS_VIEW;
 
 export default Datepicker;
