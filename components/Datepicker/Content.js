@@ -7,20 +7,20 @@ import {
   YEARS_PER_PAGE,
 } from './constants';
 
-const MONTH_VIEW = 1;
-const YEAR_VIEW = 2;
-const YEARS_VIEW = 3;
+export const MONTH_VIEW = 1;
+export const YEAR_VIEW = 2;
+export const YEARS_VIEW = 3;
 
 class Content extends PureComponent {
   constructor(props, context) {
     super(props, context);
-    const { startDate = new Date() } = props;
+    const { startDate = new Date(), view = MONTH_VIEW } = props;
     const year = startDate.getFullYear();
     const month = startDate.getMonth();
     this.state = {
       currentYear: year,
       currentMonth: month,
-      view: MONTH_VIEW,
+      view,
     };
   }
 
