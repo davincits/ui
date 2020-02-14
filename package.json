@@ -1,6 +1,6 @@
 {
   "name": "davinci-ui",
-  "version": "0.5.25",
+  "version": "0.5.27",
   "private": true,
   "scripts": {
     "start": "start-storybook -p 9009 -s public",

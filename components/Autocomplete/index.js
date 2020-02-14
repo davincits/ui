@@ -9,9 +9,10 @@ import { classes } from "../utils";
 
 class Autocomplete extends Component {
   onSelect = (value) => {
-    const { onChange } = this.props;
+    const { onChange, onSelect } = this.props;
     const { dropdown } = this.refs;
     onChange(value);
+    if (onSelect) onSelect(value);
     dropdown.setState({ opened: false });
   }
 
