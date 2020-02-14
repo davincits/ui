@@ -41,7 +41,7 @@ class Datepicker extends PureComponent {
       calendarClassName,
       disabled,
       view,
-      inline,
+      inline = false,
     } = this.props;
     let startDateString = value;
     let endDateString;
