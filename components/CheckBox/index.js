@@ -24,12 +24,14 @@ class CheckBox extends PureComponent {
       value = false,
       error,
       disabled,
+      tumbler,
       ...rest
     } = this.props;
     return (
       <div
         className={classes([
           'ui-component ui-checkbox',
+          tumbler && 'ui-checkbox-tumbler',
           value && 'ui-checkbox-checked',
           error && 'ui-with-error',
           disabled && 'ui-disabled',

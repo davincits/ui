@@ -27,6 +27,7 @@
       height: 6px;
       border-left: 2px solid $ui-color-white;
       border-bottom: 2px solid $ui-color-white;
+      transition: background-color 0.2s, transform 0.2s;
       transform: translate(2px, 3px) rotate(-45deg);
       opacity: 0;
       content: "";
@@ -64,6 +65,37 @@
     cursor: default;
     .ui-fake-checkbox {
       background-color: $ui-color-gray;
+    }
+  }
+  &.ui-checkbox-tumbler {
+    & > .ui-fake-checkbox {
+      width: 34px;
+      height: 14px;
+      border-radius: 7px;
+      border: none;
+      background-color: #eaeaea;
+      &::after {
+        width: 20px;
+        height: 20px;
+        border: none;
+        transform: translate(0, -3px);
+        opacity: 1;
+        background-color: #d6d6d6;
+        border-radius: 50%;
+      }
+      &:hover {
+        background-color: #f0f0f0;
+        &::after {
+          background-color: #dfdfdf;
+        }
+      }
+    }
+    > input:checked + .ui-fake-checkbox {
+      background-color: $ui-color-brand-primary-light-2;
+      &::after {
+        background-color: $ui-color-brand-primary;
+        transform: translate(14px, -3px);
+      }
     }
   }
 }
