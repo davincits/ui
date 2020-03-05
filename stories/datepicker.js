@@ -18,27 +18,6 @@ storiesOf('Date picker', module)
       )}
     </Container>
   ))
-  .add('allowed dates', () => (
-    <Container>
-      {({ value = '', onChange }) => (
-        <div>
-          <Datepicker
-            label={(
-              <Button>
-                <IconCalendar />
-                {value || 'Select a date'}
-              </Button>
-            )}
-            onChange={onChange}
-            isDateAllowed={({ year, month, date }) => new Date(year, month, date) > Date.now()}
-            isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
-            isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
-            value={value}
-          />
-        </div>
-      )}
-    </Container>
-  ))
   .add('button', () => (
     <Container>
       {({ value = '', onChange }) => (
@@ -65,6 +44,42 @@ storiesOf('Date picker', module)
             range
           />
           <p>Selected range: {value.join(' / ')}</p>
+        </div>
+      )}
+    </Container>
+  ))
+  .add('allowed dates', () => (
+    <Container>
+      {({ value: [value, rangeValue] = ['', []], onChange }) => (
+        <div>
+          <Datepicker
+            label={(
+              <Button>
+                <IconCalendar />
+                {value || 'Select a date'}
+              </Button>
+            )}
+            onChange={(val) => onChange([val, rangeValue])}
+            isDateAllowed={({ year, month, date }) => new Date(year, month, date) > Date.now()}
+            isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
+            isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
+            value={value}
+          />
+          <br />
+          <Datepicker
+            label={(
+              <Button>
+                <IconCalendar />
+                {rangeValue.length ? rangeValue.join(', ') : 'Select a date'}
+              </Button>
+            )}
+            onChange={(val) => onChange([value, val])}
+            isDateAllowed={({ year, month, date }) => new Date(year, month, date) > Date.now()}
+            isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
+            isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
+            value={rangeValue}
+            range
+          />
         </div>
       )}
     </Container>

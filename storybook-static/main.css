@@ -66,6 +66,12 @@ hr {
 .u-padding-bottom {
   padding-bottom: 16px; }
 
+.u-flex {
+  display: flex; }
+
+.u-padded {
+  padding: 16px; }
+
 .ui-alert {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
@@ -209,13 +215,16 @@ hr {
     opacity: 0.1; }
   .ui-dropdown .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
     color: #333333;
+    line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6);
-    font-weight: 500;
+    color: #ADADAD;
     line-height: 12px;
-    margin-bottom: 4px; }
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap; }
   .ui-dropdown .ui-ellipsis {
     width: 100%;
     overflow: hidden;
@@ -262,7 +271,6 @@ hr {
   align-items: center;
   padding: 0 16px;
   cursor: pointer;
-  overflow: hidden;
   -webkit-transition: background-color 0.25s, border-color 0.25s;
   transition: background-color 0.25s, border-color 0.25s;
   outline: none;
@@ -389,16 +397,18 @@ hr {
     color: rgba(51, 51, 51, 0.2) !important;
     border: none !important;
     cursor: default !important; }
-  .ui-button.ui-button-loading::after {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.3);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-animation: buttonLoadingAnimation 2s linear infinite;
-            animation: buttonLoadingAnimation 2s linear infinite;
-    content: ""; }
+  .ui-button.ui-button-loading {
+    overflow: hidden; }
+    .ui-button.ui-button-loading::after {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.3);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: buttonLoadingAnimation 2s linear infinite;
+              animation: buttonLoadingAnimation 2s linear infinite;
+      content: ""; }
   .ui-button.ui-uppercased {
     text-transform: uppercase; }
 
@@ -430,13 +440,16 @@ hr {
     font-weight: normal; }
   .ui-text-field .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
     color: #333333;
-    font-weight: 500;
-    line-height: 12px;
-    margin-bottom: 4px;
+    line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6); }
+    color: #ADADAD;
+    line-height: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap; }
   .ui-text-field .ui-text-field-input-wrap {
     display: flex;
     position: relative;
@@ -613,6 +626,10 @@ hr {
       height: 6px;
       border-left: 2px solid #ffffff;
       border-bottom: 2px solid #ffffff;
+      -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+      transition: background-color 0.2s, -webkit-transform 0.2s;
+      transition: background-color 0.2s, transform 0.2s;
+      transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
       -webkit-transform: translate(2px, 3px) rotate(-45deg);
               transform: translate(2px, 3px) rotate(-45deg);
       opacity: 0;
@@ -621,11 +638,16 @@ hr {
     background-color: #f0f0f0; }
   .ui-checkbox > .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
     color: #333333;
-    font-weight: 500;
-    line-height: 12px;
+    line-height: 1.4;
+    font-size: 11px;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6);
+    color: #ADADAD;
+    line-height: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap;
     font-size: 12px;
     align-items: center;
     display: flex;
@@ -644,6 +666,31 @@ hr {
     cursor: default; }
     .ui-checkbox.ui-disabled .ui-fake-checkbox {
       background-color: #D6D6D6; }
+  .ui-checkbox.ui-checkbox-tumbler > .ui-fake-checkbox {
+    width: 34px;
+    height: 14px;
+    border-radius: 7px;
+    border: none;
+    background-color: #eaeaea; }
+    .ui-checkbox.ui-checkbox-tumbler > .ui-fake-checkbox::after {
+      width: 20px;
+      height: 20px;
+      border: none;
+      -webkit-transform: translate(0, -3px);
+              transform: translate(0, -3px);
+      opacity: 1;
+      background-color: #d6d6d6;
+      border-radius: 50%; }
+    .ui-checkbox.ui-checkbox-tumbler > .ui-fake-checkbox:hover {
+      background-color: #f0f0f0; }
+      .ui-checkbox.ui-checkbox-tumbler > .ui-fake-checkbox:hover::after {
+        background-color: #dfdfdf; }
+  .ui-checkbox.ui-checkbox-tumbler > input:checked + .ui-fake-checkbox {
+    background-color: #82DCF2; }
+    .ui-checkbox.ui-checkbox-tumbler > input:checked + .ui-fake-checkbox::after {
+      background-color: #05B9E6;
+      -webkit-transform: translate(14px, -3px);
+              transform: translate(14px, -3px); }
 
 .ui-row-gutter > .ui-column + .ui-column {
   margin-left: 16px; }
@@ -724,7 +771,8 @@ hr {
       .ui-dialog .ui-dialog-window .ui-dialog-actions .ui-button {
         margin-left: 8px; }
       .ui-dialog .ui-dialog-window .ui-dialog-actions.with-shadow {
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2); }
+        box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
+        position: relative; }
   .ui-dialog.disabled {
     cursor: not-allowed; }
     .ui-dialog.disabled .ui-dialog-window .ui-dialog-header .ui-dialog-close {
@@ -1181,10 +1229,16 @@ hr {
     background-color: #f0f0f0; }
   .ui-radio > .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 500;
-    line-height: 12px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+    font-size: 11px;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6);
+    color: #ADADAD;
+    line-height: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap;
     font-size: 12px;
     align-items: center;
     display: flex;
@@ -1486,15 +1540,6 @@ hr {
       background-color: inherit; }
     .ui-datepicker.ui-disabled .ui-datepicker-icon-container svg {
       opacity: 0.5; }
-  .ui-datepicker .ui-label {
-    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    color: #333333;
-    font-size: 11px;
-    text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6);
-    font-weight: 500;
-    line-height: 12px;
-    margin-bottom: 4px; }
 
 .ui-datepicker_dropdown .ui-dropdown-content {
   padding: 8px;
@@ -1504,6 +1549,18 @@ hr {
           user-select: none;
   overflow: auto;
   max-height: none; }
+  .ui-datepicker_dropdown .ui-dropdown-content .ui-label {
+    font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #ADADAD;
+    line-height: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap; }
   .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row {
     display: flex; }
     .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-month-row .ui-datepicker-month-col {
@@ -1620,10 +1677,6 @@ hr {
       .ui-datepicker_dropdown .ui-dropdown-content .ui-datepicker-view-header .ui-datepicker-view-label .year-label {
         color: #cccccc; }
 
-.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected {
-  border-right: none;
-  border-radius: 4px 0 0 4px; }
-
 .ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month.selected-range-end {
   border: 1px solid #05B9E6;
   font-weight: 500;
@@ -1637,6 +1690,10 @@ hr {
   border-right: none;
   border-radius: 0;
   background-color: rgba(5, 185, 230, 0.1); }
+
+.ui-datepicker_dropdown .ui-datepicker-range-content .ui-datepicker-days-of-month.range-end-selected .ui-datepicker-day-of-month.selected {
+  border-right: none;
+  border-radius: 4px 0 0 4px; }
 
 .ui-timepicker {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1825,11 +1882,11 @@ hr {
     border: none;
     outline: none;
     padding: 0 4px;
-    height: 26px;
+    height: 24px;
     margin-bottom: 2px;
     background: none; }
   .ui-tags-field .ui-tags-field-tag {
-    height: 26px;
+    height: 24px;
     background-color: #05B9E6;
     color: #ffffff;
     font-size: 13px;
@@ -1860,13 +1917,16 @@ hr {
         opacity: 1; }
   .ui-tags-field .ui-label {
     font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
     color: #333333;
+    line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 0.6);
-    font-weight: 500;
+    color: #ADADAD;
     line-height: 12px;
-    margin-bottom: 4px; }
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap; }
 
 .ui-tags-autocomplete {
   font-family: Roboto, "-apple-system", "system-ui", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
