@@ -26,3 +26,19 @@ $ui-color-brand-danger: #F53C3C;
 $ui-color-brand-danger-light:#FF3E2F;
 $ui-color-disabled: #EAEAEA;
 $ui-border-radius: 4px;
+@mixin font {
+  font-family: $ui-font-family;
+  font-size: $ui-font-size;
+  color: $ui-font-color;
+  line-height: $ui-line-height;
+}
+@mixin label {
+  @include font;
+  font-size: $ui-font-size-xxs;
+  text-transform: uppercase;
+  color: $ui-color-gray-light;
+  line-height: $ui-font-size-xxs + 1;
+  font-weight: 500;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}

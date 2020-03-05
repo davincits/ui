@@ -1,10 +1,7 @@
 @import '../common';
 
 .ui-tags-autocomplete {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
 }
 .ui-tags-autocomplete_dropdown .ui-dropdown-content {

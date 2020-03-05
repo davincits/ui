@@ -1,10 +1,7 @@
 @import '../common.scss';
 
 .ui-datepicker {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   font-weight: 400;
   .ui-datepicker-icon-container {
@@ -25,16 +22,6 @@
       opacity: 0.5;
     }
   }
-  .ui-label {
-    font-family: $ui-font-family;
-    color: $ui-font-color;
-    font-size: $ui-font-size-xxs;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
-    font-weight: 500;
-    line-height: $ui-font-size-xxs + 1;
-    margin-bottom: 4px;
-  }
 }
 .ui-datepicker_dropdown {
   .ui-dropdown-content {
@@ -42,6 +29,9 @@
     user-select: none;
     overflow: auto;
     max-height: none;
+    .ui-label {
+      @include label;
+    }
     .ui-datepicker-month-row {
       display: flex;
       .ui-datepicker-month-col {
@@ -184,24 +174,26 @@
       }
     }
   }
-  .ui-datepicker-range-content .ui-datepicker-days-of-month .ui-datepicker-day-of-month {
-    &.selected {
+  .ui-datepicker-range-content .ui-datepicker-days-of-month {
+    .ui-datepicker-day-of-month {
+      &.selected-range-end {
+        border: 1px solid $ui-color-brand-primary;
+        font-weight: 500;
+        border-left: none;
+        border-radius: 0 $ui-border-radius $ui-border-radius 0;
+        background-color: rgba($ui-color-brand-primary, 0.1);
+      }
+      &.highlighted {
+        border: 1px solid $ui-color-brand-primary;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        background-color: rgba($ui-color-brand-primary, 0.1);
+      }
+    }
+    &.range-end-selected .ui-datepicker-day-of-month.selected {
       border-right: none;
       border-radius: $ui-border-radius 0 0 $ui-border-radius;
-    }
-    &.selected-range-end {
-      border: 1px solid $ui-color-brand-primary;
-      font-weight: 500;
-      border-left: none;
-      border-radius: 0 $ui-border-radius $ui-border-radius 0;
-      background-color: rgba($ui-color-brand-primary, 0.1);
-    }
-    &.highlighted {
-      border: 1px solid $ui-color-brand-primary;
-      border-left: none;
-      border-right: none;
-      border-radius: 0;
-      background-color: rgba($ui-color-brand-primary, 0.1);
     }
   }
 }

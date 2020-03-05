@@ -9,7 +9,8 @@ export const FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
 export const FILE_SIZE_ERROR = 'FILE_SIZE_ERROR';
 
 class FileField extends PureComponent {
-  changeHandler = ({ target: { files } }) => {
+  changeHandler = (event) => {
+    const { target: { files } } = event;
     const {
       multiple, fileTypes, maxSize, onError,
     } = this.props;
@@ -36,7 +37,7 @@ class FileField extends PureComponent {
       }
     }
     const { onChange } = this.props;
-    if (onChange) onChange(files);
+    if (onChange) onChange(files, event);
   }
 
   render() {

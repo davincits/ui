@@ -31,6 +31,8 @@ storiesOf('Date picker', module)
             )}
             onChange={onChange}
             isDateAllowed={({ year, month, date }) => new Date(year, month, date) > Date.now()}
+            isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
+            isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
             value={value}
           />
         </div>

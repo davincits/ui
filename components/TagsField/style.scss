@@ -1,10 +1,7 @@
 @import '../common';
 
 .ui-tags-field {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   .ui-tags-field-content {
     display: flex;
@@ -41,12 +38,12 @@
     border: none;
     outline: none;
     padding: 0 4px;
-    height: 26px;
+    height: 24px;
     margin-bottom: 2px;
     background: none;
   }
   .ui-tags-field-tag {
-    height: 26px;
+    height: 24px;
     background-color: $ui-color-brand-primary;
     color: $ui-color-white;
     font-size: $ui-font-size-s;
@@ -86,13 +83,6 @@
     }
   }
   .ui-label {
-    font-family: $ui-font-family;
-    color: $ui-font-color;
-    font-size: $ui-font-size-xxs;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
-    font-weight: 500;
-    line-height: $ui-font-size-xxs + 1;
-    margin-bottom: 4px;
+    @include label;
   }
 }

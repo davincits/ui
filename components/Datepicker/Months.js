@@ -13,6 +13,7 @@ function Months(props) {
     onYearLabelClick,
     onPrevYearClick,
     onNextYearClick,
+    isMonthAllowed,
   } = props;
   const selectedYear = startDate && startDate.getFullYear();
   const selectedMonth = startDate && startDate.getMonth();
@@ -44,6 +45,7 @@ function Months(props) {
           month={index}
           name={monthNames ? monthNames[index] : name}
           selected={currentYear === selectedYear && index === selectedMonth}
+          disabled={!isMonthAllowed({ year: currentYear, month: index })}
           onClick={onMonthClick}
         />
       ))}

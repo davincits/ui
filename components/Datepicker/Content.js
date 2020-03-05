@@ -120,6 +120,8 @@ class Content extends PureComponent {
       startDate,
       endDate,
       range,
+      isMonthAllowed,
+      isYearAllowed,
     } = this.props;
     const {
       view,
@@ -135,6 +137,7 @@ class Content extends PureComponent {
             onYearClick={this.onYearClick}
             onNextYearsClick={this.onNextYearsClick}
             onPrevYearsClick={this.onPrevYearsClick}
+            isYearAllowed={isYearAllowed}
           />
         );
       case MONTHES_VIEW:
@@ -147,6 +150,7 @@ class Content extends PureComponent {
             startDate={startDate}
             currentYear={currentYear}
             monthNames={monthNames}
+            isMonthAllowed={isMonthAllowed}
           />
         );
       default:

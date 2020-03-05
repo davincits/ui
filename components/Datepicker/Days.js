@@ -82,7 +82,7 @@ function Days(props) {
     || dateObject.getDay() !== weekStartIndex
   );
   return (
-    <div className="ui-datepicker-days-of-month">
+    <div className={`ui-datepicker-days-of-month${(selectedEndYear && selectedEndMonth && selectedEndDate) ? ' range-end-selected' : ''}`}>
       <div className="ui-datepicker-view-header">
         {!secondMonth && (
           <div

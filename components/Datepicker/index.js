@@ -35,6 +35,8 @@ class Datepicker extends PureComponent {
       label,
       className,
       isDateAllowed = () => true,
+      isMonthAllowed = () => true,
+      isYearAllowed = () => true,
       monthNames,
       dayNames,
       range,
@@ -90,6 +92,8 @@ class Datepicker extends PureComponent {
             endDate={endDate}
             onChange={this.onChange}
             isDateAllowed={isDateAllowed}
+            isMonthAllowed={isMonthAllowed}
+            isYearAllowed={isYearAllowed}
             monthNames={monthNames}
             dayNames={dayNames}
             range={range}

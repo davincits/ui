@@ -11,6 +11,7 @@ function Years(props) {
     onYearClick,
     onNextYearsClick,
     onPrevYearsClick,
+    isYearAllowed,
   } = props;
   const years = [];
   const selectedYear = startDate && startDate.getFullYear();
@@ -41,12 +42,12 @@ function Years(props) {
           <IconChevronRight />
         </div>
       </div>
-      {years.map(({ year, selected, disabled }) => (
+      {years.map(({ year, selected }) => (
         <Year
           key={year}
           year={year}
           selected={selected}
-          disabled={disabled}
+          disabled={!isYearAllowed({ year })}
           onClick={onYearClick}
         />
       ))}

@@ -1,10 +1,7 @@
 @import '../common';
 
 .ui-text-field {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   label {
     display: block;
@@ -12,14 +9,7 @@
     font-weight: normal;
   }
   .ui-label {
-    font-family: $ui-font-family;
-    color: $ui-font-color;
-    font-weight: 500;
-    line-height: $ui-font-size-xxs + 1;
-    margin-bottom: 4px;
-    font-size: $ui-font-size-xxs;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
+    @include label;
   }
   .ui-text-field-input-wrap {
     display: flex;

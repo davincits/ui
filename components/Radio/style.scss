@@ -1,10 +1,7 @@
 @import '../common';
 
 .ui-radio {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -27,11 +24,7 @@
     background-color: $ui-color-gray-light-2;
   }
   & > .ui-label {
-    font-family: $ui-font-family;
-    font-weight: 500;
-    line-height: $ui-font-size-xxs + 1;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
+    @include label;
     font-size: $ui-font-size-xs;
     align-items: center;
     display: flex;

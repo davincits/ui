@@ -1,10 +1,7 @@
 @import "../common";
 
 .ui-alert {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   position: relative;
   border: 1px solid $ui-color-gray-light-3;

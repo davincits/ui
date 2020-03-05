@@ -1,10 +1,7 @@
 @import '../common';
 
 .ui-dropdown {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   position: relative;
   & > .ui-icon-expand-less,
@@ -40,14 +37,7 @@
     }
   }
   .ui-label {
-    font-family: $ui-font-family;
-    color: $ui-font-color;
-    font-size: $ui-font-size-xxs;
-    text-transform: uppercase;
-    color: rgba($ui-font-color, 0.6);
-    font-weight: 500;
-    line-height: $ui-font-size-xxs + 1;
-    margin-bottom: 4px;
+    @include label;
   }
   .ui-ellipsis {
     width: 100%;
@@ -57,10 +47,7 @@
   }
 }
 .ui-dropdown-content {
-  font-family: $ui-font-family;
-  font-size: $ui-font-size;
-  color: $ui-font-color;
-  line-height: $ui-line-height;
+  @include font;
   box-sizing: border-box;
   position: fixed;
   background-color: $ui-color-white;
