@@ -10,11 +10,14 @@ export const FILE_SIZE_ERROR = 'FILE_SIZE_ERROR';
 
 class FileField extends PureComponent {
   changeHandler = (event) => {
-    const { target: { files } } = event;
+    const { target } = event;
     const {
-      multiple, fileTypes, maxSize, onError,
+      multiple,
+      fileTypes,
+      maxSize,
+      onError,
     } = this.props;
-    files = [...files];
+    const files = [...target.files];
     if (!files.length) return null;
     if (!multiple && files.length > 1) {
       if (onError) return onError(FILES_COUNT_ERROR);
