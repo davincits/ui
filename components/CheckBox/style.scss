@@ -41,6 +41,7 @@
     padding-left: 8px;
     height: 32px;
     margin-bottom: 0;
+    white-space: initial;
   }
   & > input:checked + .ui-fake-checkbox {
     background-color: $ui-color-brand-primary;

@@ -32,6 +32,7 @@
     padding-top: 1px;
     height: 32px;
     margin-bottom: 0;
+    white-space: initial;
   }
   &.ui-radio-checked > .ui-fake-radio {
     border: 4px solid $ui-color-brand-primary;
