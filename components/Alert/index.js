@@ -22,9 +22,10 @@ class Alert extends PureComponent {
   onCloseClick = () => {
     const { onClose, delay = DEFAULT_DELAY } = this.props;
     this.setState({ showed: false });
-    if (!onClose) return;
-    if (!delay) return onClose();
-    setTimeout(() => this.setState({ display: false }, onClose), delay);
+    setTimeout(() => {
+      this.setState({ display: false });
+      if (onClose) onClose();
+    }, delay || 0);
   }
 
   render() {
@@ -35,6 +36,7 @@ class Alert extends PureComponent {
       ...props
     } = this.props;
     const { showed, display } = this.state;
+    console.log({ showed, display });
     return display && (
       <div className={classes(['ui-component ui-alert', showed && 'ui-showed', className])} {...props}>
         {closeable && (

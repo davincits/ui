@@ -1,6 +1,7 @@
 import './style.scss';
 
 import './accordion';
+import './alert';
 import './autocomplete';
 import './button';
 import './checkbox';
