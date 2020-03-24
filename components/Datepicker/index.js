@@ -20,10 +20,10 @@ class Datepicker extends PureComponent {
       return onChange([date]);
     }
     if (!end) {
-      if (start < date) {
-        onChange([start, date]);
-      } else {
+      if (start > date) {
         onChange([date, start]);
+      } else {
+        onChange([start, date]);
       }
       return dropdown.setState({ opened: false });
     }
