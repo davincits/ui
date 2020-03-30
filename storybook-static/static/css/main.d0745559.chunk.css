@@ -220,7 +220,7 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
@@ -248,7 +248,7 @@ hr {
 
 .ui-dropdown .ui-dropdown-content {
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   top: 100%;
   left: 0;
   width: 100%;
@@ -445,10 +445,13 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap; }
   .ui-text-field .ui-text-field-input-wrap {
     display: flex;
@@ -643,7 +646,7 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
@@ -1235,7 +1238,7 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
@@ -1478,7 +1481,7 @@ hr {
       background-color: #f0f0f0;
       text-transform: uppercase;
       color: rgba(51, 51, 51, 0.4);
-      font-size: 12px;
+      font-size: 11px;
       min-height: 32px;
       font-weight: 500;
       padding-left: 16px;
@@ -1558,7 +1561,7 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
@@ -1924,7 +1927,7 @@ hr {
     line-height: 1.4;
     font-size: 11px;
     text-transform: uppercase;
-    color: #ADADAD;
+    color: #808080;
     line-height: 12px;
     font-weight: 500;
     margin-bottom: 4px;
@@ -1999,4 +2002,4 @@ hr {
     max-height: 640px; }
 
 
-/*# sourceMappingURL=main.82e8b0b4.chunk.css.map*/
+/*# sourceMappingURL=main.d0745559.chunk.css.map*/

@@ -10,6 +10,9 @@
   }
   .ui-label {
     @include label;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .ui-text-field-input-wrap {
     display: flex;

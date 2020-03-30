@@ -58,7 +58,6 @@ class Autocomplete extends Component {
               search />
           )}
           disabled={disabled}
-          inline={false}
           ref="dropdown"
           name="ui-autocomplete"
           manual>
