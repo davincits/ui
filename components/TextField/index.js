@@ -27,7 +27,6 @@ class TextField extends PureComponent {
     if (number && !REGEXP_NUMBER.test(value)) {
       return;
     }
-    console.log(3)
     onChange(value, event);
   };
 

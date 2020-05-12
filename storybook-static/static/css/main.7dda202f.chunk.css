@@ -433,7 +433,8 @@ hr {
   font-size: 14px;
   color: #333333;
   line-height: 1.4;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative; }
   .ui-text-field label {
     display: block;
     width: 100%;
@@ -536,6 +537,29 @@ hr {
     border-radius: 0 0 3px 0; }
     .ui-text-field .ui-text-field-number-control-minus::after {
       border-color: #dcdcdc transparent transparent; }
+  .ui-text-field .error-text {
+    color: #F53C3C;
+    font-size: 13px; }
+  .ui-text-field.ui-with-floated-label input {
+    height: 48px;
+    padding-top: 14px;
+    padding-bottom: 0; }
+  .ui-text-field.ui-with-floated-label .floated-label {
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    margin-top: -9px;
+    color: #828282;
+    font-weight: 500;
+    -webkit-transition: -webkit-transform 0.15s;
+    transition: -webkit-transform 0.15s;
+    transition: transform 0.15s;
+    transition: transform 0.15s, -webkit-transform 0.15s; }
+  .ui-text-field.ui-text-field-filled .floated-label,
+  .ui-text-field input:focus + .floated-label {
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px); }
 
 .ui-loading-dotted {
   position: relative;
@@ -2002,4 +2026,4 @@ hr {
     max-height: 640px; }
 
 
-/*# sourceMappingURL=main.4c3437a0.chunk.css.map*/
+/*# sourceMappingURL=main.7dda202f.chunk.css.map*/
