@@ -12,7 +12,6 @@ function Button(props) {
     warning,
     success,
     stroke,
-    uppercase,
     uppercased = true,
     className,
     block,
@@ -25,7 +24,6 @@ function Button(props) {
     focused,
     ...rest
   } = props;
-  if (loading) rest.disabled = true;
   const classList = classes({
     'ui-component ui-button': true,
     'ui-button-loading': loading,
@@ -48,6 +46,7 @@ function Button(props) {
     <button
       type="button"
       className={classList}
+      disabled={disable || loading}
       {...rest}
     >
       {children}

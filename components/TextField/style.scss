@@ -3,6 +3,7 @@
 .ui-text-field {
   @include font;
   box-sizing: border-box;
+  position: relative;
   label {
     display: block;
     width: 100%;
@@ -121,5 +122,30 @@
     &::after {
       border-color: #dcdcdc transparent transparent;
     }
+  }
+  .error-text {
+    color: $ui-color-brand-danger;
+    font-size: $ui-font-size-s;
+  }
+  &.ui-with-floated-label {
+    input {
+      height: 48px;
+      padding-top: 14px;
+      padding-bottom: 0;
+    }
+    .floated-label {
+      line-height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 13px;
+      margin-top: -9px;
+      color: #828282;
+      font-weight: 500;
+      transition: transform 0.15s;
+    }
+  }
+  &.ui-text-field-filled .floated-label,
+  input:focus + .floated-label {
+    transform: translate(0, -10px);
   }
 }

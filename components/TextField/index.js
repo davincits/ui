@@ -8,10 +8,8 @@ import { classes, uniqid } from "../utils";
 import SearchIcon from "../icons/Search";
 import CloseIcon from "../icons/Close";
 
-const checkValue = (value) => (
-  (value === null) || (value === undefined) || (value !== value) ? "" : value // eslint-disable-line no-self-compare
-);
-const FIELD_TYPE_NUMBER = "number";
+const REGEXP_NATURAL = /^\d*$/;
+const REGEXP_NUMBER = /^[+-]?(0|\d*)\.?\d*$/;
 
 class TextField extends PureComponent {
   constructor(props, context) {
@@ -21,14 +19,16 @@ class TextField extends PureComponent {
 
   onChange = (event) => {
     const { value } = event.target;
-    const { onChange, type, natural } = this.props;
-    const isNumberType = type === FIELD_TYPE_NUMBER;
-    if (onChange && (!isNumberType || (value === "") || !isNaN(value))) {
-      if (natural) {
-        return onChange(Math.abs(parseInt(value, 10)), event);
-      }
-      onChange(value, event);
+    const { onChange, number, natural } = this.props;
+    if (!onChange) return;
+    if (natural && !REGEXP_NATURAL.test(value)) {
+      return;
     }
+    if (number && !REGEXP_NUMBER.test(value)) {
+      return;
+    }
+    console.log(3)
+    onChange(value, event);
   };
 
   onBlur = (event) => {
@@ -68,23 +68,26 @@ class TextField extends PureComponent {
       inline,
       onChange,
       onBlur,
-      value: $value,
       type = "text",
       autoheight = true,
       search,
-      error,
+      errorText,
+      error = !!errorText,
       id = uniqid(),
       natural,
+      floatedLabel,
+      value,
       ...rest
     } = this.props;
     const { height } = this.state;
-    const value = checkValue($value);
     const classList = classes({
       "ui-component ui-text-field": true,
       "ui-no-resize": !resize,
       "ui-inline": inline,
       "ui-type-search": search,
       "ui-state-error": error,
+      "ui-with-floated-label": !!floatedLabel,
+      "ui-text-field-filled": !!value,
       [className]: className,
     });
     const props = {
@@ -113,7 +116,13 @@ class TextField extends PureComponent {
               ? (<CloseIcon onClick={this.onResetClick} />)
               : (<SearchIcon />)
             ) : null}
+            {!!floatedLabel && (
+              <div className="floated-label">{floatedLabel}</div>
+            )}
           </div>
+        )}
+        {!!errorText && (
+          <div className="error-text">{errorText}</div>
         )}
       </div>
     );

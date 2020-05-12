@@ -46,7 +46,7 @@ storiesOf('TextField', module)
           label="Input label"
           value={value}
           onChange={onChange}
-          type="number"
+          number
         />
       )}
     </Container>
@@ -58,7 +58,6 @@ storiesOf('TextField', module)
           label="Input label"
           value={value}
           onChange={onChange}
-          type="number"
           natural
         />
       )}
@@ -72,6 +71,18 @@ storiesOf('TextField', module)
           value={value}
           onChange={onChange}
           error
+        />
+      )}
+    </Container>
+  ))
+  .add('error text', () => (
+    <Container width="240px">
+      {({ value = 'Lorem ipsum', onChange }) => (
+        <TextField
+          label="Input label"
+          value={value}
+          onChange={onChange}
+          errorText="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         />
       )}
     </Container>
@@ -121,6 +132,17 @@ storiesOf('TextField', module)
             />
           </div>
         </div>
+      )}
+    </Container>
+  ))
+  .add('floated label', () => (
+    <Container width="240px">
+      {({ value = 'Lorem ipsum', onChange }) => (
+        <TextField
+          floatedLabel="Input label"
+          value={value}
+          onChange={onChange}
+        />
       )}
     </Container>
   ));

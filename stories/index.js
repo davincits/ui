@@ -14,7 +14,6 @@ import './file-field';
 import './full-size-modal';
 import './gallery';
 import './grid';
-import './icons';
 import './list';
 import './multiselect';
 import './radio';
