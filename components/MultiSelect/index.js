@@ -57,6 +57,7 @@ class MultiSelect extends Component {
       search,
       notFoundText = 'Nothing was found...',
       disabled,
+      loading,
     } = this.props;
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();

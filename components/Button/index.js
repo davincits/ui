@@ -22,6 +22,7 @@ function Button(props) {
     active,
     hovered,
     focused,
+    disabled,
     ...rest
   } = props;
   const classList = classes({
@@ -46,7 +47,7 @@ function Button(props) {
     <button
       type="button"
       className={classList}
-      disabled={disable || loading}
+      disabled={disabled || loading}
       {...rest}
     >
       {children}
