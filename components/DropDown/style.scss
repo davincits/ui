@@ -67,4 +67,8 @@
     width: 100%;
     margin-top: 2px;
   }
+  &.ui-align-right {
+    left: auto;
+    right: 0;
+  }
 }

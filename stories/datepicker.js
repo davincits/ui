@@ -38,11 +38,21 @@ storiesOf('Date picker', module)
     <Container>
       {({ value = [], onChange }) => (
         <div>
-          <Datepicker
-            onChange={onChange}
-            value={value}
-            range
-          />
+          <div className="u-flex">
+            <Datepicker
+              onChange={onChange}
+              value={value}
+              range
+            />
+            <div className="u-pull-right">
+              <Datepicker
+                onChange={onChange}
+                value={value}
+                range
+                alignRight
+              />
+            </div>
+          </div>
           <p>Selected range: {value.join(' / ')}</p>
         </div>
       )}

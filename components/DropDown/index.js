@@ -55,11 +55,12 @@ class DropDown extends PureComponent {
 
   checkPosition = () => {
     const { button } = this.refs;
-    const { autoWidth } = this.props;
-    const { innerHeight: windowHeight } = window;
+    const { autoWidth, alignRight } = this.props;
+    const { innerHeight: windowHeight, innerWidth: windowWidth } = window;
     const {
       width,
       left,
+      right,
       top,
       bottom,
       height,
@@ -68,7 +69,8 @@ class DropDown extends PureComponent {
     this.setState({
       dropDownStyle: {
         width: autoWidth ? "" : width,
-        left,
+        left: alignRight ? "auto" : left,
+        right: alignRight ? (windowWidth - right) : "auto",
         top: onTop ? "" : bottom,
         bottom: onTop ? windowHeight - top : "",
       },
@@ -98,6 +100,7 @@ class DropDown extends PureComponent {
       closeDelay,
       manual,
       autoWidth,
+      alignRight,
       ...rest
     } = this.props;
     const { opened, dropDownStyle } = this.state;
@@ -105,6 +108,7 @@ class DropDown extends PureComponent {
       "ui-component ui-dropdown": true,
       "ui-dropdown-opened": opened,
       "ui-disabled": disabled,
+      "ui-align-right": alignRight,
       [className]: className,
     });
     const dropDown = children ? (
