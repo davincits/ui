@@ -57,6 +57,24 @@ storiesOf('Select', module)
               disabled
             />
           </div>
+          <div className="u-padding-top">
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange}
+              error
+            />
+          </div>
+          <div className="u-padding-top">
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange}
+              error="Error text ..."
+            />
+          </div>
         </div>
       )}
     </Container>

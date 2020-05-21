@@ -122,4 +122,8 @@
       border-color: #dcdcdc transparent transparent;
     }
   }
+  .ui-error-text {
+    font-size: $ui-font-size-s;
+    color: $ui-color-brand-danger;
+  }
 }

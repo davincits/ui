@@ -67,12 +67,21 @@ storiesOf('TextField', module)
   .add('error', () => (
     <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          label="Input label"
-          value={value}
-          onChange={onChange}
-          error
-        />
+        <>
+          <TextField
+            label="Input label"
+            value={value}
+            onChange={onChange}
+            error
+          />
+          <TextField
+            className="u-margin-top"
+            label="Input label"
+            value={value}
+            onChange={onChange}
+            error="Error text..."
+          />
+        </>
       )}
     </Container>
   ))

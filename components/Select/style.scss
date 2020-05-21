@@ -4,6 +4,10 @@
   &.ui-with-error .ui-dropdown .ui-dropdown-button {
     border-color: $ui-color-brand-danger;
   }
+  .ui-error-text {
+    font-size: $ui-font-size-s;
+    color: $ui-color-brand-danger;
+  }
 }
 .ui-select_dropdown {
   position: relative;
