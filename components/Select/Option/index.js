@@ -9,6 +9,13 @@ class Option extends PureComponent {
     if (!selected) onClick(value);
   };
 
+  componentDidMount() {
+    const { selected } = this.props;
+    if (!selected) return;
+    const { root } = this.refs;
+    root.scrollIntoView();
+  }
+
   render() {
     const {
       className, value, label, selected,
@@ -19,7 +26,7 @@ class Option extends PureComponent {
       [className]: className,
     });
     return (
-      <div className={classList} onClick={this.onClick}>
+      <div className={classList} onClick={this.onClick} ref="root">
         <div className="ui-ellipsis">{label || value}</div>
       </div>
     );
