@@ -85,6 +85,33 @@ storiesOf('TextField', module)
       )}
     </Container>
   ))
+  .add('floated label', () => (
+    <Container width="240px">
+      {({ value = 'Lorem ipsum', onChange }) => (
+        <>
+          <TextField
+            floatedLabel="Input label"
+            value={value}
+            onChange={onChange}
+          />
+          <TextField
+            className="u-margin-top"
+            floatedLabel="Input label"
+            value={value}
+            onChange={onChange}
+            error
+          />
+          <TextField
+            className="u-margin-top"
+            floatedLabel="Input label"
+            value={value}
+            onChange={onChange}
+            error="Error text..."
+          />
+        </>
+      )}
+    </Container>
+  ))
   .add('multiline', () => (
     <Container width="240px">
       {({ value = 'Lorem ipsum', onChange }) => (

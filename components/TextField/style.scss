@@ -126,4 +126,26 @@
     font-size: $ui-font-size-s;
     color: $ui-color-brand-danger;
   }
+  &.ui-with-floated-label {
+    input {
+      height: 52px;
+      padding-top: 14px;
+      padding-bottom: 0;
+    }
+    .floated-label {
+      line-height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 13px;
+      margin-top: -10px;
+      color: #828282;
+      font-weight: 500;
+      transition: transform 0.15s;
+      font-size: $ui-font-size-xs;
+    }
+  }
+  &.ui-text-field-filled .floated-label,
+  input:focus + .floated-label {
+    transform: translate(0, -11px);
+  }
 }

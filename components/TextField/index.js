@@ -75,6 +75,7 @@ class TextField extends PureComponent {
       error,
       id = uniqid(),
       natural,
+      floatedLabel,
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -85,6 +86,8 @@ class TextField extends PureComponent {
       "ui-inline": inline,
       "ui-type-search": search,
       "ui-state-error": error,
+      "ui-with-floated-label": !!floatedLabel,
+      "ui-text-field-filled": !!value,
       [className]: className,
     });
     const props = {
@@ -112,6 +115,9 @@ class TextField extends PureComponent {
               value
               ? (<CloseIcon onClick={this.onResetClick} />)
               : (<SearchIcon />)
+            ) : null}
+            {floatedLabel ? (
+              <label className="floated-label" htmlFor={id}>{floatedLabel}</label>
             ) : null}
           </div>
         )}
