@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Container from './Container';
 import { Button, Row, Col } from '../components';
 
+const handleClick = (event, name) => console.log({ event, name });
 
 storiesOf('Button', module)
   .add('common', () => (
@@ -11,7 +12,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log}>Common Button</Button>
+            <Button onClick={handleClick} name="lorem">Common Button</Button>
           </Col>
         </Row>
       )}
@@ -23,16 +24,16 @@ storiesOf('Button', module)
         <div>
           <Row gutter style={{ width: '680px', margin: '24px 0' }}>
             <Col>
-              <Button onClick={console.log} block primary>Primary Button</Button>
+              <Button onClick={handleClick} block primary>Primary Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block danger>Danger Button</Button>
+              <Button onClick={handleClick} block danger>Danger Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block success>Success Button</Button>
+              <Button onClick={handleClick} block success>Success Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block warning>Warning Button</Button>
+              <Button onClick={handleClick} block warning>Warning Button</Button>
             </Col>
           </Row>
         </div>
@@ -45,16 +46,16 @@ storiesOf('Button', module)
         <div>
           <Row gutter style={{ width: '680px', margin: '24px 0' }}>
             <Col>
-              <Button onClick={console.log} block stroke primary>Primary Button</Button>
+              <Button onClick={handleClick} block stroke primary>Primary Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block stroke danger>Danger Button</Button>
+              <Button onClick={handleClick} block stroke danger>Danger Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block stroke success>Success Button</Button>
+              <Button onClick={handleClick} block stroke success>Success Button</Button>
             </Col>
             <Col>
-              <Button onClick={console.log} block stroke warning>Warning Button</Button>
+              <Button onClick={handleClick} block stroke warning>Warning Button</Button>
             </Col>
           </Row>
         </div>
@@ -66,7 +67,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log} large>Large Button</Button>
+            <Button onClick={handleClick} large>Large Button</Button>
           </Col>
         </Row>
       )}
@@ -77,7 +78,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log} small>Small Button</Button>
+            <Button onClick={handleClick} small>Small Button</Button>
           </Col>
         </Row>
       )}
@@ -88,7 +89,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log} uppercase>Uppercase Button</Button>
+            <Button onClick={handleClick} uppercase>Uppercase Button</Button>
           </Col>
         </Row>
       )}
@@ -98,7 +99,7 @@ storiesOf('Button', module)
     <Container>
       {() => (
         <div>
-          <Button onClick={console.log} block>Full width Button</Button>
+          <Button onClick={handleClick} block>Full width Button</Button>
         </div>
       )}
     </Container>
@@ -108,7 +109,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log} unbordered>Unbordered Button</Button>
+            <Button onClick={handleClick} unbordered>Unbordered Button</Button>
           </Col>
         </Row>
       )}
@@ -119,7 +120,7 @@ storiesOf('Button', module)
       {() => (
         <Row gutter>
           <Col auto>
-            <Button onClick={console.log} loading>Loading Button</Button>
+            <Button onClick={handleClick} loading>Loading Button</Button>
           </Col>
         </Row>
       )}
@@ -127,16 +128,16 @@ storiesOf('Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      {() => <Button onClick={console.log} disabled>Hello Button</Button>}
+      {() => <Button onClick={handleClick} disabled>Hello Button</Button>}
     </Container>
   ))
   .add('focused', () => (
     <Container>
-      {() => <Button onClick={console.log} focused>Hello Button</Button>}
+      {() => <Button onClick={handleClick} focused>Hello Button</Button>}
     </Container>
   ))
   .add('hovered', () => (
     <Container>
-      {() => <Button onClick={console.log} hovered>Hello Button</Button>}
+      {() => <Button onClick={handleClick} hovered>Hello Button</Button>}
     </Container>
   ));
