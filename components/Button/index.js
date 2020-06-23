@@ -19,8 +19,7 @@ class Button extends Component {
       warning,
       success,
       stroke,
-      uppercase,
-      uppercased = true,
+      uppercased,
       className,
       block,
       loading,
@@ -30,6 +29,7 @@ class Button extends Component {
       active,
       hovered,
       focused,
+      name,
       ...rest
     } = this.props;
     if (loading) rest.disabled = true;

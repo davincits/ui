@@ -87,13 +87,35 @@ class DropDown extends PureComponent {
     });
   }
 
+  renderContent() {
+    const {
+      name = "ui",
+      inline = true,
+      dropdownClassName,
+      children,
+    } = this.props;
+    const { opened, dropDownStyle } = this.state;
+    if (!opened) return null;
+    const content = (
+      <div className={classes(["ui-component", dropdownClassName, `${name}_dropdown`])}>
+        <div
+          className="ui-dropdown-content"
+          ref="dropdown"
+          style={inline ? null : dropDownStyle}>
+          {children}
+        </div>
+      </div>
+    );
+    return inline ? content : (<Portal>{content}</Portal>);
+  }
+
   render() {
     const {
       children,
       label,
       buttonContent,
       className,
-      inline = true,
+      inline,
       button,
       name,
       disabled,
@@ -103,7 +125,7 @@ class DropDown extends PureComponent {
       alignRight,
       ...rest
     } = this.props;
-    const { opened, dropDownStyle } = this.state;
+    const { opened } = this.state;
     const classList = classes({
       "ui-component ui-dropdown": true,
       "ui-dropdown-opened": opened,
@@ -111,16 +133,6 @@ class DropDown extends PureComponent {
       "ui-align-right": alignRight,
       [className]: className,
     });
-    const dropDown = children ? (
-      <div className={`ui-component ${name || "ui"}_dropdown${className ? ` ${className}` : ""}`}>
-        <div
-          className="ui-dropdown-content"
-          ref="dropdown"
-          style={inline ? null : dropDownStyle}>
-          {children}
-        </div>
-      </div>
-    ) : null;
     return (
       <div className={classList} {...rest} onKeyDown={this.handleKeyPress}>
         {!!label && <div className="ui-label ui-dropdown-label">{label}</div>}
@@ -135,14 +147,13 @@ class DropDown extends PureComponent {
               className="ui-dropdown-button"
               focused={opened}
               disabled={disabled}
-              onClick={this.clickHandler}
-              uppercased={false}>
+              onClick={this.clickHandler}>
               <div className="ui-ellipsis">{buttonContent}</div>
             </Button>
           )}
-          {dropDown && opened && (inline ? dropDown : <Portal>{dropDown}</Portal>)}
+          {this.renderContent()}
         </div>
-        {!button && (dropDown && opened ? <IconExpandLess /> : <IconExpandMore />)}
+        {!button && (opened ? (<IconExpandLess />) : (<IconExpandMore />))}
       </div>
     );
   }
