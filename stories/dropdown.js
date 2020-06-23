@@ -29,10 +29,12 @@ storiesOf('DropDown', module)
           </div>
           <div className="u-margin-top">
             <DropDown buttonContent="Click me">
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </div>
+              {() => (
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+              )}
             </DropDown>
           </div>
           <div className="u-margin-top">

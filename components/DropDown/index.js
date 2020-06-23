@@ -3,7 +3,7 @@ import "./style.scss";
 import React, { PureComponent } from "react";
 import Button from "../Button";
 import { KEY_ESC, KEY_DOWN } from "../constants";
-import { classes } from "../utils";
+import { classes, isFunction } from "../utils";
 import IconExpandMore from "../icons/ExpandMore";
 import IconExpandLess from "../icons/ExpandLess";
 import Portal from "../Portal";
@@ -102,7 +102,7 @@ class DropDown extends PureComponent {
           className="ui-dropdown-content"
           ref="dropdown"
           style={inline ? null : dropDownStyle}>
-          {children}
+          {isFunction(children) ? children() : children}
         </div>
       </div>
     );

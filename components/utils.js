@@ -9,4 +9,6 @@ export const isNull = (value) => value === null;
 
 export const isString = (value) => typeof value === 'string';
 
+export const isFunction = (value) => typeof value === 'function';
+
 export const uniqid = () => `uid${Date.now().toString(36)}${Math.random().toString(36)}`;
