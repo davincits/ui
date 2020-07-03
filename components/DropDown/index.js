@@ -131,6 +131,7 @@ class DropDown extends PureComponent {
       manual,
       autoWidth,
       alignRight,
+      closeOnClick,
       ...rest
     } = this.props;
     const { opened } = this.state;
