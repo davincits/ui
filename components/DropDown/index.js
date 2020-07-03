@@ -47,6 +47,12 @@ class DropDown extends PureComponent {
     this.toggleOpenState();
   };
 
+  handleDropDownClick = () => {
+    const { closeOnClick } = this.props;
+    if (!closeOnClick) return;
+    this.toggleOpenState(false);
+  }
+
   clickHandler = () => {
     const { disabled, manual } = this.props;
     if (disabled || manual) return;
@@ -97,7 +103,9 @@ class DropDown extends PureComponent {
     const { opened, dropDownStyle } = this.state;
     if (!opened) return null;
     const content = (
-      <div className={classes(["ui-component", dropdownClassName, `${name}_dropdown`])}>
+      <div 
+        className={classes(["ui-component", dropdownClassName, `${name}_dropdown`])}
+        onClick={this.handleDropDownClick}>
         <div
           className="ui-dropdown-content"
           ref="dropdown"
