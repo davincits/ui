@@ -23,9 +23,13 @@ class TextField extends PureComponent {
     const { value } = event.target;
     const { onChange, type, natural } = this.props;
     const isNumberType = type === FIELD_TYPE_NUMBER;
-    if (onChange && (!isNumberType || (value === "") || !isNaN(value))) {
+    const isEmpty = value === "";
+    if (onChange && (!isNumberType || isEmpty || !isNaN(value))) {
       if (natural) {
         return onChange(Math.abs(parseInt(value, 10)), event);
+      }
+      if (isNumberType) {
+        return onChange(isEmpty ? value : Number(value));
       }
       onChange(value, event);
     }
