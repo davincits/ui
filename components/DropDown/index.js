@@ -103,7 +103,7 @@ class DropDown extends PureComponent {
     const { opened, dropDownStyle } = this.state;
     if (!opened) return null;
     const content = (
-      <div 
+      <div
         className={classes(["ui-component", dropdownClassName, `${name}_dropdown`])}
         onClick={this.handleDropDownClick}>
         <div
@@ -132,6 +132,7 @@ class DropDown extends PureComponent {
       autoWidth,
       alignRight,
       closeOnClick,
+      dropdownClassName,
       ...rest
     } = this.props;
     const { opened } = this.state;
