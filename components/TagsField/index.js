@@ -108,19 +108,21 @@ class TagsField extends PureComponent {
               key={tag.label || tag}
               value={tag}
               index={i}
+              disabled={disabled}
               onRemove={this.onRemove}
             />
           ))}
-          <input
-            ref="input"
-            value={inputValue}
-            disabled={disabled}
-            onChange={this.onInputChange}
-            onKeyPress={this.onInputKeyPress}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            placeholder={placeholder}
-          />
+          {!disabled && (
+            <input
+              ref="input"
+              value={inputValue}
+              onChange={this.onInputChange}
+              onKeyPress={this.onInputKeyPress}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              placeholder={placeholder}
+            />
+          )}
         </div>
       </div>
     );

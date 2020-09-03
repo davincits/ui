@@ -73,7 +73,9 @@
       cursor: default;
     }
     .ui-tags-field-tag {
-      background-color: $ui-color-gray;
+      background-color: #E0E0E0;
+      color: #4F4F4F;
+      padding-right: 8px;
       .ui-tags-field-tag-remove {
         cursor: default;
         &:hover {
