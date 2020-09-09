@@ -70,6 +70,22 @@ storiesOf('MultiSelect', module)
       )}
     </Container>
   ))
+  .add('with error', () => (
+    <Container>
+      {({ value, onChange }) => (
+        <div style={{ width: '280px' }}>
+          <MultiSelect
+            label="Input label"
+            error="Some error text"
+            value={value}
+            options={USERS_WITH_ICON}
+            onChange={onChange}
+            search
+          />
+        </div>
+      )}
+    </Container>
+  ))
   .add('disabled', () => (
     <Container>
       {({ value, onChange }) => (
