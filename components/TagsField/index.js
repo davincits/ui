@@ -105,7 +105,7 @@ class TagsField extends PureComponent {
         <div className="ui-tags-field-content" onClick={this.onClick}>
           {tags.map((tag, i) => (
             <Tag
-              key={tag.label || tag}
+              key={tag.key || tag}
               value={tag}
               index={i}
               disabled={disabled}
