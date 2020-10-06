@@ -4,12 +4,13 @@
   @include font;
   box-sizing: border-box;
   .ui-tags-field-content {
-    display: flex;
-    flex-wrap: wrap;
     border: 1px solid $ui-color-gray;
     border-radius: $ui-border-radius;
     padding: 3px 1px 1px 3px;
     cursor: text;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
   }
   &:hover:not(.ui-focused):not(.ui-disabled) .ui-tags-field-content {
     background-color: $ui-color-gray-lightest;
@@ -43,6 +44,7 @@
     background: none;
   }
   .ui-tags-field-tag {
+    display: flex;
     height: 24px;
     background-color: $ui-color-brand-primary;
     color: $ui-color-white;
@@ -51,13 +53,18 @@
     line-height: 16px;
     padding-left: 8px;
     padding-right: 1px;
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 2px;
     margin-bottom: 2px;
     border-radius: 2px;
     cursor: default;
+    max-width: 100%;
+    .ui-tags-field-tag-content {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
     .ui-tags-field-tag-remove {
       cursor: pointer;
       svg {

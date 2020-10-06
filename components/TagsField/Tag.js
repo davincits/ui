@@ -11,9 +11,10 @@ class Tag extends PureComponent {
 
   render() {
     const { value, disabled } = this.props;
+    const content = value.label || value;
     return (
       <div className="ui-tags-field-tag">
-        <div className="ui-tags-field-tag-content">{value.label || value}</div>
+        <div className="ui-tags-field-tag-content" title={content}>{content}</div>
         {!disabled && (
           <div className="ui-tags-field-tag-remove" onClick={this.onRemove}>
             <IconClose />

@@ -17,7 +17,7 @@ storiesOf('TagsField', module)
   ))
   .add('predefined', () => (
     <Container width="480px">
-      {({ value = ['Brno', 'Ostrave', 'Plzen'], onChange }) => (
+      {({ value = ['Brno', 'Ostrave', 'Plzen', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum odio consequuntur id alias magni recusandae molestias rem assumenda laboriosam ad, eos inventore quasi repellat quibusdam possimus error suscipit, perferendis ipsam'], onChange }) => (
         <TagsField
           label="Tags"
           value={value}
