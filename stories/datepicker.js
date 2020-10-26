@@ -49,7 +49,6 @@ storiesOf('Date picker', module)
                 onChange={onChange}
                 value={value}
                 range
-                alignRight
               />
             </div>
           </div>

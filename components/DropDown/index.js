@@ -29,7 +29,8 @@ class DropDown extends PureComponent {
     const { opened } = this.state;
     if (disabled || !opened) return;
     event.stopImmediatePropagation();
-    const { button, dropdown } = this.refs;
+    const { button } = this.refs;
+    const dropdown = this.dropdown;
     let parent = event.target;
     while (parent) {
       if (parent.isSameNode(dropdown) || parent.isSameNode(button)) return;
@@ -59,9 +60,11 @@ class DropDown extends PureComponent {
     this.toggleOpenState();
   };
 
-  checkPosition = () => {
+  checkPosition = (dropdown) => {
+    this.dropdown = dropdown;
+    const { inline, autoWidth, alignRight } = this.props;
+    if (inline || !dropdown) return;
     const { button } = this.refs;
-    const { autoWidth, alignRight } = this.props;
     const { innerHeight: windowHeight, innerWidth: windowWidth } = window;
     const {
       width,
@@ -71,11 +74,13 @@ class DropDown extends PureComponent {
       bottom,
       height,
     } = button.getBoundingClientRect();
+    const { width: contentWidth } = dropdown.getBoundingClientRect();
     const onTop = top > (windowHeight + height) / 2;
+    const overflowRight = Math.max(left + contentWidth - windowWidth, 0);
     this.setState({
       dropDownStyle: {
         width: autoWidth ? "" : width,
-        left: alignRight ? "auto" : left,
+        left: alignRight ? "auto" : (left - overflowRight),
         right: alignRight ? (windowWidth - right) : "auto",
         top: onTop ? "" : bottom,
         bottom: onTop ? windowHeight - top : "",
@@ -87,10 +92,7 @@ class DropDown extends PureComponent {
     const { inline = true, manual } = this.props;
     const { opened: stateOpened } = this.state;
     const [opened = !stateOpened] = args;
-    this.setState({ opened }, () => {
-      if (inline || !opened) return;
-      this.checkPosition();
-    });
+    this.setState({ opened });
   }
 
   renderContent() {
@@ -108,7 +110,7 @@ class DropDown extends PureComponent {
         onClick={this.handleDropDownClick}>
         <div
           className="ui-dropdown-content"
-          ref="dropdown"
+          ref={this.checkPosition}
           style={inline ? null : dropDownStyle}>
           {isFunction(children) ? children() : children}
         </div>
