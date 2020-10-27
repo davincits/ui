@@ -14,7 +14,10 @@ export const YEARS_VIEW = 3;
 class Content extends PureComponent {
   constructor(props, context) {
     super(props, context);
-    const { startDate = new Date(), view = DAYS_VIEW } = props;
+    const {
+      startDate = new Date(),
+      view = DAYS_VIEW,
+    } = props;
     const year = startDate.getFullYear();
     const month = startDate.getMonth();
     this.state = {
@@ -31,7 +34,17 @@ class Content extends PureComponent {
   }
 
   setCurrentMonth = (currentMonth) => {
-    this.setState({ currentMonth });
+    const { withoutDate } = this.props;
+    if (!withoutDate) {
+      this.setState({ currentMonth });
+      return;
+    }
+    const { currentYear } = this.state;
+    this.onChange({
+      year: currentYear,
+      month: currentMonth,
+      date: 1,
+    });
   }
 
   setCurrentYear = (currentYear) => {
@@ -89,7 +102,9 @@ class Content extends PureComponent {
   }
 
   onMonthClick = (month) => {
+    const { withoutDate } = this.props;
     this.setCurrentMonth(month);
+    if (withoutDate) return;
     setTimeout(() => {
       this.setState({ view: DAYS_VIEW });
     }, 0);

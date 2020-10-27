@@ -10,9 +10,17 @@ storiesOf('Date picker', module)
     <Container>
       {({ value = '', onChange }) => (
         <div>
-          <Datepicker onChange={onChange} value={value} />
-          <Datepicker onChange={onChange} value={value} view={2} />
-          <Datepicker onChange={onChange} value={value} view={3} />
+          <Datepicker
+            onChange={onChange}
+            value={value}
+          />
+          <Datepicker onChange={onChange} value={value} view={Datepicker.MONTHES_VIEW} />
+          <Datepicker onChange={onChange} value={value} view={Datepicker.YEARS_VIEW} />
+          <Datepicker
+            onChange={onChange}
+            value={value}
+            withoutDate
+          />
           <p>Selected date: {value}</p>
         </div>
       )}

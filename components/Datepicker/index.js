@@ -45,6 +45,7 @@ class Datepicker extends PureComponent {
       view,
       inline = false,
       alignRight,
+      withoutDate,
     } = this.props;
     let startDateString = value;
     let endDateString;
@@ -99,7 +100,8 @@ class Datepicker extends PureComponent {
             monthNames={monthNames}
             dayNames={dayNames}
             range={range}
-            view={view} />
+            withoutDate={withoutDate}
+            view={withoutDate ? MONTHES_VIEW : view} />
         </DropDown>
       </div>
     );
