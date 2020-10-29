@@ -22,6 +22,7 @@ class CheckBox extends PureComponent {
       children,
       onChange,
       value = false,
+      indeterminate,
       error,
       disabled,
       tumbler,
@@ -31,8 +32,9 @@ class CheckBox extends PureComponent {
       <div
         className={classes([
           'ui-component ui-checkbox',
-          tumbler && 'ui-checkbox-tumbler',
+          indeterminate && 'ui-checkbox-indeterminate',
           value && 'ui-checkbox-checked',
+          tumbler && 'ui-checkbox-tumbler',
           error && 'ui-with-error',
           disabled && 'ui-disabled',
           className
