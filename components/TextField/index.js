@@ -22,17 +22,18 @@ class TextField extends PureComponent {
   onChange = (event) => {
     const { value } = event.target;
     const { onChange, type, natural } = this.props;
-    const isNumberType = type === FIELD_TYPE_NUMBER;
-    const isEmpty = value === "";
-    if (onChange && (!isNumberType || isEmpty || !isNaN(value))) {
-      if (natural) {
-        return onChange(Math.abs(parseInt(value, 10)), event);
-      }
-      if (isNumberType) {
-        return onChange(isEmpty ? value : Number(value));
-      }
+    if (!onChange) return;
+    if ((type !== FIELD_TYPE_NUMBER) || !value) {
       onChange(value, event);
+      return;
     }
+    if (isNaN(value)) return;
+    const number = Number(value);
+    if (natural) {
+      onChange(Math.max(0, parseInt(value, 10)));
+      return;
+    }
+    onChange(Number(value));
   };
 
   onBlur = (event) => {
