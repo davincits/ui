@@ -30,10 +30,10 @@ class TextField extends PureComponent {
     if (isNaN(value)) return;
     const number = Number(value);
     if (natural) {
-      onChange(Math.max(0, parseInt(value, 10)));
+      onChange(Math.max(0, parseInt(value, 10)), event);
       return;
     }
-    onChange(Number(value));
+    onChange(Number(value), event);
   };
 
   onBlur = (event) => {
