@@ -11,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+    min-height: 32px;
   }
   &:hover:not(.ui-focused):not(.ui-disabled) .ui-tags-field-content {
     background-color: $ui-color-gray-lightest;

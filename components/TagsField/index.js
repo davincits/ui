@@ -17,7 +17,10 @@ class TagsField extends PureComponent {
 
   completeInput = (target) => {
     const {
-      value, onChange, onInputChange, noCustom,
+      value,
+      onChange,
+      onInputChange,
+      noCustom,
     } = this.props;
     const inputValue = target.value.trim();
     const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
@@ -56,9 +59,8 @@ class TagsField extends PureComponent {
   onClick = (event) => {
     const { input } = this.refs;
     const { target, currentTarget } = event;
-    if (target === currentTarget) {
-      input.focus();
-    }
+    if (!input || (target !== currentTarget)) return;
+    input.focus();
   }
 
   onFocus = (event) => {

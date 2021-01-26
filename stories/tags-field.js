@@ -29,12 +29,20 @@ storiesOf('TagsField', module)
   .add('disabled', () => (
     <Container width="480px">
       {({ value = ['Brno', 'Ostrave', 'Plzen'], onChange }) => (
-        <TagsField
-          label="Tags"
-          value={value}
-          onChange={onChange}
-          disabled
-        />
+        <>
+          <TagsField
+            label="Tags"
+            value={value}
+            onChange={onChange}
+            disabled
+          />
+          <div style={{ marginTop: 16 }}>
+            <TagsField
+              label="Tags"
+              disabled
+            />
+          </div>
+        </>
       )}
     </Container>
   ));
