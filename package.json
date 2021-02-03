@@ -70,9 +70,7 @@
     "sass-loader": "^8.0.0",
     "url-loader": "^4.1.1",
     "webpack": "4.41.2",
-    "webpack-cli": "3.3.10"
-  },
-  "dependencies": {
+    "webpack-cli": "3.3.10",
     "caniuse-lite": "^1.0.30001154"
   }
 }
