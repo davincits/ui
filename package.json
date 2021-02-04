@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --open --mode=development --config=webpack.config.demo.js",
-    "pack": "webpack --mode=production --config=webpack.config.demo.js",
+    "page": "webpack --mode=production --config=webpack.config.demo.js",
     "build": "webpack --mode=production"
   },
   "browserslist": {
