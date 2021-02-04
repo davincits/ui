@@ -1,9 +1,6 @@
 import "./style.scss";
 
 import React, { PureComponent } from "react";
-import {
-  bool, string, func, element, oneOfType,
-} from "prop-types";
 import { classes, uniqid, isString } from "../utils";
 import SearchIcon from "../icons/Search";
 import CloseIcon from "../icons/Close";
@@ -133,19 +130,5 @@ class TextField extends PureComponent {
     );
   }
 }
-
-TextField.propTypes = {
-  className: string,
-  label: oneOfType([element, string]),
-  type: string,
-  inline: bool,
-  multiline: bool,
-  resize: bool,
-  autoheight: bool,
-  search: bool,
-  error: bool,
-  onChange: func,
-  onBlur: func,
-};
 
 export default TextField;

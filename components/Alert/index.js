@@ -1,19 +1,12 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { bool, func, number } from 'prop-types';
 import { classes } from '../utils';
 import IconClose from '../icons/Close';
 
 const DEFAULT_DELAY = 300;
 
 class Alert extends PureComponent {
-  static propTypes = {
-    closeable: bool,
-    onClose: func,
-    delay: number,
-  }
-
   state = {
     showed: true,
     display: true,

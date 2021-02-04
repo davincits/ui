@@ -1,41 +1,12 @@
 {
   "name": "davinci-ui",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "private": true,
   "scripts": {
-    "start": "start-storybook -p 9009 -s public",
-    "storybook": "start-storybook -p 9009 -s public",
+    "start": "webpack --mode=development",
     "build": "build-storybook -s public",
-    "build-storybook": "build-storybook -s public",
-    "package": "webpack --mode production",
-    "build:test": "webpack --env dev"
-  },
-  "eslintConfig": {
-    "plugins": [
-      "babel"
-    ],
-    "extends": [
-      "airbnb",
-      "react-app"
-    ],
-    "rules": {
-      "camelcase": 0,
-      "react/no-string-refs": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-unresolved": 0,
-      "react/jsx-filename-extension": 0,
-      "react/state-in-constructor": 0,
-      "no-underscore-dangle": 0,
-      "jsx-a11y/click-events-have-key-events": 0,
-      "jsx-a11y/no-static-element-interactions": 0,
-      "react/jsx-props-no-spreading": 0,
-      "no-plusplus": 0,
-      "react/jsx-one-expression-per-line": 0,
-      "no-nested-ternary": 0,
-      "react/require-default-props": 0,
-      "consistent-return": 0,
-      "react/prop-types": 0
-    }
+    "build-demo": "",
+    "package": "webpack --mode=production"
   },
   "browserslist": {
     "production": [
@@ -49,28 +20,19 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@storybook/addons": "5.3.19",
-    "@storybook/react": "5.3.19",
-    "babel-loader": "^8.0.6",
-    "eslint": "6.6.0",
-    "eslint-config-airbnb": "18.0.1",
-    "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-react": "7.16.0",
-    "extract-text-webpack-plugin": "3.0.2",
-    "markdown-to-jsx": "^6.11.4",
-    "memoizerific": "1.11.3",
-    "mini-css-extract-plugin": "0.8.0",
-    "node-sass": "^4.14.1",
-    "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-scripts": "^3.4.3",
-    "sass-loader": "^8.0.0",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "mini-css-extract-plugin": "^1.3.5",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
     "url-loader": "^4.1.1",
-    "webpack": "4.41.2",
-    "webpack-cli": "3.3.10",
-    "caniuse-lite": "^1.0.30001154"
+    "webpack": "^5.20.1",
+    "webpack-cli": "^4.5.0"
   }
 }

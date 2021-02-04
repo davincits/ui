@@ -2,9 +2,6 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import {
-  bool, string, func, element, oneOfType,
-} from 'prop-types';
 import { classes } from '../utils';
 
 class CheckBox extends PureComponent {
@@ -49,11 +46,5 @@ class CheckBox extends PureComponent {
     );
   }
 }
-
-CheckBox.propTypes = {
-  label: oneOfType([string, element]),
-  value: bool,
-  onChange: func,
-};
 
 export default CheckBox;

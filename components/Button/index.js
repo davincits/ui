@@ -1,7 +1,6 @@
 import './style.scss';
 
 import React, { Component } from 'react';
-import { bool, string } from 'prop-types';
 import { classes } from '../utils';
 
 class Button extends Component {
@@ -63,23 +62,5 @@ class Button extends Component {
     );
   }
 }
-
-Button.propsTypes = {
-  className: string,
-  primary: bool,
-  danger: bool,
-  warning: bool,
-  success: bool,
-  stroke: bool,
-  uppercased: bool,
-  block: bool,
-  loading: bool,
-  unbordered: bool,
-  large: bool,
-  small: bool,
-  active: bool,
-  hovered: bool,
-  focused: bool,
-};
 
 export default Button;
