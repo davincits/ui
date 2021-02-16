@@ -17,7 +17,6 @@ import RadioGroup from './Radio/RadioGroup';
 import Radio from './Radio/Radio';
 import Range from './Range';
 import Select from './Select';
-import Show from './Show';
 import Slider from './Slider';
 import Tabs from './Tabs';
 import TextField from './TextField';
@@ -77,7 +76,6 @@ export {
   Range,
   Row,
   Select,
-  Show,
   Slider,
   Tabs,
   TextField,

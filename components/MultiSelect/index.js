@@ -5,7 +5,7 @@ import DropDown from '../DropDown';
 import List from '../List';
 import TextField from '../TextField';
 import Loading from '../LoadingDotted';
-import { classes } from '../utils';
+import { classes, isString } from '../utils';
 
 class MultiSelect extends Component {
   state = {
@@ -57,7 +57,11 @@ class MultiSelect extends Component {
       search,
       notFoundText = 'Nothing was found...',
       disabled,
+<<<<<<< HEAD
       loading,
+=======
+      error,
+>>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
     } = this.props;
     const { serchString } = this.state;
     const searchStringLowercased = serchString.toLocaleLowerCase();
@@ -70,7 +74,7 @@ class MultiSelect extends Component {
           )
       : [];
     return (
-      <div className={classes(['ui-component ui-multiselect', className])}>
+      <div className={classes(['ui-component ui-multiselect', error && 'ui-with-error', className])}>
         <DropDown
           label={label}
           buttonContent={buttonContent}
@@ -110,6 +114,9 @@ class MultiSelect extends Component {
             )
           )}
         </DropDown>
+        {isString(error) && (
+          <div className="ui-error-text">{error}</div>
+        )}
       </div>
     );
   }

@@ -17,7 +17,6 @@ import RadioGroup from '../components/Radio/RadioGroup';
 import Radio from '../components/Radio/Radio';
 import Range from '../components/Range';
 import Select from '../components/Select';
-import Show from '../components/Show';
 import Slider from '../components/Slider';
 import Tabs from '../components/Tabs';
 import TextField from '../components/TextField';
@@ -69,7 +68,6 @@ export {
   Range,
   Row,
   Select,
-  Show,
   Slider,
   Tabs,
   TextField,

@@ -1,7 +1,7 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import { classes, isString } from '../utils';
 import DropDown from '../DropDown';
 import Option from './Option';
 
@@ -54,6 +54,9 @@ class Select extends PureComponent {
             />
           ) : null))}
         </DropDown>
+        {isString(error) && (
+          <div className="ui-error-text">{error}</div>
+        )}
       </div>
     );
   }

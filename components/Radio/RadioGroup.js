@@ -1,5 +1,4 @@
 import React, { Children } from 'react';
-import { func } from 'prop-types';
 import { classes } from '../utils';
 
 function RadioGroup({
@@ -20,9 +19,5 @@ function RadioGroup({
     </div>
   );
 }
-
-RadioGroup.propTypes = {
-  onChange: func,
-};
 
 export default RadioGroup;

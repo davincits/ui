@@ -20,6 +20,7 @@ class DropArea extends PureComponent {
   }
 
   dragEnterHandler = () => {
+    const { disabled } = this.props;
     this.setState({ dragOver: true, error: false });
   }
 
@@ -33,8 +34,9 @@ class DropArea extends PureComponent {
   }
 
   dropHandler = (event) => {
-    const { multiple, fileTypes, maxSize } = this.props;
+    const { multiple, fileTypes, maxSize, disabled } = this.props;
     event.preventDefault();
+    if (disabled) return;
     const files = event.dataTransfer.files;
     this.setState({ dragOver: false });
     if (!multiple && files.length > 1) {
@@ -66,18 +68,19 @@ class DropArea extends PureComponent {
   }
 
   render() {
-    const { children, className } = this.props;
+    const { children, className, disabled } = this.props;
     const { dragOver, error } = this.state;
     const classList = classes({
       'ui-component ui-drop-area': true,
       'drag-over': dragOver,
       'error-state': error,
       [className]: className,
+      disabled,
     });
     return (
       <div className={classList}>
         {children}
-        <div className="ui-drop-decoration"><IconCloudBackup /></div>
+        {!disabled && (<div className="ui-drop-decoration"><IconCloudBackup /></div>)}
         <div
           onDragLeave={this.dragLeaveHandler}
           onDragOver={this.dragOverHandler}

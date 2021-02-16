@@ -1,10 +1,7 @@
 import "./style.scss";
 
 import React, { PureComponent } from "react";
-import {
-  bool, string, func, element, oneOfType,
-} from "prop-types";
-import { classes, uniqid } from "../utils";
+import { classes, uniqid, isString } from "../utils";
 import SearchIcon from "../icons/Search";
 import CloseIcon from "../icons/Close";
 
@@ -19,6 +16,7 @@ class TextField extends PureComponent {
 
   onChange = (event) => {
     const { value } = event.target;
+<<<<<<< HEAD
     const { onChange, number, natural } = this.props;
     if (!onChange) return;
     if (natural && !REGEXP_NATURAL.test(value)) {
@@ -28,6 +26,21 @@ class TextField extends PureComponent {
       return;
     }
     onChange(value, event);
+=======
+    const { onChange, type, natural } = this.props;
+    if (!onChange) return;
+    if ((type !== FIELD_TYPE_NUMBER) || !value) {
+      onChange(value, event);
+      return;
+    }
+    if (isNaN(value)) return;
+    const number = Number(value);
+    if (natural) {
+      onChange(Math.max(0, parseInt(value, 10)), event);
+      return;
+    }
+    onChange(Number(value), event);
+>>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
   };
 
   onBlur = (event) => {
@@ -75,7 +88,10 @@ class TextField extends PureComponent {
       id = uniqid(),
       natural,
       floatedLabel,
+<<<<<<< HEAD
       value,
+=======
+>>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -115,6 +131,7 @@ class TextField extends PureComponent {
               ? (<CloseIcon onClick={this.onResetClick} />)
               : (<SearchIcon />)
             ) : null}
+<<<<<<< HEAD
             {!!floatedLabel && (
               <div className="floated-label">{floatedLabel}</div>
             )}
@@ -122,24 +139,19 @@ class TextField extends PureComponent {
         )}
         {!!errorText && (
           <div className="error-text">{errorText}</div>
+=======
+            {floatedLabel ? (
+              <label className="floated-label" htmlFor={id}>{floatedLabel}</label>
+            ) : null}
+          </div>
+        )}
+        {isString(error) && (
+          <div className="ui-error-text">{error}</div>
+>>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
         )}
       </div>
     );
   }
 }
-
-TextField.propTypes = {
-  className: string,
-  label: oneOfType([element, string]),
-  type: string,
-  inline: bool,
-  multiline: bool,
-  resize: bool,
-  autoheight: bool,
-  search: bool,
-  error: bool,
-  onChange: func,
-  onBlur: func,
-};
 
 export default TextField;

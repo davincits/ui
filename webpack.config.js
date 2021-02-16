@@ -1,10 +1,10 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: "[name].css",
     }),
   ],
   module: {
@@ -13,11 +13,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             presets: [
-              '@babel/env',
-              '@babel/react',
+              "@babel/env",
+              "@babel/react",
             ],
           },
         },
@@ -28,23 +28,23 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          'sass-loader',
+          "css-loader",
+          "sass-loader",
         ],
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
+        loader: "url-loader",
       },
     ],
   },
   entry: {
-    index: './src/index.js',
+    index: "./src/index.js",
   },
   output: {
-    filename: '[name].js',
+    filename: "[name].js",
     path: path.resolve(__dirname),
-    libraryTarget: 'umd',
+    libraryTarget: "umd",
   },
-  externals: ['react', 'react-dom'],
+  externals: ["react", "react-dom"],
 };

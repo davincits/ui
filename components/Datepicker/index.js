@@ -44,6 +44,8 @@ class Datepicker extends PureComponent {
       disabled,
       view,
       inline = false,
+      alignRight,
+      withoutDate,
     } = this.props;
     let startDateString = value;
     let endDateString;
@@ -84,6 +86,7 @@ class Datepicker extends PureComponent {
           )}
           disabled={disabled}
           inline={inline}
+          alignRight={alignRight}
           className={calendarClassName}
           autoWidth
           name="ui-datepicker">
@@ -97,7 +100,8 @@ class Datepicker extends PureComponent {
             monthNames={monthNames}
             dayNames={dayNames}
             range={range}
-            view={view} />
+            withoutDate={withoutDate}
+            view={withoutDate ? MONTHES_VIEW : view} />
         </DropDown>
       </div>
     );

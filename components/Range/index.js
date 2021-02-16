@@ -1,14 +1,13 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { number, array, func } from 'prop-types';
 import { classes } from '../utils';
 
 class Range extends PureComponent {
   getValue(value) {
-    const { value: $value } = this.props;
+    const { value: $value = [0, 100] } = this.props;
     let [first, second] = value || $value;
-    const { min, max } = this.props;
+    const { min = 0, max = 100 } = this.props;
     first = Number(first);
     second = Number(second);
     if (isNaN(first)) first = min;
@@ -22,7 +21,7 @@ class Range extends PureComponent {
   }
 
   onMouseDown = (event) => {
-    const { value, disabled } = this.props;
+    const { value = [0, 100], disabled } = this.props;
     if (disabled) return;
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
     this.clientXStart = event.clientX;
@@ -35,8 +34,8 @@ class Range extends PureComponent {
 
   onMouseMove = (event) => {
     const {
-      min,
-      max,
+      min = 0,
+      max = 100,
       onChange,
     } = this.props;
     let [first, second] = this.getValue();
@@ -61,7 +60,7 @@ class Range extends PureComponent {
   }
 
   getStyles() {
-    const { min, max } = this.props;
+    const { min = 0, max = 100 } = this.props;
     const [first, second] = this.getValue();
     const delta = max - min;
     const firstSliderLeft = (first - min) / delta * 100;
@@ -106,19 +105,5 @@ class Range extends PureComponent {
     );
   }
 }
-
-Range.propTypes = {
-  min: number,
-  max: number,
-  value: array,
-  onChange: func,
-};
-
-Range.defaultProps = {
-  min: 0,
-  max: 100,
-  value: [0, 100],
-  onChange: () => { },
-};
 
 export default Range;

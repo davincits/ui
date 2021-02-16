@@ -43,12 +43,22 @@
     margin-bottom: 0;
     white-space: initial;
   }
-  & > input:checked + .ui-fake-checkbox {
-    background-color: $ui-color-brand-primary;
-    border-color: $ui-color-brand-primary;
-    &::after {
-      opacity: 1;
+  &.ui-checkbox-indeterminate,
+  &.ui-checkbox-checked {
+    .ui-fake-checkbox {
+      background-color: $ui-color-brand-primary;
+      border-color: $ui-color-brand-primary;
     }
+  }
+  &.ui-checkbox-indeterminate .ui-fake-checkbox::after {
+    position: absolute;
+    height: 2px;
+    background-color: #fff;
+    transform: translate(2px, 6px);
+    opacity: 1;
+  }
+  &.ui-checkbox-checked .ui-fake-checkbox::after {
+    opacity: 1;
   }
   &.ui-with-error > .ui-fake-checkbox {
     border-color: $ui-color-brand-danger;
@@ -58,6 +68,7 @@
     cursor: default;
     .ui-fake-checkbox {
       background-color: $ui-color-gray;
+      border-color: $ui-color-gray;
     }
   }
   &.ui-checkbox-tumbler {
@@ -83,7 +94,16 @@
         }
       }
     }
-    > input:checked + .ui-fake-checkbox {
+    &.ui-checkbox-indeterminate .ui-fake-checkbox {
+      background-color: #fff;
+      box-shadow: inset 0 0 0 1px #E6E6E6;
+      &::after {
+        background-color: #fff;
+        box-shadow: inset 0 0 0 1px #E6E6E6;
+        transform: translate(7px, -3px);
+      }
+    }
+    &.ui-checkbox-checked .ui-fake-checkbox {
       background-color: $ui-color-brand-primary-light-2;
       &::after {
         background-color: $ui-color-brand-primary;

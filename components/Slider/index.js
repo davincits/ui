@@ -2,7 +2,6 @@ import '../Range/style.scss';
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import { number, func } from 'prop-types';
 import { classes } from '../utils';
 
 class Slider extends PureComponent {
@@ -97,19 +96,5 @@ class Slider extends PureComponent {
     );
   }
 }
-
-Range.propTypes = {
-  min: number,
-  max: number,
-  value: number,
-  onChange: func,
-};
-
-Range.defaultProps = {
-  min: 0,
-  max: 100,
-  value: 100,
-  onChange: () => { },
-};
 
 export default Slider;

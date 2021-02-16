@@ -2,9 +2,6 @@
 import './style.scss';
 
 import React, { PureComponent } from 'react';
-import {
-  bool, string, func, element, oneOfType,
-} from 'prop-types';
 import { classes } from '../utils';
 
 class CheckBox extends PureComponent {
@@ -22,6 +19,7 @@ class CheckBox extends PureComponent {
       children,
       onChange,
       value = false,
+      indeterminate,
       error,
       disabled,
       tumbler,
@@ -31,8 +29,9 @@ class CheckBox extends PureComponent {
       <div
         className={classes([
           'ui-component ui-checkbox',
-          tumbler && 'ui-checkbox-tumbler',
+          indeterminate && 'ui-checkbox-indeterminate',
           value && 'ui-checkbox-checked',
+          tumbler && 'ui-checkbox-tumbler',
           error && 'ui-with-error',
           disabled && 'ui-disabled',
           className
@@ -47,11 +46,5 @@ class CheckBox extends PureComponent {
     );
   }
 }
-
-CheckBox.propTypes = {
-  label: oneOfType([string, element]),
-  value: bool,
-  onChange: func,
-};
 
 export default CheckBox;

@@ -17,7 +17,10 @@ class TagsField extends PureComponent {
 
   completeInput = (target) => {
     const {
-      value, onChange, onInputChange, noCustom,
+      value,
+      onChange,
+      onInputChange,
+      noCustom,
     } = this.props;
     const inputValue = target.value.trim();
     const inputValues = inputValue ? inputValue.replace(/(?:\s*,\s*|\s+)/g, ",").split(",") : [];
@@ -56,9 +59,8 @@ class TagsField extends PureComponent {
   onClick = (event) => {
     const { input } = this.refs;
     const { target, currentTarget } = event;
-    if (target === currentTarget) {
-      input.focus();
-    }
+    if (!input || (target !== currentTarget)) return;
+    input.focus();
   }
 
   onFocus = (event) => {
@@ -105,22 +107,24 @@ class TagsField extends PureComponent {
         <div className="ui-tags-field-content" onClick={this.onClick}>
           {tags.map((tag, i) => (
             <Tag
-              key={tag.label || tag}
+              key={tag.key || tag}
               value={tag}
               index={i}
+              disabled={disabled}
               onRemove={this.onRemove}
             />
           ))}
-          <input
-            ref="input"
-            value={inputValue}
-            disabled={disabled}
-            onChange={this.onInputChange}
-            onKeyPress={this.onInputKeyPress}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            placeholder={placeholder}
-          />
+          {!disabled && (
+            <input
+              ref="input"
+              value={inputValue}
+              onChange={this.onInputChange}
+              onKeyPress={this.onInputKeyPress}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              placeholder={placeholder}
+            />
+          )}
         </div>
       </div>
     );
