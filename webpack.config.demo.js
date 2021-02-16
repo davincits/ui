@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = (arg, { mode }) => {
+  const isProd = mode === "production";
   return {
     module: {
       rules: [
@@ -15,13 +16,21 @@ module.exports = (arg, { mode }) => {
           exclude: /node_modules/,
           loader: "url-loader",
         },
+        {
+          test: /\.s?css$/,
+          use: [
+            "style-loader",
+            "css-loader",
+            "sass-loader",
+          ],
+        },
       ],
     },
     entry: {
       index: "./demo/index.js",
     },
     output: {
-      path: path.resolve(__dirname, "./dist"),
+      path: path.resolve(__dirname, isProd ? "./build" : "./dist"),
       filename: "bundle.js",
     },
     devServer: {
