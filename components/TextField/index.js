@@ -5,8 +5,10 @@ import { classes, uniqid, isString } from "../utils";
 import SearchIcon from "../icons/Search";
 import CloseIcon from "../icons/Close";
 
-const REGEXP_NATURAL = /^\d*$/;
-const REGEXP_NUMBER = /^[+-]?(0|\d*)\.?\d*$/;
+const checkValue = (value) => (
+  (value === null) || (value === undefined) || (value !== value) ? "" : value // eslint-disable-line no-self-compare
+);
+const FIELD_TYPE_NUMBER = "number";
 
 class TextField extends PureComponent {
   constructor(props, context) {
@@ -68,17 +70,18 @@ class TextField extends PureComponent {
       inline,
       onChange,
       onBlur,
+      value: $value,
       type = "text",
       autoheight = true,
       search,
-      errorText,
-      error = !!errorText,
+      error,
       id = uniqid(),
       natural,
       floatedLabel,
       ...rest
     } = this.props;
     const { height } = this.state;
+    const value = checkValue($value);
     const classList = classes({
       "ui-component ui-text-field": true,
       "ui-no-resize": !resize,
