@@ -16,17 +16,6 @@ class TextField extends PureComponent {
 
   onChange = (event) => {
     const { value } = event.target;
-<<<<<<< HEAD
-    const { onChange, number, natural } = this.props;
-    if (!onChange) return;
-    if (natural && !REGEXP_NATURAL.test(value)) {
-      return;
-    }
-    if (number && !REGEXP_NUMBER.test(value)) {
-      return;
-    }
-    onChange(value, event);
-=======
     const { onChange, type, natural } = this.props;
     if (!onChange) return;
     if ((type !== FIELD_TYPE_NUMBER) || !value) {
@@ -40,7 +29,6 @@ class TextField extends PureComponent {
       return;
     }
     onChange(Number(value), event);
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
   };
 
   onBlur = (event) => {
@@ -88,10 +76,6 @@ class TextField extends PureComponent {
       id = uniqid(),
       natural,
       floatedLabel,
-<<<<<<< HEAD
-      value,
-=======
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
       ...rest
     } = this.props;
     const { height } = this.state;
@@ -131,15 +115,6 @@ class TextField extends PureComponent {
               ? (<CloseIcon onClick={this.onResetClick} />)
               : (<SearchIcon />)
             ) : null}
-<<<<<<< HEAD
-            {!!floatedLabel && (
-              <div className="floated-label">{floatedLabel}</div>
-            )}
-          </div>
-        )}
-        {!!errorText && (
-          <div className="error-text">{errorText}</div>
-=======
             {floatedLabel ? (
               <label className="floated-label" htmlFor={id}>{floatedLabel}</label>
             ) : null}
@@ -147,7 +122,6 @@ class TextField extends PureComponent {
         )}
         {isString(error) && (
           <div className="ui-error-text">{error}</div>
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
         )}
       </div>
     );

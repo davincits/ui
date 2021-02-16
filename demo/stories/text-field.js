@@ -111,23 +111,7 @@ storiesOf("TextField", module)
       )}
     </Container>
   ))
-<<<<<<< HEAD:stories/text-field.js
-  .add('error text', () => (
-    <Container width="240px">
-      {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          label="Input label"
-          value={value}
-          onChange={onChange}
-          errorText="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        />
-      )}
-    </Container>
-  ))
-  .add('multiline', () => (
-=======
   .add("multiline", () => (
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60:demo/stories/text-field.js
     <Container width="240px">
       {({ value = "Lorem ipsum", onChange }) => (
         <TextField

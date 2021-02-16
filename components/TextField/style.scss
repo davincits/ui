@@ -123,15 +123,6 @@
       border-color: #dcdcdc transparent transparent;
     }
   }
-<<<<<<< HEAD
-  .error-text {
-    color: $ui-color-brand-danger;
-    font-size: $ui-font-size-s;
-  }
-  &.ui-with-floated-label {
-    input {
-      height: 48px;
-=======
   .ui-error-text {
     font-size: $ui-font-size-s;
     color: $ui-color-brand-danger;
@@ -139,7 +130,6 @@
   &.ui-with-floated-label {
     input {
       height: 52px;
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
       padding-top: 14px;
       padding-bottom: 0;
     }
@@ -148,26 +138,15 @@
       position: absolute;
       top: 50%;
       left: 13px;
-<<<<<<< HEAD
-      margin-top: -9px;
-      color: #828282;
-      font-weight: 500;
-      transition: transform 0.15s;
-=======
       margin-top: -10px;
       color: #828282;
       font-weight: 500;
       transition: transform 0.15s;
       font-size: $ui-font-size-xs;
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
     }
   }
   &.ui-text-field-filled .floated-label,
   input:focus + .floated-label {
-<<<<<<< HEAD
-    transform: translate(0, -10px);
-=======
     transform: translate(0, -11px);
->>>>>>> e2ade77316d111b4b7be2e0e0803de426319dd60
   }
 }
