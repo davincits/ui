@@ -1,6 +1,6 @@
 # Davinci UI
 
-[Storybook](https://davincits.github.io/ui/storybook-static)
+[Demo page](https://davincits.github.io/ui/build)
 
 ### Usage
 
