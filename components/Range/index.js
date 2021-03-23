@@ -23,16 +23,20 @@ class Range extends PureComponent {
   onMouseDown = (event) => {
     const { value = [0, 100], disabled } = this.props;
     if (disabled) return;
+    const source = event.touches ? event.touches[0] : event;
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
-    this.clientXStart = event.clientX;
+    this.clientXStart = source.clientX;
     this.sliderIndex = event.target.nextSibling ? 0 : 1;
     this.sliderLeftStart = value[this.sliderIndex];
     window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('touchmove', this.onMouseMove);
     window.addEventListener('mouseup', this.cancelTracking);
+    window.addEventListener('touchend', this.cancelTracking);
     window.addEventListener('mouseleave', this.cancelTracking);
   }
 
   onMouseMove = (event) => {
+    const source = event.touches ? event.touches[0] : event;
     const {
       min = 0,
       max = 100,
@@ -40,7 +44,7 @@ class Range extends PureComponent {
     } = this.props;
     let [first, second] = this.getValue();
     const delta = max - min;
-    const shift = (event.clientX - this.clientXStart) / this.fullWidth;
+    const shift = (source.clientX - this.clientXStart) / this.fullWidth;
     let left = Math.round(this.sliderLeftStart + delta * shift);
     if (left < min) left = min;
     if (left > max) left = max;
@@ -55,7 +59,9 @@ class Range extends PureComponent {
 
   cancelTracking = () => {
     window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('touchmove', this.onMouseMove);
     window.removeEventListener('mouseup', this.cancelTracking);
+    window.removeEventListener('touchend', this.cancelTracking);
     window.removeEventListener('mouseleave', this.cancelTracking);
   }
 
@@ -98,8 +104,16 @@ class Range extends PureComponent {
       <div className={classList}>
         <div className="ui-range-track" ref="track">
           <div className="ui-range-track-active" style={trackStyle} />
-          <div className="ui-range-slider" style={firstSliderStyle} onMouseDown={this.onMouseDown} />
-          <div className="ui-range-slider" style={secondSliderStyle} onMouseDown={this.onMouseDown} />
+          <div
+            className="ui-range-slider"
+            style={firstSliderStyle}
+            onMouseDown={this.onMouseDown}
+            onTouchStart={this.onMouseDown} />
+          <div
+            className="ui-range-slider"
+            style={secondSliderStyle}
+            onMouseDown={this.onMouseDown}
+            onTouchStart={this.onMouseDown} />
         </div>
       </div>
     );
