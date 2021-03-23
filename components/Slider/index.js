@@ -7,12 +7,14 @@ import { classes } from '../utils';
 class Slider extends PureComponent {
   componentDidMount() {
     window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('touchmove', this.onMouseMove);
     window.addEventListener('mouseup', this.cancelTracking);
     window.addEventListener('mouseleave', this.cancelTracking);
   }
 
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('touchmove', this.onMouseMove);
     window.removeEventListener('mouseup', this.cancelTracking);
     window.removeEventListener('mouseleave', this.cancelTracking);
   }
@@ -29,17 +31,19 @@ class Slider extends PureComponent {
   onMouseDown = (event) => {
     const { value, disabled } = this.props;
     if (disabled) return;
+    const source = event.touches ? event.touches[0] : event;
     this.tracking = true;
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
-    this.clientXStart = event.clientX;
+    this.clientXStart = source.clientX;
     this.sliderStart = Number(value);
   }
 
   onMouseMove = (event) => {
     if (!this.tracking) return null;
     const { min, max, onChange } = this.props;
+    const source = event.touches ? event.touches[0] : event;
     const delta = max - min;
-    const shift = (event.clientX - this.clientXStart) / this.fullWidth;
+    const shift = (source.clientX - this.clientXStart) / this.fullWidth;
     let value = Math.round(this.sliderStart + delta * shift);
     if (value < min) value = min;
     if (value > max) value = max;
@@ -90,7 +94,11 @@ class Slider extends PureComponent {
       <div className={classList} onClick={this.onClick}>
         <div className="ui-range-track" ref="track">
           <div className="ui-range-track-active" style={trackStyle} />
-          <div className="ui-range-slider" style={sliderStyle} onMouseDown={this.onMouseDown} />
+          <div
+            className="ui-range-slider"
+            style={sliderStyle}
+            onMouseDown={this.onMouseDown}
+            onTouchStart={this.onMouseDown} />
         </div>
       </div>
     );
