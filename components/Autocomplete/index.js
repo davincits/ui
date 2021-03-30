@@ -43,6 +43,7 @@ class Autocomplete extends Component {
       loading,
       disabled,
       placeholder,
+      autoComplete,
     } = this.props;
     return (
       <div className={classes(["ui-component ui-autocomplete", className])}>
@@ -55,6 +56,7 @@ class Autocomplete extends Component {
               onFocus={this.onFocus}
               disabled={disabled}
               placeholder={placeholder}
+              autoComplete={autoComplete}
               search />
           )}
           disabled={disabled}
