@@ -43,7 +43,7 @@ class Autocomplete extends Component {
       loading,
       disabled,
       placeholder,
-      autoComplete,
+      autoComplete = "no",
     } = this.props;
     return (
       <div className={classes(["ui-component ui-autocomplete", className])}>
