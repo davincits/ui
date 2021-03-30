@@ -52,6 +52,7 @@ class Example extends Component {
         value={value}
         items={items}
         loading={loading}
+        autoComplete="no"
         onChange={this.onChange}
       />
     );
@@ -70,6 +71,7 @@ storiesOf("Autocomplete", module)
               label="Autocomplete"
               value={value}
               items={items}
+              autoComplete="no"
               onChange={onChange}
             />
           </div>
@@ -97,6 +99,7 @@ storiesOf("Autocomplete", module)
               label="Autocomplete"
               value={value}
               items={items}
+              autoComplete="no"
               onChange={onChange}
               disabled
             />
