@@ -1,8 +1,8 @@
 import React from "react";
 
 import { storiesOf } from "../utils";
-import Container from "./Container";
 import { Select } from "../../components";
+import Container from "./Container";
 
 const OPTIONS = [
   { value: 1, label: "Gulgowski LLC" },
@@ -67,8 +67,14 @@ storiesOf("Select", module)
               label="Input label"
               value={value}
               options={OPTIONS}
-              onChange={onChange}
-            />
+              onChange={onChange} />
+          </div>
+          <div className="u-padding-top">
+            <Select
+              label="Input label"
+              value={value}
+              options={OPTIONS}
+              onChange={onChange} />
           </div>
           <div className="u-padding-top">
             <Select
@@ -76,7 +82,7 @@ storiesOf("Select", module)
               value={value}
               options={OPTIONS}
               onChange={onChange}
-            />
+              search />
           </div>
           <div className="u-padding-top">
             <Select
@@ -84,8 +90,7 @@ storiesOf("Select", module)
               value={value}
               options={OPTIONS}
               onChange={onChange}
-              disabled
-            />
+              disabled />
           </div>
           <div className="u-padding-top">
             <Select
@@ -93,8 +98,7 @@ storiesOf("Select", module)
               value={value}
               options={OPTIONS}
               onChange={onChange}
-              error
-            />
+              error />
           </div>
           <div className="u-padding-top">
             <Select
@@ -102,8 +106,7 @@ storiesOf("Select", module)
               value={value}
               options={OPTIONS}
               onChange={onChange}
-              error="Error text ..."
-            />
+              error="Error text ..." />
           </div>
         </div>
       )}
