@@ -1,8 +1,8 @@
-import React from 'react';
-import Month from './Month';
-import IconChevronLeft from '../icons/ChevronLeft';
-import IconChevronRight from '../icons/ChevronRight';
-import { MONTH_NAMES } from './constants';
+import React from "react";
+import Month from "./Month";
+import IconChevronLeft from "../icons/ChevronLeft";
+import IconChevronRight from "../icons/ChevronRight";
+import { MONTH_NAMES } from "./constants";
 
 function Months(props) {
   const {
@@ -22,20 +22,17 @@ function Months(props) {
       <div className="ui-datepicker-view-header">
         <div
           className="ui-datepicker-view-previous"
-          onClick={onPrevYearClick}
-        >
+          onClick={onPrevYearClick}>
           <IconChevronLeft />
         </div>
         <div
           onClick={onYearLabelClick}
-          className="ui-datepicker-view-label"
-        >
+          className="ui-datepicker-view-label">
           {currentYear}
         </div>
         <div
           className="ui-datepicker-view-next"
-          onClick={onNextYearClick}
-        >
+          onClick={onNextYearClick}>
           <IconChevronRight />
         </div>
       </div>
@@ -46,8 +43,7 @@ function Months(props) {
           name={monthNames ? monthNames[index] : name}
           selected={currentYear === selectedYear && index === selectedMonth}
           disabled={!isMonthAllowed({ year: currentYear, month: index })}
-          onClick={onMonthClick}
-        />
+          onClick={onMonthClick} />
       ))}
     </div>
   );

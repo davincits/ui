@@ -1,11 +1,13 @@
 {
   "name": "davinci-ui",
-  "version": "0.8.10",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "start": "webpack serve --open --mode=development --config=webpack.config.demo.js",
     "page": "webpack --mode=production --config=webpack.config.demo.js",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "lint" : "eslint ./components/",
+    "lint-fix" : "eslint --fix ./components/"
   },
   "browserslist": {
     "production": [

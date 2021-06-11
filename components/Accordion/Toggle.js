@@ -1,37 +1,35 @@
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { memo, useCallback } from "react";
+import { classNames } from "../utils";
 
-class Toggle extends PureComponent {
-  onClick = (event) => {
-    const {
-      index, disabled, onChangeIndex, onClick,
-    } = this.props;
+const Toggle = memo((props) => {
+  const {
+    index,
+    className,
+    children,
+    active,
+    disabled,
+    onChangeIndex,
+    onClick,
+  } = props;
+
+  const handleClick = useCallback((event) => {
     if (disabled) return;
     if (onChangeIndex) onChangeIndex(index);
     if (onClick) onClick(event);
-  }
+  }, [disabled, index, onChangeIndex, onClick]);
 
-  render() {
-    const {
-      className,
-      children,
-      active,
-      disabled,
-    } = this.props;
-    return (
-      <div
-        className={classes([
-          'ui-component ui-accordion-toggle',
-          active && 'ui-active',
-          disabled && 'ui-disabled',
-          className,
-        ])}
-        onClick={this.onClick}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      className={classNames([
+        "ui-component ui-accordion-toggle",
+        active && "ui-active",
+        disabled && "ui-disabled",
+        className,
+      ])}
+      onClick={handleClick}>
+      {children}
+    </div>
+  );
+});
 
 export default Toggle;

@@ -1,5 +1,5 @@
-import React, { Children } from 'react';
-import { classes } from '../utils';
+import React, { Children } from "react";
+import { classes } from "../utils";
 
 function RadioGroup({
   children,
@@ -10,7 +10,7 @@ function RadioGroup({
   disabled,
 }) {
   return (
-    <div className={classes(['ui-component ui-radio-group', error && 'ui-with-error', className])}>
+    <div className={classes(["ui-component ui-radio-group", error && "ui-with-error", className])}>
       {Children.map(children, (child) => React.cloneElement(child, {
         disabled: disabled || child.props.disabled,
         checked: value === child.props.value,

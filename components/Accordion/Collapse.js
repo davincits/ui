@@ -1,25 +1,27 @@
-import React from 'react';
-import { classes } from '../utils';
+import React, { memo } from "react";
+import { classNames } from "../utils";
 
-function Collapse({
-  className,
-  children,
-  active,
-  animated,
-}) {
-  return (active || animated) ? (
-    <div className={
-      classes([
-        'ui-component ui-accordion-collapse',
-        animated && 'ui-animated',
-        active && 'ui-active',
+const Collapse = memo((props) => {
+  const {
+    className,
+    children,
+    active,
+    animated,
+  } = props;
+  if (!active && !animated) {
+    return null;
+  }
+  return (
+    <div
+      className={classNames([
+        "ui-component ui-accordion-collapse",
+        animated && "ui-animated",
+        active && "ui-active",
         className,
-      ])
-    }
-    >
+      ])}>
       {children}
     </div>
-  ) : null;
-}
+  );
+});
 
 export default Collapse;

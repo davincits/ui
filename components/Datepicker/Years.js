@@ -1,8 +1,8 @@
-import React from 'react';
-import Year from './Year';
-import IconChevronLeft from '../icons/ChevronLeft';
-import IconChevronRight from '../icons/ChevronRight';
-import { YEARS_PER_PAGE } from './constants';
+import React from "react";
+import Year from "./Year";
+import IconChevronLeft from "../icons/ChevronLeft";
+import IconChevronRight from "../icons/ChevronRight";
+import { YEARS_PER_PAGE } from "./constants";
 
 function Years(props) {
   const {
@@ -15,9 +15,10 @@ function Years(props) {
   } = props;
   const years = [];
   const selectedYear = startDate && startDate.getFullYear();
-  const startYear = currentYear - currentYear % YEARS_PER_PAGE;
-  for (let i = 0; i < YEARS_PER_PAGE; i++) {
-    const _year = startYear + i;
+  const startYear = currentYear - (currentYear % YEARS_PER_PAGE);
+  // eslint-disable-next-line no-loops/no-loops
+  for (let iterator = 0; iterator < YEARS_PER_PAGE; iterator++) {
+    const _year = startYear + iterator;
     years.push({
       year: _year,
       selected: _year === selectedYear,
@@ -28,8 +29,7 @@ function Years(props) {
       <div className="ui-datepicker-view-header">
         <div
           className="ui-datepicker-view-previous"
-          onClick={onPrevYearsClick}
-        >
+          onClick={onPrevYearsClick}>
           <IconChevronLeft />
         </div>
         <div className="ui-datepicker-view-label">
@@ -37,8 +37,7 @@ function Years(props) {
         </div>
         <div
           className="ui-datepicker-view-next"
-          onClick={onNextYearsClick}
-        >
+          onClick={onNextYearsClick}>
           <IconChevronRight />
         </div>
       </div>
@@ -48,8 +47,7 @@ function Years(props) {
           year={year}
           selected={selected}
           disabled={!isYearAllowed({ year })}
-          onClick={onYearClick}
-        />
+          onClick={onYearClick} />
       ))}
     </div>
   );

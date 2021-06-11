@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 export default function getContainer({ item: Item, store, className }) {
   class Container extends PureComponent {
     constructor(props, context) {
       super(props, context);
       this.state = { items: [] };
-      this.unsubscribe = store.on('change', this.onStoreChange);
+      this.unsubscribe = store.on("change", this.onStoreChange);
     }
 
     componentWillUnmount() {

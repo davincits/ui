@@ -1,5 +1,5 @@
-export const UPDATE = 'UPDATE';
-export const REMOVE = 'REMOVE';
+export const UPDATE = "UPDATE";
+export const REMOVE = "REMOVE";
 
 class Store {
   constructor() {
@@ -11,19 +11,19 @@ class Store {
     const { items } = this;
     switch (type) {
       case UPDATE:
-        this.items = this.items.map(item => (item.uid === payload.uid ? { ...item, ...payload } : item));
-        this.emit('change');
+        this.items = this.items.map((item) => (item.uid === payload.uid ? { ...item, ...payload } : item));
+        this.emit("change");
         break;
       case REMOVE:
-        this.items = this.items.filter(item => item.uid !== payload);
-        this.emit('change');
+        this.items = this.items.filter((item) => item.uid !== payload);
+        this.emit("change");
         break;
       default:
         this.items = [...items, { type, ...payload }];
-        this.emit('change');
+        this.emit("change");
         break;
     }
-  }
+  };
 
   on(event, cb) {
     if (!this.events[event]) this.events[event] = [];
@@ -37,7 +37,7 @@ class Store {
 
   emit(event, ...rest) {
     if (this.events[event]) {
-      this.events[event].forEach(cb => cb(...rest));
+      this.events[event].forEach((cb) => cb(...rest));
     }
   }
 }

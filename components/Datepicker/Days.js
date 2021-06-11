@@ -1,13 +1,13 @@
-import React from 'react';
-import Day from './Day';
-import IconChevronLeft from '../icons/ChevronLeft';
-import IconChevronRight from '../icons/ChevronRight';
+import React from "react";
+import Day from "./Day";
+import IconChevronLeft from "../icons/ChevronLeft";
+import IconChevronRight from "../icons/ChevronRight";
 import {
   WEEK_DAYS,
   WEEK_START,
   MONTH_NAMES,
   LAST_MONTH_INDEX,
-} from './constants';
+} from "./constants";
 
 function Days(props) {
   const {
@@ -36,9 +36,9 @@ function Days(props) {
   const currentYear = dateObject.getFullYear();
   const currentMonth = dateObject.getMonth();
   const previousMonth = currentMonth > 0 ? currentMonth - 1 : LAST_MONTH_INDEX;
-  while (dateObject.getDay() !== weekStartIndex) {
+  while (dateObject.getDay() !== weekStartIndex) { // eslint-disable-line no-loops/no-loops
     if (isNaN(dateObject.getDay())) {
-      throw Error('isNaN(dateObject.getDay())');
+      throw new TypeError("isNaN(dateObject.getDay())");
     }
     dateObject.setDate(dateObject.getDate() - 1);
   }
@@ -46,6 +46,7 @@ function Days(props) {
   const labels = [];
   let month;
   let date;
+  // eslint-disable-next-line no-loops/no-loops
   do {
     month = dateObject.getMonth();
     date = dateObject.getDate();
@@ -74,7 +75,7 @@ function Days(props) {
     });
     dateObject.setDate(dateObject.getDate() + 1);
     if (isNaN(dateObject.getMonth())) {
-      throw Error('isNaN(dateObject.getMonth())');
+      throw new TypeError("isNaN(dateObject.getMonth())");
     }
   } while (
     dateObject.getMonth() === previousMonth
@@ -82,37 +83,33 @@ function Days(props) {
     || dateObject.getDay() !== weekStartIndex
   );
   return (
-    <div className={`ui-datepicker-days-of-month${(selectedEndYear && selectedEndMonth && selectedEndDate) ? ' range-end-selected' : ''}`}>
+    <div className={`ui-datepicker-days-of-month${(selectedEndYear && selectedEndMonth && selectedEndDate) ? " range-end-selected" : ""}`}>
       <div className="ui-datepicker-view-header">
         {!secondMonth && (
           <div
             className="ui-datepicker-view-previous"
-            onClick={onPrevMonthClick}
-          >
+            onClick={onPrevMonthClick}>
             <IconChevronLeft />
           </div>
         )}
         <div
           onClick={onMonthLabelClick}
-          className="ui-datepicker-view-label"
-        >
+          className="ui-datepicker-view-label">
           {(monthNames || MONTH_NAMES)[currentMonth]}
-          <span className="year-label">, {currentYear}</span>
+          <span className="year-label">{`, ${currentYear}`}</span>
         </div>
         {(secondMonth || !range) && (
           <div
             className="ui-datepicker-view-next"
-            onClick={onNextMonthClick}
-          >
+            onClick={onNextMonthClick}>
             <IconChevronRight />
           </div>
         )}
       </div>
-      {labels.map((item, index) => (
+      {labels.map((item) => (
         <div
           className="ui-datepicker-day-of-month-label ui-label"
-          key={index} // eslint-disable-line react/no-array-index-key
-        >
+          key={item}>
           {item}
         </div>
       ))}
@@ -128,8 +125,7 @@ function Days(props) {
           rangeEnd={item.rangeEnd}
           disabled={item.disabled}
           range={item.range}
-          highlighted={item.highlighted}
-        />
+          highlighted={item.highlighted} />
       ))}
     </div>
   );

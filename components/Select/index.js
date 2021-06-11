@@ -47,7 +47,7 @@ const Select = memo(({
     <div className={classList} {...props}>
       <DropDown
         label={label}
-        buttonContent={selected ? selected.label : placeholderText}
+        buttonContent={selected ? (selected.label || selected.value) : placeholderText}
         disabled={disabled}
         inline={inline}
         name="ui-select"

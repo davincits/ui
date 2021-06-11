@@ -1,53 +1,44 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import IconTime from '../icons/Time';
-import DropDown from '../DropDown';
-import Content from './Content';
-import { classes } from '../utils';
+import React, { memo, useCallback, useRef } from "react";
 
-class Timepicker extends PureComponent {
-  onChange = (time) => {
-    const { onChange } = this.props;
-    const { dropdown } = this.refs;
-    if (onChange) onChange(time);
-    dropdown.setState({ opened: false });
-  }
+import { CLASS_NAME_BASE, CLASS_NAME_DISABLED } from "../constants";
+import { classNames } from "../utils";
+import IconTime from "../icons/Time";
+import DropDown from "../DropDown";
+import Content from "./Content";
 
-  render() {
-    const {
-      value,
-      label,
-      className,
-      allowedTime,
-      disabled,
-    } = this.props;
-    return (
-      <div className={classes([
-        'ui-component ui-timepicker',
-        disabled && 'ui-disabled',
-        className
-        ])}>
-        <DropDown
-          ref="dropdown"
-          button={label || (
-            <div className="ui-timepicker-icon-container">
-              <IconTime />
-            </div>
-          )}
-          inline={false}
-          disabled={disabled}
-          name="ui-timepicker"
-        >
-          <Content
-            value={value}
-            onChange={this.onChange}
-            allowedTime={allowedTime}
-          />
-        </DropDown>
-      </div>
-    );
-  }
-}
+const CLASS_NAME = `${CLASS_NAME_BASE} ui-timepicker`;
+const DEFAULT_LABEL = (
+  <div className="ui-timepicker-icon-container">
+    <IconTime />
+  </div>
+);
+
+const Timepicker = memo((props) => {
+  const {
+    value,
+    label = DEFAULT_LABEL,
+    className,
+    allowedTime,
+    disabled,
+    onChange,
+  } = props;
+
+  return (
+    <div className={classNames([CLASS_NAME, disabled && CLASS_NAME_DISABLED, className])}>
+      <DropDown
+        button={label}
+        inline={false}
+        disabled={disabled}
+        name="ui-timepicker">
+        <Content
+          value={value}
+          onChange={onChange}
+          allowedTime={allowedTime} />
+      </DropDown>
+    </div>
+  );
+});
 
 export default Timepicker;

@@ -1,10 +1,10 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import IconClose from '../icons/Close';
+import React, { PureComponent } from "react";
+import IconClose from "../icons/Close";
 
 class Tag extends PureComponent {
-  onRemove = () => {
+  handleClick = () => {
     const { index, onRemove } = this.props;
     onRemove(index);
   };
@@ -16,7 +16,7 @@ class Tag extends PureComponent {
       <div className="ui-tags-field-tag">
         <div className="ui-tags-field-tag-content" title={content}>{content}</div>
         {!disabled && (
-          <div className="ui-tags-field-tag-remove" onClick={this.onRemove}>
+          <div className="ui-tags-field-tag-remove" onClick={this.handleClick}>
             <IconClose />
           </div>
         )}

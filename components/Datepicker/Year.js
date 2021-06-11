@@ -1,18 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 class Year extends PureComponent {
-  onClick = () => {
+  handleClick = () => {
     const { year, disabled, onClick } = this.props;
     if (!disabled) onClick(year);
-  }
+  };
 
   render() {
     const { year, selected, disabled } = this.props;
     return (
       <div
-        className={`ui-datepicker-year-label${selected ? ' selected' : ''}${disabled ? ' disabled' : ''}`}
-        onClick={this.onClick}
-      >
+        className={`ui-datepicker-year-label${selected ? " selected" : ""}${disabled ? " disabled" : ""}`}
+        onClick={this.handleClick}>
         {year}
       </div>
     );

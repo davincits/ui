@@ -1,5 +1,5 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
 export default (props) => (
   <Svg viewBox="0 0 24 24" iconName="calendar" {...props}>

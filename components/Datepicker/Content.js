@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
-import Years from './Years';
-import Months from './Months';
-import Days from './Days';
+import React, { PureComponent } from "react";
+import Years from "./Years";
+import Months from "./Months";
+import Days from "./Days";
 import {
   LAST_MONTH_INDEX,
   YEARS_PER_PAGE,
-} from './constants';
+} from "./constants";
 
 export const DAYS_VIEW = 1;
 export const MONTHES_VIEW = 2;
@@ -27,11 +27,11 @@ class Content extends PureComponent {
     };
   }
 
-  onChange = ({ year, month, date }) => {
+  handleChange = ({ year, month, date }) => {
     const { onChange } = this.props;
-    const startDateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+    const startDateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(date).padStart(2, "0")}`;
     onChange(startDateString);
-  }
+  };
 
   setCurrentMonth = (currentMonth) => {
     const { withoutDate } = this.props;
@@ -40,18 +40,18 @@ class Content extends PureComponent {
       return;
     }
     const { currentYear } = this.state;
-    this.onChange({
+    this.handleChange({
       year: currentYear,
       month: currentMonth,
       date: 1,
     });
-  }
+  };
 
   setCurrentYear = (currentYear) => {
     this.setState({ currentYear });
-  }
+  };
 
-  onPrevMonthClick = () => {
+  handlePrevMonthClick = () => {
     const {
       currentMonth,
       currentYear,
@@ -63,9 +63,9 @@ class Content extends PureComponent {
     } else {
       this.setCurrentMonth(newMonth);
     }
-  }
+  };
 
-  onNextMonthClick = () => {
+  handleNextMonthClick = () => {
     const {
       currentMonth,
       currentYear,
@@ -77,55 +77,55 @@ class Content extends PureComponent {
     } else {
       this.setCurrentMonth(newMonth);
     }
-  }
+  };
 
-  onPrevYearClick = () => {
+  handlePrevYearClick = () => {
     const { currentYear } = this.state;
     this.setCurrentYear(currentYear - 1);
-  }
+  };
 
-  onNextYearClick = () => {
+  handleNextYearClick = () => {
     const { currentYear } = this.state;
     this.setCurrentYear(currentYear + 1);
-  }
+  };
 
-  onMonthLabelClick = () => {
+  handleMonthLabelClick = () => {
     setTimeout(() => {
       this.setState({ view: MONTHES_VIEW });
     }, 0);
-  }
+  };
 
-  onYearLabelClick = () => {
+  handleYearLabelClick = () => {
     setTimeout(() => {
       this.setState({ view: YEARS_VIEW });
     }, 0);
-  }
+  };
 
-  onMonthClick = (month) => {
+  handleMonthClick = (month) => {
     const { withoutDate } = this.props;
     this.setCurrentMonth(month);
     if (withoutDate) return;
     setTimeout(() => {
       this.setState({ view: DAYS_VIEW });
     }, 0);
-  }
+  };
 
-  onYearClick = (year) => {
+  handleYearClick = (year) => {
     this.setCurrentYear(year);
     setTimeout(() => {
       this.setState({ view: MONTHES_VIEW });
     }, 0);
-  }
+  };
 
-  onPrevYearsClick = () => {
+  handlePrevYearsClick = () => {
     const { currentYear } = this.state;
     this.setCurrentYear(currentYear - YEARS_PER_PAGE);
-  }
+  };
 
-  onNextYearsClick = () => {
+  handleNextYearsClick = () => {
     const { currentYear } = this.state;
     this.setCurrentYear(currentYear + YEARS_PER_PAGE);
-  }
+  };
 
   renderContent() {
     const {
@@ -149,24 +149,22 @@ class Content extends PureComponent {
           <Years
             currentYear={currentYear}
             startDate={startDate}
-            onYearClick={this.onYearClick}
-            onNextYearsClick={this.onNextYearsClick}
-            onPrevYearsClick={this.onPrevYearsClick}
-            isYearAllowed={isYearAllowed}
-          />
+            onYearClick={this.handleYearClick}
+            onNextYearsClick={this.handleNextYearsClick}
+            onPrevYearsClick={this.handlePrevYearsClick}
+            isYearAllowed={isYearAllowed} />
         );
       case MONTHES_VIEW:
         return (
           <Months
-            onMonthClick={this.onMonthClick}
-            onYearLabelClick={this.onYearLabelClick}
-            onPrevYearClick={this.onPrevYearClick}
-            onNextYearClick={this.onNextYearClick}
+            onMonthClick={this.handleMonthClick}
+            onYearLabelClick={this.handleYearLabelClick}
+            onPrevYearClick={this.handlePrevYearClick}
+            onNextYearClick={this.handleNextYearClick}
             startDate={startDate}
             currentYear={currentYear}
             monthNames={monthNames}
-            isMonthAllowed={isMonthAllowed}
-          />
+            isMonthAllowed={isMonthAllowed} />
         );
       default:
         return (
@@ -181,11 +179,10 @@ class Content extends PureComponent {
                 range={range}
                 currentYear={currentYear}
                 currentMonth={currentMonth}
-                onChange={this.onChange}
-                onMonthLabelClick={this.onMonthLabelClick}
-                onPrevMonthClick={this.onPrevMonthClick}
-                onNextMonthClick={this.onNextMonthClick}
-              />
+                onChange={this.handleChange}
+                onMonthLabelClick={this.handleMonthLabelClick}
+                onPrevMonthClick={this.handlePrevMonthClick}
+                onNextMonthClick={this.handleNextMonthClick} />
             </div>
             {range && (
               <div className="ui-datepicker-month-col">
@@ -198,12 +195,11 @@ class Content extends PureComponent {
                   range={range}
                   currentYear={currentYear}
                   currentMonth={currentMonth}
-                  onChange={this.onChange}
-                  onMonthLabelClick={this.onMonthLabelClick}
-                  onPrevMonthClick={this.onPrevMonthClick}
-                  onNextMonthClick={this.onNextMonthClick}
-                  secondMonth
-                />
+                  onChange={this.handleChange}
+                  onMonthLabelClick={this.handleMonthLabelClick}
+                  onPrevMonthClick={this.handlePrevMonthClick}
+                  onNextMonthClick={this.handleNextMonthClick}
+                  secondMonth />
               </div>
             )}
           </div>
@@ -214,7 +210,7 @@ class Content extends PureComponent {
   render() {
     const { range } = this.props;
     return (
-      <div className={`ui-datepicker-content${range ? ' ui-datepicker-range-content' : ''}`}>
+      <div className={`ui-datepicker-content${range ? " ui-datepicker-range-content" : ""}`}>
         {this.renderContent()}
       </div>
     );

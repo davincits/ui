@@ -1,5 +1,5 @@
-import React from 'react';
-import { classes } from '../utils';
+import React from "react";
+import { classes } from "../utils";
 
 function Cell({
   children,
@@ -7,7 +7,7 @@ function Cell({
   cellWidth,
   width,
   style = {},
-  align = 'left',
+  align = "left",
   ...props
 }) {
   const classList = classes([`ui-component ui-table-cell ui-table-cell-align-${align}`, className]);
