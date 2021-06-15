@@ -35,7 +35,7 @@ class Dialog extends PureComponent {
 
   resizeHandler = () => {
     this.detectFooterCovering();
-  }
+  };
 
   detectFooterCovering() {
     const { content, footer } = this.refs;
@@ -82,7 +82,7 @@ class Dialog extends PureComponent {
 
   mouseDownHandler = () => {
     this.clickStartOnDialogContent = true;
-  }
+  };
 
   render() {
     const {

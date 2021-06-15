@@ -19,7 +19,7 @@ const openConfirmDialog = async () => {
   }
 };
 
-storiesOf("CommonDialogs", module)
+storiesOf("CommonDialogs")
   .addDecorator((story) => (
     <Container>
       {() => (

@@ -1,30 +1,30 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import IconBroken from '../icons/Broken';
-import IconArrowRight from '../icons/ArrowRight';
-import IconArrowLeft from '../icons/ArrowLeft';
-import Preview from './Preview';
+import React, { PureComponent } from "react";
+import IconBroken from "../icons/Broken";
+import IconArrowRight from "../icons/ArrowRight";
+import IconArrowLeft from "../icons/ArrowLeft";
+import Preview from "./Preview";
 
-const ARROW_RIGHT_CODE = 'ArrowRight';
-const ARROW_LEFT_CODE = 'ArrowLeft';
+const ARROW_RIGHT_CODE = "ArrowRight";
+const ARROW_LEFT_CODE = "ArrowLeft";
 
 class Gallery extends PureComponent {
   state = {
     current: 0,
     error: false,
-  }
+  };
 
   componentDidMount() {
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', this.keyPressHandler);
-    window.addEventListener('resize', this.resizeImage);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", this.keyPressHandler);
+    window.addEventListener("resize", this.resizeImage);
   }
 
   componentWillUnmount() {
-    document.body.style.overflow = '';
-    window.removeEventListener('keydown', this.keyPressHandler);
-    window.removeEventListener('resize', this.resizeImage);
+    document.body.style.overflow = "";
+    window.removeEventListener("keydown", this.keyPressHandler);
+    window.removeEventListener("resize", this.resizeImage);
   }
 
   resizeImage = () => {
@@ -40,11 +40,11 @@ class Gallery extends PureComponent {
     );
     image.style.transform = `translate(-50%, -50%) scale(${scale})`;
     image.style.opacity = 1;
-  }
+  };
 
   onLoadError = () => {
     this.setState({ error: true });
-  }
+  };
 
   keyPressHandler = ({ code }) => {
     switch (code) {
@@ -56,11 +56,11 @@ class Gallery extends PureComponent {
         break;
       default:
     }
-  }
+  };
 
   setCurrent = (current) => {
     this.setState({ current });
-  }
+  };
 
   nextPhoto = () => {
     let { current } = this.state;
@@ -71,7 +71,7 @@ class Gallery extends PureComponent {
       current,
       error: false,
     });
-  }
+  };
 
   prevPhoto = () => {
     let { current } = this.state;
@@ -82,7 +82,7 @@ class Gallery extends PureComponent {
       current,
       error: false,
     });
-  }
+  };
 
   render() {
     const { current, error } = this.state;
@@ -91,47 +91,38 @@ class Gallery extends PureComponent {
     return hasImages ? (
       <div className="ui-component component-gallery">
         <div className="component-gallery-view">
-          {
-            (!images[current] || error) ? (<IconBroken />) : (
-              <div className="photo-view">
-                <img
-                  key={current}
-                  src={images[current]}
-                  onLoad={this.resizeImage}
-                  onError={this.onLoadError}
-                  ref="image"
-                  alt="gallery"
-                />
-              </div>
-            )
-          }
+          {(!images[current] || error) ? (<IconBroken />) : (
+            <div className="photo-view">
+              <img
+                key={current}
+                src={images[current]}
+                onLoad={this.resizeImage}
+                onError={this.onLoadError}
+                ref="image"
+                alt="gallery" />
+            </div>
+          )}
         </div>
         <div
           className="component-gallery-photos"
-          onClick={this.nextPhoto}
-        >
-          {
-            images.map((src, index) => (
-              <Preview
-                key={src}
-                src={src}
-                index={index}
-                current={current === index}
-                onClick={this.setCurrent}
-              />
-            ))
-          }
+          onClick={this.nextPhoto}>
+          {images.map((src, index) => (
+            <Preview
+              key={src}
+              src={src}
+              index={index}
+              current={current === index}
+              onClick={this.setCurrent} />
+          ))}
         </div>
         <div
           className="control control-prev"
-          onClick={this.prevPhoto}
-        >
+          onClick={this.prevPhoto}>
           <IconArrowLeft />
         </div>
         <div
           className="control control-next"
-          onClick={this.nextPhoto}
-        >
+          onClick={this.nextPhoto}>
           <IconArrowRight />
         </div>
       </div>

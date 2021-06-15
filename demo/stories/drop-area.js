@@ -4,7 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { DropArea } from "../../components";
 
-storiesOf("DropArea", module)
+storiesOf("DropArea")
   .add("common", () => (
     <Container>
       {({ onChange }) => (

@@ -62,7 +62,7 @@ const TABS = [
   },
 ];
 
-storiesOf("FullSizeModal", module)
+storiesOf("FullSizeModal")
   .add("common", () => (
     <Container>
       {({ value = false, onChange }) => (
@@ -72,8 +72,7 @@ storiesOf("FullSizeModal", module)
             <FullSizeModal
               title="Full size modal title"
               footer={<div style={{ padding: "16px 32px", background: "#fff" }}>Footer</div>}
-              onClose={() => onChange(false)}
-            >
+              onClose={() => onChange(false)}>
               <div style={{ padding: "0 32px" }}>
                 <p>Press ESC to close this window</p>
                 <Lorem />
@@ -116,8 +115,7 @@ storiesOf("FullSizeModal", module)
                     </Tabs>
                   )}
                   footer={<div style={{ padding: "16px 32px", background: "#fff" }}>Footer</div>}
-                  onClose={() => onChange(false)}
-                >
+                  onClose={() => onChange(false)}>
                   <div style={{ padding: "32px" }}>
                     <Tabs active={activeTab}>
                       {TABS.map(({ render }, i) => (

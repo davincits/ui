@@ -4,7 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Tabs } from "../../components";
 
-storiesOf("Tabs", module)
+storiesOf("Tabs")
   .add("common", () => (
     <Container>
       {() => (

@@ -7,17 +7,18 @@
   padding: 0 16px;
   height: 40px;
   align-items: center;
-  cursor: pointer;
-
-  &:hover {
+  &:hover:not(.ui-disabled) {
     background-color: $ui-color-gray-light-2;
+    cursor: pointer;
   }
-
   &.ui-selected {
     font-weight: 500;
     color: $ui-color-brand-primary;
   }
-
+  &.ui-disabled {
+    font-weight: 500;
+    color: $ui-color-gray-light-3;
+  }
   .ui-ellipsis {
     width: 100%;
     overflow: hidden;

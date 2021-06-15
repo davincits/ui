@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-literals */
 import React from "react";
 
 import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Tooltip } from "../../components";
 
-storiesOf("Tooltip", module)
+storiesOf("Tooltip")
   .add("common", () => (
     <Container>
       {() => (

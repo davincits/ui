@@ -1,8 +1,8 @@
 
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
 
 class CheckBox extends PureComponent {
   onChange = () => {
@@ -10,7 +10,7 @@ class CheckBox extends PureComponent {
       value, name, disabled, onChange,
     } = this.props;
     if (onChange && !disabled) onChange(!value, name);
-  }
+  };
 
   render() {
     const {
@@ -28,16 +28,15 @@ class CheckBox extends PureComponent {
     return (
       <div
         className={classes([
-          'ui-component ui-checkbox',
-          indeterminate && 'ui-checkbox-indeterminate',
-          value && 'ui-checkbox-checked',
-          tumbler && 'ui-checkbox-tumbler',
-          error && 'ui-with-error',
-          disabled && 'ui-disabled',
-          className
+          "ui-component ui-checkbox",
+          indeterminate && "ui-checkbox-indeterminate",
+          value && "ui-checkbox-checked",
+          tumbler && "ui-checkbox-tumbler",
+          error && "ui-with-error",
+          disabled && "ui-disabled",
+          className,
         ])}
-        onClick={this.onChange}
-      >
+        onClick={this.onChange}>
         <input type="checkbox" onChange={this.onChange} checked={value} disabled={disabled} {...rest} />
         <div className="ui-fake-checkbox" />
         {!!label && (<div className="ui-label">{label}</div>)}

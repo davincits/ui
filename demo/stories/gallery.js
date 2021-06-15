@@ -15,11 +15,11 @@ const IMAGES = [
   "https://stage-davinci-media.s3.eu-central-1.amazonaws.com/hotels/photos/W0GCmB5E87aV.jpg",
 ];
 
-storiesOf("Gallery", module)
+storiesOf("Gallery")
   .add("common", () => (
     <Container>
       {() => (
         <Gallery images={IMAGES} />
       )}
     </Container>
-  ))
+  ));

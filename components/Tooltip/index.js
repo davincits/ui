@@ -1,14 +1,14 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import Tooltip from './Tooltip';
-import Portal from '../Portal';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import Tooltip from "./Tooltip";
+import Portal from "../Portal";
+import { classes } from "../utils";
 
-const TOP = 'top';
-const BOTTOM = 'bottom';
-const LEFT = 'left';
-const RIGHT = 'right';
+const TOP = "top";
+const BOTTOM = "bottom";
+const LEFT = "left";
+const RIGHT = "right";
 
 class Container extends PureComponent {
   state = {
@@ -36,11 +36,11 @@ class Container extends PureComponent {
         this.setState({ left: left + width / 2, top });
     }
     this.setState({ opened: true });
-  }
+  };
 
   onMouseLeave = () => {
     this.setState({ opened: false });
-  }
+  };
 
   render() {
     const {
@@ -54,8 +54,7 @@ class Container extends PureComponent {
       <div
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
-        className={classes(['ui-tooltip-container', className])}
-      >
+        className={classes(["ui-tooltip-container", className])}>
         {children}
         {Boolean(tooltip) && opened && (
           <Portal>

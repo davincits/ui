@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
 export default class Portal extends Component {
   componentDidMount() {
@@ -22,10 +22,10 @@ export default class Portal extends Component {
   renderPortal() {
     let { children } = this.props;
     if (!this.node) {
-      this.node = document.createElement('div');
+      this.node = document.createElement("div");
       document.body.appendChild(this.node);
     }
-    if (typeof children.type === 'function') {
+    if (typeof children.type === "function") {
       children = React.cloneElement(children);
     }
     this.portal = ReactDOM.unstable_renderSubtreeIntoContainer(

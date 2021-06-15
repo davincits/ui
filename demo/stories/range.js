@@ -4,8 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Range } from "../../components";
 
-
-storiesOf("Range", module)
+storiesOf("Range")
   .add("common", () => (
     <Container>
       {({ value = [20, 80], onChange }) => (
@@ -15,8 +14,7 @@ storiesOf("Range", module)
             min={10}
             max={100}
             value={value}
-            onChange={onChange}
-          />
+            onChange={onChange} />
         </div>
       )}
     </Container>
@@ -31,8 +29,7 @@ storiesOf("Range", module)
             max={100}
             value={value}
             onChange={onChange}
-            disabled
-          />
+            disabled />
         </div>
       )}
     </Container>

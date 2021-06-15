@@ -5,15 +5,14 @@ import Container from "./Container";
 import { Timepicker, Button } from "../../components";
 import IconCalendar from "../../components/icons/Calendar";
 
-storiesOf("Time picker", module)
+storiesOf("Time picker")
   .add("common", () => (
     <Container>
       {({ value = "", onChange }) => (
         <div>
           <Timepicker
             onChange={onChange}
-            value={value}
-          />
+            value={value} />
           <p>Selected time: {value}</p>
         </div>
       )}
@@ -26,8 +25,7 @@ storiesOf("Time picker", module)
           <Timepicker
             onChange={onChange}
             value={value}
-            disabled
-          />
+            disabled />
           <p>Selected time: {value}</p>
         </div>
       )}
@@ -46,8 +44,7 @@ storiesOf("Time picker", module)
           // from 7:30 to 18:45
           allowedTime="7:30-13:00;14:00-18:45"
           onChange={onChange}
-          value={value}
-        />
+          value={value} />
       )}
     </Container>
   ))
@@ -62,8 +59,7 @@ storiesOf("Time picker", module)
             </Button>
           )}
           onChange={onChange}
-          value={value}
-        />
+          value={value} />
       )}
     </Container>
   ));

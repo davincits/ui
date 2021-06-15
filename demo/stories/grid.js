@@ -4,9 +4,9 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Row, Col } from "../../components";
 
-const Dummy = ({ text = "Column" }) => (<div style={{ padding: "8px", backgroundColor: "#f0f0f0" }}>{text}</div>)
+const Dummy = ({ text = "Column" }) => (<div style={{ padding: "8px", backgroundColor: "#f0f0f0" }}>{text}</div>);
 
-storiesOf("Grid", module)
+storiesOf("Grid")
   .add("common", () => (
     <Container>
       {() => (
@@ -61,10 +61,10 @@ storiesOf("Grid", module)
     <Container>
       {() => (
         <Row gutter>
-          <Col auto><Dummy text="Lorem ipsum dolor sit amet"/></Col>
+          <Col auto><Dummy text="Lorem ipsum dolor sit amet" /></Col>
           <Col auto><Dummy text="Consectetur" /></Col>
           <Col auto><Dummy text="Ut enim ad minim veniam adipisicing elit" /></Col>
         </Row>
       )}
     </Container>
-  ))
+  ));

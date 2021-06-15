@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import React, { Component } from "react";
 import { storiesOf } from "../utils";
 import Container from "./Container";
@@ -23,7 +24,7 @@ class Example extends Component {
   state = {
     value: null,
     items: null,
-  }
+  };
 
   request = debounce((value) => {
     this.setState({ loading: true });
@@ -37,12 +38,12 @@ class Example extends Component {
         loading: false,
       });
     }, 1000);
-  }, 400)
+  }, 400);
 
   onChange = (value, event) => {
     this.setState({ value, items: null });
     if (value && event) this.request(value);
-  }
+  };
 
   render() {
     const { value, items, loading } = this.state;
@@ -53,13 +54,12 @@ class Example extends Component {
         items={items}
         loading={loading}
         autoComplete="no"
-        onChange={this.onChange}
-      />
+        onChange={this.onChange} />
     );
   }
 }
 
-storiesOf("Autocomplete", module)
+storiesOf("Autocomplete")
   .add("common", () => (
     <Container>
       {({ value, onChange }) => {
@@ -72,8 +72,7 @@ storiesOf("Autocomplete", module)
               value={value}
               items={items}
               autoComplete="no"
-              onChange={onChange}
-            />
+              onChange={onChange} />
           </div>
         );
       }}
@@ -101,8 +100,7 @@ storiesOf("Autocomplete", module)
               items={items}
               autoComplete="no"
               onChange={onChange}
-              disabled
-            />
+              disabled />
           </div>
         );
       }}

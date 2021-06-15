@@ -30,7 +30,7 @@ class DropDown extends PureComponent {
     if (disabled || !opened) return;
     event.stopImmediatePropagation();
     const { button } = this.refs;
-    const dropdown = this.dropdown;
+    const { dropdown } = this;
     let parent = event.target;
     while (parent) {
       if (parent.isSameNode(dropdown) || parent.isSameNode(button)) return;
@@ -52,7 +52,7 @@ class DropDown extends PureComponent {
     const { closeOnClick } = this.props;
     if (!closeOnClick) return;
     this.toggleOpenState(false);
-  }
+  };
 
   clickHandler = () => {
     const { disabled, manual } = this.props;
@@ -86,7 +86,7 @@ class DropDown extends PureComponent {
         bottom: onTop ? windowHeight - top : "",
       },
     });
-  }
+  };
 
   toggleOpenState(...args) {
     const { inline = true, manual } = this.props;

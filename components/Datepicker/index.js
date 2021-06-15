@@ -27,7 +27,7 @@ class Datepicker extends PureComponent {
       }
       return dropdown.setState({ opened: false });
     }
-  }
+  };
 
   render() {
     const {
@@ -71,12 +71,13 @@ class Datepicker extends PureComponent {
       );
     }
     return (
-      <div className={classes([
-        "ui-component ui-datepicker",
-        range && "ui-datepicker-range",
-        disabled && "ui-disabled",
-        className,
-      ])}>
+      <div
+        className={classes([
+          "ui-component ui-datepicker",
+          range && "ui-datepicker-range",
+          disabled && "ui-disabled",
+          className,
+        ])}>
         <DropDown
           ref="dropdown"
           button={label || (

@@ -1,7 +1,7 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
 
 class Range extends PureComponent {
   getValue(value) {
@@ -28,12 +28,12 @@ class Range extends PureComponent {
     this.clientXStart = source.clientX;
     this.sliderIndex = event.target.nextSibling ? 0 : 1;
     this.sliderLeftStart = value[this.sliderIndex];
-    window.addEventListener('mousemove', this.onMouseMove);
-    window.addEventListener('touchmove', this.onMouseMove);
-    window.addEventListener('mouseup', this.cancelTracking);
-    window.addEventListener('touchend', this.cancelTracking);
-    window.addEventListener('mouseleave', this.cancelTracking);
-  }
+    window.addEventListener("mousemove", this.onMouseMove);
+    window.addEventListener("touchmove", this.onMouseMove);
+    window.addEventListener("mouseup", this.cancelTracking);
+    window.addEventListener("touchend", this.cancelTracking);
+    window.addEventListener("mouseleave", this.cancelTracking);
+  };
 
   onMouseMove = (event) => {
     const source = event.touches ? event.touches[0] : event;
@@ -50,20 +50,20 @@ class Range extends PureComponent {
     if (left > max) left = max;
     [first, second] = this.sliderIndex ? [first, left] : [left, second];
     onChange(this.getValue([first, second]));
-  }
+  };
 
   onMouseUp = () => {
     if (!this.trackMouse) return;
     this.trackMouse = false;
-  }
+  };
 
   cancelTracking = () => {
-    window.removeEventListener('mousemove', this.onMouseMove);
-    window.removeEventListener('touchmove', this.onMouseMove);
-    window.removeEventListener('mouseup', this.cancelTracking);
-    window.removeEventListener('touchend', this.cancelTracking);
-    window.removeEventListener('mouseleave', this.cancelTracking);
-  }
+    window.removeEventListener("mousemove", this.onMouseMove);
+    window.removeEventListener("touchmove", this.onMouseMove);
+    window.removeEventListener("mouseup", this.cancelTracking);
+    window.removeEventListener("touchend", this.cancelTracking);
+    window.removeEventListener("mouseleave", this.cancelTracking);
+  };
 
   getStyles() {
     const { min = 0, max = 100 } = this.props;
@@ -91,8 +91,8 @@ class Range extends PureComponent {
   render() {
     const { className, disabled } = this.props;
     const classList = classes({
-      'ui-component ui-range': true,
-      'ui-disabled': disabled,
+      "ui-component ui-range": true,
+      "ui-disabled": disabled,
       [className]: className,
     });
     const [

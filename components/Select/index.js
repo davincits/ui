@@ -66,6 +66,7 @@ const Select = memo(({
               key={opt.value}
               onClick={handleOptionClick}
               selected={opt.value === value}
+              disabled={opt.disabled}
               label={opt.label}
               value={opt.value} />
           ))}

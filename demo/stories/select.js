@@ -57,7 +57,7 @@ const OPTIONS = [
   { value: 50, label: "Jaskolski-Mann" },
 ];
 
-storiesOf("Select", module)
+storiesOf("Select")
   .add("common", () => (
     <Container>
       {({ value = OPTIONS[20].value, onChange }) => (

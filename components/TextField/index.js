@@ -115,8 +115,8 @@ class TextField extends PureComponent {
             <input type={type} id={id} {...props} />
             {search ? (
               value
-              ? (<CloseIcon onClick={this.onResetClick} />)
-              : (<SearchIcon />)
+                ? (<CloseIcon onClick={this.onResetClick} />)
+                : (<SearchIcon />)
             ) : null}
             {floatedLabel ? (
               <label className="floated-label" htmlFor={id}>{floatedLabel}</label>

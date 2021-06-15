@@ -4,14 +4,13 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { RadioGroup, Radio } from "../../components";
 
-storiesOf("Radio", module)
+storiesOf("Radio")
   .add("common", () => (
     <Container>
       {({ value = 2, onChange }) => (
         <RadioGroup
           onChange={onChange}
-          value={value}
-        >
+          value={value}>
           <Radio value={1}>Input label #1</Radio>
           <Radio value={2}>Input label #2</Radio>
           <Radio value={3}>Input label #3</Radio>
@@ -24,8 +23,7 @@ storiesOf("Radio", module)
       {({ value = 2, onChange }) => (
         <RadioGroup
           onChange={onChange}
-          value={value}
-        >
+          value={value}>
           <Radio value={1}>Input label #1</Radio>
           <Radio value={2}>Input label #2</Radio>
           <Radio value={3} disabled>Input label #3</Radio>
@@ -39,8 +37,7 @@ storiesOf("Radio", module)
         <RadioGroup
           onChange={onChange}
           value={value}
-          disabled
-        >
+          disabled>
           <Radio value={1}>Input label #1</Radio>
           <Radio value={2}>Input label #2</Radio>
           <Radio value={3}>Input label #3</Radio>

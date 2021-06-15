@@ -1,4 +1,4 @@
-storybook/
-bode_modules/*
-index.js
-icons.js
+dist
+build
+node_modules
+/index.js
