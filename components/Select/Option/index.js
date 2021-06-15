@@ -1,36 +1,43 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../../utils';
+import React, { memo, useCallback, useEffect, useRef } from "react";
+import { classNames } from "../../utils";
 
-class Option extends PureComponent {
-  onClick = () => {
-    const { value, selected, onClick } = this.props;
-    if (!selected) onClick(value);
-  };
+const Option = memo((props) => {
+  const {
+    className,
+    value,
+    label,
+    selected,
+    disabled,
+    onClick,
+  } = props;
+  const rootRef = useRef();
+  const classList = classNames({
+    "ui-option": true,
+    "ui-selected": selected,
+    "ui-disabled": disabled,
+    [className]: className,
+  });
 
-  componentDidMount() {
-    const { selected } = this.props;
+  const handleClick = useCallback(() => {
+    if (selected || disabled) return;
+    onClick(value);
+  }, [onClick, value, selected]);
+
+  useEffect(() => {
     if (!selected) return;
-    const { root } = this.refs;
-    root.scrollIntoView();
-  }
+    rootRef.current.scrollIntoView();
+  }, []);
 
-  render() {
-    const {
-      className, value, label, selected,
-    } = this.props;
-    const classList = classes({
-      'ui-option': true,
-      'ui-selected': selected,
-      [className]: className,
-    });
-    return (
-      <div className={classList} onClick={this.onClick} ref="root">
-        <div className="ui-ellipsis">{label || value}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      className={classList}
+      ref={rootRef}
+      onClick={handleClick}>
+      <div className="ui-ellipsis">{label || value}</div>
+    </div>
+  );
+});
 
 export default Option;

@@ -1,15 +1,15 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { Component } from 'react';
-import DropDown from '../DropDown';
-import List from '../List';
-import TextField from '../TextField';
-import Loading from '../LoadingDotted';
-import { classes, isString } from '../utils';
+import React, { Component } from "react";
+import DropDown from "../DropDown";
+import List from "../List";
+import TextField from "../TextField";
+import Loading from "../LoadingDotted";
+import { classes, isString } from "../utils";
 
 class MultiSelect extends Component {
   state = {
-    serchString: '',
+    serchString: "",
   };
 
   onSelect = (item) => {
@@ -20,13 +20,13 @@ class MultiSelect extends Component {
       return onChange((value || []).filter((current) => item.value !== current.value));
     }
     onChange([...value, item]);
-  }
+  };
 
   getButtonContent() {
     const {
       value,
       options,
-      placeholder = 'Choose...',
+      placeholder = "Choose...",
       renderLabel,
     } = this.props;
     if (!value || !value.length) {
@@ -36,14 +36,14 @@ class MultiSelect extends Component {
       return renderLabel(value);
     }
     if (value.length === 1) {
-      return options.find(i => i.value === value[0].value).label;
+      return options.find((i) => i.value === value[0].value).label;
     }
     return `Selected: ${value.length}`;
   }
 
   onSearchChange = (serchString) => {
     this.setState({ serchString });
-  }
+  };
 
   render() {
     const {
@@ -55,7 +55,7 @@ class MultiSelect extends Component {
       inline,
       imageSize,
       search,
-      notFoundText = 'Nothing was found...',
+      notFoundText = "Nothing was found...",
       disabled,
       error,
     } = this.props;
@@ -63,28 +63,25 @@ class MultiSelect extends Component {
     const searchStringLowercased = serchString.toLocaleLowerCase();
     const items = Array.isArray(options)
       ? options
-          .filter(item =>
-            !serchString || item.label
+        .filter((item) =>
+          !serchString || item.label
             .toLocaleLowerCase()
-            .includes(searchStringLowercased)
-          )
+            .includes(searchStringLowercased))
       : [];
     return (
-      <div className={classes(['ui-component ui-multiselect', error && 'ui-with-error', className])}>
+      <div className={classes(["ui-component ui-multiselect", error && "ui-with-error", className])}>
         <DropDown
           label={label}
           buttonContent={buttonContent}
           inline={inline}
           name="ui-multiselect"
-          disabled={disabled}
-        >
+          disabled={disabled}>
           {search && (
             <div className="ui-multiselect-search">
               <TextField
                 value={serchString}
                 onChange={this.onSearchChange}
-                search
-              />
+                search />
             </div>
           )}
           {items
@@ -95,20 +92,17 @@ class MultiSelect extends Component {
                 onClick={this.onSelect}
                 imageSize={imageSize}
                 isSelected={(current) => Boolean((value || []).find((item) => item.value === current.value))}
-                checkbox
-              />
+                checkbox />
             ) : (
               <List
                 items={[notFoundText]}
-                notActive
-              />
+                notActive />
             )) : (loading && (
               <List
                 items={[<Loading />]}
-                notActive
-              />
+                notActive />
             )
-          )}
+            )}
         </DropDown>
         {isString(error) && (
           <div className="ui-error-text">{error}</div>

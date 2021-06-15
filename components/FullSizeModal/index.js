@@ -1,10 +1,10 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import IconCloseFilled from "../icons/CloseFilled";
-import { classes } from '../utils';
+import { classes } from "../utils";
 
-const ESC_CODE = 'Escape';
+const ESC_CODE = "Escape";
 
 class FullSizeModal extends PureComponent {
   componentDidMount() {
@@ -13,9 +13,9 @@ class FullSizeModal extends PureComponent {
     } else {
       document.body.__opened_modals__++;
     }
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', this.keyPressHandler);
-    window.addEventListener('resize', this.resizeHandler);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", this.keyPressHandler);
+    window.addEventListener("resize", this.resizeHandler);
     this.detectFooterCovering();
     setTimeout(() => this.detectFooterCovering(), 200);
   }
@@ -25,11 +25,11 @@ class FullSizeModal extends PureComponent {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyPressHandler);
-    window.removeEventListener('resize', this.resizeHandler);
+    window.removeEventListener("keydown", this.keyPressHandler);
+    window.removeEventListener("resize", this.resizeHandler);
     document.body.__opened_modals__--;
     if (document.body.__opened_modals__ > 0) return;
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   }
 
   onClose = () => {
@@ -54,9 +54,9 @@ class FullSizeModal extends PureComponent {
     const { scrollHeight, scrollTop, offsetHeight } = content;
     if (footer) {
       if (Math.ceil(offsetHeight + scrollTop) === scrollHeight) {
-        footer.classList.remove('with-shadow');
+        footer.classList.remove("with-shadow");
       } else {
-        footer.classList.add('with-shadow');
+        footer.classList.add("with-shadow");
       }
     }
   }
@@ -64,9 +64,9 @@ class FullSizeModal extends PureComponent {
   onScroll = (event) => {
     const { header } = this.refs;
     if (event.target.scrollTop) {
-      header.classList.add('with-shadow');
+      header.classList.add("with-shadow");
     } else {
-      header.classList.remove('with-shadow');
+      header.classList.remove("with-shadow");
     }
     this.detectFooterCovering();
   };
@@ -77,18 +77,17 @@ class FullSizeModal extends PureComponent {
       title,
       footer,
       subtitle,
-      closeLabel = 'Close',
+      closeLabel = "Close",
       className,
     } = this.props;
     return (
-      <div className={classes(['ui-component component-full-size-modal', className])} onScroll={this.onScroll}>
+      <div className={classes(["ui-component component-full-size-modal", className])} onScroll={this.onScroll}>
         <div className="component-full-size-modal-header" ref="header">
           <div className="component-full-size-modal-header-main">
             <div className="component-full-size-modal-title">{title}</div>
             <div
               className="component-full-size-modal-close"
-              onClick={this.onClose}
-            >
+              onClick={this.onClose}>
               <span>{closeLabel}</span>
               <span className="component-full-size-modal-close-key">(esc)</span>
               <IconCloseFilled />

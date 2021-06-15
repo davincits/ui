@@ -7,7 +7,7 @@ import LIST from "./mocks/users_list.json";
 import LIST_24 from "./mocks/users_list_img_24.json";
 import LIST_40 from "./mocks/users_list_img_40.json";
 
-storiesOf("List", module)
+storiesOf("List")
   .add("common", () => (
     <Container width="240px">
       {() => (

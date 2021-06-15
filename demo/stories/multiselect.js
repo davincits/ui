@@ -11,7 +11,7 @@ const USERS = LIST.map((user) => ({ ...user, value: user.id }));
 const USERS_WITH_ICON = LIST_24.map((user) => ({ ...user, value: user.id }));
 const USERS_WITH_LARGE_ICON = LIST_40.map((user) => ({ ...user, value: user.id }));
 
-storiesOf("MultiSelect", module)
+storiesOf("MultiSelect")
   .add("common", () => (
     <Container>
       {({ value, onChange }) => (
@@ -20,8 +20,7 @@ storiesOf("MultiSelect", module)
             label="Input label"
             value={value}
             options={USERS}
-            onChange={onChange}
-          />
+            onChange={onChange} />
         </div>
       )}
     </Container>
@@ -34,8 +33,7 @@ storiesOf("MultiSelect", module)
             label="Input label"
             value={value}
             options={USERS_WITH_ICON}
-            onChange={onChange}
-          />
+            onChange={onChange} />
         </div>
       )}
     </Container>
@@ -49,8 +47,7 @@ storiesOf("MultiSelect", module)
             value={value}
             options={USERS_WITH_LARGE_ICON}
             imageSize="large"
-            onChange={onChange}
-          />
+            onChange={onChange} />
         </div>
       )}
     </Container>
@@ -64,8 +61,7 @@ storiesOf("MultiSelect", module)
             value={value}
             options={USERS_WITH_ICON}
             onChange={onChange}
-            search
-          />
+            search />
         </div>
       )}
     </Container>
@@ -80,8 +76,7 @@ storiesOf("MultiSelect", module)
             value={value}
             options={USERS_WITH_ICON}
             onChange={onChange}
-            search
-          />
+            search />
         </div>
       )}
     </Container>
@@ -95,8 +90,7 @@ storiesOf("MultiSelect", module)
             value={value}
             options={USERS_WITH_ICON}
             onChange={onChange}
-            disabled
-          />
+            disabled />
         </div>
       )}
     </Container>

@@ -1,10 +1,10 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent, Children, cloneElement } from 'react';
-import { classes } from '../utils';
-import Tab from './Tab';
-import TabList from './TabList';
-import TabPanel from './TabPanel';
+import React, { PureComponent, Children, cloneElement } from "react";
+import { classes } from "../utils";
+import Tab from "./Tab";
+import TabList from "./TabList";
+import TabPanel from "./TabPanel";
 
 class Tabs extends PureComponent {
   constructor(props, context) {
@@ -16,7 +16,7 @@ class Tabs extends PureComponent {
     const { onChange } = this.props;
     this.setState({ index });
     if (onChange) onChange(index);
-  }
+  };
 
   renderChildren() {
     const { children } = this.props;
@@ -28,14 +28,14 @@ class Tabs extends PureComponent {
         changeIndex: this.changeIndex,
         active: (child.type !== TabList) && (index === i++),
         index,
-      })
+      });
     });
   }
 
   render() {
     const { className } = this.props;
     const classList = classes({
-      'ui-component ui-tabs': true,
+      "ui-component ui-tabs": true,
       [className]: className,
     });
     return (

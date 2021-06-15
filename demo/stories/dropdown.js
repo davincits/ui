@@ -6,7 +6,7 @@ import {
   DropDown, Row, Col, Button,
 } from "../../components";
 
-storiesOf("DropDown", module)
+storiesOf("DropDown")
   .add("common", () => (
     <Container>
       {() => (

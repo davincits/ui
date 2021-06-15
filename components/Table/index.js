@@ -1,10 +1,10 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { Children, cloneElement } from 'react';
-import Row from './Row';
-import Head from './Head';
-import Cell from './Cell';
-import { classes } from '../utils';
+import React, { Children, cloneElement } from "react";
+import Row from "./Row";
+import Head from "./Head";
+import Cell from "./Cell";
+import { classes } from "../utils";
 
 function Table({
   children,
@@ -13,13 +13,13 @@ function Table({
   ...props
 }) {
   const classList = classes({
-    'ui-component ui-table': true,
+    "ui-component ui-table": true,
     [className]: className,
   });
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {Children.map(children, child => child && cloneElement(child, { cellsWidth }))}
+        {Children.map(children, (child) => child && cloneElement(child, { cellsWidth }))}
       </div>
     );
   }

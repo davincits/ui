@@ -4,7 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { FileField } from "../../components";
 
-storiesOf("FileField", module)
+storiesOf("FileField")
   .add("common", () => (
     <Container>
       {() => (
@@ -27,8 +27,7 @@ storiesOf("FileField", module)
           error={error}
           maxSize={1024}
           fileTypes=".txt"
-          multiple
-        >
+          multiple>
           Click to select one or more file
         </FileField>
       )}

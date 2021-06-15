@@ -12,7 +12,7 @@ const ROOMS = [
   { type: "Quadruple", amount: 1, price: 39 },
 ];
 
-storiesOf("Table", module)
+storiesOf("Table")
   .add("common", () => (
     <Container>
       {() => (
@@ -25,21 +25,19 @@ storiesOf("Table", module)
               <Table.Head>Price, €</Table.Head>
               <Table.Head>Total, €</Table.Head>
             </Table.Row>
-            {
-              ROOMS.map(({ type, amount, price }, i) => (
-                <Table.Row key={type}>
-                  <Table.Cell>{type}</Table.Cell>
-                  <Table.Cell>
-                    <span>12/12/20</span>
-                    <span>&nbsp;-&nbsp;</span>
-                    <span>13/12/20</span>
-                  </Table.Cell>
-                  <Table.Cell>{amount}</Table.Cell>
-                  <Table.Cell align="right">{price.toFixed(2)}</Table.Cell>
-                  <Table.Cell align="right">{(amount * price).toFixed(2)}</Table.Cell>
-                </Table.Row>
-              ))
-            }
+            {ROOMS.map(({ type, amount, price }, i) => (
+              <Table.Row key={type}>
+                <Table.Cell>{type}</Table.Cell>
+                <Table.Cell>
+                  <span>12/12/20</span>
+                  <span>&nbsp;-&nbsp;</span>
+                  <span>13/12/20</span>
+                </Table.Cell>
+                <Table.Cell>{amount}</Table.Cell>
+                <Table.Cell align="right">{price.toFixed(2)}</Table.Cell>
+                <Table.Cell align="right">{(amount * price).toFixed(2)}</Table.Cell>
+              </Table.Row>
+            ))}
             <Table.Row>
               <Table.Cell width="86" align="right"><b>Total</b></Table.Cell>
               <Table.Cell width="14" align="right">

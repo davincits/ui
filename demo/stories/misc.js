@@ -10,7 +10,7 @@ import {
   Datepicker,
 } from "../../components";
 
-storiesOf("Misc", module)
+storiesOf("Misc")
   .add("LoadingDotted", () => (
     <Container>
       {() => (<LoadingDotted />)}
@@ -34,14 +34,12 @@ storiesOf("Misc", module)
             {modalOpened && (
               <Dialog
                 title="Dialog title"
-                onClose={() => onChange({ ...value, modalOpened: false })}
-              >
+                onClose={() => onChange({ ...value, modalOpened: false })}>
                 <Datepicker
                   value={[dateStart, dateEnd]}
                   label={(<span>{`${dateStart || "Start"} - ${dateEnd || "End"}`}</span>)}
                   onChange={(d) => onChange({ ...value, dates: d })}
-                  range
-                />
+                  range />
               </Dialog>
             )}
           </div>

@@ -1,16 +1,16 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
-import Tag from './Tag';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
+import Tag from "./Tag";
 
-const KEY_NAMES = ['Enter', ',', ' '];
+const KEY_NAMES = ["Enter", ",", " "];
 
 class TagsField extends PureComponent {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      inputValue: '',
+      inputValue: "",
       focused: false,
     };
   }
@@ -27,10 +27,10 @@ class TagsField extends PureComponent {
     if (inputValues.length && onChange && !noCustom) {
       const uniqValues = inputValues.filter((item) => !(value || []).includes(item));
       onChange(Array.isArray(value) ? [...value, ...uniqValues] : uniqValues);
-      if (onInputChange) onInputChange('');
-      this.setState({ inputValue: '' });
+      if (onInputChange) onInputChange("");
+      this.setState({ inputValue: "" });
     }
-  }
+  };
 
   onInputChange = (event) => {
     const { onInputChange } = this.props;
@@ -54,20 +54,20 @@ class TagsField extends PureComponent {
     if (onChange && !disabled) {
       onChange(value.filter((v, i) => i !== index));
     }
-  }
+  };
 
   onClick = (event) => {
     const { input } = this.refs;
     const { target, currentTarget } = event;
     if (!input || (target !== currentTarget)) return;
     input.focus();
-  }
+  };
 
   onFocus = (event) => {
     const { onFocus } = this.props;
     if (onFocus) onFocus(event);
     this.setState({ focused: true });
-  }
+  };
 
   onBlur = (event) => {
     const { target } = event;
@@ -75,7 +75,7 @@ class TagsField extends PureComponent {
     if (onBlur) onBlur(event);
     this.setState({ focused: false });
     this.completeInput(target);
-  }
+  };
 
   render() {
     const {
@@ -92,11 +92,11 @@ class TagsField extends PureComponent {
       placeholder,
     } = this.props;
     const classList = classes([
-      'ui-component ui-tags-field',
-      disabled && 'ui-disabled',
-      focused && 'ui-focused',
-      error && 'ui-with-error',
-      className
+      "ui-component ui-tags-field",
+      disabled && "ui-disabled",
+      focused && "ui-focused",
+      error && "ui-with-error",
+      className,
     ]);
     const tags = Array.isArray(value) ? value : [];
     return (
@@ -111,8 +111,7 @@ class TagsField extends PureComponent {
               value={tag}
               index={i}
               disabled={disabled}
-              onRemove={this.onRemove}
-            />
+              onRemove={this.onRemove} />
           ))}
           {!disabled && (
             <input
@@ -122,8 +121,7 @@ class TagsField extends PureComponent {
               onKeyPress={this.onInputKeyPress}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
-              placeholder={placeholder}
-            />
+              placeholder={placeholder} />
           )}
         </div>
       </div>

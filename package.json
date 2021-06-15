@@ -6,8 +6,8 @@
     "start": "webpack serve --open --mode=development --config=webpack.config.demo.js",
     "page": "webpack --mode=production --config=webpack.config.demo.js",
     "build": "webpack --mode=production",
-    "lint" : "eslint ./components/",
-    "lint-fix" : "eslint --fix ./components/"
+    "lint" : "eslint ./",
+    "lint-fix" : "eslint --fix ./"
   },
   "browserslist": {
     "production": [

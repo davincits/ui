@@ -22,7 +22,7 @@ class Example extends Component {
   state = {
     value: null,
     items: null,
-  }
+  };
 
   request = debounce((value) => {
     this.setState({ loading: true });
@@ -36,16 +36,16 @@ class Example extends Component {
         loading: false,
       });
     }, 1000);
-  }, 400)
+  }, 400);
 
   onChange = (value, event) => {
     this.setState({ value, items: null });
-  }
+  };
 
   onInputChange = (value) => {
     this.setState({ items: null });
     if (value) this.request(value);
-  }
+  };
 
   render() {
     const { disabled } = this.props;
@@ -60,13 +60,12 @@ class Example extends Component {
         loading={loading}
         onChange={this.onChange}
         onInputChange={this.onInputChange}
-        disabled={disabled}
-      />
+        disabled={disabled} />
     );
   }
 }
 
-storiesOf("TagsAutocomplete", module)
+storiesOf("TagsAutocomplete")
   .add("common", () => (
     <Container width="480px">
       {() => (

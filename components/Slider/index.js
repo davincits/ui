@@ -1,22 +1,22 @@
-import '../Range/style.scss';
-import './style.scss';
+import "../Range/style.scss";
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
 
 class Slider extends PureComponent {
   componentDidMount() {
-    window.addEventListener('mousemove', this.onMouseMove);
-    window.addEventListener('touchmove', this.onMouseMove);
-    window.addEventListener('mouseup', this.cancelTracking);
-    window.addEventListener('mouseleave', this.cancelTracking);
+    window.addEventListener("mousemove", this.onMouseMove);
+    window.addEventListener("touchmove", this.onMouseMove);
+    window.addEventListener("mouseup", this.cancelTracking);
+    window.addEventListener("mouseleave", this.cancelTracking);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousemove', this.onMouseMove);
-    window.removeEventListener('touchmove', this.onMouseMove);
-    window.removeEventListener('mouseup', this.cancelTracking);
-    window.removeEventListener('mouseleave', this.cancelTracking);
+    window.removeEventListener("mousemove", this.onMouseMove);
+    window.removeEventListener("touchmove", this.onMouseMove);
+    window.removeEventListener("mouseup", this.cancelTracking);
+    window.removeEventListener("mouseleave", this.cancelTracking);
   }
 
   getValue(value = this.props.value) { // eslint-disable-line react/destructuring-assignment
@@ -36,7 +36,7 @@ class Slider extends PureComponent {
     this.fullWidth = this.refs.track.getBoundingClientRect().width;
     this.clientXStart = source.clientX;
     this.sliderStart = Number(value);
-  }
+  };
 
   onMouseMove = (event) => {
     if (!this.tracking) return null;
@@ -48,7 +48,7 @@ class Slider extends PureComponent {
     if (value < min) value = min;
     if (value > max) value = max;
     onChange(value);
-  }
+  };
 
   onClick = (event) => {
     event.stopPropagation();
@@ -61,7 +61,7 @@ class Slider extends PureComponent {
     if (value < min) value = min;
     if (value > max) value = max;
     onChange(value);
-  }
+  };
 
   getStyles() {
     const { min, max } = this.props;
@@ -69,7 +69,7 @@ class Slider extends PureComponent {
     const delta = max - min;
     const sliderLeft = (value - min) / delta * 100;
     const trackStyle = {
-      left: '0%',
+      left: "0%",
       right: `${100 - sliderLeft}%`,
     };
     const sliderStyle = {
@@ -80,13 +80,13 @@ class Slider extends PureComponent {
 
   cancelTracking = () => {
     this.tracking = false;
-  }
+  };
 
   render() {
     const { className, disabled } = this.props;
     const classList = classes([
-      'ui-component ui-range ui-slider',
-      disabled && 'ui-disabled',
+      "ui-component ui-range ui-slider",
+      disabled && "ui-disabled",
       className,
     ]);
     const [trackStyle, sliderStyle] = this.getStyles();

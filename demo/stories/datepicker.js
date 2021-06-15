@@ -5,22 +5,20 @@ import Container from "./Container";
 import { Datepicker, Button } from "../../components";
 import IconCalendar from "../../components/icons/Calendar";
 
-storiesOf("Date picker", module)
+storiesOf("Date picker")
   .add("common", () => (
     <Container>
       {({ value = "", onChange }) => (
         <div>
           <Datepicker
             onChange={onChange}
-            value={value}
-          />
+            value={value} />
           <Datepicker onChange={onChange} value={value} view={Datepicker.MONTHES_VIEW} />
           <Datepicker onChange={onChange} value={value} view={Datepicker.YEARS_VIEW} />
           <Datepicker
             onChange={onChange}
             value={value}
-            withoutDate
-          />
+            withoutDate />
           <p>Selected date: {value}</p>
         </div>
       )}
@@ -37,8 +35,7 @@ storiesOf("Date picker", module)
             </Button>
           )}
           onChange={onChange}
-          value={value}
-        />
+          value={value} />
       )}
     </Container>
   ))
@@ -50,14 +47,12 @@ storiesOf("Date picker", module)
             <Datepicker
               onChange={onChange}
               value={value}
-              range
-            />
+              range />
             <div className="u-pull-right">
               <Datepicker
                 onChange={onChange}
                 value={value}
-                range
-              />
+                range />
             </div>
           </div>
           <p>Selected range: {value.join(" / ")}</p>
@@ -80,8 +75,7 @@ storiesOf("Date picker", module)
             isDateAllowed={({ year, month, date }) => new Date(year, month, date) > Date.now()}
             isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
             isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
-            value={value}
-          />
+            value={value} />
           <br />
           <Datepicker
             label={(
@@ -95,8 +89,7 @@ storiesOf("Date picker", module)
             isMonthAllowed={({ year, month }) => new Date(year, month + 1) > Date.now()}
             isYearAllowed={({ year }) => new Date(year + 1) > Date.now()}
             value={rangeValue}
-            range
-          />
+            range />
         </div>
       )}
     </Container>
@@ -108,8 +101,7 @@ storiesOf("Date picker", module)
           <Datepicker
             onChange={onChange}
             value={value}
-            disabled
-          />
+            disabled />
         </div>
       )}
     </Container>

@@ -2,7 +2,7 @@ import "./style.scss";
 
 import React, { PureComponent } from "react";
 import { classes } from "../utils";
-import { KEY_UP, KEY_DOWN } from '../constants';
+import { KEY_UP, KEY_DOWN } from "../constants";
 import Item from "./Item";
 
 class List extends PureComponent {
@@ -39,7 +39,7 @@ class List extends PureComponent {
     if (value < 0) value = items.length - 1;
     if (value === items.length) value = 0;
     this.setState({ selected: value });
-  }
+  };
 
   render() {
     const {

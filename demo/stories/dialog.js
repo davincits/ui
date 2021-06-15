@@ -4,7 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Dialog, Button } from "../../components";
 
-storiesOf("Dialog", module)
+storiesOf("Dialog")
   .add("common", () => (
     <Container>
       {({ value, onChange }) => {

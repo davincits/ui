@@ -4,7 +4,7 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { Slider } from "../../components";
 
-storiesOf("Slider", module)
+storiesOf("Slider")
   .add("common", () => (
     <Container>
       {({ value: [first, second] = [50, 60], onChange }) => (
@@ -15,8 +15,7 @@ storiesOf("Slider", module)
               min={10}
               max={100}
               value={first}
-              onChange={(val) => onChange([val, second])}
-            />
+              onChange={(val) => onChange([val, second])} />
           </div>
           <div>
             <span>Value: {second}</span>
@@ -25,8 +24,7 @@ storiesOf("Slider", module)
               max={77}
               value={second}
               onChange={(val) => onChange([first, val])}
-              disabled
-            />
+              disabled />
           </div>
         </div>
       )}

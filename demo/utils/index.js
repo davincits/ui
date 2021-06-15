@@ -17,15 +17,15 @@ export const storiesOf = (storyName) => {
       story.stories.push({
         name,
         slug: slugify(name),
-        Component
+        Component,
       });
       return api;
     },
     addDecorator(render) {
       story.decorator = render;
       return api;
-    }
-  }
+    },
+  };
   return api;
 };
 

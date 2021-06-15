@@ -3,15 +3,14 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { TagsField } from "../../components";
 
-storiesOf("TagsField", module)
+storiesOf("TagsField")
   .add("common", () => (
     <Container width="480px">
       {({ value, onChange }) => (
         <TagsField
           label="Tags"
           value={value}
-          onChange={onChange}
-        />
+          onChange={onChange} />
       )}
     </Container>
   ))
@@ -21,8 +20,7 @@ storiesOf("TagsField", module)
         <TagsField
           label="Tags"
           value={value}
-          onChange={onChange}
-        />
+          onChange={onChange} />
       )}
     </Container>
   ))
@@ -34,13 +32,11 @@ storiesOf("TagsField", module)
             label="Tags"
             value={value}
             onChange={onChange}
-            disabled
-          />
+            disabled />
           <div style={{ marginTop: 16 }}>
             <TagsField
               label="Tags"
-              disabled
-            />
+              disabled />
           </div>
         </>
       )}

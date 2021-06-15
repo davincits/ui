@@ -3,15 +3,14 @@ import { storiesOf } from "../utils";
 import Container from "./Container";
 import { TextField } from "../../components";
 
-storiesOf("TextField", module)
+storiesOf("TextField")
   .add("common", () => (
     <Container width="240px">
       {({ value = "Lorem ipsum", onChange }) => (
         <TextField
           label="Input label"
           value={value}
-          onChange={onChange}
-        />
+          onChange={onChange} />
       )}
     </Container>
   ))
@@ -22,8 +21,7 @@ storiesOf("TextField", module)
           label="Input label"
           value={value}
           onChange={onChange}
-          inline
-        />
+          inline />
       )}
     </Container>
   ))
@@ -34,8 +32,7 @@ storiesOf("TextField", module)
           label="Input label"
           value={value}
           onChange={onChange}
-          search
-        />
+          search />
       )}
     </Container>
   ))
@@ -46,8 +43,7 @@ storiesOf("TextField", module)
           label="Input label"
           value={value}
           onChange={onChange}
-          number
-        />
+          number />
       )}
     </Container>
   ))
@@ -58,8 +54,7 @@ storiesOf("TextField", module)
           label="Input label"
           value={value}
           onChange={onChange}
-          natural
-        />
+          natural />
       )}
     </Container>
   ))
@@ -71,15 +66,13 @@ storiesOf("TextField", module)
             label="Input label"
             value={value}
             onChange={onChange}
-            error
-          />
+            error />
           <TextField
             className="u-margin-top"
             label="Input label"
             value={value}
             onChange={onChange}
-            error="Error text..."
-          />
+            error="Error text..." />
         </>
       )}
     </Container>
@@ -91,22 +84,19 @@ storiesOf("TextField", module)
           <TextField
             floatedLabel="Input label"
             value={value}
-            onChange={onChange}
-          />
+            onChange={onChange} />
           <TextField
             className="u-margin-top"
             floatedLabel="Input label"
             value={value}
             onChange={onChange}
-            error
-          />
+            error />
           <TextField
             className="u-margin-top"
             floatedLabel="Input label"
             value={value}
             onChange={onChange}
-            error="Error text..."
-          />
+            error="Error text..." />
         </>
       )}
     </Container>
@@ -118,8 +108,7 @@ storiesOf("TextField", module)
           label="Input label"
           value={value}
           onChange={onChange}
-          multiline
-        />
+          multiline />
       )}
     </Container>
   ))
@@ -131,8 +120,7 @@ storiesOf("TextField", module)
           value={value}
           onChange={onChange}
           multiline
-          autoheight={false}
-        />
+          autoheight={false} />
       )}
     </Container>
   ))
@@ -144,16 +132,14 @@ storiesOf("TextField", module)
             label="Input label"
             value={value}
             onChange={onChange}
-            disabled
-          />
+            disabled />
           <div className="u-margin-top">
             <TextField
               label="Input label"
               value={value}
               onChange={onChange}
               multiline
-              disabled
-            />
+              disabled />
           </div>
         </div>
       )}

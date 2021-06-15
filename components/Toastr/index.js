@@ -1,16 +1,16 @@
-import './style.scss';
+import "./style.scss";
 
-import Item from './Item';
-import Store, { UPDATE, REMOVE } from '../share/Store';
-import Dispatcher from '../share/Dispatcher';
-import getContainer from '../share/getContainer';
-import { uniqid } from '../utils';
+import Item from "./Item";
+import Store, { UPDATE, REMOVE } from "../share/Store";
+import Dispatcher from "../share/Dispatcher";
+import getContainer from "../share/getContainer";
+import { uniqid } from "../utils";
 
-const TOASTR_DEFAULT = 'default';
-const TOASTR_INFO = 'info';
-const TOASTR_SUCCESS = 'success';
-const TOASTR_WARNING = 'warning';
-const TOASTR_DANGER = 'danger';
+const TOASTR_DEFAULT = "default";
+const TOASTR_INFO = "info";
+const TOASTR_SUCCESS = "success";
+const TOASTR_WARNING = "warning";
+const TOASTR_DANGER = "danger";
 const DELLAY = 5000;
 const HIDE_ANIMATION_DURATION = 250;
 
@@ -25,7 +25,7 @@ export function ToastSuccess(params) { add(params, TOASTR_SUCCESS); }
 export function ToastWarning(params) { add(params, TOASTR_WARNING); }
 export function ToastDanger(params) { add(params, TOASTR_DANGER); }
 
-export default getContainer({ item: Item, store, className: 'ui-toaster-container' });
+export default getContainer({ item: Item, store, className: "ui-toaster-container" });
 
 function update(payload) {
   dispatcher.dispatch({ type: UPDATE, payload });
