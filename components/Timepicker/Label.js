@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 class Label extends PureComponent {
-  onClick = () => {
+  handleClick = () => {
     const { value, disabled, onClick } = this.props;
     if (!disabled) onClick(value);
-  }
+  };
 
   render() {
     const {
@@ -16,12 +16,12 @@ class Label extends PureComponent {
       disabled,
     } = this.props;
     const classList = [`ui-timepicker-${type}-label position-${position}`];
-    if (inner) classList.push('inner');
-    if (selected) classList.push('selected');
-    if (disabled) classList.push('disabled');
+    if (inner) classList.push("inner");
+    if (selected) classList.push("selected");
+    if (disabled) classList.push("disabled");
     return (
-      <div className={classList.join(' ')}>
-        <span onClick={this.onClick}>{label}</span>
+      <div className={classList.join(" ")}>
+        <span onClick={this.handleClick}>{label}</span>
       </div>
     );
   }

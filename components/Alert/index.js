@@ -1,47 +1,45 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
-import IconClose from '../icons/Close';
+import React, { memo, useCallback, useState } from "react";
+import { classNames } from "../utils";
+import IconClose from "../icons/Close";
 
 const DEFAULT_DELAY = 300;
 
-class Alert extends PureComponent {
-  state = {
-    showed: true,
-    display: true,
-  }
+const Alert = memo(({
+  className,
+  children,
+  closeable = true,
+  onClose,
+  delay = DEFAULT_DELAY,
+}) => {
+  const [showed, setShowed] = useState(true);
+  const [displayed, setDisplayed] = useState(true);
 
-  onCloseClick = () => {
-    const { onClose, delay = DEFAULT_DELAY } = this.props;
-    this.setState({ showed: false });
+  const handleCloseClick = useCallback(() => {
+    setShowed(false);
     setTimeout(() => {
-      this.setState({ display: false });
+      setDisplayed(false);
       if (onClose) onClose();
     }, delay || 0);
+  }, []);
+
+  if (!displayed) {
+    return null;
   }
 
-  render() {
-    const {
-      className,
-      children,
-      closeable = true,
-      ...props
-    } = this.props;
-    const { showed, display } = this.state;
-    return display && (
-      <div className={classes(['ui-component ui-alert', showed && 'ui-showed', className])} {...props}>
-        {closeable && (
-          <div className="ui-close" onClick={this.onCloseClick}>
-            <IconClose />
-          </div>
-        )}
-        <div className="ui-alert-content">
-          {children}
+  return (
+    <div className={classNames(["ui-component ui-alert", showed && "ui-showed", className])}>
+      {Boolean(closeable) && (
+        <div className="ui-close" onClick={handleCloseClick}>
+          <IconClose />
         </div>
+      )}
+      <div className="ui-alert-content">
+        {children}
       </div>
-    );
-  }
-}
+    </div>
+  );
+});
 
 export default Alert;

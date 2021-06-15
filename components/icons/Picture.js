@@ -1,7 +1,7 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
-export default props => (
+export default (props) => (
   <Svg viewBox="0 0 32 32" iconName="picture" {...props}>
     <g stroke="currentColor" strokeWidth="2" fill="none">
       <polyline points="8 23 13.9 17 19 22.1" />

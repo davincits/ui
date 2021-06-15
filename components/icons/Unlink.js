@@ -1,5 +1,5 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
 export default (props) => (
   <Svg viewBox="0 0 32 32" iconName="unlink" {...props}>

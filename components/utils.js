@@ -3,12 +3,15 @@ export const parent = ({ parentElement }, query) => {
   return parent(parentElement, query);
 };
 
-export const classes = (o) => (Array.isArray(o) ? o : Object.entries(o).map(([k, v]) => v && k)).filter((k) => k).join(' ');
+export const classes = (arg) => (Array.isArray(arg) ? arg : Object.entries(arg).map(([key, val]) => val && key)).filter((key) => key).join(" ");
+
+export const classNames = classes;
 
 export const isNull = (value) => value === null;
 
-export const isString = (value) => typeof value === 'string';
+export const isString = (value) => typeof value === "string";
 
-export const isFunction = (value) => typeof value === 'function';
+export const isFunction = (value) => typeof value === "function";
 
-export const uniqid = () => `uid${Date.now().toString(36)}${Math.random().toString(36)}`;
+const MAX_TO_STRING_BASE = 36;
+export const uniqid = () => `uid${Date.now().toString(MAX_TO_STRING_BASE)}${Math.random().toString(MAX_TO_STRING_BASE)}`;

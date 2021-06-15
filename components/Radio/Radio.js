@@ -1,13 +1,13 @@
-import './style.scss';
+import "./style.scss";
 
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
 
 class Radio extends PureComponent {
-  onChange = () => {
+  handleChange = () => {
     const { value, disabled, onChange } = this.props;
     if (onChange && !disabled) onChange(value);
-  }
+  };
 
   render() {
     const {
@@ -21,14 +21,13 @@ class Radio extends PureComponent {
     return (
       <div
         className={classes([
-          'ui-component ui-radio',
-          checked && 'ui-radio-checked',
-          disabled && 'ui-disabled',
+          "ui-component ui-radio",
+          checked && "ui-radio-checked",
+          disabled && "ui-disabled",
           className,
         ])}
-        onClick={this.onChange}
-      >
-        <input type="radio" onChange={this.onChange} checked={checked} {...rest} />
+        onClick={this.handleChange}>
+        <input type="radio" onChange={this.handleChange} checked={checked} {...rest} />
         <span className="ui-fake-radio" />
         {!!children && <div className="ui-label">{children}</div>}
       </div>

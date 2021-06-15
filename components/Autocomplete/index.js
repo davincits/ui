@@ -1,87 +1,85 @@
 import "./style.scss";
 
-import React, { Component } from "react";
+import React, { memo, useCallback, useRef } from "react";
+
+import { classNames } from "../utils";
 import DropDown from "../DropDown";
 import TextField from "../TextField";
 import Loading from "../LoadingDotted";
 import List from "../List";
-import { classes } from "../utils";
 
-class Autocomplete extends Component {
-  onSelect = (value) => {
-    const { onChange, onSelect } = this.props;
-    const { dropdown } = this.refs;
+const Autocomplete = memo((props) => {
+  const {
+    className,
+    notFoundText = "Nothing was found...",
+    items,
+    label,
+    value = "",
+    loading,
+    disabled,
+    placeholder,
+    autoComplete = "no",
+    onSelect,
+    onChange,
+  } = props;
+  const dropdownRef = useRef();
+
+  const handleSelect = useCallback((value) => {
     onChange(value);
     if (onSelect) onSelect(value);
-    dropdown.setState({ opened: false });
-  }
+    if (!dropdownRef.current) return;
+    dropdownRef.current.setState({ opened: false });
+  }, [onChange, onSelect]);
 
-  onFocus = () => {
-    const { dropdown } = this.refs;
-    dropdown.setState({ opened: true });
-    dropdown.checkPosition();
-  }
+  const handleFocus = useCallback(() => {
+    if (!dropdownRef.current) return;
+    dropdownRef.current.setState({ opened: true });
+    dropdownRef.current.checkPosition();
+  }, []);
 
-  handleChange = (value, event) => {
-    const { dropdown } = this.refs;
-    const { onChange } = this.props;
-    if (!dropdown.state.opened) {
-      dropdown.setState({ opened: true });
-      dropdown.checkPosition();
+  const handleChange = useCallback((value, event) => {
+    if (!dropdownRef.current) return;
+    if (!dropdownRef.current.state.opened) {
+      dropdownRef.current.setState({ opened: true });
+      dropdownRef.current.checkPosition();
     }
     if (onChange) onChange(value, event);
-  }
+  }, []);
 
-  render() {
-    const {
-      className,
-      notFoundText = "Nothing was found...",
-      items,
-      label,
-      value = "",
-      onChange,
-      loading,
-      disabled,
-      placeholder,
-      autoComplete = "no",
-    } = this.props;
-    return (
-      <div className={classes(["ui-component ui-autocomplete", className])}>
-        <DropDown
-          button={(
-            <TextField
-              label={label}
-              value={value}
-              onChange={this.handleChange}
-              onFocus={this.onFocus}
-              disabled={disabled}
-              placeholder={placeholder}
-              autoComplete={autoComplete}
-              search />
-          )}
-          disabled={disabled}
-          ref="dropdown"
-          name="ui-autocomplete"
-          manual>
-          <div className="ui-autocomplete-items">
-            {items
-              ? (items.length ? (
-                <List items={items} onClick={this.onSelect} />
-              ) : (
-                <List
-                  items={[notFoundText]}
-                  notActive />
-              )) : (loading && (
-                <List
-                  items={[<Loading />]}
-                  notActive />
-              )
-              )}
-          </div>
-        </DropDown>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classNames(["ui-component ui-autocomplete", className])}>
+      <DropDown
+        button={(
+          <TextField
+            label={label}
+            value={value}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            disabled={disabled}
+            placeholder={placeholder}
+            autoComplete={autoComplete}
+            search />
+        )}
+        disabled={disabled}
+        ref={dropdownRef}
+        name="ui-autocomplete"
+        manual>
+        <div className="ui-autocomplete-items">
+          {items
+            ? (
+              items.length
+                ? (
+                  <List items={items} onClick={handleSelect} />
+                ) : (
+                  <List items={[notFoundText]} notActive />
+                )
+            ) : (loading && (
+              <List items={[<Loading />]} notActive />
+            ))}
+        </div>
+      </DropDown>
+    </div>
+  );
+});
 
 export default Autocomplete;

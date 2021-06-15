@@ -1,7 +1,7 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
-export default props => (
+export default (props) => (
   <Svg viewBox="0 0 24 24" iconName="not-allowed" {...props}>
     <path d="M12,2 C6.49,2 2,6.49 2,12 C2,17.51 6.49,22 12,22 C17.51,22 22,17.51 22,12 C22,6.49 17.51,2 12,2 Z M12,4 C16.43,4 20,7.57 20,12 C20,13.85 19.37,15.55 18.32,16.9 L7.1,5.68 C8.45,4.63 10.15,4 12,4 Z M5.68,7.1 L16.9,18.32 C15.55,19.37 13.85,20 12,20 C7.57,20 4,16.43 4,12 C4,10.15 4.63,8.45 5.68,7.1 Z" />
   </Svg>

@@ -158,15 +158,4 @@ storiesOf("TextField", module)
         </div>
       )}
     </Container>
-  ))
-  .add('floated label', () => (
-    <Container width="240px">
-      {({ value = 'Lorem ipsum', onChange }) => (
-        <TextField
-          floatedLabel="Input label"
-          value={value}
-          onChange={onChange}
-        />
-      )}
-    </Container>
   ));

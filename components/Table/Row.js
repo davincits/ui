@@ -1,5 +1,5 @@
-import React, { Children, cloneElement } from 'react';
-import { classes } from '../utils';
+import React, { Children, cloneElement } from "react";
+import { classes } from "../utils";
 
 function Row({
   children,
@@ -7,12 +7,12 @@ function Row({
   cellsWidth,
   ...props
 }) {
-  const classList = classes(['ui-component ui-table-row', className]);
+  const classList = classes(["ui-component ui-table-row", className]);
   if (cellsWidth) {
     return (
       <div className={classList} {...props}>
-        {Children.map(children, (child, i) => child
-          && cloneElement(child, { cellWidth: cellsWidth[i] }))}
+        {Children.map(children, (child, index) => child
+          && cloneElement(child, { cellWidth: cellsWidth[index] }))}
       </div>
     );
   }

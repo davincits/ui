@@ -1,14 +1,14 @@
-import React from 'react';
-import IconPlus from '../icons/Plus';
-import { classes } from '../utils';
+import React, { memo } from "react";
+import { classNames } from "../utils";
+import IconPlus from "../icons/Plus";
 
-function Title({ className, children }) {
+const Title = memo(({ className, children }) => {
   return (
-    <div className={classes(['ui-component ui-accordion-title', className])}>
+    <div className={classNames(["ui-component ui-accordion-title", className])}>
       <IconPlus />
       {children}
     </div>
   );
-}
+});
 
 export default Title;

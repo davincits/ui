@@ -1,18 +1,18 @@
-import React, { PureComponent } from 'react';
-import { classes } from '../utils';
+import React, { PureComponent } from "react";
+import { classes } from "../utils";
 
 class Preview extends PureComponent {
-  state = { showed: false }
+  state = { showed: false };
 
-  clickHandler = (event) => {
+  handleClick = (event) => {
     event.stopPropagation();
     const { index, onClick } = this.props;
     if (onClick) onClick(index);
-  }
+  };
 
-  loadHandler = () => {
+  handleLoadEvent = () => {
     this.setState({ showed: true });
-  }
+  };
 
   render() {
     const { current, src } = this.props;
@@ -21,15 +21,13 @@ class Preview extends PureComponent {
       <div
         className={classes({ image: true, current, showed })}
         style={{ backgroundImage: `url(${src})` }}
-        onClick={this.clickHandler}
-      >
+        onClick={this.handleClick}>
         <img
           src={src}
-          onLoad={this.loadHandler}
-          onAbort={this.loadHandler}
-          onError={this.loadHandler}
-          alt="gallery-preview"
-        />
+          onLoad={this.handleLoadEvent}
+          onAbort={this.handleLoadEvent}
+          onError={this.handleLoadEvent}
+          alt="gallery-preview" />
       </div>
     );
   }

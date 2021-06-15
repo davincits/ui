@@ -1,5 +1,5 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
 export default ({ delay, ...props }) => {
   const styles = `

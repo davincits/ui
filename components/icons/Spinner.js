@@ -1,7 +1,9 @@
-import React from 'react';
-import Svg from './Svg';
+import React from "react";
+import Svg from "./Svg";
 
-export default ({ duration = 2000, ...props }) => {
+const DEFAULT_DURATION = 2000;
+
+export default ({ duration = DEFAULT_DURATION, ...props }) => {
   const styles = `
     #svg-icon-spinner-animation {
       animation: rotate ${duration}ms linear infinite;

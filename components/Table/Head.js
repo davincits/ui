@@ -1,12 +1,12 @@
-import React from 'react';
-import { classes } from '../utils';
+import React from "react";
+import { classes } from "../utils";
 
 function Head({
   children,
   className,
   cellWidth,
   width,
-  align = 'left',
+  align = "left",
   style = {},
   ...props
 }) {

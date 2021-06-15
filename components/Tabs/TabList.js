@@ -1,5 +1,5 @@
-import React, { Children, cloneElement } from 'react';
-import { classes } from '../utils';
+import React, { Children, cloneElement } from "react";
+import { classes } from "../utils";
 
 function TabList({
   className,
@@ -8,17 +8,17 @@ function TabList({
   changeIndex,
 }) {
   const classList = classes({
-    'ui-component ui-tab-list': true,
+    "ui-component ui-tab-list": true,
     [className]: className,
   });
-  let i = 0;
+  let iterator = 0;
   return (
     <div className={classList}>
       {Children.map(children, (child) => {
         if (!child) return null;
         return cloneElement(child, {
-          active: index === i,
-          index: i++,
+          active: index === iterator,
+          index: iterator++,
           changeIndex,
         });
       })}

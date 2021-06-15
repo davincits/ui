@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "module": "commonjs"
+  },
+  "include": [
+    "src",
+    "components",
+  ]
+}
