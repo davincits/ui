@@ -16,7 +16,7 @@ const Accordion = memo((props) => {
   let toggleIndex = 0;
   let collapseIndex = 0;
 
-  const handleChangeIndex = useCallback((index) => setIndex(index), []);
+  const handleChangeIndex = useCallback((idx) => setIndex(idx), []);
 
   return (
     <div className={classNames(["ui-component ui-accordion", className])}>

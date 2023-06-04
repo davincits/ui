@@ -17,12 +17,9 @@
   "plugins": [
     "babel",
     "import",
-    "no-loops",
-    "promise",
     "react",
     "react-hooks",
-    "sort-imports-es6-autofix",
-    "unicorn"
+    "sort-imports-es6-autofix"
   ],
   "settings": {
     "react": {
@@ -262,7 +259,6 @@
     "no-lone-blocks": "warn",
     "no-lonely-if": "warn",
     "no-loop-func": "warn",
-    "no-loops/no-loops": "warn",
     "no-magic-numbers": [
       "warn",
       {
@@ -393,13 +389,6 @@
     "prefer-rest-params": "warn",
     "prefer-spread": "warn",
     "prefer-template": "warn",
-    "promise/no-callback-in-promise": "warn",
-    "promise/no-new-statics": "warn",
-    "promise/no-promise-in-callback": "warn",
-    "promise/no-return-in-finally": "warn",
-    "promise/no-return-wrap": "warn",
-    "promise/param-names": "warn",
-    "promise/valid-params": "warn",
     "quote-props": [
       "warn",
       "as-needed"
@@ -542,25 +531,6 @@
       "warn",
       "never"
     ],
-    "unicorn/custom-error-definition": "warn",
-    "unicorn/error-message": "warn",
-    "unicorn/escape-case": "warn",
-    "unicorn/new-for-builtins": "warn",
-    "unicorn/no-array-instanceof": "warn",
-    "unicorn/no-hex-escape": "warn",
-    "unicorn/no-nested-ternary": "warn",
-    "unicorn/no-new-buffer": "warn",
-    "unicorn/no-zero-fractions": "warn",
-    "unicorn/number-literal-case": "warn",
-    "unicorn/prefer-add-event-listener": "warn",
-    "unicorn/prefer-dataset": "warn",
-    "unicorn/prefer-includes": "warn",
-    "unicorn/prefer-reflect-apply": "warn",
-    "unicorn/prefer-spread": "warn",
-    "unicorn/prefer-starts-ends-with": "warn",
-    "unicorn/prefer-type-error": "warn",
-    "unicorn/regex-shorthand": "warn",
-    "unicorn/throw-new-error": "warn",
     "use-isnan": "warn",
     "valid-jsdoc": "warn",
     "valid-typeof": "warn",

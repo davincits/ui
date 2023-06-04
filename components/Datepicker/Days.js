@@ -36,7 +36,7 @@ function Days(props) {
   const currentYear = dateObject.getFullYear();
   const currentMonth = dateObject.getMonth();
   const previousMonth = currentMonth > 0 ? currentMonth - 1 : LAST_MONTH_INDEX;
-  while (dateObject.getDay() !== weekStartIndex) { // eslint-disable-line no-loops/no-loops
+  while (dateObject.getDay() !== weekStartIndex) {
     if (isNaN(dateObject.getDay())) {
       throw new TypeError("isNaN(dateObject.getDay())");
     }
@@ -46,7 +46,6 @@ function Days(props) {
   const labels = [];
   let month;
   let date;
-  // eslint-disable-next-line no-loops/no-loops
   do {
     month = dateObject.getMonth();
     date = dateObject.getDate();

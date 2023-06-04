@@ -24,9 +24,9 @@ const Autocomplete = memo((props) => {
   } = props;
   const dropdownRef = useRef();
 
-  const handleSelect = useCallback((value) => {
-    onChange(value);
-    if (onSelect) onSelect(value);
+  const handleSelect = useCallback((val) => {
+    onChange(val);
+    if (onSelect) onSelect(val);
     if (!dropdownRef.current) return;
     dropdownRef.current.setState({ opened: false });
   }, [onChange, onSelect]);
@@ -37,14 +37,14 @@ const Autocomplete = memo((props) => {
     dropdownRef.current.checkPosition();
   }, []);
 
-  const handleChange = useCallback((value, event) => {
+  const handleChange = useCallback((val, event) => {
     if (!dropdownRef.current) return;
     if (!dropdownRef.current.state.opened) {
       dropdownRef.current.setState({ opened: true });
       dropdownRef.current.checkPosition();
     }
-    if (onChange) onChange(value, event);
-  }, []);
+    if (onChange) onChange(val, event);
+  }, [onChange]);
 
   return (
     <div className={classNames(["ui-component ui-autocomplete", className])}>
@@ -74,7 +74,7 @@ const Autocomplete = memo((props) => {
                   <List items={[notFoundText]} notActive />
                 )
             ) : (loading && (
-              <List items={[<Loading />]} notActive />
+              <List items={[<Loading key={0} />]} notActive />
             ))}
         </div>
       </DropDown>
