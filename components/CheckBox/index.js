@@ -5,7 +5,7 @@ import React, { PureComponent } from "react";
 import { classes } from "../utils";
 
 class CheckBox extends PureComponent {
-  onChange = () => {
+  handleClick = () => {
     const {
       value, name, disabled, onChange,
     } = this.props;
@@ -36,8 +36,8 @@ class CheckBox extends PureComponent {
           disabled && "ui-disabled",
           className,
         ])}
-        onClick={this.onChange}>
-        <input type="checkbox" onChange={this.onChange} checked={value} disabled={disabled} {...rest} />
+        onClick={this.handleClick}>
+        <input type="checkbox" onChange={this.handleClick} checked={value} disabled={disabled} {...rest} />
         <div className="ui-fake-checkbox" />
         {!!label && (<div className="ui-label">{label}</div>)}
         {children}

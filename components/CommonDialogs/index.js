@@ -11,6 +11,26 @@ const dispatcher = new Dispatcher();
 
 dispatcher.register(store.handle);
 
+const remove = (payload, callback) => {
+  dispatcher.dispatch({ type: REMOVE, payload });
+  callback();
+};
+
+const add = (payload, type) => {
+  const uid = uniqid();
+  return new Promise((resolve) => {
+    dispatcher.dispatch({
+      type,
+      payload: {
+        uid,
+        onConfirm: (value) => remove(uid, () => resolve({ value })),
+        onCancel: () => remove(uid, () => resolve(false)),
+        ...payload,
+      },
+    });
+  });
+};
+
 export const showAlertDialog = (params) => {
   return add(params, DIALOG_ALERT);
 };
@@ -25,22 +45,3 @@ export const showCustomDialog = (params) => {
 
 export default getContainer({ item: Item, store, className: "ui-common-dialogs-container" });
 
-function remove(payload, callback) {
-  dispatcher.dispatch({ type: REMOVE, payload });
-  callback();
-}
-
-function add(payload, type) {
-  const uid = uniqid();
-  return new Promise((resolve) => {
-    dispatcher.dispatch({
-      type,
-      payload: {
-        uid,
-        onConfirm: (value) => remove(uid, () => resolve({ value })),
-        onCancel: () => remove(uid, () => resolve(false)),
-        ...payload,
-      },
-    });
-  });
-}

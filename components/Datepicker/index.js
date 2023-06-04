@@ -13,6 +13,7 @@ class Datepicker extends PureComponent {
     if (!onChange) return;
     if (!range) {
       onChange(date);
+
       return dropdown.setState({ opened: false });
     }
     const [start, end] = value;
